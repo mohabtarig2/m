@@ -281,6 +281,8 @@ Route::get('mytenders/MyofferIsset/{id}' ,'TenderController@MyofferIsset');
 Route::get('send' ,'TenderController@send');
 
 
+
+
 Route::get('/mytenders/MyOffer/{id}' ,'OfferController@myoffer');
 
 

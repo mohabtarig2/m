@@ -28,7 +28,7 @@
             <small class="fa  fa-ticket text-muted" ></small>
 
 
-            <small >   ( {{project.count}} )العروض</small>
+            <small >   ( {{project.count==null ? 0 : project.count}} )العروض</small>
             </span>
     </div>
 
@@ -43,6 +43,7 @@
 
 
                         <div class="col-6 ">
+                          
                   <div class="pr-single m-0">
                       <div class="pr-desc">
 											<span>{{$t('bed_rooms')}}</span>
@@ -58,7 +59,7 @@
 											<p class="pr-des-title m-0" >  {{project.bathroom}}</p>
 
 										</div>
-										<div class="pr-icon"><i class="fa fa-bed"></i></div>
+										<div class="pr-icon"><i class="fa fa-bath"></i></div>
 
 									</div>
                 </div>
@@ -67,16 +68,6 @@
 
 
 
-
-<!-- <div class="col-6 font-weight-bold">
-     <div class="text-center mb-0"> Tender id
-            <br>
-                  <span class="main-color"> 1002{{emirats}}</span></div>
-
-        <router-link class="  btn btn-bus" :to="{name:'project',params:{id} }">More Details</router-link>
-
-
-</div> -->
               </div>
               <router-link class="  theme-btn" :to="{name:'project',params:{id:project.id} }">تفاصيل اكتر </router-link>
                  </div>
@@ -102,7 +93,7 @@
 
 
         </div>
-           <pagination :data="projects" @pagination-change-page="detailsTender"></pagination>
+           <!-- <pagination :data="projects" @pagination-change-page="detailsTender"></pagination> -->
 
     </div>
 

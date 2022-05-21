@@ -6,10 +6,44 @@
 </div>
                 <div class="col-md-8">
 
+         <div class="modal fade text-right" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+ dir="rtl">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+         <div class="modal-header">
 
+        <h5 class="modal-title" id="exampleModalLongTitle">مسح إعلان </h5>
+    
+         </div>
+      <div class="">
+        هل انت متاكد تريد حذف
+        <span class="font-weight-bold text-danger">{{AdsTitle}} </span>
+        <span class="font-weight-bold text-danger">{{adsid}} </span>
+      </div>
+      <div class="mt-3">
+          <button type="button" class="btn btn-danger confirm text-light" @click="deleteAds(adsid)"
+         >نعم انا متأكد </button>
+        <button type="button" class="btn btn-light confirm mr-3" data-dismiss="modal">لا</button>
+
+      </div>
+    </div>
+  </div>
+</div>
                     <div class=" container  h2 mt-2 text-right text-dark"> كل الاعلانات</div>
           <div v-for="(project,index) in projects.data" :key="index" v-bind="project">
               <div class="p-descrip-box mt-3 container">
+                                                                      <div class="dropdown float-right">
+  <button class="btn btn-transparnt " type="button"
+   id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+<i class='bx bx-dots-horizontal-rounded'></i>
+</button>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <!-- <a class="dropdown-item" href="#">تعديل</a> -->
+    <a class="dropdown-item" data-toggle="modal" data-target="#delete" @click="GetAdsTitle(project.title,project.id)">مسح</a>
+  </div>
+</div>
 
 <div class="ml-3">
          <div class="font-weight-bold theme-color   ml-2 ">
@@ -90,10 +124,30 @@ export default {
       users: null,
       tenders: [],
       count: null,
+      AdsTitle:'',
+      adsid:'',
     };
   },
   methods:{
+  deleteAds(id){
+            console.log('this id = '+ id);
+            let data = new FormData();
+            data.append('id',id);
+            axios.post('api/other/delete/ads',data).then(res=>{
+                        this.detailsTender();
+                          $('#delete').modal('hide');
+             $('.modal-backdrop').css('display','none');
 
+                      $('#success').modal('show');
+                $('.modal-backdrop').css('display','block ');
+    
+            })
+        },
+        GetAdsTitle(title,id){
+            this.AdsTitle=title
+            this.adsid=id
+
+        },
       detailsTender(page=1){
 //   this.loading = true;
 
@@ -146,5 +200,10 @@ export default {
     width: 70px !important;
     height: 70px !important;
      margin: 5px;
+}
+.btn-danger {
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
 }
 </style>

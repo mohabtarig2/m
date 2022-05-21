@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use App\CoastVilla;
 use App\Http\Controllers\Controller;
 use App\hvac;
+use App\img_service_ads;
 use App\offer_villa_img;
 use App\offerConsr;
 use App\OfferHvac;
@@ -28,6 +29,122 @@ use Illuminate\Support\Str;
 class AdsController extends Controller
 {
 
+     public function DeleteAds(Request $request)
+    {
+        $userid = Auth::id();
+        $adsId = $request->id;
+
+
+        $VillaCount = Villa::where('c_id', '=', $userid)->where('id', '=', $adsId)->count();
+        
+
+
+        if($VillaCount==1){
+            $villa= Villa::find($adsId);
+            $image = offer_villa_img::where('img_villa_id',$adsId)->first();
+
+
+            $villa->delete();
+            $image->delete();
+
+
+            return 'Success Deleted ';
+
+
+        }
+
+        
+        // $Villa->delete();
+
+
+    }
+    public function DeleteOtherAds(Request $request)
+    {
+        
+        $userid = Auth::id();
+        $adsId = $request->id;
+
+
+        $ads = service_ads::where('user_id', '=', $userid)->where('id', '=', $adsId)->count();
+        
+
+
+        if($ads==1){
+            $ads= service_ads::find($adsId);
+            $image = img_service_ads::where('ads_id',$adsId)->first();
+            
+
+
+            $ads->delete();
+            $image->delete();
+
+
+            return 'Success Deleted ';
+
+
+        }
+
+        
+        // $Villa->delete();
+
+
+    }
+
+    
+
+    public function UpdateAds(Request $request){
+        
+        // return $request;
+
+        $villa= Villa::find($request->adsid);
+        // return $villa;
+         $villa->Bedroom_wardrobes=$request->Bedroom_wardrobes;
+         $villa->Consultant_fee= $request->Consultant_fee;
+         $villa->CostGov=$request->CostGov;
+         $villa->Kitchen_Cabinets=$request->Kitchen_Cabinets;
+         $villa->Service_room_placement=$request->Service_room_placement;
+         $villa->ads=$request->TypeAds;
+         $villa->type_villa=$request->TypeVilla;
+         $villa->bathroom=$request->bathroom;
+         $villa->conditioning=$request->conditioning;
+          
+      
+
+         $villa->Description=$request->description;
+         $villa->dining=$request->dining;
+         $villa->electric_pendants=$request->electric_pendants;
+         $villa->floors=$request->floors;
+         $villa->garden_design=$request->garden_design;
+         $villa->gypsum=$request->gypsum;
+
+         
+      
+         $villa->interior_decoration=$request->interior_decoration;
+         $villa->kitchen=$request->kitchen;
+         $villa->majlis=$request->majlis;
+         $villa->Name_eng=$request->name_eng;
+         $villa->pelvis=$request->pelvis;
+         $villa->Phone=$request->phone;
+         $villa->price=$request->price;
+         $villa->rooms=$request->room;
+         $villa->sqft=$request->sqft;
+         $villa->supervision=$request->supervision;
+
+         $villa->tabCost=$request->tabCos;
+         $villa->the_elevator=$request->the_elevator;
+         $villa->the_fence=$request->the_fence;
+         $villa->title=$request->title;
+         
+         
+
+   
+
+         $villa->save();
+
+         return 'hello';
+         
+
+        }
     public function countAllConsule(){
 
     $userid = Auth::id();
@@ -436,11 +553,17 @@ class AdsController extends Controller
 
         return response()->json($villas);
     }
+    public function checkUniqueAds(){
+        $id =   Auth::id();
+        $villa = Villa::where('ads',1)->where('c_id',$id)->count();
+        return $villa;
+    }
     public function adsdetails(Request $request){
 
 
       
-
+        
+    
         
         $id =  $request->id;
 
@@ -453,7 +576,7 @@ class AdsController extends Controller
             $rating =  $VillaReview / count($reviewCalc) ;
         }
         // $offers =  Villa::with('villaImage','company.company','savedVilla')->where('status',1)->where( 'ads','=',1)->latest()->get();
-        $villas =  Villa::with('villaImage','company.company','savedVilla','review.user')->where('id',$id)->where('status',1)->get();
+        $villas =  Villa::with('villaImage','company.company','savedVilla','review.user')->where('id',$id)->get();
         
         foreach($villas as $villa){
             $villa->setAttribute('rating',$rating);

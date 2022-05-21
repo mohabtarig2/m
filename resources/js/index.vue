@@ -13,7 +13,11 @@
                 <!-- offcanvas-menu start -->
                 <nav id="offcanvas-menu" class="offcanvas-menu">
                     <ul class="list-none">
-<li class=" "><router-link :to="{name:'home'}" >{{$t('home')}}</router-link >
+<li class=" "><router-link :to="{name:'home'}" >{{$t('home')}}</router-link ></li>
+
+
+
+
 <li v-if="!isLoggedIn"><router-link :to="'/login'"> {{ $t('login') }}</router-link></li>
 <li v-if="!isLoggedIn"><router-link :to="'register'"   > {{ $t('register') }} </router-link>
   <li v-if="isLoggedIn"> <router-link to="/dashboard"  class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
@@ -54,8 +58,26 @@
 
 													</ul>
 						</li> -->
+                      		<li class="menu-item-has-children"><a href="#">{{$t('villa_design')}}</a>
+													<ul class="sub-menu">
+														<li>
+                                                            <!-- <router-link :to="{name:'property',
+                                                            params: {type:1,emirats:'all',bed:'all',}}">
+                                                            {{$t('classic')}}
+                                                            </router-link> -->
+                                                            <a @click="Singlefillter('type',1)">كلاسيك </a>
+                                                            </li>
+                                                            	
+                                                            	
+                                                            
+												<li><a @click="Singlefillter('type',2)">حديث </a>
+                                                        </li>
+
+													</ul>
+												</li>
+
 						<li class="menu-arrow" :class="{ 'active' : active2}">
-                            <a href="#"  @click="active('services')">الشركات</a>
+                            <a href="#"  @click="active('services')">خدمات</a>
 								<ul class="sub-menu">
 														<!-- <li>
                                                             <router-link :to="{name:'services',params:{type:'consulting'}}">
@@ -278,9 +300,8 @@
 													</ul>
 												</li>
 
-                                                <li class=" "><router-link :to="{name:'home'}">{{$t('home')}}</router-link >
-
-												</li>
+  <li class=" "><router-link :to="{name:'home'}">{{$t('home')}}</router-link ></li>
+  <!-- <li class=" "><a href="#HowItWroks">{{$t('HowItWroks')}}</a></li> -->
 
                                              
 
@@ -375,14 +396,26 @@
                                                             <router-link :to="{name:'services',params:{type:'stone'}}">
                                                                 {{$t('Stone_companies')}}
                                                                 </router-link>
-                                                                  </li>
-<li>
+                                                              
+                                                              </li>
 
+                                                             <li>
                                                                 <router-link :to="{name:'services',params:{type:'interior'}}">
                                                                 {{$t('interior_companies')}}
                                                                 </router-link>
+                                                            </li>
+                                                                <li>
+                                                                <router-link :to="{name:'termsConditions'   }">
+                                                                {{$t('termsConditions')}}
+                                                                </router-link>
+                                                            </li>
 
-</li>
+                                                               <li>
+                                                                <router-link :to="{name:'Evacuation_responsibilaty'   }">
+                                                                {{$t('Evacuation_responsibilaty')}}
+                                                                </router-link>
+                                                            </li>
+
 
 
                                                           
@@ -425,12 +458,15 @@
 			</div>
 		</div>
 		
+
+
 		<div class="copyright">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<p class="mb-0">© {{new Date().getFullYear()}} <a href="index.html">AmbTenders</a> By <a href="https://twitter.com/MohabTarig">mohab tarig</a>. All Rights Reserved.</p>
-					</div>
+<p class="mb-0">© {{new Date().getFullYear()}} 
+
+                        <a>{{$t('All_Rights_Reserved')}}</a></p>					</div>
 				</div>
 			</div>
 		</div>

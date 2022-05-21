@@ -50,7 +50,7 @@
 							<div class="icon"><i class="far fa-comments"></i></div>
 							<div class="media-body">
 								<span>{{$t('Get_Support')}}</span>
-								<h4 class="mb-0"><a href="mailto:Info@example.com">Info@ambtender.com</a></h4>
+								<h4 class="mb-0"><a href="mailto:Info@ambtenders.com">Info@ambtenders.com</a></h4>
 							</div>
 						</div>
 					</div>
@@ -595,7 +595,7 @@
 	<!-- End Recent Property Area -->
 
 	<!-- Work Process Area -->
-	<section class="work-process-area section-padding">
+	<section class="work-process-area section-padding" id="HowItWroks">
 		<div class="bg-image bg-img-top" style="background-image:url('img/work-process/work-process-bg.png')"></div>
 		<div class="container">
 			<div class="row">
@@ -798,7 +798,7 @@ style="position:absolute;
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-4"><a href="agents-details.html">Mohamed alhubaishi </a></h3>
+								<h3 class="agent-title hs-4" style="font-size: 2em;"><a >Mohamed alhubaishi </a></h3>
 								<p class="theme-color">CEO & Founder</p>
 							</div>
 						</div>
@@ -818,7 +818,7 @@ style="position:absolute;
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-4"><a href="agents-details.html">Dr.Hajar alhubsiahi</a></h3>
+								<h3 class="agent-title hs-4" style="font-size: 8em;"><a >Dr.Hajar alhubsiahi</a></h3>
 								<p class="theme-color">Founder</p>
 							</div>
 						</div>
@@ -838,7 +838,7 @@ style="position:absolute;
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-4"><a href="agents-details.html">Hamad  alhubaishi</a></h3>
+								<h3 class="agent-title hs-4" style="font-size: 2em;"><a >Hamad  alhubaishi</a></h3>
 								<p class="theme-color">Founder</p>
 							</div>
 						</div>
@@ -858,7 +858,7 @@ style="position:absolute;
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-4"><a href="agents-details.html">Mohab Tarig</a></h3>
+								<h3 class="agent-title hs-4"><a href="">Mohab Tarig</a></h3>
 								<p class="theme-color">IT administrator</p>
 							</div>
 						</div>
@@ -1141,7 +1141,7 @@ settingsTeam: {
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
  		dots: true
 

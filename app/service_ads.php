@@ -13,7 +13,7 @@ class service_ads extends Model
 
     public function company(){
 
-        return $this->belongsTo('App\user','user_id');
+        return $this->belongsTo('App\User','user_id');
 
     }
     public function image(){

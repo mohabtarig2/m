@@ -716,9 +716,8 @@ public function AllMyconslCtender(Request $request)
 
 
                 
-                $tenders = Tconsulte::latest()->where('status',1)->where('stage',0)->
-
-               whereIn('emirats',$branchs)->Orwhere('emirats',$emirats->emirates)->paginate(5);
+                $tenders = Tconsulte::latest()->whereIn('emirats',$branchs)->where('status',1)->where('stage',0)->
+                Orwhere('emirats',$emirats->emirates)->where('status',1)->where('stage',0)->paginate(5);
 
                 foreach($tenders as $tender){
                    $uid =  $tender->id;

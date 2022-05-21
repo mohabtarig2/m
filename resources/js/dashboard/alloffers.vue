@@ -2,6 +2,44 @@
      <div class="  mb-4 container mt-5"    >
 
          <all-offers-constructions v-if="IsUser==6 || IsUser==4 || IsUser==3 || IsUser==5" ></all-offers-constructions>
+
+                 <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div class="text-center"><i class='bx bxs-check-circle text-success'></i></div>
+        <div class="text-center font-weight-bold">تم حذف اعلانك بنجاح </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+         <div class="modal fade text-right" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+ dir="rtl">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+         <div class="modal-header">
+
+        <h5 class="modal-title" id="exampleModalLongTitle">مسح إعلان </h5>
+    
+         </div>
+      <div class="">
+        هل انت متاكد تريد حذف
+        <span class="font-weight-bold text-danger">{{AdsTitle}} </span>
+      </div>
+      <div class="mt-3">
+          <button type="button" class="btn btn-danger confirm text-light" @click="deleteAds(adsid)"
+         >نعم انا متأكد </button>
+        <button type="button" class="btn btn-light confirm mr-3" data-dismiss="modal">لا</button>
+
+      </div>
+    </div>
+  </div>
+</div>
 <div class="row" v-if="IsUser==1">
 
 
@@ -26,6 +64,7 @@
  <div class=" mb-4 row" :dir="$t('directions')" :class="$t('text_align')">
       <div v-for="(offer,index) in recents.data" :key="index" v-bind="recent" class="col-md-4 col-sm-12">
 
+
 <div class="single-recent-property">
 								<div class="single-r-property-top">
 									<!-- Recent Property Img -->
@@ -33,16 +72,29 @@
 										<img :src="image.path" alt="#"  class="image_villa"  v-if="i==0">
 									</div>
 									<div class="property-for-sale">
-                                        <status :status="offer.confirmed"></status>
+                                        <!-- <status :status="offer.confirmed"></status> -->
 										<ul class="list-none">
 											<li><a >{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}</a></li>
 											<li class="unique "  ><a href="#" >{{$t('unique')}}</a></li>
+                                            <li>
+                                                      <div class="dropdown">
+  <button class="btn btn-transparnt " type="button"
+   id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+<i class='bx bx-dots-horizontal-rounded'></i>
+</button>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">تعديل</a>
+    <a class="dropdown-item" data-toggle="modal" data-target="#delete" @click="GetAdsTitle(offer.title,offer.id)">مسح</a>
+  </div>
+</div>
+                                            </li>
 
 										</ul>
 									</div>
 									<!-- Property Ratting -->
 									<div class="property-ratting">
-										<div class="property-ratting-left">
+										<!-- <div class="property-ratting-left">
 											<span class="p-ratting-point">4.5</span>
 											<div class="p-ratting-details">
 												<ul class="ratting-details-star list-none">
@@ -54,17 +106,17 @@
 												</ul>
 												<span>2 Comment</span>
 											</div>
-										</div>
-										<div class="property-ratting-save" >
-											<a @click="saved(offer.id)"><i class="fa fa-heart"></i>Save</a>
-										</div>
+										</div> -->
+										
 									</div>
 								</div>
 								<!-- Single Recent Content -->
 								<div class="s-property-content">
-									<h3 class="srp-title hs-4"><router-link :to="{name:'offerdetails',params:{id:offer.id}}">{{offer.title}}</router-link></h3>
+									<h3 class="srp-title hs-4"><router-link :to="{name:'offerdetails',params:{id:offer.id}}">
+                                    {{offer.title}}</router-link></h3>
 									<p class="property-location mb-0"><i class="fa fa-map-marker-alt"></i>
                                     <all-uae :emirates="offer.Emirates"></all-uae></p>
+                                    
 
 									<div class="single-r-property-bed">
 										<ul class="single-bed-property list-none">
@@ -105,7 +157,7 @@
 
 
  </div>
-   <div  ><pagination :data="recents" @pagination-change-page="detailsTender" ></pagination></div>
+   <!-- <div  ><pagination :data="recents" @pagination-change-page="detailsTender" ></pagination></div> -->
 </div>
 </div>
                             </div>
@@ -113,11 +165,12 @@
 
 
 <script>
+import AllUae from '../auth/AllUae.vue';
 import recent from '../v-dash/recent.vue';
 import AllOffersConstructions from './allOffersConstructions.vue';
 import Listproject from './listproject.vue';
 export default {
-  components: { recent, Listproject, AllOffersConstructions },
+  components: { recent, Listproject, AllOffersConstructions, AllUae },
 
     data () {
             return {
@@ -144,6 +197,8 @@ export default {
             images:[],
             FileNotAllowd:'',
             Post:'Post',
+            AdsTitle:'',
+            adsid:'',
             }
     },
     created(){
@@ -153,6 +208,25 @@ export default {
 
     },
     methods:{
+        deleteAds(id){
+            console.log('this id = '+ id);
+            let data = new FormData();
+            data.append('id',id);
+            axios.post('api/consulting/delete/ads',data).then(res=>{
+                        this.detailsTender();
+                          $('#delete').modal('hide');
+             $('.modal-backdrop').css('display','none');
+
+                      $('#success').modal('show');
+                $('.modal-backdrop').css('display','block ');
+    
+            })
+        },
+        GetAdsTitle(title,id){
+            this.AdsTitle=title
+            this.adsid=id
+
+        },
         directTo(id){
 
  this.$router.push({ path: `/myads/details/${id}`});
@@ -423,5 +497,10 @@ console.log(result1);
   width: 10px;
   border-radius: 50%;
   display: inline-block;
+}
+.btn-danger {
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
 }
 </style>

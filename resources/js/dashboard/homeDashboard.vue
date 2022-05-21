@@ -46,7 +46,7 @@
 </div> -->
 
 <div class="container mt-5">
-  <h2 class="text-right">مناقصات </h2>
+  <h2 class="text-right" v-if="IsUser==10">مناقصات </h2>
         <div class="row " >
 
 
@@ -177,7 +177,7 @@
                 <div class="inner">
                   <h3 class="text-light">{{countsAds.active}}</h3>
 
-                  <p class="text-light">Active Ads</p>
+                  <p class="text-light"> المفعلة </p>
                 </div>
                 <div class="icon">
   <i class="far fa-check-circle"></i>
@@ -191,7 +191,7 @@
                   <h3 class="text-light">{{countsAds.pending}}</h3>
 
                   <p class="text-light">
-                      pending
+                      المعلقة
                        </p>
                 </div>
 
@@ -211,7 +211,7 @@
                 <div class="inner">
                   <h3 class="text-light">{{countsAds.draft}}</h3>
 
-                  <p class="text-light">Draft</p>
+                  <p class="text-light">مسودة</p>
                 </div>
                 <div class="icon">
                  <i class='bx bxs-folder-minus'></i>

@@ -4,6 +4,11 @@ import Example2 from './components/Example2';
  import Bookable from './bookable/bookable';
  import index from './index.vue';
  import home from './home.vue';
+ import  termsConditions from './terms-conditions.vue';
+ import  responsibilaty from './responsibilaty.vue';
+
+ 
+
  import Dashboard from './dashboard/Dashboard';
  import homeDashboard from './dashboard/homeDashboard';
  import alloffers from './dashboard/alloffers';
@@ -144,6 +149,26 @@ const routes = [
         name:'home',
 
     },
+
+    {
+
+        path:"/terms-conditions",
+        component: termsConditions,
+        name:'termsConditions',
+
+    },
+
+    {
+
+        path:"/responsibilaty",
+        component: responsibilaty,
+        name:'responsibilaty',
+
+    },
+
+
+    
+    
 
     {
         path:"/sidebar",

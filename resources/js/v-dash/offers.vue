@@ -13,11 +13,11 @@
             <h2 class=" mt-3 text-dark text-right " v-if="IsUser==3"  >اخر عروض مناقصات الحجر التي قدمتها </h2>
             <h2 class=" mt-3 text-dark text-right " v-if="IsUser==5"  >اخر عروض مناقصات الديكور الداخلي التي قدمتها </h2>
 
-                    <div class="card" v-if="IsUser==1">
-                        <div class="card-body">
+                    <div class="p-descrip-box" v-if="IsUser==1" >
+                        <div class="">
 
-              <div v-for="(project,index) in Myoffers" :key="index" v-bind="project">
-              <div class="card mt-3 container">
+              <div v-for="(project,index) in Myoffers" :key="index" v-bind="project" dir="rtl" >
+              <div class="p-descrip-box mt-3 container text-right ">
 
 <div class="ml-3">
          <div class="font-weight-bold    ml-2 ">
@@ -41,30 +41,43 @@
             <div class="mt-3 " style="padding:0 20px">
 
 
-              <div class="row mt-3">
-                  <div class="col-6 text-left">
-                        <span  class="mt-2 text-muted "><img src="assets/img/bathtub.svg" width="17" class="mr-1">
-                         <span class=" font-weight-bold">{{project.tender.bathroom}}</span> bathroom  </span>
-   <span class="mt-2 text-muted" ><img src="assets/img/bedtest.svg"  width="17" class="mr-1">
-   <span class="font-weight-bold ">{{project.tender.bedroom}}</span>bedroom </span>
+        
+
+              
+              <div class="row mt-3" >
 
 
+                        <div class="col-6 ">
+                          
+                  <div class="pr-single m-0">
+                      <div class="pr-desc">
+											<span>{{$t('bed_rooms')}}</span>
+											<p class="pr-des-title m-0" >  {{project.tender.bedroom}}</p>
+
+										</div>
+										<div class="pr-icon"><i class="fa fa-bed"></i></div>
+
+									</div>
+                                     <div class="pr-single m-0 pr-2 pl-2">
+                                         <div class="pr-desc">
+											<span>{{$t('bathroom')}}</span>
+											<p class="pr-des-title m-0" >  {{project.tender.bedroom}}</p>
+
+										</div>
+										<div class="pr-icon"><i class="fa fa-bath"></i></div>
+
+									</div>
+                </div>
 
 
-                  </div>
+<div class="col-6">
+
+                <router-link class="  theme-btn" :to="{name:'project',params:{id:project.tender.id} }">تفاصيل اكتر </router-link>
+
+</div>
 
 
-<!-- <div class="col-6 font-weight-bold">
-     <div class="text-center mb-0"> Tender id
-            <br>
-                  <span class="main-color"> 1002{{emirats}}</span></div>
-
-        <router-link class="  btn btn-bus" :to="{name:'project',params:{id} }">More Details</router-link>
-
-
-</div> -->
               </div>
-              <router-link class=" float-right theme-btn" :to="{name:'project',params:{id:project.tender.id} }">تفاصيل اكتر </router-link>
                  </div>
 
 

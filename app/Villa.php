@@ -8,10 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Villa extends Model
 {
     protected $fillable = [
-        'id','Description', 'Emirates', 'Date','title','type_villa','confirmed','c_id','time','price','rooms','floors',
-        'Service_room_placement','Consultant_fee','conditioning','gypsum','electric_pendants','Bedroom_wardrobes','Kitchen_Cabinets'
-        ,'the_elevator','pelvis','interior_decoration','garden_design','the_fence','room_master'
-        ,'majlis','bathroom','dining','kitchen','Service_room_placement','ads','sqft','living_room',
+        'id','Description', 'Emirates', 'Date','title',
+        'type_villa','confirmed','c_id','time','price','rooms','floors',
+        'Service_room_placement','Consultant_fee','conditioning','gypsum',
+        'electric_pendants','Bedroom_wardrobes','Kitchen_Cabinets'
+        ,'the_elevator','pelvis','interior_decoration','garden_design',
+        'the_fence','room_master'
+        ,'majlis','bathroom','dining','kitchen','Service_room_placement',
+        'ads','sqft','living_room',
         'Phone','Name_eng','supervision','design','tab','CostGov','tabCost'
     ];
 

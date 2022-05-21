@@ -24,15 +24,16 @@
 
 
 
-
          <h1 class="text-center font-weight-bold text-muted mb-5 mt-5">{{$t('New_Offers')}}</h1>
 <div class="row" :dir="$t('directions')" :class="$t('text_align')">
 
+<div class="offset-md-2">
 
+      </div>
 
            <div class="invalid-feedback" v-for="(error, index) in this.errorFor('rooms')" :key="'rooms' + index" >{{ error }}</div>
 
-<div class="col-md-6 col-sm-12">
+<div class="col-md-8 col-sm-12">
                             <div class="c-form-inner container">
 
 
@@ -131,7 +132,7 @@
       <div class="col-md-4 col-sm-12">
     <label for="exampleFormControlSelect1">{{$t('majlis')}}</label>
     <select  class="form-control" id="exampleFormControlSelect1" name="floors" v-model="form.majlis" :class="[{'is-invalid':this.errorFor('majlis')}]">
-          <option value="0">0</option>
+          <option value="0">0 {{$t('majlis')}}</option>
      <option value="1">1 {{$t('majlis')}}</option>
       <option value="2">2 {{$t('majlis')}}</option>
       <option value="3">3 {{$t('majlis')}}</option>
@@ -307,12 +308,6 @@
 
 
 
-</form>
-
-                            </div>
-</div>
-<div class="col-md-6 col-sm-12">
-
 
      <div class="form-group">
 
@@ -386,12 +381,16 @@
   <span class="mr-4 ml-4"> {{$t('ads')}}</span>
 </label>
 
- <label class="checkbox d-bolck" :dir="$t('directions')">
+ <label class="checkbox d-bolck" :dir="$t('directions')" v-if="CheckAds<2">
 
   <input type="radio" name="flexRadioDefault" v-model="ads" value="1">
   <span class="check" style="border-radius:10px"></span>
   <span class="mr-4 ml-4"> {{$t('offer')}}</span>
 </label>
+<span v-else class="badge badge-danger">
+  الحد الاعلى للاعلانات المميزة 2 فقط
+  
+</span>
                                 </div>
 
  <div class="includes">
@@ -502,8 +501,14 @@
         قم بتسجيل الدخول اولا
 
       </a>
+</form>
 
+                            </div>
 </div>
+<div class="offset-md-2">
+
+      </div>
+
 </div>
 </div>
                             </div>
@@ -576,6 +581,7 @@ export default {
             ads:'',
          
             number:'',
+            CheckAds:'',
 
 
             }
@@ -585,6 +591,7 @@ export default {
     created(){
 
         this.detailsTender();
+        this.getUnique();
 
 
     },
@@ -699,9 +706,13 @@ console.log(result1);
 
  this.$router.push({ path: `/myads/details/${id}`});
         },
+        getUnique(){
+            axios.get('api/checkUniqueAds').then(res=>{
+                this.CheckAds=res.data;
+            })
+        },
 
-         submit()
-        {
+         submit() {
 
 
         this.loading=true;

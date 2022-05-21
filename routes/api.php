@@ -56,9 +56,14 @@ Route::get('Ads/images/{photoid}', function($photoid)
 return $photo;
 
 });
-
-
+Route::post('/consulting/delete/ads','Api\AdsController@DeleteAds')->middleware('consulte');
+Route::post('/other/delete/ads','Api\AdsController@DeleteOtherAds');
 Route::get('ads/details/{id}','Api\AdsController@adsdetails');
+Route::get('checkUniqueAds','Api\AdsController@checkUniqueAds');
+
+Route::post('ads/edit/ads','Api\AdsController@UpdateAds')->middleware('consulte');
+
+
 Route::get('ads/similir/{Emirates}','Api\AdsController@similir');
 Route::get('ads/unique/details','Api\AdsController@uniquedetails');
 Route::get('randomOffers','Api\AdsController@randomOffers');
