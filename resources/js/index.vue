@@ -113,7 +113,7 @@ style="position:absolute;
                                                 
 
 						<li class="menu-arrow" :class="{ 'active' : active2}">
-                            <a href="#"  @click="active('services')">{{$t('Services')}}</a>
+                            <a href="#"  @click="active('services')">{{$t('services')}}</a>
 								<ul class="sub-menu">
 														<!-- <li>
                                                             <router-link :to="{name:'services',params:{type:'consulting'}}">
@@ -301,7 +301,7 @@ style="position:absolute;
 													</ul>
 												</li>
 
-                                                   		<li class="menu-item-has-children"><a href="#">{{$t('companies')}}</a>
+                                                   		<li class="menu-item-has-children"><a href="#">{{$t('services')}}</a>
 													<ul class="sub-menu">
 														<!-- <li>
                                                             <router-link :to="{name:'services',params:{type:'consulting'}}">

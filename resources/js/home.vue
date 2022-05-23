@@ -412,7 +412,7 @@
 						</h4>
 
 						<div class="text-left">
-												<a @click="Singlefillter('type',1)" class="all" style="cursor:pointer">الكل </a>
+												<a @click="Singlefillter('type',1)" class="all" style="cursor:pointer">{{$t('all')}} </a>
 
 						</div>
                     <slick   v-if="classic.length" v-bind="settings"  class="recent-property-slider  ">
