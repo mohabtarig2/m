@@ -1,6 +1,37 @@
 <template>
 
 <div >
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="max-width: 800px;margin: 30px auto;">
+    <div class="modal-content">
+
+
+      <div class="modal-body " style="position:relative;padding:0px;">
+
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+style="position:absolute;
+  right:-30px;
+  top:0;
+  z-index:999;
+  font-size:2rem;
+  font-weight: normal;
+  color:#fff;
+  opacity:1;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- 16:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PimNyy606M4" id="video"
+    allowscriptaccess="always" allow="autoplay"></iframe>
+</div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <div class=" "   >
     <div class="modal offcanvas-modal e" id="offcanvas-modal">
@@ -18,9 +49,14 @@
 
 
 
+
+
+
 <li v-if="!isLoggedIn"><router-link :to="'/login'"> {{ $t('login') }}</router-link></li>
 <li v-if="!isLoggedIn"><router-link :to="'register'"   > {{ $t('register') }} </router-link>
   <li v-if="isLoggedIn"> <router-link to="/dashboard"  class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
+  <li class><a data-toggle="modal" data-target="#myModal" class="font-weight-bold" >
+                                                    <i class="item-center fa fa-play"></i>{{$t('How_it_works')}}</a ></li>
 
  
 
@@ -58,26 +94,26 @@
 
 													</ul>
 						</li> -->
-                      		<li class="menu-item-has-children"><a href="#">{{$t('villa_design')}}</a>
+                      		<li class="menu-arrow" :class="{ 'active' : active3}">
+                                  <a href="#" @click="active('villa')">{{$t('villa_design')}}</a>
 													<ul class="sub-menu">
-														<li>
-                                                            <!-- <router-link :to="{name:'property',
-                                                            params: {type:1,emirats:'all',bed:'all',}}">
+												<li>
+                                                            <a @click="Singlefillter('type',1)">
                                                             {{$t('classic')}}
-                                                            </router-link> -->
-                                                            <a @click="Singlefillter('type',1)">كلاسيك </a>
-                                                            </li>
-                                                            	
-                                                            	
-                                                            
-												<li><a @click="Singlefillter('type',2)">حديث </a>
+                                                            </a>
+                                                </li>
+												<li><a @click="Singlefillter('type',2)">
+                                                             {{$t('modern')}}
+
+                                                </a>
                                                         </li>
 
 													</ul>
 												</li>
+                                                
 
 						<li class="menu-arrow" :class="{ 'active' : active2}">
-                            <a href="#"  @click="active('services')">خدمات</a>
+                            <a href="#"  @click="active('services')">{{$t('Services')}}</a>
 								<ul class="sub-menu">
 														<!-- <li>
                                                             <router-link :to="{name:'services',params:{type:'consulting'}}">
@@ -135,7 +171,8 @@
                      
                     </ul>
                     <div class="mt-5">
-                         <small> <a class="" @click="switchLang('ar')" v-show="lang=='en'"><img src="https://img.icons8.com/color/20/000000/united-arab-emirates.png"/>عربي</a></small>
+                         <small> <a class="" @click="switchLang('ar')" v-show="lang=='en' || lang==null">
+                         <img src="https://img.icons8.com/color/20/000000/united-arab-emirates.png"/>عربي</a></small>
                                         <small><a @click="switchLang('en')" v-show="lang=='ar'">
                                            <img src="https://img.icons8.com/color/20/000000/usa.png"/> English
                                             </a></small>
@@ -253,12 +290,12 @@
                                                             params: {type:1,emirats:'all',bed:'all',}}">
                                                             {{$t('classic')}}
                                                             </router-link> -->
-                                                            <a @click="Singlefillter('type',1)">كلاسيك </a>
+                                                            <a @click="Singlefillter('type',1)">{{$t('classic')}} </a>
                                                             </li>
                                                             	
                                                             	
                                                             
-												<li><a @click="Singlefillter('type',2)">حديث </a>
+												<li><a @click="Singlefillter('type',2)">{{$t('modern')}} </a>
                                                         </li>
 
 													</ul>
@@ -301,6 +338,9 @@
 												</li>
 
   <li class=" "><router-link :to="{name:'home'}">{{$t('home')}}</router-link ></li>
+   <li class><a data-toggle="modal" data-target="#myModal" class="font-weight-bold" >
+                                                    {{$t('How_it_works')}}
+                                                    </a ></li>
   <!-- <li class=" "><a href="#HowItWroks">{{$t('HowItWroks')}}</a></li> -->
 
                                              
@@ -355,8 +395,11 @@
 								<div class="col-lg-4 col-12">
 								
 									<div class="single-f-widget">
-										<h3 class="widget_title text-right">حول </h3>
-										<p class="mb-0 text-right">شركة اماراتية تأسس عام ٢٠٢٠ لخدمة السوق المحلي لتطور مجلس التعاون الخليجي والسوق ألاجنبي</p>
+							<h3 class="widget_title text-right">{{$t('about')}} </h3>
+								<p class="mb-0 text-right">
+                                  
+                                        {{$t('content_about')}}                
+                                                            </p>
 										<ul class="footer-social list-none text-right">
 											<li class="active ">
                                                 <a href="https://www.instagram.com/amb.tenders/"><i class="fab fa-instagram  "></i></a></li>
@@ -369,7 +412,7 @@
 								<div class="col-lg-4 col-md-6 col-12">
 								
 									<div class="single-f-widget f-services-widget">
-										<h3 class="widget_title text-right">الخدمات</h3>
+										<h3 class="widget_title text-right">{{$t('services')}}</h3>
 										<ul class="footer-services list-none text-right">
                                             
 
@@ -411,7 +454,7 @@
                                                             </li>
 
                                                                <li>
-                                                                <router-link :to="{name:'Evacuation_responsibilaty'   }">
+                                                                <router-link :to="{name:'responsibilaty'   }">
                                                                 {{$t('Evacuation_responsibilaty')}}
                                                                 </router-link>
                                                             </li>
@@ -428,7 +471,7 @@
 								<div class="col-lg-4 col-md-6 col-12">	
 								
 									<div class="single-f-widget">
-										<h3 class="widget_title text-right">فلل مميزة </h3>
+										<h3 class="widget_title text-right">{{$t('villa_design')}} </h3>
                                         
 									
                                     	<div class="f-news-feed" v-for="offer, index in offers" :key="index" >

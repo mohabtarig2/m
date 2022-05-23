@@ -13,7 +13,9 @@
 									<div class="property-tab-menu">
 										<div class="list-group" id="list-tab" role="tablist">
 											<!-- <a class="list-group-item" data-bs-toggle="list" href="#list-rent" role="tab">Rent</a> -->
-											<a class="list-group-item active" data-bs-toggle="list" href="#list-buy" role="tab">عروض الفلل</a>
+											<a class="list-group-item active" data-bs-toggle="list" href="#list-buy" role="tab">
+                                                {{$t('villa_design')}}
+                                                </a>
 											<!-- <a class="list-group-item" data-bs-toggle="list" href="#list-sell" role="tab">Sell</a> -->
 										</div>
 									</div>

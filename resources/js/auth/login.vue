@@ -63,16 +63,16 @@
 					<div class="login-inner" data-aos="fade-right" data-aos-delay="200">
 				
 						<div class="login-form">
-							<h1 class="login-form-title">Log <span>In</span></h1>
+							<h1 class="login-form-title">{{$t('log')}} <span>{{$t('in')}}</span></h1>
 
                             <div class="text-center alert alert-success" v-show="$route.query.redirect" >
-                                        غير مصرح لك دخول هذه الصفحة عليك تسجيل الدخول اولاَ
+                                       {{$t('You_are_not_authorized')}}
                             </div>
 							<form  class="login-form-inner">
 								<div class="row">
 									<div class="col-12">
 										<div class="form-group">
-							<input name="email" class="form-control" type="email" placeholder="Email Address" v-model="email"
+							<input name="email" class="form-control" type="email" :placeholder="$t('Email')" v-model="email"
              :class="[{'is-invalid': errorFor('email')},{'is-invalid': errorFor('mobile')}]"
           />
           <v-errors :errors="errorFor('email')"></v-errors>
@@ -81,7 +81,7 @@
 									</div>
 									<div class="col-12">
 										<div class="form-group">
-											<input name="password" class="form-control" type="password" placeholder="Password"
+											<input name="password" class="form-control" type="password" :placeholder="$t('Password')"
                                              v-model="password"
              :class="[{'is-invalid': errorFor('password')}]"
           />
@@ -89,22 +89,23 @@
 
 										</div>
 									</div>
-									<div class="col-12">
+									<div class="col-12" :dir="$t('directions')" >
 										<div class="login-bottom-content login-c">
 											<div class="login-c-left">
-												<span><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">Remember Me</span>
-											</div>
+												<!-- <span><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">Remember Me</span> -->
+												<p class="m-0">{{$t('Dont_have_an_account')}}
+                           <router-link :to="{name:'Register'}" class="font-weight-bold">{{$t('register')}}</router-link></p>
+
+                      </div>
 											<div class="login-c-right">
-												<a href="signup.html">Forgot Account?</a>
-                        <div class="login-c-right">
-												<p class="m-0">Don’t have an account? <router-link :to="{name:'Register'}">register</router-link></p>
-											</div>
+												<a href="signup.html">{{$t('Forgot_Account')}}</a>
+                     
 											</div>
 										</div>
 									</div>
 									<div class="col-12">
 										<div class="login-form-btn">
-											<button class="theme-btn" :disabled="loading" @click="login">Log In</button>
+											<button class="theme-btn" :disabled="loading" @click="login">{{$t('login')}}</button>
 										</div>
 									</div>
 								</div>

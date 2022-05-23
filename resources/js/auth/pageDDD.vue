@@ -50,7 +50,7 @@
 					<!-- Property Filter -->
 					<div class="list-filter property-filter">
 						<!-- Property Filter Title -->
-						<h4 class="l-filter-title m-0"> {{tender.length}}: النتائج </h4>
+						<h4 class="l-filter-title m-0"> {{tender.length}}: {{$t('results')}} </h4>
 						<ul class="filter-item-list list-none">
 							<!-- <li class="filter-save"><a href="#"><i class="fa fa-heart"></i>Save Search</a></li> -->
 							<li class="filter-grid visible-xs" :class="{'active':row=='row'}"><a @click="grid"><i class="fa fa-th"></i></a></li>
@@ -79,7 +79,7 @@
 							</div>
 							<div class="property-for-sale">
 								<ul class="list-none">
-									<li><a href="#">Hot</a></li>
+									<!-- <li><a href="#">Hot</a></li> -->
 									<li class="active">
                                        <a href="#">{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}</a></li>
 								</ul>
@@ -164,7 +164,7 @@
 							</div>
 							<div class="property-for-sale">
 								<ul class="list-none">
-									<li><a href="#">Hot</a></li>
+									<!-- <li><a href="#">Hot</a></li> -->
 									<li class="active">
                                        <a href="#">{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}</a></li>
 								</ul>
@@ -252,7 +252,7 @@
 					<div class="properties-sidebar">
 						<!-- Property Sidebar Widget -->
 						<div class="properties-s-widget m-b-30"  >
-							<h4 class="p-sidebar-title">إعلانات مميزة </h4>
+							<h4 class="p-sidebar-title">{{$t('unique_ads')}} </h4>
 
 							<slick :v-bind="settings" class="properties-s-slider" v-if="randomOffers.length">
 								<!-- Sidebar Slider Widget -->
@@ -279,7 +279,7 @@
 						</div>
 						<!-- Property Sidebar Widget -->
 						<div class="properties-s-widget">
-							<h4 class="p-sidebar-title">إعلاتات </h4>
+							<h4 class="p-sidebar-title">{{$t('ads')}} </h4>
 							<div class="r-view-inner" v-for="ads , index in randomOffers " :key="index">
 								<!-- Sidebar Recent View -->
 								<router-link  :to="{name:'pageDetails',params:{id:ads.id}}" style="cursror:pointer">
@@ -298,9 +298,9 @@
 										</ul>
 										<!-- <h5 class="r-view-title"><a  @click="ridirct(ads.id)" :to="{name:'pageDetails',params:{id:ads.id}}"> -->
 										<h5 class="r-view-title"><a  @click="ridirct(ads.id)">
-                                            {{ads.title}} <span class="badge badge-secondary">إعلانات</span>
+                                            {{ads.title}} <span class="badge badge-secondary">{{$t('ads')}}</span>
                                             </a> </h5>
-										<p class="m-0">{{ads.price}}</p>
+										<p class="m-0">{{ads.price}} {{$t('aed')}}</p>
 
 									</div>
 								</div>

@@ -1,10 +1,54 @@
 {
+  
+    "log":"تسجيل",
+    "in":"دخول",
+    "sign":"تسجيل",
+    "up":"حساب",
+    "Dont_have_an_account":"ليس لديك حساب  ؟" ,
+    "do_you_have_an_account":"هل لديك حساب  ؟" ,
+    "Forgot_Account":"هل نسيت كلمة السر ؟",
+    "Message_success_sign_up":"لقد تم تسجيل حساب بنجاح",
+    "You_are_not_authorized":" غير مصرح لك الدخول عليك تسجيل الدخول اولاً",
+    "FullName":"الاسم بالكامل",
+    "I_agree":"موفق على",
+    "Deisgn_request":"طلب تصميم ",
+    "add_notes":" أضف ملاحظات ",
+    "Mention_the_loan_amount":"أذكر قيمة القرض ",
+    "optional":"أختياري",
+    "Grant_Provider":"الجهة المقدمة للمنحة",    
+    "send":"إرسال",
+
+    
+    "Sheikh_Zayed_Housing_Program":"برنامج الشيخ زايد للاسكان",
+    "Sheikh_Mohammed_bin_Rashid_Housing_Program":"برنامج الشيخ محمد بن راشد للاسكان",
+    "AbuDhabi_Housing_Program":"برنامج ابوظبي للاسكان",
+    "Sharjah_Housing_Program":"برنامج الشارقة للاسكان",
+    "Sharjah_Esnad_Housing_Program":"برنامج الشارقة للاسكان اسناد",
+    "Diwan":"الديوان",
+    "Grant_Funding_Bank":"البنك الممول اللمنحة ",
+    "Approximate_added_amount_Financing_method":"المبلغ المضاف التقريبي لطريقة التمويل",
+
+    
     "home":"الرئيسية",
     "about":"من نحن",
+    "results":"نتائج",
+    "unique_ads":"إعلانات مميزة",
+    "ads":"اعلان",
+    "advertiser":"معلن",
+    "login_first":"سجل دخولك اولا لتقديم الطلب",
+    "Related_search":"بحث ذات صلة ",
+    "posted_by":"نشر بواسطة",
+    
+  
+    
+    "content_about":"شركة اماراتية تأسس عام ٢٠٢٠ لخدمة السوق المحلي لتطور مجلس التعاون الخليجي والسوق ألاجنبي",
     "contact":"اتصل بنا",
     "All_Rights_Reserved":"مناقصات اي ام بي كل الحقوق محفوظة ",
     "villa":"فلل",
     "villa_design":"تصاميم فلل",
+    "modern_villa_designs":"تصاميم فلل حديثة",
+    "classic_villa_designs":"تصاميم فلل كلاسيك",
+    "unique_villa_designs":"تصاميم فلل مميزة",
     "more":"تفاصيل أكثر",
     "HowItWroks":" طريقة العمل",
     "tenders":"مناقصات",
@@ -68,7 +112,7 @@
     "Get_Support":"احصل علي الدعم",
     "total_area_build":" مساحة البناء ",
     "supervision":"إشراف",
-    "Services":"خدمات ",    
+    "services":"خدمات ",    
     "Gallary":"معرض أعمالي ",   
     "Type Services":"نوع الخدمة", 
 
@@ -189,7 +233,7 @@
     "New_offer_add":"تم اضافة عرض جديد",
     "Type_of_Ads":"نوع الاعلان",
     "offer":"عرض خاص",
-    "ads":"اعلان",
+    
     "description":"الوصف",
     "submit_an_app":"ارسل طلب  ",
     "Consultant_fee": " الأستشارات   ",
@@ -204,6 +248,7 @@
     "pelvis": "الحوض",
     "interior_decoration": "االديكور الداخلي",
     "Soil_testing":"شركات فحص التربة  ",
+    "soon" : "soon",
     "garden_design": "تنظيم الحدائق ",
     "the_fence": "السور",
     "Items_not_covered":"البنود  المشمولة",
@@ -217,6 +262,10 @@
     "build_by":"طريقة البناء ",
     "request":"تم ارسال طلبك بنجاح",
     "sqft":" قدم مربع",
+    "Email":"البريد الأكتروني",
+    "Password":" كلمة السر",
+    "mobile":"رقم هاتف ",
+    "Confirm_Password":"  تأكيد كلمة السر ",
     "email_verification":" التحقق من البريد الاكتروني ",
     "Verify_Your_Email":"قم بالتحقق من البريد الاكتروني  ",
     "Resend_Email_verification":"إعادة ارسال    التحقق من البريد الاكتروني  ",
@@ -254,6 +303,7 @@
     "sent_request":"تم ارسال طلب إكمال المشروع     ",
     "Complete_Request":"تم قبول طلب إكمال المشروع     ",
     "Added_review":"اضاف تقييم",
+    "review":" تقييم",
     "update":"تحديث",
     "new":"جديد",
 
@@ -267,7 +317,7 @@
     "Desgin_Details":"تفاصيل التصميم",
     "desgin":"التصميم",
     "Supervisor":"إشراف",
-    "Supervisor":"إشراف",
+   
     
 
 

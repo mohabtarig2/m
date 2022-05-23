@@ -20,6 +20,7 @@ export default {
         AdminToken:null,
         
         isLoggedIn: localStorage.getItem("isLoggedIn") || false,
+        lang:localStorage.getItem("lang") || localStorage.setItem("lang",'ar'),
         isAdminLoggedIn:false,
         user: null,
         admin:null,

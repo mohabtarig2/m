@@ -130,6 +130,7 @@
 
                                         <span class="">{{$t('tender')}}</span>
 										<h6 class="mt-3">{{$t('Soil_testing')}}</h6>
+										{{$t('soon')}}
 									</div>
                                     <div class="about-content-widget">
 											<router-link :to="{name:'interiorTender'}">
@@ -170,6 +171,8 @@
 										<i class="fas fa-toolbox"></i>
                                         <span>{{$t('tender')}}</span>
 											<h6 class="mt-3">{{$t('maintenance')}}</h6>
+																					{{$t('soon')}}
+
 									</div>
 
 								</div>
@@ -306,11 +309,12 @@
 				<div class="col-12">
 
 	<h4 class="text-right">
-							فلل مميزة
+							{{$t('unique_villa_designs')}}
+
 						</h4>
 
 						<div class="text-left">
-						<a @click="Singlefillter('type','all')" style="cursor:pointer" class="all">الكل </a>
+						<a @click="Singlefillter('type','all')" style="cursor:pointer" class="all">{{$t('all')}} </a>
 						</div>
                     <slick   v-if="allOffershow.length" v-bind="settings"  class="recent-property-slider  ">
 					
@@ -404,7 +408,7 @@
                 <div class="col-12 mt-5">
 
 <h4 class="text-right">
-							فلل كلاسيك
+							 {{$t('modern_villa_designs')}}
 						</h4>
 
 						<div class="text-left">
@@ -462,7 +466,7 @@
                                                 <a @click="Singlefillter('room',offer.type_villa)">
                                                 <b>{{offer.rooms}}</b>
                                                 <span><i class="bx bxs-bed"></i></span>
-                                                </a>
+                                                </a>	
                                                  </li>
 											<li><a @click="Singlefillter('bath',offer.bathroom)"><b>{{offer.bathroom}}</b>
                                             <span><i class="bx bxs-bath"></i></span>
@@ -497,11 +501,11 @@
 
 
 <h4 class="text-right">
-							فلل حديثة
+							 {{$t('classic_villa_designs')}}
 						</h4>
 
 						<div class="text-left">
-							<a @click="Singlefillter('type',2)" class="all" style="cursor:pointer">الكل </a>
+							<a @click="Singlefillter('type',2)" class="all" style="cursor:pointer">{{$t('all')}} </a>
 
 						</div>
                     <slick   v-if="modern.length" v-bind="settings"  class="recent-property-slider  ">
@@ -676,35 +680,6 @@
 
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document" style="max-width: 800px;margin: 30px auto;">
-    <div class="modal-content">
-
-
-      <div class="modal-body " style="position:relative;padding:0px;">
-
-       <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-style="position:absolute;
-  right:-30px;
-  top:0;
-  z-index:999;
-  font-size:2rem;
-  font-weight: normal;
-  color:#fff;
-  opacity:1;">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <!-- 16:9 aspect ratio -->
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PimNyy606M4" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-</div>
-
-
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
 
@@ -798,7 +773,7 @@ style="position:absolute;
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-4" style="font-size: 2em;"><a >Mohamed alhubaishi </a></h3>
+								<h3 class="agent-title hs-6" style="font-size: 2em;"><a >Mohamed alhubaishi </a></h3>
 								<p class="theme-color">CEO & Founder</p>
 							</div>
 						</div>
@@ -818,7 +793,7 @@ style="position:absolute;
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-4" style="font-size: 8em;"><a >Dr.Hajar alhubsiahi</a></h3>
+								<h3 class="agent-title hs-6" style="font-size: 8em;"><a >Dr.Hajar alhubsiahi</a></h3>
 								<p class="theme-color">Founder</p>
 							</div>
 						</div>
@@ -838,7 +813,7 @@ style="position:absolute;
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-4" style="font-size: 2em;"><a >Hamad  alhubaishi</a></h3>
+								<h3 class="agent-title hs-6" style="font-size: 2em;"><a >Hamad  alhubaishi</a></h3>
 								<p class="theme-color">Founder</p>
 							</div>
 						</div>
@@ -846,7 +821,7 @@ style="position:absolute;
 						<div class="single-agent">
 							<div class="agent-head">
 								<div class="agent-img">
-									<img src="img/agent/1." alt="#">
+									<img src="img/agent/1.jpg" alt="#">
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
@@ -858,7 +833,7 @@ style="position:absolute;
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-4"><a href="">Mohab Tarig</a></h3>
+								<h3 class="agent-title hs-6"><a href="">Mohab Tarig</a></h3>
 								<p class="theme-color">IT administrator</p>
 							</div>
 						</div>
@@ -1002,7 +977,7 @@ export default {
       components: {  carousel,Slick,AllUae, NotificationBar, VillaFinder },
 
 data(){
-     const lang = localStorage.getItem('lang') || 'ar';
+     const lang = localStorage.getItem('lang') || localStorage.setItem('lang','ar');
     return {
 
             options: ['mohammed','ali'],
@@ -1076,7 +1051,7 @@ responsive: [
 
   },
 seetingsWork: {
-  dots: true,
+
   infinite: false,
   speed: 500,
   slidesToShow: 3,
@@ -1089,7 +1064,7 @@ seetingsWork: {
         slidesToShow: 3,
         slidesToScroll: 3,
         infinite: true,
-        dots: true
+      
       }
     },
     {
@@ -1105,7 +1080,7 @@ seetingsWork: {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
- 		dots: true
+ 	
 
 		
       }
@@ -1114,7 +1089,7 @@ seetingsWork: {
 },
 
 settingsTeam: {
-  dots: true,
+//   dots: true,
   infinite: false,
   speed: 500,
   slidesToShow: 4,
@@ -1124,10 +1099,10 @@ settingsTeam: {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 3,
         infinite: true,
-        dots: true
+     
       }
     },
     {
@@ -1141,9 +1116,9 @@ settingsTeam: {
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
- 		dots: true
+ 		
 
 		
       }

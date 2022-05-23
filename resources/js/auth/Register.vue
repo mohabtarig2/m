@@ -1,6 +1,21 @@
 <template>
 <div v-if="!isLoggedIn">
 
+<!-- Modal -->
+<div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+  
+
+        <terms-conditions></terms-conditions>
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">{{$t('close')}}</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 <section class="login-area">
 		<div class="login-area-bg" style="background-image:url('img/login-bg.jpg');"></div>
@@ -12,14 +27,14 @@
 						
 						<div class="login-form">
                             <div class="alert alert-success" :class="alert">
-                                لقد تم تسجيل حساب بنجاح
+                                {{$t('Message_success_sign_up')}}
                             </div>
-							<h1 class="login-form-title">Sign <span>Up</span></h1>
+							<h1 class="login-form-title">{{$t('sign')}} <span>{{$t('in')}}</span></h1>
 							<form method="post" action="#" class="login-form-inner">
 								<div class="row">
 									<div class="col-lg-12 col-12">
 										<div class="form-group">
-											<input name="name" type="text" placeholder="FullName" required="required" v-model="user.name"
+											<input name="name" type="text" :placeholder="$t('FullName')" required="required" v-model="user.name"
             :class="[{'is-invalid': errorFor('name')}]"
           />
           <v-errors :errors="errorFor('name')"></v-errors>
@@ -262,7 +277,7 @@
                   </div>
 									<div class="col-lg-9 col-8">
                     	<div class="form-group">
-               	<input name="name" type="text" placeholder="mobile" required="required"  v-model="mobile"
+               	<input name="name" type="text" :placeholder="$t('mobile')" required="required"  v-model="mobile"
             :class="[{'is-invalid': errorFor('mobile')}]"
           />
           <v-errors :errors="errorFor('mobile')"></v-errors>
@@ -272,7 +287,7 @@
 									</div>
 									<div class="col-12">
 										<div class="form-group">
-											<input name="email" type="email" placeholder="Email Address" required="required"
+											<input name="email" type="email" :placeholder="$t('Email')" required="required"
                                              v-model="user.email"
             :class="[{'is-invalid': errorFor('email')}]"
           />
@@ -281,7 +296,7 @@
 									</div>
 									<div class="col-lg-6 col-12">
 										<div class="form-group">
-											<input name="password" type="password" placeholder="Password"  v-model="user.password"
+											<input name="password" type="password" :placeholder="$t('Password')"  v-model="user.password"
             :class="[{'is-invalid': errorFor('password')}]"
           />
           <v-errors :errors="errorFor('password')"></v-errors>
@@ -289,20 +304,24 @@
 									</div>
 										<div class="col-lg-6 col-12">
 										<div class="form-group">
-											<input name="password" type="password" placeholder="Re-Type Password"
+											<input name="password" type="password" :placeholder="$t('Confirm_Password')"
                                               v-model="user.password_confirmation"
             :class="[{'is-invalid': errorFor('confirmed')}]"
           />
           <v-errors :errors="errorFor('confirmed')"></v-errors>
 										</div>
 									</div>
-									<div class="col-12">
+									<div class="col-12" >
 										<div class="login-bottom-content">
-											<div class="login-c-left">
-												<span><input class="form-check-input" type="checkbox" v-model="agree" id="flexCheckDefault">I agree with <a href="#">* terms & conditions</a></span>
+										
+                      	<div class="login-c-right" :dir="$t('directions')">
+                        <input class="form-check-input " type="checkbox" v-model="agree" id="flexCheckDefault" >
+												<span class="mr-4">
+                          
+                        {{$t('I_agree')}} <a href="#" data-toggle="modal" data-target="#terms" class="theme-color"> {{$t('termsConditions')}}</a></span>
 											</div>
 											<div class="login-c-right">
-												<p class="m-0">You have an account? <router-link :to="{name:'login'}">Login</router-link></p>
+												<p class="m-0">{{$t('do_you_have_an_account')}} <router-link :to="{name:'login'}">{{$t('login')}}</router-link></p>
 											</div>
 										</div>
 									</div>
@@ -310,7 +329,7 @@
 										<div class="">
 											<button class="btnSign btn btn-download" :disabled="loading || !agree"
           @click.prevent="register"
-        >Sign Up</button>
+        >{{$t('sign')}}</button>
 										</div>
 									</div>
 								</div>
@@ -329,11 +348,12 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 import validationErrors from "../shared/mixins/validationErrors";
+import TermsConditions from '../terms-conditions.vue';
 import { logIn } from "./../shared/utils/auth";
 import Allcountry from './allcountry.vue';
 import navbar from './navbar.vue';
 export default {
-  components: { navbar, Allcountry },
+  components: { navbar, Allcountry, TermsConditions },
   mixins: [validationErrors],
   data() {
     return {

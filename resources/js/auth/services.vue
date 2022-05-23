@@ -1,6 +1,7 @@
 <template>
     <div>
 			<!-- Breadcrumbs Area -->
+			
 	<section class="breadcrumbs-area" style="background-image:url('img/breadcrumbs-bg.jpg');">
 		<div class="container">
 			<div class="row">
@@ -28,10 +29,10 @@
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
 					<div class="section-title">
-						<span class="sub-heading">خدمات</span>
+						<span class="sub-heading">{{$t('services')}}</span>
 						<h2 class="heading-title">
 							
-							خدمات 
+							
 							{{type=="consulting" ? $t('consulting_company'):''}}
                                 {{type=="construction" ? $t('construcion_company'):''}}
                                 {{type=="hvac" ? $t('HVAC_companies'):''}}
@@ -46,18 +47,28 @@
 
 			
 <!-- {{more}}{{count}} -->
+<div v-show="row=='row'">
+
+
 			<div class="row" v-for="row in rows" :key="'row'+row">
+		
 				
-					<div class="col" v-for="(ads,column) in OfferRow(row)" :key="'row'+row+column">
+					<div  class="col " v-for="(ads,column) in OfferRow(row)" :key="'row'+row+column">
 					<div class="blog-slider" >
 						<!-- Single Blog -->
 						<div class="single-blog">
-							<div class="blog-img" v-for="image , i in ads.image" :key="i">
+							<div v-if="ads.image.length" class="blog-img">
+								
+							
+							<span  v-for="image , i in ads.image" :key="i" >
 									
-					<img  :src="image.path"  v-if="i==0" >
+					<img  :src="image.path"  v-if="i==0 "  >
+					 
 				
 		
-							</div>
+							</span>
+						</div>
+						
 							<div class="blog-content">
 								<div class="blog-meta">
 									<!-- <a href="#"><i class="fa fa-calendar-alt"></i>05 Jan,2021</a> -->
@@ -72,7 +83,7 @@
 								<div class="blog-admin"  >
 									<img :src="ads.company.avatar" alt="#" style="width:45px;height:45px">
 									<div class="blog-admin-title">
-										<span class="theme-color">نشر بواسطة</span>
+										<span class="theme-color">{{$t('posted_by')}}</span>
 										<p class="author-title hs-6 mb-0">
 											<router-link :to="{name:'CompanyProfile',params:{id:ads.company.id,type:type}}">
 																				{{ads.company.name}}
@@ -87,11 +98,14 @@
 						</div>
 			
 				</div>
-				<div class="col" v-for="p in placeHolder(row)" :key="'placeholder'+row+p"></div>
+				<div class="col visible-xs" v-for="p in placeHolder(row)" :key="'placeholder'+row+p" ></div>
+				
 			</div>
+			</div>
+			
 
 <center class="mt-3">
-			<div class="theme-btn text-center " @click="moreLoad(more)" v-show="count >= more" :disabled="loading">أكثر </div>
+			<div class="theme-btn text-center " @click="moreLoad(more)" v-show="count >= more" :disabled="loading">{{$t('more')}} </div>
 </center>			
 		</div>
 
@@ -111,7 +125,7 @@
 	
 						<div class="text-left">
 												<router-link :to="{name:'agents',params:{type:type}}"
-												 class="theme-color all" style="cursor:pointer">الكل </router-link>
+												 class="theme-color all" style="cursor:pointer">{{$t('all')}} </router-link>
 												
 
 						</div>
@@ -182,16 +196,16 @@ data(){
     return{
 
         type: this.$route.params.type,
+		 windowWidth: window.innerWidth,
         adsense:null,
 		col:'',
-		row:'',
+		row:"row",
 		none:'',
 		columns:3,
 		more:3,
 		users:null,
 		loading:false,
 		settingsTeam: {
-  dots: true,
   infinite: false,
   speed: 500,
   slidesToShow: 4,
@@ -204,7 +218,7 @@ data(){
         slidesToShow: 4,
         slidesToScroll: 3,
         infinite: true,
-        dots: true
+       
       }
     },
     {
@@ -220,7 +234,7 @@ data(){
       settings: {
         slidesToShow: 2,
         slidesToScroll: 4,
- 		dots: true
+ 	
 
 		
       }
@@ -229,25 +243,43 @@ data(){
 },
     }
 },
+ watch:{
+    windowWidth(newHeight, oldHeight) {
+            this.txt = `it changed to ${newHeight} from ${oldHeight}`;
+        }
+    },
 computed:{
-	rows(){
-return this.adsense===null?0:Math.ceil(this.adsense.length / this.columns)
-
-}
+		rows(){
+		return this.adsense===null?0:Math.ceil(this.adsense.length / this.columns)
+		}
 },
 
   mounted() {
 
                 $('.header-inner').removeClass('d-none');
                 // $('.header-inner').addClass('d-block');
+				         this.$nextTick(() => {
+            window.addEventListener('resize', this.onResize);
+        })
+				
         },
 methods:{
+	       onResize() {
+            this.windowWidth = window.innerWidth
+                 if(this.windowWidth >=1000)
+            {
+              this.open='open'
+            }else  if(this.windowWidth <=1000){
+              this.open=''
+            }
+        },
 		OfferRow(row){
 		return this.adsense.slice((row-1) *  this.columns , row * this.columns)
 	},
 	placeHolder(row){
 		return this.columns - this.OfferRow(row).length;
 	},
+	
 		grid(){
 		this.row="row"
 		this.col='col-lg-4 col-md-6 col-12'
@@ -385,4 +417,7 @@ methods:{
 		display:block;
 	}
 }
+
 </style>
+
+

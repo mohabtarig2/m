@@ -98,7 +98,7 @@
 							<div class="col-lg-4 col-md-5 col-12">
 								<div class="p-single-pr m-t-50">
 									<div class="price-amount">
-										<span>درهم</span><b class="theme-color">{{offer.price}}</b></div>
+										<span>{{$t('aed')}}</span><b class="theme-color">{{offer.price}}</b></div>
 								</div>
 							</div>
 						</div>
@@ -201,7 +201,7 @@
 						<unique></unique>
 						<!-- Property Sidebar Widget -->
 						<div class="properties-s-widget mb-5">
-							<h4 class="p-sidebar-title text-center">  المعلن	</h4>
+							<h4 class="p-sidebar-title text-center">  {{$t('advertiser')}}	</h4>
 						<form class="p-schedule-tour">
 								<div class="row">
 
@@ -276,7 +276,7 @@
 					<div class="p-descrip-box">
 						
 						<div class="p-des-box-title">
-							<span class="request-view theme-color"><i class="fa fa-check-circle"></i></span>
+							<span class="request-view theme-color"><i class="fa fa-check-circle-circle"></i></span>
 							<h4 class="pr-d-title" :dir="$t('directions')" :class="$t('text_align')">{{$t('Desgin_Descrpition')}}</h4>
 
 						</div>
@@ -292,7 +292,7 @@
 							<div class="row"  >
 								<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single m-0" :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single m-0" :dir="$t('directions')"  :class="{'text-right float-right':lang=='ar'}">
 										
 										<div class="pr-desc">
 											<span>{{$t('Type_Of_Villa')}}</span>
@@ -305,7 +305,7 @@
 								</div>
 								<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single m-0" :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single m-0" :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
 											<span>{{$t('floors')}}</span>
 											<p class="pr-des-title m-0">  {{offer.floors}}</p>
@@ -317,7 +317,7 @@
 								</div>
 								<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single m-0" :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single m-0" :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
 										<div class="pr-desc">
 											<span>{{$t('total_area_build')}}</span>
@@ -329,7 +329,7 @@
 								</div>
 								<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single m-0" :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single m-0" :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
 											<span>{{$t('bed_rooms')}}</span>
 											<p class="pr-des-title m-0">{{offer.rooms}}</p>
@@ -341,7 +341,7 @@
 								</div>
 								<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
 											<span>{{$t('master_rooms')}}</span>
 											<p class="pr-des-title m-0">{{offer.room_master}}</p>
@@ -353,7 +353,7 @@
 								</div>
 								<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
 										<div class="pr-desc">
 											<span>{{$t('bathroom')}}</span>
@@ -367,7 +367,7 @@
 
                                 	<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
 											<span>{{$t('majlis')}}</span>
 											<p class="pr-des-title m-0">  {{offer.majlis}}</p>
@@ -379,7 +379,7 @@
 								</div>
 								<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
 											<span>{{$t('kitchen')}}</span>
 											<p class="pr-des-title m-0">{{offer.kitchen}}</p>
@@ -391,7 +391,7 @@
 								</div>
 								<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
 										<div class="pr-desc">
 											<span>{{$t('dining')}}</span>
@@ -407,7 +407,7 @@
 
                                 	<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
 										<div class="pr-desc">
 											<span>
@@ -429,7 +429,7 @@
 
 									   	<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
 										<div class="pr-desc">
 											<span>
@@ -449,7 +449,7 @@
 
 									   	<div class="col-xl-3 col-md-4 col-12">
 									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="$t('text_align')">
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
 										<div class="pr-desc">
 											<span>
@@ -475,36 +475,58 @@
 					<!-- End Property Details -->
 
 					<!-- Property Features -->
-					<div class="p-descrip-box pro-features text-right" >
+					<div class="p-descrip-box pro-features " :class="{'text-left ':lang=='en' ,'text-right ':lang=='ar'}" >
 						<h4 class="pr-d-title">{{$t('price_include')}}</h4>
 							
-						<ul class="single-pro-f list-none">
-							<li>{{$t('Consultant_fee')}}    <span v-show="offer.CostGov"> + 
-                  {{$t('CostGov')}} </span><i class="fas fa-check" :class="{'text-muted':offer.Consultant_fee!='true'}"></i></li>
+						<ul class="single-pro-f list-none" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
+							<li>{{$t('Consultant_fee')}} 
+                 <span v-show="offer.CostGov"> + 
+                  {{$t('CostGov')}} </span>
+                  <i class="fas fa-check-circle"
+                   :class="{'text-muted':offer.Consultant_fee!='true',
+                   'text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar' }"></i></li>
 					<!-- <li>
           
-            {{$t('CostGov')}}<i class="fas fa-check" :class="{'text-muted':offer.CostGov!='true'}"></i></li> -->
+            {{$t('CostGov')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.CostGov!='true'}"></i></li> -->
 
-							<li>{{$t('gypsum')}}<i class="fas fa-check" :class="{'text-muted':offer.gypsum!='true'}"></i></li>
-							<li>{{$t('the_fence')}}<i class="fas fa-check" :class="{'text-muted':offer.the_fence!='true'}"></i></li>
-	<li>{{$t('conditioning')}}<i class="fas fa-check" :class="{'text-muted':offer.conditioning!='true'}"></i></li>
+							<li>
+                
+                <span  >{{$t('gypsum')}}</span>
+              <i class="fas fa-check-circle" :class="{'text-muted':offer.gypsum!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i>
+              </li>
+
+							<li>{{$t('the_fence')}}<i class="fas fa-check-circle"
+               :class="{'text-muted':offer.the_fence!='true', 'text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></li>
+	<li>{{$t('conditioning')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.conditioning!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></li>
 
 
 
 						</ul>
-						<ul class="single-pro-f list-none">
+						<ul class="single-pro-f list-none" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
                           
-						    <li>{{$t('electric_pendants')}}<i class="fas fa-check" :class="{'text-muted':offer.electric_pendants!='true'}"></i></li>
-                            <li>{{$t('tabCost')}}<i class="fas fa-check" :class="{'text-muted':offer.tabCost!='true'}"></i></li>
-							<li>{{$t('Bedroom_wardrobes')}}<i class="fas fa-check" :class="{'text-muted':offer.Bedroom_wardrobes!='true'}"></i></li>
-							<li>{{$t('Kitchen_Cabinets')}}<i class="fas fa-check" :class="{'text-muted':offer.Kitchen_Cabinets!='true'}"></i></li>
+						    <li>{{$t('electric_pendants')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.electric_pendants!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></li>
+                            <li>{{$t('tabCost')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.tabCost!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></li>
+							<li>{{$t('Bedroom_wardrobes')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.Bedroom_wardrobes!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></li>
+							<li>{{$t('Kitchen_Cabinets')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.Kitchen_Cabinets!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></li>
 
 						</ul>
-						<ul class="single-pro-f list-none">
-					<li>{{$t('the_elevator')}}<i class="fas fa-check" :class="{'text-muted':offer.the_elevator!='true'}"></i></li>
-					<li>{{$t('interior_decoration')}}<i class="fas fa-check" :class="{'text-muted':offer.interior_decoration!='true'}"></i></li>
-                    <li>{{$t('garden_design')}}<i class="fas fa-check" :class="{'text-muted':offer.garden_design!='true'}"></i></li>
-					<li>{{$t('pelvis')}}<i class="fas fa-check" :class="{'text-muted':offer.pelvis!='true'}"></i></li>
+						<ul class="single-pro-f list-none" :class="{'text-right  ':lang=='ar','text-left ':lang=='en'}">
+					<li>{{$t('the_elevator')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.the_elevator!='true','text-left float-left ':lang=='en',
+                   ' float-right ':lang=='ar'}"></i></li>
+					<li>{{$t('interior_decoration')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.interior_decoration!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></li>
+                    <li>{{$t('garden_design')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.garden_design!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></li>
+					<li>{{$t('pelvis')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.pelvis!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></li>
 
 						</ul>
 						
@@ -526,7 +548,7 @@
 										class="  theme-btn mb-3">
 										 <i class="bx bxs-home-smile text-light"></i
 										>
-										  {{$t('submit_an_app')}} / عليك تسجل الدخول اولا
+										  {{$t('login_first')}} 
 										</a>
 					<!-- End Property Features -->
 					<!-- Property Features -->
@@ -536,13 +558,13 @@
 
 					<!-- Propery Features -->
 					<div class="p-descrip-box rating">
-						<h4 class="pr-d-title">التقييم </h4>
+						<h4 class="pr-d-title">{{$t('review')}} </h4>
 						<div class="rating-reviews-main">
 							<div class="rating-r-top">
 							
 							</div>
 							<div class="review-add">
-								<h4 class="review-add-title fs-20">{{offer.rating}} Review</h4>
+								<h4 class="review-add-title fs-20">{{offer.rating}} {{$t('review')}}</h4>
 								<div class="review-add-main "  v-for="review , index in offer.review" :key="index">
 									<div class="review-img">
 										<img :src="review.user.avatar" alt="#" style="width:126 !important; height:126px !important">
@@ -565,7 +587,7 @@
 					<!-- End Property Features -->
 					<!-- Similar Property -->
 					<div class="similar-property">
-						<h4 class="similar-property-title">بحث ذات صلة</h4>
+						<h4 class="similar-property-title">{{$t('Related_search')}}</h4>
 						<div class="row">
 							<div class="col-12">
 								<slick class="similar-property-slider" v-bind="ralted" v-if="smilirs.length">
@@ -648,9 +670,9 @@
 	</section>
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      	<div class=" m-b-30 model-contact">
-							<h4 class="p-sidebar-title text-center">طلب التصميم</h4>
+    <div class="modal-content" :dir="$t('direactions')" :class="$t('text_align')">
+      	<div class=" m-b-30 model-contact" :dir="$t('direactions')" :class="$t('text_align')">
+							<h4 class="p-sidebar-title text-center"> {{$t('Deisgn_request')}}</h4>
 							<form class="p-schedule-tour">
 								<div class="row">
 
@@ -660,27 +682,27 @@
 
 <div v-if='success!=null'>
 <div class="alert alert-success">
-{{$t('request')}} <i class="fa fa-check-circle-o"></i>
+{{$t('request')}} <i class="fa fa-check-circle-circle-o"></i>
 </div>
 </div>
       <div class="card-body">
         <form >
 
-<div class="form-group">
-<p class="theme-color text-right font-weight-bold">     اضف ملاحظات</p>
-<textarea v-model="notes" placeholder="ملاحظاتك" required="required"></textarea>
+<div class="form-group" >
+<p class="theme-color  font-weight-bold">     {{$t('add_notes')}}</p>
+<textarea v-model="notes" :placeholder="$t('add_notes')" required="required"></textarea>
 </div>
 <div class="form-group">
-    <p class="theme-color text-right font-weight-bold">       رقم الموبايل</p>
+    <p class="theme-color  font-weight-bold">      {{$t('mobile')}}</p>
 
-  <input type="text" class="form-control" placeholder="Mob : (971) - XXX-XXXXXX" v-model="phone" >
+  <input type="text" class="form-control" placeholder=" (971) - XXX-XXXXXX" v-model="phone" >
                 
 </div>
 
 <div class="form-group">
-    <p class="theme-color text-right font-weight-bold">       رقم الواتساب</p>
+    <p class="theme-color font-weight-bold">      {{$t('whatsapp')}}</p>
 
-  <input type="text" class="form-control" placeholder="Whatsapp : (971) - XXX-XXXXXX" v-model="whatsapp">
+  <input type="text" class="form-control" placeholder=" (971) - XXX-XXXXXX" v-model="whatsapp">
                 
 </div>
 
@@ -731,15 +753,15 @@
             </label>
 </div> -->
 
-            <div class="text-right form-group" dir="rtl">
+            <div class=" form-group" :dir="$t('directions')" >
             <p class="font-weight-bold theme-color"> {{$t('build_by')}}</p>
 
-        <label class="checkbox d-bolck" :dir="$t('directions')" >
+        <label class="checkbox d-bolck"  >
             <input type="radio"  value="1" name="typeBuild"  v-model="typeBuild">
             <span class="check" style="border-radius:10px"></span>
             <span class="mr-4 ml-4">{{$t('Loan')}}</span>
          </label>
-             <label class="checkbox d-bolck" :dir="$t('directions')" >
+             <label class="checkbox d-bolck" >
             
            <input type="radio" value="Grant"  name="typeBuild"  v-model="typeBuild">
             <span class="check" style="border-radius:10px"></span>
@@ -749,57 +771,57 @@
             
 
             <div class="form-group">
-                <div class="text-right font-weight-bold theme-color" dir="rtl">
-أذكر  قيمة القرض
-<sup class="text-danger"> (اختياري)</sup>
+                <div class=" font-weight-bold theme-color">
+{{$t('Mention_the_loan_amount')}}
+<sup class="text-danger"> ({{$t('optional')}})</sup>
                 </div>
   <input type="text" class="form-control" placeholder="" v-model="priceGrant">
                 
 </div>
 
 
-        <div class="text-right form-group" dir="rtl">
-<p class=" font-weight-bold theme-color">الجهة المقدمة للمنحة </p>
+        <div class=" form-group" :dir="$t('directions')" :class="$t('text_align')">
+<p class=" font-weight-bold theme-color">{{$t('Grant_Provider')}} </p>
 
              
     <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="1" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشيخ زايد للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('Sheikh_Zayed_Housing_Program')}}</span>
     </label>
      <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="2" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشيخ محمد بن راشد للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('Sheikh_Mohammed_bin_Rashid_Housing_Program')}}</span>
      </label>
      <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="3" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج ابوظبي للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('AbuDhabi_Housing_Program')}}</span>
      </label>
       <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="4" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشارقة للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('Sharjah_Housing_Program')}}</span>
       </label>
 
       <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="5" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشارقة للاسكان اسناد</span>
+            <span class="mr-4 ml-4">{{$t('Sharjah_Esnad_Housing_Program')}}</span>
       </label>
    <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="6" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">  الديوان</span>
+            <span class="mr-4 ml-4">  {{$t('Diwan')}}</span>
    </label>
 
         </div>
 
-        <div class="text-right">
+        <div class="">
 
-    <p class="theme-color font-weight-bold">البنك الممول اللمنحة  
-<sup class="text-danger"> (اختياري)</sup>
+    <p class="theme-color font-weight-bold">  {{$t('Grant_Funding_Bank')}}  
+<sup class="text-danger"> ({{$t('optional')}})</sup>
     </p>
 <div class="form-group">
 <input type="text" class="form-control" placeholder="" v-model="BankProvider">
@@ -808,9 +830,9 @@
 
         
             <div class="form-group">
-                <div class="text-right font-weight-bold theme-color" dir="rtl">
-المبلغ المضاف التقريبي لطريقة التمويل
-<sup class="text-danger"> (اختياري)</sup>
+                <div class=" font-weight-bold theme-color" dir="rtl">
+{{$t('Approximate_added_amount_Financing_method')}}
+<sup class="text-danger"> ({{$t('optional')}})</sup>
                 </div>
   <input type="text" class="form-control" placeholder="" v-model="finance">
                 
@@ -827,7 +849,7 @@
 
 	<div class="schedule-tour-btn">
 				<button class="theme-btn" @click.prevent="payForm(offer)"
-			>ارسال</button>
+			>{{$t('send')}}</button>
 			</div>
 		</div>
 	</div>
@@ -842,7 +864,7 @@
 
 <div class="alert alert-success alert-white rounded">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <div class="icon"><i class="fa fa-check"></i></div>
+    <div class="icon"><i class="fa fa-check-circle"></i></div>
     <strong>Success!</strong> Changes has been saved successfully!
 </div>
 
@@ -863,6 +885,7 @@ export default {
  components: { slick ,AllUae, Unique, Review },
  data() {
      return {
+       lang:localStorage.getItem('lang'),
        ResImage:null,
          priceGrant:null,
          BankProvider:null,
@@ -960,6 +983,11 @@ export default {
 
                 $('.header-inner').removeClass('d-none');
                 $('.header-inner').addClass('d-block');
+                if(this.lang=='ar'){
+                  $('.pr-single').addClass('float-right');
+                 
+                }
+                
         },
 watch:{
  phone() {
@@ -1315,16 +1343,13 @@ $('#exampleModalCenter').modal('hide');
             // })
         },
     },
- mounted() {
-    this.c1 = this.$refs.c1;
-    this.c2 = this.$refs.c2;
 
-  },
 
 
 
   created() {
    this.VillaDetails();
+   
             // console.log(this.offers.Emirates);
 
 
@@ -1332,6 +1357,7 @@ $('#exampleModalCenter').modal('hide');
 
   },
 computed:{
+  
   IsUser(){
             return this.$store.getters.IsUser
         },
@@ -1351,7 +1377,8 @@ computed:{
 </script>
 
 <style scoped>
-.page-center{
+
+.page-center {
 	    position: absolute;
     left: 50%;
     top: 50%;
@@ -1656,9 +1683,7 @@ button.close {
     margin-top: 20px;
      flex-direction: row-reverse; 
 }
-.pr-single{
-	float: right;
-}
+
 .pr-desc span{
     font-weight: bold;
 }

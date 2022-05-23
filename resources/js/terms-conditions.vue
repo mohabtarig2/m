@@ -21,7 +21,7 @@
 		</div>
 	</section>
     <div class="container">
-    <div class="terms text-right mt-5"  dir="rtl">
+    <div class="terms  mt-5"  :dir="$t('direactions')" :class="$t('text_align')">
         <h1 class="">
            {{$t('termsConditions')}}
         </h1>
