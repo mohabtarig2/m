@@ -15,7 +15,11 @@ Version: 1.0.0
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
+	.about-content-widget {
+		padding: 14px 10px  !important;
+		width: 190px  !important;
+		margin-top: 30px  !important;
+	}
 .logo {
 	margin-top: 0 !important;
 }
@@ -84,6 +88,7 @@ Version: 1.0.0
 	margin: 0 !important;
 	margin-top: 70px !important;
 }
+
 .property-details-area {
 	top: -100px !important;
 	margin-bottom: -100px !important;
@@ -100,7 +105,53 @@ Version: 1.0.0
 }
 .offcanvas-toggler{
 	display:block !important;
+	text-align: center;
+    /* display: inline-block !important; */
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+    z-index: 3;
+    border-radius: 50% !important;
+    background: #3454d1 !important;
+    border: none !important;
+    position: absolute;
+    right: 25px !important;
+    top: -23px !important;
+ 
+  
 }
+.col-auto .header-btn {
+    display: none !important;
+}
+.header-details.style-1 {
+    display: none !important;
+}
+.single-bed-property li {
+    background: #fff;
+    box-shadow: 0px 7px 16px #0000000a;
+    border: 1px solid #F1F1F1;
+    border-radius: 12px;
+    text-align: center;
+    padding: 5px 8px !important;
+    margin-top: 0px;
+    display: inline-block;
+    font-size: 15px !important;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.image_villa {
+  
+    height: 197px !important;
+}
+.blog-img img {
+    height: 197px !important;
+}
+.s-property-content {
+    padding: 16px 15px !important;
+    border-radius: 0px 0px 12px 12px !important;
+}
+
 .header-area {
 	top: 30px  !important;
 }
@@ -772,6 +823,7 @@ Version: 1.0.0
 
 /* Mobile Screen */
 @media only screen and (max-width:767px) {
+	
 .logo{
 	margin:0 !important;
 }
@@ -1093,7 +1145,7 @@ Version: 1.0.0
 }
 .about-content-widget {
     padding: 14px 10px  !important;
-    width: 95px  !important;
+    width: 172px  !important;
     margin-top: 30px  !important;
 }
 
@@ -1107,6 +1159,7 @@ Version: 1.0.0
 .about-content-widget h5 {
 	 margin: 0 !important;
 }
+
 .about-content {
 	margin: 0 !important;
 	margin-top: 60px !important;
@@ -2299,11 +2352,22 @@ Version: 1.0.0
 	}
 
 
-	@media screen and (min-width: 350px) and (max-width: 768px) {
 
-		.visible-xs{
-		   display: none !important;
-		}
+}
+@media screen and (min-width: 350px) and (max-width: 1056px) {
+
+	.visible-xs{
+	   display: none !important;
+	}
 	
+
+}
+
+@media screen and (max-width: 361px)  {
+
+	.about-content-widget {
+		padding: 14px 10px  !important;
+		width: 165px  !important;
+		margin-top: 30px  !important;
 	}
 }

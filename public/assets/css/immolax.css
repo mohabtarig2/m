@@ -3144,8 +3144,11 @@ Version: 1.0.0
 
   .blog-img img {
     width: 370px !important ;
-    height: 280px !important;
+    height: 197px ;
   }
+  .blog-content {
+    padding: 10px !important;
+}
 
   .blog-content {
     padding: 30px;

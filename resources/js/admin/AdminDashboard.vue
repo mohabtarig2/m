@@ -122,7 +122,7 @@
           <div class="row">
 
                 <div class="col-lg-3 col-6">
-                  <div class="card text-right" dir="rtl" >
+                  <div class="p-descrip-box text-right" dir="rtl" >
                       <div class="h5"> مناقصة الاستشارات </div>
 
 
@@ -227,7 +227,7 @@
                   </div>
               </div>
         <div class="col-lg-3 col-6">
-                  <div class="card text-right" dir="rtl" >
+                  <div class="p-descrip-box text-right" dir="rtl" >
                       <div class="h5"> مناقصة المقاولات </div>
 
 
@@ -332,7 +332,7 @@
                   </div>
               </div>
                <div class="col-lg-3 col-6">
-                  <div class="card text-right" dir="rtl" >
+                  <div class="p-descrip-box text-right" dir="rtl" >
                       <div class="h5"> مناقصة تكييف </div>
 
 
@@ -438,7 +438,7 @@
               </div>
 
                  <div class="col-lg-3 col-6">
-                  <div class="card text-right" dir="rtl" >
+                  <div class="p-descrip-box text-right" dir="rtl" >
                       <div class="h5"> مناقصة حجر </div>
 
 

@@ -693,6 +693,7 @@ export default {
              
                 // $('.header-inner').removeClass('d-none');
                 $('.header-inner').addClass('d-none');
+                $('.footer-inner').addClass('d-none');
         },
    computed: {
     ...mapState({

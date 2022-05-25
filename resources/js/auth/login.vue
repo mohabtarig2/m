@@ -98,7 +98,7 @@
 
                       </div>
 											<div class="login-c-right">
-												<a href="signup.html">{{$t('Forgot_Account')}}</a>
+												<a href="/password/reset">{{$t('Forgot_Account')}}</a>
                      
 											</div>
 										</div>

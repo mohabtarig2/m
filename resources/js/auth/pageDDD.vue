@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="VillaPage">
         <!-- <div class="preloader">
         <div class="loading">
             <div class="loader-line"></div>
@@ -446,7 +446,9 @@ created() {
 </script>
 
 
-<style >
+<style scoped>
+
+
 .slick-slide {
 
     float: left;
@@ -462,7 +464,7 @@ created() {
 .uinque-image{
     width:290px;height:250px !important;
 }
-.content {
+.VillaPage .content {
     padding:0;
 	top:5%;
 	left:1%;

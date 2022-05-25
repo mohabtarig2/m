@@ -30,7 +30,7 @@
 												<div class="property-tab-d-inner">
 													<form >
 														<div class="row">
-															<div class="col-xl-3 col-md-4 col-12">
+															<div class="col-xl-3 col-md-3 col-12">
 
 																<div class="single-property-details">
 																	<label>{{$t('Emirates')}} </label>
@@ -66,7 +66,7 @@
 
 
 
-                                                        <div class="col-xl-3 col-md-4 col-12">
+                                                        <div class="col-xl-3 col-md-3 col-12">
 
                                                         <div class="single-property-details">
                                                             <label>{{$t('Type_Of_Villa')}}</label>
@@ -86,7 +86,7 @@
                                                         </div>
 
                                                     </div>
-                                <div class="col-xl-3 col-md-6 col-12">
+                                <div class="col-xl-3 col-md-3 col-12">
 
                             <div class="single-property-details">
                                 <label>{{$t('bed_rooms')}}</label>
@@ -172,7 +172,7 @@
 																</div> -->
 																<!-- End Price Range -->
 															<!-- </div> -->
-															<div class="col-xl-3 col-md-4 col-12">
+															<div class="col-xl-3 col-md-3 col-12">
 																<div class="single-property-btn">
 																	<button class="button theme-btn"
 																	 @click.prevent="filterVilla">

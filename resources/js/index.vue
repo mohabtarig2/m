@@ -384,7 +384,7 @@ style="position:absolute;
 
 
 
-	<footer class="footer-area " dir="rtl"> 
+	<footer class="footer-area  footer-inner" dir="rtl" v-show="$route.name!=='admin'"> 
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">

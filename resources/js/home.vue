@@ -124,6 +124,13 @@
 										<h6 class="mt-3">{{$t('consulting_company')}}</h6>
 										</router-link>
 									</div>
+									 <div class="about-content-widget">
+										<router-link :to="{name:'StoneTender'}">
+										<i class="fas fa-igloo"></i>
+                                        <span>{{$t('tender')}}</span>
+										<h6 class="mt-3">{{$t('Stone_companies')}}</h6>
+										</router-link>
+									</div>
                                     <div class="about-content-widget">
 										
 										<i class="fas fa-couch"></i>
@@ -132,13 +139,8 @@
 										<h6 class="mt-3">{{$t('Soil_testing')}}</h6>
 										{{$t('soon')}}
 									</div>
-                                    <div class="about-content-widget">
-											<router-link :to="{name:'interiorTender'}">
-										<i class="fas fa-couch"></i>
-                                        <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('interior_decoration')}}</h6>
-											</router-link>
-									</div>
+
+                                   
 								</div>
 								
 								<div class="col-lg-4 col-md-4 col-auto" data-aos="fade-up" data-aos-delay="300">
@@ -150,30 +152,37 @@
 										</router-link>
 									</div>
 
-                                    <div class="about-content-widget">
-										<router-link :to="{name:'StoneTender'}">
-										<i class="fas fa-igloo"></i>
+									 <div class="about-content-widget">
+											<router-link :to="{name:'interiorTender'}">
+										<i class="fas fa-couch"></i>
                                         <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('Stone_companies')}}</h6>
-										</router-link>
+										<h6 class="mt-3">{{$t('interior_decoration')}}</h6>
+											</router-link>
 									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-auto" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="about-content-widget">
-									<router-link :to="{name:'hvac'}">
-										<i class="fa fa-fan"></i>
-                                        <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('HVAC_companies')}}</h6>
-									</router-link>
-									</div>
-
-                                    <div class="about-content-widget">
+									   <div class="about-content-widget">
 										<i class="fas fa-toolbox"></i>
                                         <span>{{$t('tender')}}</span>
 											<h6 class="mt-3">{{$t('maintenance')}}</h6>
 																					{{$t('soon')}}
 
 									</div>
+
+                                   
+
+									
+								</div>
+								<div class="col-lg-4 col-md-4 col-auto" data-aos="fade-up" data-aos-delay="400">
+
+									 <div class="about-content-widget">
+									<router-link :to="{name:'hvac'}">
+										<i class="fa fa-fan"></i>
+                                        <span>{{$t('tender')}}</span>
+										<h6 class="mt-3">{{$t('HVAC_companies')}}</h6>
+									</router-link>
+									</div> 
+                                   
+
+                                 
 
 								</div>
 							</div>
@@ -723,6 +732,7 @@
 									    <p class="">{{$t('goal3')}}</p>
                                         <p class="">{{$t('goal4')}}</p>
                 						<p class="">{{$t('goal5')}}</p>
+										<p class="">{{$t('goal6')}}</p>
 
 									</div>
 									<!-- Single Testimonial Content -->
@@ -761,7 +771,7 @@
 						<div class="single-agent">
 							<div class="agent-head">
 								<div class="agent-img">
-									<img src="img/agent/01.png" alt="#">
+									<img src="img/agent/01.jpg" alt="#">
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
@@ -773,7 +783,7 @@
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-6" style="font-size: 2em;"><a >Mohamed alhubaishi </a></h3>
+								<h3 class="agent-title hs-6" style="font-size: 2em;"><a >Mohamed Alhubaishi </a></h3>
 								<p class="theme-color">CEO & Founder</p>
 							</div>
 						</div>
@@ -781,7 +791,7 @@
 						<div class="single-agent">
 							<div class="agent-head">
 								<div class="agent-img">
-									<img src="img/agent/02.png" alt="#">
+									<img src="img/agent/02.jpg" alt="#">
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
@@ -793,7 +803,7 @@
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-6" style="font-size: 8em;"><a >Dr.Hajar alhubsiahi</a></h3>
+								<h3 class="agent-title hs-6" style="font-size: 8em;"><a >Dr.Hajar Alhubaishi</a></h3>
 								<p class="theme-color">Founder</p>
 							</div>
 						</div>
@@ -801,7 +811,7 @@
 						<div class="single-agent">
 							<div class="agent-head">
 								<div class="agent-img">
-									<img src="img/agent/03.png" alt="#">
+									<img src="img/agent/03.jpg" alt="#">
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
@@ -813,7 +823,7 @@
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-6" style="font-size: 2em;"><a >Hamad  alhubaishi</a></h3>
+								<h3 class="agent-title hs-6" style="font-size: 2em;"><a >Hamad  Alhubaishi</a></h3>
 								<p class="theme-color">Founder</p>
 							</div>
 						</div>
@@ -821,7 +831,7 @@
 						<div class="single-agent">
 							<div class="agent-head">
 								<div class="agent-img">
-									<img src="img/agent/1.jpg" alt="#">
+									<img src="img/agent/4.jpg" alt="#">
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
@@ -833,10 +843,31 @@
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-6"><a href="">Mohab Tarig</a></h3>
+								<h3 class="agent-title hs-6"><a href="">Mohab Tariq</a></h3>
 								<p class="theme-color">IT administrator</p>
 							</div>
 						</div>
+
+							<div class="single-agent">
+							<div class="agent-head">
+								<div class="agent-img">
+									<img src="img/agent/5.jpg" alt="#">
+								</div>
+								<div class="agent-social">
+									<a class="plus"><i class="fa fa-plus item-center"></i></a>
+									<ul class="agent-social-hover list-none">
+										<li><a href="#"><i class="fab fa-facebook-f item-center"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter item-center"></i></a></li>
+										<li><a href="#"><i class="fab fa-dribbble item-center"></i></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="agent-content">
+								<h3 class="agent-title hs-6"><a href="">Natalia Belskaya</a></h3>
+								<p class="theme-color">SMM</p>
+							</div>
+						</div>
+		
 		
 				
 			
@@ -888,7 +919,7 @@
 					<div class="single-fact">
 						<i class="fa fa-home"></i>
 						<div class="fact-content">
-							<h3 class="fact-c-title"><span class="counter" data-goal="140000">{{number1}}</span>+</h3>
+							<h3 class="fact-c-title"><span class="counter" data-goal="1000">{{number1}}</span>+</h3>
 							<p class="m-0">{{$t('villa_excuted')}}</p>
 						</div>
 					</div>
@@ -898,7 +929,7 @@
 					<div class="single-fact">
 						<i class="fa fa-users"></i>
 						<div class="fact-content">
-							<h3 class="fact-c-title"><span class="counter" data-goal="10">10</span>M</h3>
+							<h3 class="fact-c-title"><span class="counter" data-goal="10">10</span>k</h3>
 							<p class="m-0">{{$t('Visitors')}}</p>
 						</div>
 					</div>
@@ -1061,7 +1092,7 @@ seetingsWork: {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 3,
         infinite: true,
       
@@ -1171,9 +1202,9 @@ methods:{
     let count =   setInterval(()=>{
 
             // this.number1+
-            this.number1+=20
+            this.number1+=10
 
-            if(this.number1==14000){
+            if(this.number1==1000){
                 clearInterval(count)
             }
 

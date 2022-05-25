@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pageDetails">
 
 
 
@@ -590,24 +590,27 @@
 						<h4 class="similar-property-title">{{$t('Related_search')}}</h4>
 						<div class="row">
 							<div class="col-12">
-								<slick class="similar-property-slider" v-bind="ralted" v-if="smilirs.length">
-									<div class="similar-property-main" v-for="offer , index in smilirs " :key="index">
-										<!-- Single Recent Property -->
-										<div class="single-recent-property">
+                   <slick   v-bind="ralted" v-if="smilirs.length"  class="recent-property-slider  ">
+					
+
+                        <div class="single-p-slider" v-for="offer , index in smilirs " :key="index">
+<div class="single-recent-property">
 								<div class="single-r-property-top">
 									<!-- Recent Property Img -->
 									<div class="single-r-property-img" v-for="image , i in offer.villa_image" :key="i">
+									<router-link :to="{name:'pageDetails',params:{id:offer.id}}">	
 										<img :src="image.path" alt="#" v-if="i==0" class="image_villa">
+									</router-link>
 									</div>
-									<div class="property-for-sale">
-										<ul class="list-none">
-											<li><a href="#">{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}</a></li>
-											<li class="unique "  ><a href="#" >{{$t('unique')}}</a></li>
+									<div class="property-for-sale visible-xs">
+										<ul class="list-none ">
+											<li><a >{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}</a></li>
+											<li class="unique  "  ><a href="#" >{{$t('unique')}}</a></li>
 										</ul>
 									</div>
 									<!-- Property Ratting -->
 									<div class="property-ratting">
-										<div class="property-ratting-left">
+										<div class="property-ratting-left visible-xs">
 											<span class="p-ratting-point">4.5</span>
 											<div class="p-ratting-details">
 												<ul class="ratting-details-star list-none">
@@ -617,34 +620,52 @@
 													<li><i class="fa fa-star"></i></li>
 													<li><i class="fa fa-star-half-alt"></i></li>
 												</ul>
-												<span>2 Comment</span>
 											</div>
 										</div>
-										<div class="property-ratting-save">
-											<a href="#"><i class="fa fa-heart"></i>Save</a>
+										<div class="property-ratting-save" v-if="offer.saved_villa==null">
+											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i><b class="visible-xs">Save</b></a>
+										</div>
+                                        <div class="property-ratting-save saved" v-else>
+											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart"></i><b class="visible-xs">
+												{{$t('saveed')}}</b></a>
 										</div>
 									</div>
 								</div>
 								<!-- Single Recent Content -->
 								<div class="s-property-content">
-									<h3 class="srp-title hs-4"><router-link :to="{name:'pageDetails',params:{id:offer.id}}">{{offer.title}}</router-link></h3>
+									<h3 class="srp-title hs-4"><router-link :to="{name:'pageDetails',params:{id:offer.id}}">
+										{{offer.title}}</router-link></h3>
 									<p class="property-location mb-0"><i class="fa fa-map-marker-alt"></i>
                                     <all-uae :emirates="offer.Emirates"></all-uae></p>
 									<div class="single-r-property-bed">
 										<ul class="single-bed-property list-none">
-											<li><b>{{offer.rooms}}</b><span><i class="fa fa-bed"></i></span></li>
-											<li><b>{{offer.bathroom}}</b><span><i class="fa fa-shower"></i></span></li>
-											<li><b>{{offer.floors}}</b><span><i class="fa fa-warehouse"></i></span></li>
+											<li>
+                                                <a @click="Singlefillter('room',offer.type_villa)">
+                                                <b>{{offer.rooms}}</b>
+                                                <span><i class="bx bxs-bed"></i></span>
+                                                </a>
+                                                 </li>
+											<li><a @click="Singlefillter('bath',offer.bathroom)"><b>{{offer.bathroom}}</b>
+                                            <span><i class="bx bxs-bath"></i></span>
+                                            </a>
+                                            </li>
+											<span class="visible-xs">
+											<li class="visible-xs"><b>
+												{{offer.tab}}</b><span><i class="fas fa-arrows-alt"></i></span></li>
+											</span>
 										</ul>
 									</div>
 									<!-- Property User -->
 									<div class="property-user"  v-for="company , index in offer.company "
                                                 :key="index">
-										<div class="property-user-left">
-											<img :src="company.avatar" alt="#" class="rounded-circle" width="40" height="40">
+										<div class="property-user-left visible-xs">
+											<img :src="company.avatar" alt="#" class="rounded-circle visible-xs	" width="40" height="40">
 											<div class="property-user-title">
-												<p class="at-title mb-0 hs-6"><a href="#">{{company.name}}</a></p>
-												<span>company</span>
+												<p class="at-title mb-0 hs-6">
+													<router-link :to="{name:'CompanyProfile',params:{id:company.id,type:'consulting'}}">
+														{{company.name}}</router-link>
+														</p>
+												<span>استشارات هندسية</span>
 											</div>
 										</div>
 										<div class="property-user-price">
@@ -653,12 +674,11 @@
 									</div>
 								</div>
 							</div>
+                    </div>
 
-										<!-- End Single Recent Property -->
-									</div>
 
-									<!-- End Single Recent Property -->
-								</slick>
+                    </slick>
+							
 							</div>
 						</div>
 					</div>
@@ -1403,7 +1423,7 @@ computed:{
 }
 
 
-.content {
+.pageDetails .content {
     padding:0;
 	top:5%;
 	left:1%;
