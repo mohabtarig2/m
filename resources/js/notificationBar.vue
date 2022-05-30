@@ -14,7 +14,7 @@
 
       <div class="header-notification container">
 
-      <router-link :to="{name:'AllNotification'}"  class="see-all">See All </router-link>
+      <router-link :to="{name:'AllNotification'}"  class="see-all">{{all}} </router-link>
 
       <span class=" h5 font-weight-bold">Notifications</span>
 

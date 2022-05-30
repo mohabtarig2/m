@@ -3,7 +3,7 @@
             	<section class="section-50">
 
 		<div class="container">
-			<h3 class="m-b-50 heading-line">Notifications <i class="fa fa-bell text-muted"></i></h3>
+			<h3 class="m-b-50 heading-line">{{$t('Notifications')}} <i class="fa fa-bell text-muted"></i></h3>
 
 			<div class="notification-ui_dd-content" v-for="(n,i) in notificationlist" :key="i">
       
