@@ -97,7 +97,7 @@
 
 <a class="mt-5 ml-3" href="\"><i class="fa fa-eye"></i> Home</a>
        <span class="mt-5 ">
-                         <small> <a class="" @click="switchLang('ar')" v-show="lang=='en' || lang==null">
+                         <small> <a class="" @click="switchLang('ar')" v-show="lang=='en'">
                          <img src="https://img.icons8.com/color/20/000000/united-arab-emirates.png"/>عربي</a></small>
                                         <small><a @click="switchLang('en')" v-show="lang=='ar'">
                                            <img src="https://img.icons8.com/color/20/000000/usa.png"/> English
@@ -256,6 +256,7 @@ export default {
         return{
         users:null,
         seen:false,
+        lang:lang,
         status_upload:0,
         ContentWrapper:'content-wrapper',
         open:'',

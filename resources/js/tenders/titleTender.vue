@@ -50,7 +50,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     name="desc"
                     v-model="note"
                     :class="[{'is-invalid': errorFor('Notes')}]"
-                      :placeholder="$('long_descripe')"
+                      :placeholder="$t('long_descripe')"
 
                   ></textarea>
                   <div
@@ -65,7 +65,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="row">
 
                     <div class="  form-group col-6" dir="rtl">
-                      <label >{{$('to')}}</label>
+                      <label >{{$t('to')}}</label>
                       <div class="input-group mb-2">
                         <input
                           type="text"
@@ -88,7 +88,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     </div>
                     <div class="  col-6" dir="rtl">
                       <div class="form-group mb-2">
-                        <label  >{{$('from')}}</label>
+                        <label  >{{$t('from')}}</label>
 
                         <input
                        
@@ -134,7 +134,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                         </div>
               <div class="row">
       <div class="col-6">
-              <div class="font-weight-bold h6 mt-3 text-right thm-color">اختار نوع الفيلا</div>
+              <div class="font-weight-bold h6 mt-3 text-right thm-color">{{$t('Choose_the_type_of_villa')}}</div>
 
               <div class="form-group text-right ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -370,7 +370,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="form-group">
                 <div class="text-right font-weight-bold theme-color" dir="rtl">
 {{$t('Mention_the_loan_amount')}}
-<sup class="text-danger"> {{$('optional')}}</sup>
+<sup class="text-danger"> {{$t('optional')}}</sup>
                 </div>
   <input type="text" class="form-control" placeholder="" name="priceGrant" v-model="priceGrant">
                 

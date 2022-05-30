@@ -1,7 +1,8 @@
 <template>
     <div>
 
-    <slick v-bind="settings" class="tenders" v-if="IsUser==10">
+    <div class="row">
+          <div class="col-md-3 col-sm-12">
                   <div class="properties-s-widget text-right" dir="rtl" >
                       <div class="h5"> {{$t('Consulting_Tender')}}</div>
 
@@ -109,11 +110,12 @@
                         </div>
 
                   </div>
-           
+           </div>
 
-                <div class="">
+
+                  <div class="col-md-3 col-sm-12">
                   <div class="properties-s-widget text-right" dir="rtl" >
-                      <div class="h5"> مناقصة الديكور </div>
+                      <div class="h5"> {{$t('Interior_Tender')}} </div>
 
 
                         <div class="text-dark mt-3">
@@ -220,9 +222,9 @@
 
                   </div>
               </div>
-        <div class="">
+          <div class="col-md-3 col-sm-12">
                   <div class="properties-s-widget text-right" dir="rtl" >
-                      <div class="h5"> مناقصة المقاولات </div>
+                      <div class="h5"> {{$t('Conturction_Tender')}} </div>
 
 
                         <div class="text-dark mt-3">
@@ -329,9 +331,9 @@
 
 
 
- <div class="">
+   <div class="col-md-3 col-sm-12">
                   <div class="properties-s-widget text-right" dir="rtl" >
-                      <div class="h5"> مناقصة تكييف </div>
+                      <div class="h5"> {{$t('hvac_Tender')}} </div>
 
 
                         <div class="text-dark mt-3">
@@ -435,9 +437,9 @@
                   </div>
               </div>
 
-                 <div >
+                <div class="col-md-3 col-sm-12">
                   <div class="properties-s-widget text-right" dir="rtl" >
-                      <div class="h5"> مناقصة حجر </div>
+                      <div class="h5"> {{$t('stone_Tender')}}   </div>
 
 
                         <div class="text-dark mt-3">
@@ -542,7 +544,7 @@
               </div>
 
 
-    </slick>
+    </div>
 
     <div class="row"  v-if="IsUser==1">
 <div class="col-md-6">

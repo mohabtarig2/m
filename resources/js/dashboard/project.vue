@@ -18,7 +18,7 @@
   <div class="modal-dialog" role="document">
 
    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-تم مسح الصورة بنجاح
+{{$t('The_image_has_been_deleted_successfully')}}
 
 </div>
 
@@ -246,8 +246,8 @@
                             <div class="thm-color">{{$t('display_designs')}}</div>
 
                             <div class="d-flex flex-row">
-  <div class="p-2">تصميم الواجهة<img :src="comment.faced_path" width="100" height="100"></div>
-  <div class="p-2">التوزيعات الداخلية<img :src="comment.dis_path" width="100" height="100"> </div>
+  <div class="p-2"> {{$t('interface_design')}}<img :src="comment.faced_path" width="100" height="100"></div>
+  <div class="p-2">{{$t('internal_distribution')}}<img :src="comment.dis_path" width="100" height="100"> </div>
 
 </div>
                               
@@ -263,7 +263,7 @@
             <button class="btn btn-success text-light rounden-circle confirm" @click="confirm(comment.id,comment.user.name,comment.user.id)"
              data-toggle="modal" data-target="#exampleModal"  v-if="IsUser == 10 && tender.stage==0 ">
              <i class="fa fa-check-circle"></i>
-              اختيار
+              {{$t('choose')}}
              
                </button>
 
@@ -274,19 +274,19 @@
              id="contact"
              title="سوف يتم التواصل معكم عن طريق الشركة لتوقيع عقد الاستشاري"
              v-if="user_ID==tender.user_id && tender.stage==1  && confirm.offer_id ==comment.id" disabled >
-             <i class="fa fa-check-circle " ></i> {{comment.comment!=null ? 'تم اختيار هذا العرض' : 'في انتظار الرد '}}</button>
+             <i class="fa fa-check-circle " ></i> {{comment.comment!=null ? $t('This_offer_has_been_selected') : $t('Waiting_for_reply')}}</button>
 
               <router-link :to="{name:'RequesttenderDetails',params:{type:confirm.type,id:confirm.id}}"
               class="btn mr-2 btn btn-success float-right confirm"
              v-if="user_ID==tender.user_id && tender.stage==1  && confirm.offer_id ==comment.id" disabled >
              <i class='bx bx-log-out'></i>
-           قم بالدخول لمتابعة الطلب</router-link>
+           {{$t('followup_the_request')}}</router-link>
 </span>
 
 <span v-if="IsUser == 1">
              <button class="btn btn-light float-right confirm" 
              v-if="user_ID==confirm.com_id && tender.stage==1  && confirm.offer_id ==comment.id" disabled >
-             <i class="fa fa-check-circle-o" ></i> تم اختيار العرض الذي قدمته 
+             <i class="fa fa-check-circle-o" ></i> {{$t('Your_offer_has_been_selected')}}
                   
 
              </button>
@@ -294,7 +294,7 @@
                class="btn mr-2 btn btn-success float-right confirm"
              v-if="user_ID==confirm.com_id && tender.stage==1  && confirm.offer_id ==comment.id" disabled >
              <i class='bx bx-log-out'></i>
-           قم بالدخول لمتابعة الطلب</router-link>
+          {{$t('followup_the_request')}}</router-link>
 </span>
 
 
@@ -313,17 +313,17 @@ v-if="IsUser == 10" dir="rtl">
     <div class="modal-content">
          <div class="modal-header">
 
-        <h5 class="modal-title" id="exampleModalLongTitle">تأكيد الشركة </h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">{{$t('confirm')}}</h5>
     
          </div>
       <div class="">
-        هل انت متاكد تريد اختيار
+        {{$t('Are_you_sure_you_want_to_choose')}}
         <span class="font-weight-bold">{{userOffer}}</span>
       </div>
       <div class="mt-3">
           <button type="button" class="btn btn-success confirm text-light"
-           @click="confirmOffer(offerid)" :disabled="loading">نعم انا متأكد </button>
-        <button type="button" class="btn btn-light confirm mr-3" data-dismiss="modal">لا</button>
+           @click="confirmOffer(offerid)" :disabled="loading">{{$t('yes')}} </button>
+        <button type="button" class="btn btn-light confirm mr-3" data-dismiss="modal">{{$t('no')}}</button>
 
       </div>
     </div>
@@ -411,7 +411,7 @@ v-model="tab"
 
         <div v-if="checkTab=='false'"   
             class="invalid-feedback text-danger" > 
-            عليك كتابة مساحة البناء  مثال :
+           {{$t('You_have_to_write_the_building_area_for_example')}}
             <b> 3000  </b>
            {{$t('sqft')}}
              </div>
@@ -438,9 +438,9 @@ v-model="tab"
                     />
                     <div v-if="checkBudget=='false'"   
             class="invalid-feedback text-danger" > 
-            عليك كتابة الميزانية التقريبية للبناء  مثال :
+            {{$t('You_have_to_write_the_approximate_budget_for_the_construction_example')}}
             <b> 1,000,000   </b>
-             درهم
+             {{$('aed')}}
              </div>
                     <!-- <d
                     iv
@@ -469,7 +469,7 @@ v-model="tab"
 
                           <div v-if="checkNote=='false'"   
             class="invalid-feedback text-danger" > 
-        عليك كتابة الوصف ليس اقل من 100 حرف :
+        {{$t('You_must_write_the_description_not_less_than')}} 100 {{$t('characters')}}
          
              </div>
 
@@ -499,21 +499,21 @@ v-model="tab"
 
   <input type="checkbox" v-model="the_fence">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> السور</span>
+  <span class="mr-4 ml-4"> {{$t('the_fence')}}</span>
 </label>
 
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="interior_decoration">
   <span class="check" ></span>
-  <span class="mr-4 ml-4"> الديكور الداخلي</span>
+  <span class="mr-4 ml-4"> {{$t('interior_decoration')}}</span>
 </label>
 
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="conditioning">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> التكييف</span>
+  <span class="mr-4 ml-4"> {{$t('conditioning')}}</span>
 </label>
 
 
@@ -523,7 +523,8 @@ v-model="tab"
 
   <input type="checkbox" v-model="electric_pendants">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> العلقات الكهربائية</span>
+  <span class="mr-4 ml-4"> 
+     {{$t('electric_pendants')}}</span>
 </label>
 
 
@@ -531,7 +532,7 @@ v-model="tab"
 
   <input type="checkbox" v-model="Kitchen_Cabinets">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> خزائن المطبخ</span>
+  <span class="mr-4 ml-4"> {{$t('Kitchen_Cabinets')}}</span>
 </label>
 </div>
 <div class="col-6">
@@ -539,13 +540,13 @@ v-model="tab"
 
   <input type="checkbox"  v-model="Bedroom_wardrobes">
   <span class="check"></span>
-  <span class="mr-4 ml-4">  خزائن غرف النوم</span>
+  <span class="mr-4 ml-4">    {{$t('Bedroom_wardrobes')}}</span>
 </label>
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="the_elevator">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> المصعد</span>
+  <span class="mr-4 ml-4"> {{$t('the_elevator')}}</span>
 </label>
 
 
@@ -554,7 +555,7 @@ v-model="tab"
 
   <input type="checkbox" v-model="pelvis">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> الحوض</span>
+  <span class="mr-4 ml-4"> {{$t('pelvis')}}</span>
 </label>
 
 
@@ -562,14 +563,14 @@ v-model="tab"
 
   <input type="checkbox" v-model="garden_design">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> تصميم الحدائق</span>
+  <span class="mr-4 ml-4">  {{$t('garden_design')}}</span>
 </label>
 
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="gypsum">
   <span class="check"></span>
-  <span class="mr-4 ml-4">  الجبس</span>
+  <span class="mr-4 ml-4">  {{$t('gypsum')}}</span>
 </label>
   </div>
  </div>
@@ -581,14 +582,14 @@ v-model="tab"
                 
 <div class="form-group">
         <small class="text-muted">jpg , png </small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}}</small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.structure" v-if="Structure==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.structure" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">  تصميم الواجهة </span>
+           <span class="">   {{$t('interface_design')}} </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotStructureAllowd!=null">{{FileNotStructureAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="StructureFile" style="display:none" ref="structure">
@@ -618,14 +619,14 @@ v-model="tab"
   
                 <div class="form-group">
     <small class="text-muted"> jpg , png</small>
-    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}}</small>
              <div class="file-style">
 
                  <label>
                  <span class="btn btn-light" @click="$refs.fileinput2" v-if="Architect==null"><span class=" fa fa-paperclip" ></span></span>
 
                 <span class="btn btn-light " @click="$refs.fileinput2" v-else><span class="fa fa-paperclip" ></span></span>
-              <span class="">  التوزيع الداخلي  </span>
+              <span class="">   {{$t('internal_distribution')}}  </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotMapAllowd!=null">{{FileNotMapAllowd}}</small>
                 <input type="file" class="form-control"  @change="ArchitectFile" style="display:none" ref="fileinput2" >
 
@@ -668,7 +669,7 @@ v-model="tab"
                     "
                     :disabled="btntender" @click.prevent="formSubmit"
                   >
-                    اضف عرضك
+                   {{$t('add_offer')}}
                   </button>
                 </div>
               </form>
@@ -712,7 +713,7 @@ v-model="tab"
         
            
 
-                            <div class="text-right h5 mt-3 mb-3">صور وامثلة</div>
+                            <div class="text-right h5 mt-3 mb-3">{{$t('image_Exampe')}}</div>
   
               <div v-for="(image, index) in tender.image" :key="index" v-if="tender.image" class="p-descrip-box">
                 <div v-if="image.path" class="mx-auto">
@@ -721,16 +722,16 @@ v-model="tab"
 
 
                     <span class="float-left">
-                     <a :href="image.path" download="download" class="text-right btn btn-light mr-2 ml-2">تحميل</a>
+                     <a :href="image.path" download="download" class="text-right btn btn-light mr-2 ml-2">{{$t('download')}}</a>
                      <a @click="openImageToDelete(image.id,image.path)"  class="text-right btn btn-danger mr-2 ml-2"
-                      data-toggle="modal" data-target="#openImageToDelete" v-if="IsUser==10">ازالة</a>
+                      data-toggle="modal" data-target="#openImageToDelete" v-if="IsUser==10">{{$t('remove')}}</a>
 
                       <div class="modal fade" id="openImageToDelete" tabindex="-1" role="dialog"
                       aria-labelledby="exampleModalCenterTitle" aria-hidden="true" v-if="IsUser==10">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">هل أنت متأكد تريد حذف هذه الصورة ؟</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">{{$t('Are_you_sure_you_want_to_delete_this_photo')}}</h5>
      
       </div>
       <div class="modal-body">
@@ -738,7 +739,8 @@ v-model="tab"
       </div>
       <div class="modal-footer">
 
-        <button type="button" class="btn theme-btn" style="background: #4caf50" @click="deleteThisImage(imgID)">Save changes</button>
+        <button type="button" class="btn theme-btn" style="background: #4caf50" @click="deleteThisImage(imgID)">
+        {{$t('Save_changes')}}</button>
 
       </div>
     </div>
@@ -780,7 +782,7 @@ v-model="tab"
 
             </label>
 
-                                <span class="ttm-color">     اضافة صور  . </span>
+                                <span class="ttm-color">    {{$t('add_image')}} </span>
 
                 </div>
 
@@ -795,9 +797,11 @@ v-model="tab"
                     </span>
 <div class="progress" v-if="progressbar" style="hieght:10px !important">
   <div v-if="progressbar!='100%'" class="progress-bar  progress-bar-striped bg-primary"
-   role="progressbar" :style="'width:'+progressbar+';hieght:10px !important; '" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+   role="progressbar" :style="'width:'+progressbar+';hieght:10px !important; '" aria-valuenow="25" 
+   aria-valuemin="0" aria-valuemax="100"></div>
   <div v-if="progressbar=='100%'" class="progress-bar   bg-success" role="progressbar"
-   :style="'width:'+progressbar+';hieght:10px !important;background-color:#3454d1 !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+   :style="'width:'+progressbar+';hieght:10px !important;background-color:#3454d1 !important'" 
+   aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 
 </div>
 
