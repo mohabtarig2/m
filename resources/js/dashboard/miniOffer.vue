@@ -8,7 +8,7 @@
 
 
 
-<h1 class="  mb-2 text-center mt-3  mb-0">اخر اعلانات تمت اضافتها  </h1>
+<h1 class="  mb-2 text-center mt-3  mb-0">{{$t('Latest_ads_added')}}  </h1>
 
  <div class=" mb-4 row" :dir="$t('directions')" :class="$t('text_align')">
       <div v-for="(offer,index) in recents.data" :key="index" v-bind="recent" class="col-md-4 col-sm-12">
@@ -100,9 +100,12 @@
 							</div>
 
        </div>
-       <router-link class="theme-btn primary mx-auto mt-3 d-block mb-3" :to="{name:'alloffers'}"> {{$t('all')}} </router-link>
+       
        </div>
+       <div class="container">
+<router-link class="theme-btn primary mx-auto mt-3 d-block mb-3" :to="{name:'alloffers'}"> {{$t('all')}} </router-link>
 
+       </div>
 
 
  </div>

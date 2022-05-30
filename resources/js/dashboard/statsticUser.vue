@@ -3,12 +3,12 @@
 
     <slick v-bind="settings" class="tenders" v-if="IsUser==10">
                   <div class="properties-s-widget text-right" dir="rtl" >
-                      <div class="h5"> مناقصة الاستشارات </div>
+                      <div class="h5"> {{$t('Consulting_Tender')}}</div>
 
 
                         <div class="text-dark mt-3">
                              {{counts.ConsluteComplete  }}
-                            مكتمل
+                            {{$t('complete')}}
                              <span class="float-left">  {{
                                Math.floor((counts.ConsluteComplete * 100)/
                                  counts.AllTendersConsulate) || 0
@@ -28,7 +28,7 @@
                         <div class="text-dark mt-3">
                             {{counts.ConsluteExcuted}}
 
-                            تحت التنفيذ
+                            {{$t('UnderExcute')}}
                             <span class="float-left">  {{
                                  Math.floor((counts.ConsluteExcuted * 100)/
                                  counts.AllTendersConsulate) || 0
@@ -47,7 +47,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.ConsluteReview}}
-                                  تحت المراجعة
+                                  {{$t('UnderProcess')}}
                                                    <span class="float-left">  {{
                                 Math.floor( (counts.ConsluteReview * 100)/
                                  counts.AllTendersConsulate)
@@ -64,7 +64,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.ConsluteDraft}}
-                                  مسودة
+                                  {{$t('Draft')}}
                             <span class="float-left">
                                   {{ Math.floor((counts.ConsluteDraft * 100) /counts.AllTendersConsulate)
                                   || 0
@@ -81,7 +81,7 @@
 
                               <div class="text-dark mt-3">
                                 {{counts.ConsluteOpen}}
-                                  مفتوحة
+                                  {{$t('open')}}
                                   <span class="float-left">
                                   {{ Math.floor((counts.ConsluteOpen * 100) /counts.AllTendersConsulate)   || 0}}%
                                  </span>
@@ -95,7 +95,7 @@
                         </div>
                                <div class="text-dark mt-3">
                                                                      {{counts.ConsluteClosed}}
-                                   مغلقة
+                                   {{$t('Closed')}}
 <span class="float-left">
                                   {{ Math.floor((counts.ConsluteClosed * 100) /counts.AllTendersConsulate)   || 0 }}%
                                  </span>
@@ -118,7 +118,7 @@
 
                         <div class="text-dark mt-3">
                              {{counts.interiorComplete  }}
-                            مكتمل
+                            {{$t('complete')}}
                              <span class="float-left">  {{
                                Math.floor((counts.interiorComplete * 100)/
                                  counts.AllTenderInterior) || 0
@@ -138,7 +138,7 @@
                         <div class="text-dark mt-3">
                             {{counts.interiorExcuted}}
 
-                            تحت التنفيذ
+                           {{$t('UnderExcute')}}
                             <span class="float-left">  {{
                                  Math.floor((counts.interiorExcuted * 100)/
                                  counts.AllTenderInterior   ) || 0
@@ -157,7 +157,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.interiorReview}}
-                                  تحت المراجعة
+                                {{$t('UnderProcess')}}
                                                    <span class="float-left">  {{
                                 Math.floor( (counts.interiorReview * 100)/
                                  counts.AllTenderInterior   )
@@ -174,7 +174,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.ConsluteDraft}}
-                                  مسودة
+                                  {{$t('Draft')}}
                             <span class="float-left">
                                   {{ Math.floor((counts.ConsluteDraft * 100) /counts.AllTenderInterior   )
                                   || 0
@@ -191,7 +191,7 @@
 
                               <div class="text-dark mt-3">
                                 {{counts.ConsluteOpen}}
-                                  مفتوحة
+                                  {{$t('open')}}
                                   <span class="float-left">
                                   {{ Math.floor((counts.ConsluteOpen * 100) /counts.AllTenderInterior   )   || 0}}%
                                  </span>
@@ -205,7 +205,7 @@
                         </div>
                                <div class="text-dark mt-3">
                                                                      {{counts.ConsluteClosed}}
-                                   مغلقة
+                                   {{$t('Closed')}}
 <span class="float-left">
                                   {{ Math.floor((counts.ConsluteClosed * 100) /counts.AllTenderInterior   )   || 0 }}%
                                  </span>
@@ -227,7 +227,7 @@
 
                         <div class="text-dark mt-3">
                              {{counts.ConsrComplete }}
-                            مكتمل
+                            {{$t('complete')}}
                              <span class="float-left">  {{
                                Math.floor((counts.ConsrComplete * 100)/
                                  counts.AllTenderConsr)
@@ -247,7 +247,7 @@
                         <div class="text-dark mt-3">
                             {{counts.ConsrExcuted}}
 
-                            تحت التنفيذ
+                            {{$t('UnderExcute')}}
                             <span class="float-left">  {{
                                  Math.floor((counts.ConsrExcuted * 100)/
                                  counts.AllTenderConsr)
@@ -264,7 +264,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.ConsrReview}}
-                                  تحت المراجعة
+                                  {{$t('UnderProcess')}}
                                                    <span class="float-left">  {{
                                 Math.floor( (counts.ConsrReview * 100)/
                                  counts.AllTenderConsr)
@@ -281,7 +281,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.ConsrDraft}}
-                                  مسودة
+                                  {{$t('Draft')}}
                             <span class="float-left">
                                   {{ Math.floor((counts.ConsrDraft * 100) /counts.AllTenderConsr)}}%
                                  </span>
@@ -296,7 +296,7 @@
 
                               <div class="text-dark mt-3">
                                 {{counts.ConsrOpen}}
-                                  مفتوحة
+                                  {{$t('open')}}
                                   <span class="float-left">
                                   {{ Math.floor((counts.ConsrOpen * 100) /counts.AllTenderConsr)}}%
                                  </span>
@@ -310,7 +310,7 @@
                         </div>
                                <div class="text-dark mt-3">
                                                                      {{counts.ConsrClosed}}
-                                   مغلقة
+                                   {{$t('Closed')}}
 <span class="float-left">
                                   {{ Math.floor((counts.ConsrClosed * 100) /counts.AllTenderConsr)}}%
                                  </span>
@@ -336,7 +336,7 @@
 
                         <div class="text-dark mt-3">
                              {{counts.hvacComplete }}
-                            مكتمل
+                            {{$t('complete')}}
                              <span class="float-left">  {{
                                Math.floor((counts.hvacComplete * 100)/
                                  counts.AllTenderhvac)
@@ -356,7 +356,7 @@
                         <div class="text-dark mt-3">
                             {{counts.hvacExcuted}}
 
-                            تحت التنفيذ
+                            {{$t('UnderExcute')}}
                             <span class="float-left">  {{
                                  Math.floor((counts.hvacExcuted * 100)/
                                  counts.AllTenderhvac)
@@ -373,7 +373,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.hvacReview}}
-                                  تحت المراجعة
+                                  {{$t('UnderProcess')}}
                                                    <span class="float-left">  {{
                                 Math.floor( (counts.hvacReview * 100)/
                                  counts.AllTenderhvac)
@@ -390,7 +390,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.hvacDraft}}
-                                  مسودة
+                                  {{$t('Draft')}}
                             <span class="float-left">
                                   {{ Math.floor((counts.hvacDraft * 100) /counts.AllTenderhvac)}}%
                                  </span>
@@ -405,7 +405,7 @@
 
                               <div class="text-dark mt-3">
                                 {{counts.hvacOpen}}
-                                  مفتوحة
+                                  {{$t('open')}}
                                   <span class="float-left">
                                   {{ Math.floor((counts.hvacOpen * 100) /counts.AllTenderhvac)}}%
                                  </span>
@@ -419,7 +419,7 @@
                         </div>
                                <div class="text-dark mt-3">
                                                                      {{counts.hvacClosed}}
-                                   مغلقة
+                                   {{$t('Closed')}}
 <span class="float-left">
                                   {{ Math.floor((counts.hvacClosed * 100) /counts.AllTenderhvac)}}%
                                  </span>
@@ -442,7 +442,7 @@
 
                         <div class="text-dark mt-3">
                              {{counts.stoneComplete }}
-                            مكتمل
+                            {{$t('complete')}}
                              <span class="float-left">  {{
                                Math.floor((counts.stoneComplete * 100)/
                                  counts.AllTenderstone)
@@ -462,7 +462,7 @@
                         <div class="text-dark mt-3">
                             {{counts.stoneExcuted}}
 
-                            تحت التنفيذ
+                            {{$t('UnderExcute')}}
                             <span class="float-left">  {{
                                  Math.floor((counts.stoneExcuted * 100)/
                                  counts.AllTenderstone)
@@ -479,7 +479,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.stoneReview}}
-                                  تحت المراجعة
+                                  {{$t('UnderProcess')}}
                                                    <span class="float-left">  {{
                                 Math.floor( (counts.stoneReview * 100)/
                                  counts.AllTenderstone)
@@ -496,7 +496,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.stoneDraft}}
-                                  مسودة
+                                  {{$t('Draft')}}
                             <span class="float-left">
                                   {{ Math.floor((counts.stoneDraft * 100) /counts.AllTenderstone)}}%
                                  </span>
@@ -511,7 +511,7 @@
 
                               <div class="text-dark mt-3">
                                 {{counts.stoneOpen}}
-                                  مفتوحة
+                                  {{$t('open')}}
                                   <span class="float-left">
                                   {{ Math.floor((counts.stoneOpen * 100) /counts.AllTenderstone)}}%
                                  </span>
@@ -525,7 +525,7 @@
                         </div>
                                <div class="text-dark mt-3">
                                                                      {{counts.stoneClosed}}
-                                   مغلقة
+                                   {{$t('Closed')}}
 <span class="float-left">
                                   {{ Math.floor((counts.stoneClosed * 100) /counts.AllTenderstone)  || 0 }}%
                                  </span>
@@ -551,7 +551,7 @@
 
                          <h1 class="theme-color">{{counts.AllTenderConsr}}</h1>
 
-								<h3 class="price-title fs-40"> مجموع المناقصات</h3>
+								<h3 class="price-title fs-40"> {{$t('Group_of_tenders')}}</h3>
 
 							</div>
 							<div class="a-property-btn">
@@ -566,12 +566,12 @@
 
 <div class="col-md-6">
  <div class="properties-s-widget text-right" dir="rtl" >
-                      <div class="h5"> مناقصة المقاولات </div>
+                      <div class="h5"> {{$t('Conturction_Tender')}}</div>
 
 
                         <div class="text-dark mt-3">
                              {{counts.ConsrComplete }}
-                            مكتمل
+                            {{$t('complete')}}
                              <span class="float-left">  {{
                                Math.floor((counts.ConsrComplete * 100)/
                                  counts.AllTenderConsr)
@@ -591,7 +591,7 @@
                         <div class="text-dark mt-3">
                             {{counts.ConsrExcuted}}
 
-                            تحت التنفيذ
+                            {{$t('UnderExcute')}}
                             <span class="float-left">  {{
                                  Math.floor((counts.ConsrExcuted * 100)/
                                  counts.AllTenderConsr)
@@ -608,7 +608,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.ConsrReview}}
-                                  تحت المراجعة
+                                  {{$t('UnderProcess')}}
                                                    <span class="float-left">  {{
                                 Math.floor( (counts.ConsrReview * 100)/
                                  counts.AllTenderConsr)
@@ -625,7 +625,7 @@
                         </div>
                               <div class="text-dark mt-3">
                                   {{counts.ConsrDraft}}
-                                  مسودة
+                                  {{$t('Draft')}}
                             <span class="float-left">
                                   {{ Math.floor((counts.ConsrDraft * 100) /counts.AllTenderConsr)   || 0}}%
                                  </span>
@@ -640,7 +640,7 @@
 
                               <div class="text-dark mt-3">
                                 {{counts.ConsrOpen}}
-                                  مفتوحة
+                                  {{$t('open')}}
                                   <span class="float-left">
                                   {{ Math.floor((counts.ConsrOpen * 100) /counts.AllTenderConsr)   || 0}}%
                                  </span>
@@ -654,7 +654,7 @@
                         </div>
                                <div class="text-dark mt-3">
                                                                      {{counts.ConsrClosed}}
-                                   مغلقة
+                                   {{$t('Closed')}}
 <span class="float-left">
                                   {{ Math.floor((counts.ConsrClosed * 100) /counts.AllTenderConsr)}}%
                                  </span>
@@ -689,8 +689,8 @@ export default {
             counts:null,
                    settings:{
 
-prevArrow: false,
-    nextArrow: false,
+prevArrow: true,
+    nextArrow: true,
   infinite: true,
   speed: 500,
   slidesToShow: 5,

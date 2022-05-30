@@ -23,6 +23,9 @@
     "Diwan":"Diwan",
     "Grant_Funding_Bank":"Grant Funding Bank",
     "Approximate_added_amount_Financing_method":"Approximate added amount Financing method",
+    "Follow_up_on_requests_for_villas":"  Follow up on requests for villas",
+    "Follow_up_on_engineering_consultancy_requests":"Follow up on engineering consultancy requests",
+
 
     
     "more":"more details",
@@ -53,6 +56,7 @@
     "edit_on_offer":"Edit and submit an application",
     "price_include":"the price includes",
     "tender_request":"Tender Request",
+    "CostGov":"Government department fees",
     "Desgin_Descrpition":"Desgin Descrpition",
     "total_area_build":"total area build",
     "supervision":"supervision",
@@ -94,13 +98,40 @@
     "start_project":"start your Design from the beginning",
     "save_peoject":"  Save Money ",
     "Get_imagination":" Realize your imagination",
+    "Join_To_Our_Family":"Join To Our Family",
+    "User_name":"User_name",
+    "Login_Now":"Login Now",
+    "You_Register_Successfuly":"You Register Successfuly",
+    "Grow_your_business":"Grow your business perfectly and easily",
+    "Get_New_Project_and_Client":"Get New Project and Client",
+    "how_its_work":"how it's work",
+    "content_its_work":"Submit your classified ads, follow up on tenders, submit offers and get many projects",
+    "what_you_will_get":"what you will get",
+
+    
+    "New_Customers":"New Customers",
+    "extra_revenue":"extra revenue",
+    "Get_More_projects":"Get More projects",
+    "project_status":"project status",
+    "subtitle_New_Customers":"Easy to understand projects through the platform",
+    "Ease_of_follow":"Ease of follow-up of the project",
+    "Ready_To_Join_us":"Ready To Join us",
+    "join_now":"Join now",
+    "my_ads":"My Ads",
+    "consr_tender":"constructions Tenders",
+    "ads_status":"ads status",
+
+
+
+
 
     "Get_quility":"Get quility",
     "Villa_offer_describe":"Exclusive deals by consultants approved by government agencies in the United Arab Emirates.",
     "how_it_work_qoute":"Our goal is to eliminate all side currencies between contracting and consulting.",
     "Find Out":"Find Out",
     "team_goals":"we works hard to gain customer satisfaction and develop bidding methods in order to provide credibility and safety for citizens and residents.",
-    "add_tender":"add tender",
+    "Add_tender":"Add Tender",
+    "add_tender":"Add Tender",
     "our_goals":"our goals",
     "goal1":"credibility and transparency",
     "goal2":"credibility and transparency",
@@ -243,6 +274,8 @@
     "email_verification":" email verification",
     "Verify_Your_Email":"Verify Your Email",
     "Resend_Email_verification":"Resend Email verification",
+    "FollowUp_Request":"Follow Up On Request",
+
 
 
     "title-tips1":"Start building your project",
@@ -260,29 +293,86 @@
     "Draft":"Draft",
     "Closed":"Closed",
     "Rejected":"Rejected",
+    "add_new_ads":"add new ads",
+    "File_of_Company":"Company Profile",
+    "Offer_details":"Offer details",
+    "display_designs":"display designs",
+    "the_proposal":"the proposal",
+    "superVision_monthly":"monthly / supervision",
+    "design_price":"You have to write the design price , Example",
+    "You_have_to_write_the_construction_supervision_price_example":"You have to write the construction supervision price example:",
+    
+    "Consulting_Tender":"Consulting Tenders",
+    "Conturction_Tender":"Conturction Tenders",
+    "stone_Tender":"stone Tenders",
+    "hvac_Tender":"Hvac Tenders",
+    "Interior_Tender":"Interior Tenders",
+    "Numbers_Offer":"Number of offers",
+    "Flow_Conturction_Tender":"Flow Conturction Tender",
+    "Flow_Hvac_tender":"Flow Hvac tender",
+    "Flow_Stone_tender":"Flow Stone tender",
+    "Flow_Inteior_tender":"Flow Inteior tender",
+    "Is_a_basement_required":"Is a basement required?",
+    "Desired_villa_shape":"Desired villa shape",
+    "view":"view",
+    "soil_investigation_file":"soil investigation file",
+    "earth_map_file":"earth map file",
+    "budget_Total_Build":"Project construction budget",
+
+    "Receiving_offers":"Receiving offers",
+    "implementation_phase":"implementation phase",
+    "Implementation_completed":"Implementation completed",
+    
+
+
+
+    "Group_of_tenders":"Number of tenders",
+    "Finishing_type":"Finishing type",
+    "MY_Project":"MY Project",
+    "open_project":"open projects",
+    "owner":"owner",
+    "Engineering_Consulting_Office":"Engineering Consulting Office",
+    "Tender_Num":"Tender Number",
+    "Message_update_data":"Data has been updated successfully.",
 
     "about_us":"Amb was established in 2019 with an Emirati administration and succeeded in meeting the needs of its valued customers and contributed to reducing the cost of construction.",
 
     "companies":"companies",
+    "Latest_ads_added":"Latest ads added",
+    "The_latest_engineering_consultancy_offers":"The latest engineering consultancy offers",
+    "The_latest_contracting_tender_offer":"The latest contracting tender offers submitted by you",
+    "The_latest_offers_for_air_conditioning_tenders":"The latest offers for air conditioning tenders submitted by you",
+    "The_latest_offers_for_stone_tenders":"The latest offers for stone tenders submitted by you",
+    "The_latest_offers_for_interior_decoration_tenders":"The latest offers for interior decoration tenders submitted by you",
+
 
 
     "added_new_Tender":"added new Tender",
     "You_Tender_accepted":"You Tender accepted",
     "You_Tender_rejected":"You Tender rejected",
-    "Update_The_Tender":"Update_The_Tender",
+    "Update_The_Tender":"Update The Tender",
     "Chooseed_Your_Tender":"Your Offer Have Been Choose",
     "Add_New_Offer":"Add New Offer",
     "sent_request":"Send Request to Complete The Project",
     "Complete_Request":"Completed The Project",
     "Added_review":"Added Review ",
     "construction":"consturiction",
+    "short_descripe":"Brief description of the project",
+    "long_descripe":"Detailed description of the project",
+    "ground_floor":"ground floor",
+    "Service_room_location":" Service room position  ",
+    "Maidroom_mainkitchen_pantry":"Maid room + main kitchen + pantry",
+
 
 
     "update":"update",
+    "update_data":"update data",
     "new":"new",
     "Done_choosed":"have been choose",
 
-    "RequestsVilla":"Requests Villa"
+    "RequestsVilla":"Requests Villa",
+
+    "whatsapp":"whatsapp"
 
 
 

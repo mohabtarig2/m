@@ -7,11 +7,11 @@
 
 
 
-<h2 class="text-center">مناقصات الاستشارات الهندسية</h2>
+<h2 class="text-center">{{$t('Consulting_Tender')}}</h2>
 <div class="links-requests mb-3">
-<router-link :to="{name:'ConslTenders'}" class="theme-color mr-3" v-if="IsUser==10"> مناقصات الاستشارات</router-link>
-<router-link :to="{name:'request_consulte'}" class="theme-color  mr-3">متابعة الطلبات</router-link>
-<router-link :to="{name:'requestVilla'}" class="theme-color  mr-3">متابعة طلبات الفلل</router-link>
+<router-link :to="{name:'ConslTenders'}" class="theme-color mr-3" v-if="IsUser==10">  {{$t('Consulting_Tender')}}</router-link>
+<router-link :to="{name:'request_consulte'}" class="theme-color  mr-3"> {{$t('FollowUp_Request')}}</router-link>
+<router-link :to="{name:'requestVilla'}" class="theme-color  mr-3">{{$t('Follow_up_on_requests_for_villas')}}</router-link>
 
 
 </div>
@@ -28,7 +28,7 @@
          <router-link class="font-weight-bold text-dark ml-2" :to="'/Projects/'+tender.id+''" >{{tender.title}}
                  <status :status="tender.status"></status>
         </router-link>
-          <sup>({{tender.all_offers.length>0 ? tender.all_offers.length :0}})عدد العروض</sup>
+          <sup>({{tender.all_offers.length>0 ? tender.all_offers.length :0}}){{$t('Numbers_Offer')}}</sup>
    <small class="float-right"> {{tender.added_at}}</small>
 
 
@@ -48,7 +48,7 @@
 {{$t('rooms')}} :{{tender.bedroom}}
 </span>
 {{id}}
-<router-link class="   theme-btn     mx-auto float-right" :to="'/Projects/'+tender.id+''">المزيد من التفاصيل
+<router-link class="   theme-btn     mx-auto float-right" :to="'/Projects/'+tender.id+''">{{$t('more')}}
      </router-link>
 
     </div>

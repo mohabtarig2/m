@@ -4,10 +4,10 @@
 <template>
   <div>
 
-<h2 class="text-center">مناقصات الحجر</h2>
+<h2 class="text-center">{{$t('Flow_Stone_tender')}}</h2>
 <div class="links-requests mb-3">
-<router-link :to="{name:'StoneTenders'}" class="theme-color mr-3" > مناقصات الحجر</router-link>
-<router-link :to="{name:'requestStone'}" class="theme-color">متابعة الطلبات</router-link>
+<router-link :to="{name:'StoneTenders'}" class="theme-color mr-3" > {{$t('stone_Tender')}}</router-link>
+<router-link :to="{name:'requestStone'}" class="theme-color">{{$t('FollowUp_Request')}}</router-link>
 </div>
 
    <div class="s-blog-sidebar mt-3" v-for="request , index in data" :key="index">

@@ -350,6 +350,22 @@ class RequestTenderController extends Controller
 
 
     }
+    public function interior(){
+        // $tconsr = Tconstr::where('user_id',Auth::id())->with('user')->get();
+        $request_tenders = request_tender::where('type','interior')->with('user','company','offerInterior','interior')->
+        where('user_id',Auth::id())->latest()->get();
+        foreach($request_tenders as $tender){
+
+
+        $tender->setAttribute('added_at',$tender->created_at->diffForHumans());
+    }
+
+        return response()->json($request_tenders) ;
+
+
+
+
+    }
     public function hvac(){
         // $tconsr = Tconstr::where('user_id',Auth::id())->with('user')->get();
         $request_tenders = request_tender::where('type','hvac')->with('user','company','offerHvac','hvac')->where('user_id',Auth::id())->latest()->get();
@@ -414,6 +430,22 @@ class RequestTenderController extends Controller
 
         return response()->json($request_tenders) ;
     }
+
+    public function InteriorCompany(){
+
+        $request_tenders = request_tender::where('type','interior')->with('user','company','offerInterior','interior')->
+        where('com_id',Auth::id())->latest()->get();
+        foreach($request_tenders as $tender){
+
+
+        $tender->setAttribute('added_at',$tender->created_at->diffForHumans());
+    }
+
+        return response()->json($request_tenders) ;
+    }
+
+
+    
     public function hvacCompany(){
 
         $request_tenders = request_tender::where('type','hvac')->with('user','company','offerHvac','hvac')->where('com_id',Auth::id())->latest()->get();

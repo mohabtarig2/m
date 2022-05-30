@@ -1,35 +1,36 @@
 <template>
 <div class="d-inline">
      <span class="project-state" v-if="status==0">
-                          <span class="badge badge-warning">تحت المراجعة</span>
+                          <span class="badge badge-warning">{{$t('UnderProcess')}} </span>
                       </span>
   <span class="project-state" v-else-if="status==1">
-                          <span class="badge badge-success">مفتوح</span>
+                          <span class="badge badge-success">{{$t('open')}}</span>
              </span>
 
 
                        <span class="project-state" v-else-if="status==2">
-                          <span class="badge badge-success">قيد التنفيذ</span>
+                          <span class="badge badge-success">{{$t('UnderExcute')}}</span>
                       </span>
 
                        <span class="project-state" v-else-if="status==3">
-                          <span class="badge badge-success">اكتمال</span>
+                          <span class="badge badge-success">{{$t('complete')}}</span>
                       </span>
 
                         <span class="project-state" v-else-if="status==4">
-                          <span class="badge badge-secondary">مسودة</span>
+                          <span class="badge badge-secondary">{{$t('draft')}}</span>
                       </span>
                        <span class="project-state" v-else-if="status==5">
-                          <span class="badge badge-secondary">مغلق</span>
+                          <span class="badge badge-secondary">{{$t('Closed')}}</span>
 
 
 </span>
 
 <span class="project-state" v-else-if="status==6">
-                          <span class="badge badge-danger">مرفوض</span>
+                          <span class="badge badge-danger">{{$t('Rejected')}}</span>
 
 
 </span>
+
 </div>
 
 </template>

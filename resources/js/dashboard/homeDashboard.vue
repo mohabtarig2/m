@@ -46,7 +46,7 @@
 </div> -->
 
 <div class="container mt-5">
-  <h2 class="text-right" v-if="IsUser==10">مناقصات </h2>
+  <h2 class="text-right" v-if="IsUser==10">{{$t('tenders')}} </h2>
         <div class="row " >
 
 
@@ -64,13 +64,13 @@
                 <div class="inner">
                   <h3 class="text-light" v-if="counts">{{counts.AllTendersConsulate}}</h3>
 
-                  <p class="text-light">  الاستشارات  </p>
+                  <p class="text-light">  {{$t('consulting')}}  </p>
                 </div>
                 <div class="icon">
 <i class='bx bx-building-house'></i>                </div>
 
                 <router-link :to="{name:'ConslTenders'}" class="small-box-footer">
-                 اكثر
+                 {{$t('more')}}
                   <i class="fas fa-arrow-circle-right"></i>
                 </router-link>
               </div>
@@ -83,7 +83,7 @@
                   <h3 class="text-light" v-if="counts">{{counts.AllTenderConsr}}</h3>
 
                   <p class="text-light">
-                      مقاولات
+                      {{$t('construction')}}
                        </p>
                 </div>
 
@@ -93,7 +93,7 @@
                   <i class=" fas fa-hard-hat "></i>
                 </div>
                 <router-link :to="{name:'constrtenders'}" class="small-box-footer">
-                    اكثر 
+                   {{$t('more')}}
                   <i class="fas fa-arrow-circle-right"></i>
                 </router-link>
               </div>
@@ -105,13 +105,13 @@
                 <div class="inner">
                   <h3 class="text-light" v-if="counts">{{counts.AllTenderhvac}}</h3>
 
-                  <p class="text-light">تكييف</p>
+                  <p class="text-light">  {{$t('hvac')}}</p>
                 </div>
                 <div class="icon">
                   <i class="fas fa-fan"></i>
                 </div>
                 <router-link :to="{name:'HvacTenders'}" class="small-box-footer">
-                 أكثر
+                 {{$t('more')}}
                   <i class="fas fa-arrow-circle-right"></i>
                 </router-link>
               </div>
@@ -125,14 +125,14 @@
                   {{counts.AllTenderstone}}
                   </h3>
 
-                  <p class="text-light">حجر</p>
+                  <p class="text-light">{{$t('stone')}}</p>
                 </div>
 
                 <div class="icon">
                   <i class='bx bx-cylinder' ></i>
                 </div>
                 <router-link :to="{name:'StoneTenders'}" class="small-box-footer">
-                  اكثر
+                  {{$t('more')}}
                   <i class="fas fa-arrow-circle-right"></i>
                 </router-link>
               </div>
@@ -144,14 +144,14 @@
                   {{counts.AllTenderInterior}}
                   </h3>
 
-                  <p class="text-dark">ديكور</p>
+                  <p class="text-dark">{{$t('interior_design')}}</p>
                 </div>
 
                 <div class="icon">
                   <i class='fas fa-couch' ></i>
                 </div>
                 <router-link :to="{name:'InteriorTenders'}" class="small-box-footer">
-                  اكثر
+                  {{$t('more')}}
                   <i class="fas fa-arrow-circle-right"></i>
                 </router-link>
               </div>
@@ -167,7 +167,7 @@
     <div class="col-md-12"  >
 
 
-<h2 class=" thm-color text-right"> حالة الطلبات </h2>
+<h2 class=" thm-color text-right"> {{$t('ads_status')}} </h2>
 <div v-if="IsUser==1 || IsUser==6 || IsUser==4 || IsUser==3 || IsUser==5" class="row">
 
  <div class="col-md-4 col-sm-12">
@@ -177,7 +177,7 @@
                 <div class="inner">
                   <h3 class="text-light">{{countsAds.active}}</h3>
 
-                  <p class="text-light"> المفعلة </p>
+                  <p class="text-light"> {{$t('open')}} </p>
                 </div>
                 <div class="icon">
   <i class="far fa-check-circle"></i>
@@ -191,7 +191,7 @@
                   <h3 class="text-light">{{countsAds.pending}}</h3>
 
                   <p class="text-light">
-                      المعلقة
+                      {{$t('UnderExcute')}}
                        </p>
                 </div>
 
@@ -211,7 +211,7 @@
                 <div class="inner">
                   <h3 class="text-light">{{countsAds.draft}}</h3>
 
-                  <p class="text-light">مسودة</p>
+                  <p class="text-light">{{$t('Draft')}}</p>
                 </div>
                 <div class="icon">
                  <i class='bx bxs-folder-minus'></i>
@@ -221,14 +221,14 @@
     </div>
 </div>
    <router-link to="dashboard/myads" class="theme-btn primary    mt-2 mb-2  " v-if="IsUser!=10">
-   اضف اعلان جديد  <i class="fa fa-plus fa-fw "></i>
+  {{$t('add_new_ads')}}  <i class="fa fa-plus fa-fw "></i>
    </router-link>
 
 
 
 
 
-<h2 class=" thm-color text-right" v-if="IsUser==1"> المناقصات </h2>
+<h2 class=" thm-color text-right" v-if="IsUser==1"> {{$t('tenders')}} </h2>
 
 
 
@@ -322,11 +322,10 @@ export default {
     return {
          settings:{
 
-prevArrow: false,
-    nextArrow: false,
+
   infinite: true,
   speed: 500,
-  slidesToShow: 5,
+  slidesToShow: 4,
 
  arrows:true,
 
@@ -391,6 +390,26 @@ responsive: [
     },
 
 methods:{
+    
+              reset(resendemail) {
+      this.loading = true;
+      this.errors = null;
+this.email=resendemail;
+
+
+       try {
+         axios.post("/verification/resend", {
+                        email:this.email
+
+                }).then(res=>{
+                    this.link=res.data.message;
+                });
+
+      } catch (error) {
+        this.errors = error.response && error.response.data.errors;
+      }
+      this.loading = false;
+    },
     getCountAds(){
 
         let ads =null;

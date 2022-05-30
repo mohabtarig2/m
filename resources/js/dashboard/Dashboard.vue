@@ -87,7 +87,7 @@
   <li >
          <a @click="logout()">
     <i class='bx bx-log-out' id="log_out" ></i>
-             <span class="links_name">تسجيل خروج</span>
+             <span class="links_name">{{$t('logout')}}</span>
          </a>
          <span class="tooltip">{{$t('logout')}}</span>
      </li>
@@ -96,6 +96,13 @@
 <div class="home-section">
 
 <a class="mt-5 ml-3" href="\"><i class="fa fa-eye"></i> Home</a>
+       <span class="mt-5 ">
+                         <small> <a class="" @click="switchLang('ar')" v-show="lang=='en' || lang==null">
+                         <img src="https://img.icons8.com/color/20/000000/united-arab-emirates.png"/>عربي</a></small>
+                                        <small><a @click="switchLang('en')" v-show="lang=='ar'">
+                                           <img src="https://img.icons8.com/color/20/000000/usa.png"/> English
+                                            </a></small>
+                    </span>
 
 
 <router-view></router-view>
@@ -137,9 +144,9 @@
       <li>
          <router-link :to="{name:'mytenders'}" v-if="IsUser==10" >
 <i class='bx bx-list-ul'></i>     
-    <span class="links_name">مشاريعي</span>
+    <span class="links_name">{{$t('MY_Project')}}</span>
          </router-link>
-       <span class="tooltip">مشاريعي </span>
+       <span class="tooltip">{{$t('MY_Project')}} </span>
      </li>
 
      <li>
@@ -190,7 +197,7 @@
      <li >
          <a @click="logout()">
     <i class='bx bx-log-out' id="log_out" ></i>
-             <span class="links_name">تسجيل خروج</span>
+             <span class="links_name">{{$t('logout')}}</span>
          </a>
          <span class="tooltip">{{$t('logout')}}</span>
      </li>
@@ -208,7 +215,7 @@
 
 <div class="home-section">
 
-<a class="mt-3 ml-3" href="\"><i class="fa fa-eye"></i> Home</a>
+<a class="mt-3 ml-3" href="\"><i class="fa fa-eye"></i> {{$t('home')}}</a>
 
 
   {{windowWidth}}
@@ -242,8 +249,10 @@ import NotificationBar from '../notificationBar.vue'
 import StatsticUser from './statsticUser.vue'
 import branch from './branch.vue'
 export default {
+  
   components: { complete, Achive, FileUpload, StatsticUser, NotificationBar, Login ,branch},
     data(){
+       const lang = localStorage.getItem('lang') || localStorage.setItem('lang','ar') ;
         return{
         users:null,
         seen:false,
@@ -295,6 +304,10 @@ export default {
   
 
     methods: {
+       switchLang(event){
+           localStorage.setItem('lang',event)
+           location.reload();
+       },
         onResize() {
             this.windowWidth = window.innerWidth
                  if(this.windowWidth >=1000)
@@ -345,26 +358,8 @@ export default {
         })
        
     },
-   
-              reset(resendemail) {
-      this.loading = true;
-      this.errors = null;
-this.email=resendemail;
-
-
-       try {
-         axios.post("/password/email", {
-                        email:this.email
-
-                }).then(res=>{
-                    this.link=res.data.message;
-                });
-
-      } catch (error) {
-        this.errors = error.response && error.response.data.errors;
-      }
-      this.loading = false;
-    },
+    
+ 
 
       
     

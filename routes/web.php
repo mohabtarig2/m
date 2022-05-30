@@ -474,9 +474,11 @@ Route::get('request/consulting','RequestTenderController@consulting');
 Route::get('request/consultingCompany','RequestTenderController@consultingCompany');
 Route::get('request/hvac','RequestTenderController@hvac');
 Route::get('request/stone','RequestTenderController@stone');
+Route::get('request/interior','RequestTenderController@interior');
 Route::get('request/constructions','RequestTenderController@constructions');
 Route::get('request/constructionsCompany','RequestTenderController@constructionsCompany');
 Route::get('request/StoneCompany','RequestTenderController@StoneCompany');
+Route::get('request/InteriorCompany','RequestTenderController@InteriorCompany');
 Route::get('request/{type}/{id}','RequestTenderController@requestConstructionsDetails');
 Route::post('doneorno','RequestTenderController@doneorno');
 

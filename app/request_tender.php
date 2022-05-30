@@ -31,6 +31,10 @@ public function review(){
 
         return $this->belongsTo('App\OfferStone','offer_id');
     }
+    public function offerInterior(){
+
+        return $this->belongsTo('App\offerInterior','offer_id');
+    }
     public function toffers(){
 
         return $this->belongsTo('App\Toffers','offer_id');
@@ -43,6 +47,10 @@ public function review(){
     public function hvac(){
 
         return $this->belongsTo('App\hvac','tender_id');
+    }
+    public function interior(){
+
+        return $this->belongsTo('App\Tinterior','tender_id');
     }
     public function stone(){
 

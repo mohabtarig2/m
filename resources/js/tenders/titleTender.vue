@@ -10,11 +10,11 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-content">
 <div class="contact-form">
 
-    <h1 class="text-center thm-color">  تحديث البيانات
+    <h1 class="text-center thm-color">  {{$t('update_data')}}
 
     </h1>
     <p class="main-color font-weight-bold text-center">
-        مناقصة رقم
+        {{$t('Tender_Num')}}
         ({{tender_id}})
         </p>
 
@@ -30,7 +30,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   name="title"
                   :value="title"
                   :class="[{'is-invalid': errorFor('title')}]"
-                  placeholder="وصف مختصر للمشروع"
+                  :placeholder="$t('short_descripe')"
 
                 />
                 <div
@@ -50,7 +50,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     name="desc"
                     v-model="note"
                     :class="[{'is-invalid': errorFor('Notes')}]"
-                      placeholder=" أدخل وصفاً مفصلاً لمشروعك   "
+                      :placeholder="$('long_descripe')"
 
                   ></textarea>
                   <div
@@ -65,7 +65,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="row">
 
                     <div class="  form-group col-6" dir="rtl">
-                      <label >الي</label>
+                      <label >{{$('to')}}</label>
                       <div class="input-group mb-2">
                         <input
                           type="text"
@@ -88,7 +88,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     </div>
                     <div class="  col-6" dir="rtl">
                       <div class="form-group mb-2">
-                        <label  >من</label>
+                        <label  >{{$('from')}}</label>
 
                         <input
                        
@@ -156,21 +156,21 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
     <div class="col-6">
 
- <div class="font-weight-bold h6 mt-3 text-right thm-color">الطوابق</div>
+ <div class="font-weight-bold h6 mt-3 text-right thm-color">{{$t('floors')}}</div>
 
               <div class="form-group text-right">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
   <input type="radio" name="floors" value="1" v-model="floors">
   <span class="check" style="border-radius:10px"></span>
-   <span class="mr-4 ml-4"> طابق + طابق ارضي </span>
+   <span class="mr-4 ml-4">1 {{$t('floor')}} + {{$t('ground_floor')}}</span>
 </label>
 
  <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="radio" name="floors" value="2"  v-model="floors">
   <span class="check" style="border-radius:10px"></span>
-  <span class="mr-4 ml-4"> طابقين + طابق ارضي </span>
+  <span class="mr-4 ml-4"> 2 {{$t('floor')}} + {{$t('ground_floor')}} </span>
 </label>
                                 </div>
     </div>
@@ -181,7 +181,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 </div>
 <div class="row">
 <div class="col-12">
- <div class="h6 font-weight-bold text-right thm-color">مكان غرفة الخدمات   </div>
+ <div class="h6 font-weight-bold text-right thm-color">{{$t('Service_room_location')}}  </div>
 
                           <div class="form-group text-right">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -189,9 +189,9 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <input type="radio" name="replacement" value="inside"
                     v-model="position">
   <span class="check" style="border-radius:10px"></span>
-   <span class="mr-4 ml-4">   داخل الفيلا
+   <span class="mr-4 ml-4">   {{$t('inisde')}}
         <sub>
-                      <span class="text-muted">غرفة خادمة + مطبخ رئيسي + مخزن</span>
+                      <span class="text-muted">{{$t('Maidroom_mainkitchen_pantry')}}</span>
                     </sub>
         </span>
 </label>
@@ -201,7 +201,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <input type="radio" name="replacement"   value="outside" v-model="position">
   <span class="check" style="border-radius:10px"></span>
   <span class="mr-4 ml-4 ">
-      خارج الفيلا
+   {{$t('outside')}}
 
       </span>
 </label>
@@ -329,7 +329,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
            <div class="form-group">
                 <div class="text-right font-weight-bold theme-color" dir="rtl">
-  رقم الواتساب 
+ {{$t('whatsapp')}}
 
                 </div>
   <input type="text" class="form-control" placeholder="Whatsapp : (971) - XXX-XXXXXX" v-model="whatsapp" dir="ltr"
@@ -339,10 +339,10 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
           <div class="form-group">
                 <div class="text-right font-weight-bold theme-color" dir="rtl">
-  رقم الهاتف 
+ {{$t('mobile')}}
 
                 </div>
-  <input type="text" class="form-control" placeholder="Whatsapp : (971) - XXX-XXXXXX" v-model="phone" dir="ltr"
+  <input type="text" class="form-control" :placeholder="$t('mobile')" v-model="phone" dir="ltr"
    name="phone" >
                 
 </div>
@@ -369,8 +369,8 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
             <div class="form-group">
                 <div class="text-right font-weight-bold theme-color" dir="rtl">
-أذكر  قيمة القرض
-<sup class="text-danger"> (اختياري)</sup>
+{{$t('Mention_the_loan_amount')}}
+<sup class="text-danger"> {{$('optional')}}</sup>
                 </div>
   <input type="text" class="form-control" placeholder="" name="priceGrant" v-model="priceGrant">
                 
@@ -378,48 +378,48 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
 
         <div class="text-right form-group" dir="rtl">
-<p class=" font-weight-bold theme-color">الجهة المقدمة للمنحة </p>
+<p class=" font-weight-bold theme-color">{{$t('Grant_Provider')}} </p>
 
              
     <label class="checkbox d-bolck" :dir="$t('directions')" >
           <input type="radio" name="Provider" value="1"  v-model="Provider">
 
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشيخ زايد للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('Sheikh_Zayed_Housing_Program')}}</span>
     </label>
      <label class="checkbox d-bolck" :dir="$t('directions')" >
           <input type="radio" name="Provider" value="2"  v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشيخ محمد بن راشد للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('Sheikh_Zayed_Housing_Program')}}</span>
      </label>
      <label class="checkbox d-bolck" :dir="$t('directions')" >
           <input type="radio" name="Provider" value="3"  v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج ابوظبي للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('Sheikh_Mohammed_bin_Rashid_Housing_Program')}}</span>
      </label>
       <label class="checkbox d-bolck" :dir="$t('directions')" >
           <input type="radio" name="Provider" value="4"  v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشارقة للاسكان</span>
+            <span class="mr-4 ml-4">  {{$t('Sharjah_Housing_Program')}}</span>
       </label>
 
       <label class="checkbox d-bolck" :dir="$t('directions')" >
           <input type="radio" name="Provider" value="5"  v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشارقة للاسكان اسناد</span>
+            <span class="mr-4 ml-4">{{$t('Sharjah_Esnad_Housing_Program')}}</span>
       </label>
    <label class="checkbox d-bolck" :dir="$t('directions')" >
           <input type="radio" name="Provider" value="6"  v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">  الديوان</span>
+            <span class="mr-4 ml-4">  {{$t('Diwan')}}</span>
    </label>
 
         </div>
 
         <div class="text-right">
 
-    <p class="theme-color font-weight-bold">البنك الممول اللمنحة  
-<sup class="text-danger"> (اختياري)</sup>
+    <p class="theme-color font-weight-bold">{{$t('Grant_Funding_Bank')}} 
+<sup class="text-danger"> ({{$t('optional')}})</sup>
     </p>
 <div class="form-group">
 <input type="text" class="form-control" placeholder="" name="BankProvider" v-model="BankProvider">
@@ -429,8 +429,8 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
            <div class="form-group">
                 <div class="text-right font-weight-bold theme-color" dir="rtl">
-المبلغ المضاف التقريبي لطريقة التمويل
-<sup class="text-danger"> (اختياري)</sup>
+{{$t('Approximate_added_amount_Financing_method')}}
+<sup class="text-danger"> ({{$t('optional')}})</sup>
                 </div>
   <input type="text" class="form-control" placeholder="" v-model="finance" name="finance">
          
@@ -438,7 +438,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
            </div>
 
 
-    <button class=" theme-btn"  @click.prevent="save()">حفظ</button>
+    <button class=" theme-btn"  @click.prevent="save()">{{$t('save')}}</button>
 
 
             </form>
@@ -477,7 +477,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-        <button class="btn get-start" v-if="edit==1 && IsUser==10" @click="save(id)">حفظ</button>
+        <button class="btn get-start" v-if="edit==1 && IsUser==10" @click="save(id)">{{$t('save')}}</button>
         </div>
 
 

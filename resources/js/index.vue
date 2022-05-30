@@ -55,7 +55,7 @@ style="position:absolute;
 <li v-if="!isLoggedIn"><router-link :to="'/login'"> {{ $t('login') }}</router-link></li>
 <li v-if="!isLoggedIn"><router-link :to="'register'"   > {{ $t('register') }} </router-link>
   <li v-if="isLoggedIn"> <router-link to="/dashboard"  class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
-  <li class><a data-toggle="modal" data-target="#myModal" class="font-weight-bold" >
+  <li class><a data-toggle="modal" @click="HideMenue()" data-target="#myModal" class="font-weight-bold" >
                                                     <i class="item-center fa fa-play"></i>{{$t('How_it_works')}}</a ></li>
 
  
@@ -166,7 +166,7 @@ style="position:absolute;
 													</ul>
 						</li> -->
                         <div class="header-btn">
-									<router-link :to="{name:'tenders'}" class="theme-btn">{{$t('add_tender')}}</router-link>
+									<router-link :to="{name:'tenders'}" class="theme-btn">{{$t('Add_tender')}}</router-link>
 								</div>
                      
                     </ul>
@@ -338,7 +338,7 @@ style="position:absolute;
 												</li>
 
   <li class=" "><router-link :to="{name:'home'}">{{$t('home')}}</router-link ></li>
-   <li class><a data-toggle="modal" data-target="#myModal" class="font-weight-bold" >
+   <li class><a data-toggle="modal" @click="HideMenue()" data-target="#myModal" class="font-weight-bold" >
                                                     {{$t('How_it_works')}}
                                                     </a ></li>
   <!-- <li class=" "><a href="#HowItWroks">{{$t('HowItWroks')}}</a></li> -->
@@ -600,6 +600,13 @@ return{
 
 
    methods: {
+       HideMenue(){
+           $('#offcanvas-modal').modal('hide');
+    $('#offcanvas-modal').css('display','none');
+
+    $('.menu-arrow').removeClass('active');
+    $('.modal-backdrop').css('display','none'); 
+       },
  showRandomOffer(){
 axios.get('api/ads/showOffeUnique').then(res=>{
     this.offers=res.data;

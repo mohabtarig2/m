@@ -8,7 +8,7 @@
 
 
 
-    <h2 class="text-center text-muted">مناقصة حجر </h2>
+    <h2 class="text-center text-muted">{{$t('stone_Tender')}} </h2>
 
    <div class="contact-form w-100 mb-4">
 

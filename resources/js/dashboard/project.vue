@@ -4,7 +4,7 @@
   <div class="modal-dialog" role="document">
 
    <div class="alert alert-info alert-dismissible fade show" role="alert">
-تم تحديث البيانات بنجاح
+{{$t('Message_update_data')}}
   <button type="button" class="close text-light" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -60,7 +60,7 @@
           ></stages>
 
           <div class="p-descrip-box mt-2">
-            <h5 class=" text-right font-weight-bold">وصف</h5>
+            <h5 class=" text-right font-weight-bold">{{$t('description')}}</h5>
             <div
               v-for="(tender, index) in tenders"
               :key="index"
@@ -73,14 +73,14 @@
           <div class="p-descrip-box mt-2" :dir="$t('direactions')" :class="$t('text_align')">
             <ul class="list-group list-group-flush">
               <li class="list-group-item ">
-              <h5>  العروض</h5>
+              <h5>  {{$t('Numbers_Offer')}}
                 <small
                   class="text-muted"
                   v-for="(tender, index) in tenders"
                   :key="index"
                   v-bind="tender"
-                  >({{ tender.comments.length }})</small
-                >
+                  >({{ tender.comments.length }})</small>
+                  </h5>
               </li>
             </ul>
 
@@ -100,8 +100,8 @@
                           {{comment.user.name}}
                           </span> <sup class="font-weight-bold"> <router-link :to="{name:'CompanyProfile',
                       params:{id:comment.user.id,type:'consulting'}}">
-                        ملف الشركة
-                        <i class="fas fa-external-link-alt grey">
+                {{$t('File_of_Company')}}
+        <i class="fas fa-external-link-alt grey">
 
                         </i>
                     </router-link>
@@ -114,7 +114,7 @@
                     <div class=" mb-2 ">
                      <p> {{ comment.comment }}</p>
                       <div class="files">
-                      <div class="h5  font-weight-bold thm-color text-right mt-3">تفاصيل العرض </div>
+                      <div class="h5  font-weight-bold thm-color text-right mt-3"> {{$t('Offer_details')}} </div>
 
                         <table class="table table-striped">
                           <thead>
@@ -166,7 +166,7 @@
                    <div class="pr-single m-0">
 										<div class="pr-icon"><i class="fa fa-home"></i></div>
 										<div class="pr-desc">
-											<span> إجمالي مساحة البناء</span>
+											<span> {{$t('total_area_build')}}</span>
 											<p class="pr-des-title m-0" >
                                                 {{comment.TotalAreaBuild}}</p>
 
@@ -186,7 +186,7 @@
                    <div class="pr-single m-0">
 										<div class="pr-icon"><i class='bx bx-money'></i></div>
 										<div class="pr-desc">
-											<span>تكلفة بناء المشروع</span>
+											<span> {{$t('budget_Total_Build')}} </span>
 											<p class="pr-des-title m-0" >
                                                 {{comment.budget}} {{$t('aed')}}</p>
 
@@ -243,7 +243,7 @@
 					</div>
 
                         <div class="p-descrip-box">
-                            <div class="thm-color">تصاميم العرض </div>
+                            <div class="thm-color">{{$t('display_designs')}}</div>
 
                             <div class="d-flex flex-row">
   <div class="p-2">تصميم الواجهة<img :src="comment.faced_path" width="100" height="100"></div>
@@ -340,7 +340,7 @@ v-if="IsUser == 10" dir="rtl">
                          <form  enctype="multipart/form-data" class="c-form-inner">
                 <div class="row container mt-5 c-form-inner">
                   <div class="col-md-6 form-group col-sm-12">
-                    <div class="container theme-color font-weight-bold">التصميم </div>
+                    <div class="container theme-color font-weight-bold">  {{$t('design')}} </div>
                     <input
                       class="form-control"
                       placeholder="1,000"
@@ -352,7 +352,7 @@ v-if="IsUser == 10" dir="rtl">
                     />
                      <div v-if="checkDesign=='false'"   
             class="invalid-feedback text-danger" > 
-            عليك كتابة سعر التصميم    :
+            {{$t('design_price')}}    :
             <b> 12,000  </b>
             
              </div>
@@ -368,8 +368,7 @@ v-if="IsUser == 10" dir="rtl">
                   </div>
 
                   <div class="col-md-6 form-group col-sm-12">
-                    <div class="container theme-color font-weight-bold">الأشراف/ شهرياٌ
-                    </div>
+                    <div class="container theme-color font-weight-bold">  {{$t('superVision_monthly')}}                    </div>
 
                     <input
                       class="form-control"
@@ -382,7 +381,7 @@ v-if="IsUser == 10" dir="rtl">
                     />
                      <div v-if="CheckSuper=='false'"   
             class="invalid-feedback text-danger" > 
-            عليك كتابة سعر الاشراف البناء  مثال :
+            {{$t('You_have_to_write_the_construction_supervision_price_example')}}
             <b> 1,000  </b>
          
              </div>
@@ -398,7 +397,7 @@ v-if="IsUser == 10" dir="rtl">
                 </div>
                      <div class="row container mt-5">
                   <div class="col-md-6 form-group col-sm-12">
-                    <div class="container theme-color font-weight-bold">مساحة البناء  </div>
+                    <div class="container theme-color font-weight-bold">{{$t('total_area_build')}}</div>
                     <input
                       class="form-control"
                       placeholder="3000 Sqft"
@@ -414,7 +413,7 @@ v-model="tab"
             class="invalid-feedback text-danger" > 
             عليك كتابة مساحة البناء  مثال :
             <b> 3000  </b>
-            قدم مربع
+           {{$t('sqft')}}
              </div>
                     <!-- <div
                       class="invalid-feedback"
@@ -426,7 +425,7 @@ v-model="tab"
                   </div>
 
                   <div class="col-md-6 form-group col-sm-12">
-                    <div class="container theme-color font-weight-bold">تكلفة بناء المشروع</div>
+                    <div class="container theme-color font-weight-bold">{{$t('budget_Total_Build')}}</div>
 
                     <input
                       class="form-control"
@@ -454,7 +453,7 @@ v-model="tab"
                   </div>
                 </div>
                 <div class="form-group container">
-                  <div class="container theme-color font-weight-bold">االمقترح </div>
+                  <div class="container theme-color font-weight-bold">{{$t('the_proposal')}} </div>
                   <textarea
                     class="form-control"
                     id="exampleFormControlTextarea1"
@@ -486,14 +485,14 @@ v-model="tab"
                 
              
 <div class="includes">
-<h3 class="mt-3 mb-3 theme-color font-weight-bold h5" :class="$t('text_align')">العرض يشمل </h3>
+<h3 class="mt-3 mb-3 theme-color font-weight-bold h5" :class="$t('text_align')"> {{$t('price_include')}} </h3>
  <div class="form-group row " dir="rtl">
 <div class="col-6">
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="Consultant_fee">
   <span class="check" ></span>
-  <span class="mr-4 ml-4"> رسوم الاستشارات + رسوم الدوائر الحكومية </span>
+  <span class="mr-4 ml-4"> {{$t('Consultant_fee')}} +{{$t('CostGov')}} </span>
 </label>
 
 <label class="checkbox d-bolck" :dir="$t('directions')">

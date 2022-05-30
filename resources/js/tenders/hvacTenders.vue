@@ -1,9 +1,10 @@
 <template>
 <div>
-<h2 class="text-center">مناقصات  التكييف</h2>
+
+<h2 class="text-center">{{$t('hvac_Tender')}}</h2>
 <div class="links-requests mb-3">
-<router-link :to="{name:'HvacTenders'}" class="theme-color mr-3" > مناقصات التكييف</router-link>
-<router-link :to="{name:'requestHvac'}" class="theme-color">متابعة الطلبات</router-link>
+<router-link :to="{name:'HvacTenders'}" class="theme-color mr-3" > {{$t('hvac_Tender')}}</router-link>
+<router-link :to="{name:'requestHvac'}" class="theme-color">{{$t('FollowUp_Request')}}</router-link>
 </div>
 
  <div class="s-blog-sidebar mb-3" v-for="(tendercr,index) in tenders" :key="index">
@@ -18,7 +19,7 @@
         
 
          </router-link>
-          <sup>({{tendercr.count}})عدد العروض</sup>
+          <sup>({{tendercr.count}}){{$t('Numbers_Offer')}}</sup>
           <small class="float-right"> {{tendercr.added_at}}</small>
 
 

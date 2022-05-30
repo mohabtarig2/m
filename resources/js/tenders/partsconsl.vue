@@ -6,7 +6,7 @@
        <li class="list-group-item mb-0 h5    main-color text-center font-weight-bold" :dir="$t('directions')" >
             <h5 class=" text-center"> {{$t('budget')}} </h5>
             <div class="text text-success font-weight-bold">
-  نوع التشطيب : 
+{{$t('Finishing_type')}} :
   <span v-show="finishing==1"> {{$t('commercial')}} </span>
                 <span v-show="finishing==2"> {{$t('normal')}}</span>
                 <span v-show="finishing==3"> {{$t('good')}}</span>
@@ -182,20 +182,20 @@
             <hr>
 
             <div  class="text-dark text-right" >
-                هل مطلوب سرداب ؟
+              {{$t('Is_a_basement_required')}}
                 <div v-show="crypt==1" class="text-success">
-                  نعم
+                  {{$t('yes')}}
                 </div>
 
                  <div v-show="crypt==0" class="text-success">
-                  لا
+                                    {{$t('no')}}
                 </div>
 
 
             </div>
             <hr>
             <div class="text-right">
-<div class="text-right"> شكل الفيلا المطلوب</div>
+<div class="text-right"> {{$t('Desired_villa_shape')}}</div>
              <div class="form-group shapeVilla " style="display: flex;">
               
     <h4  v-if="villaShape=='H'" class="checked"> H</h4>
@@ -208,16 +208,16 @@
 
              </div>
 
-             <div>ملف فحص التربة </div>
+             <div>{{$t('soil_investigation_file')}}</div>
              <a class="btn btn-success" :href="soil" target="_blank"> 
                <i class="fa fa-eye"></i>
-               عرض </a>
+               {{$t('view')}} </a>
 
 
-               <div class="mt-2">ملف خارطة الارض  </div>
+               <div class="mt-2">{{$t('earth_map_file')}} </div>
              <a class="btn btn-success" :href="mapPath" target="_blank"> 
                <i class="fa fa-eye"></i>
-               عرض </a>
+               {{$t('view')}} </a>
   
   </div>
 
@@ -241,7 +241,7 @@
                 </div>
                 <div class="col-6 text-center main-color">
                    <all-uae :emirates="emirats" ></all-uae>
-                    <!-- <select  name="emirats" v-if="edit==1">
+                    <select  name="emirats" v-if="edit==1">
                    <option value=7>{{$t('abu_dabhi')}}</option>
                 <option value=1 v>{{$t('dubai')}}</option>
                 <option value=5>{{$t('sharja')}}</option>

@@ -3,15 +3,14 @@
 
 <template>
   <div>
-<h2 class="text-center mb-3">متابعة طلبات التكييف </h2>
-
+      
+<h2 class="text-center">{{$t('Flow_Hvac_tender')}}</h2>
 <div class="links-requests mb-3">
-<router-link :to="{name:'HvacTenders'}" class="theme-color mr-3" > مناقصات التكييف</router-link>
-<router-link :to="{name:'requestHvac'}" class="theme-color">متابعة الطلبات</router-link>
+<router-link :to="{name:'HvacTenders'}" class="theme-color mr-3" > {{$t('hvac_Tender')}}</router-link>
+<router-link :to="{name:'requestHvac'}" class="theme-color">{{$t('FollowUp_Request')}}</router-link>
 </div>
 
-
-   <div class="card mt-3" v-for="request , index in data" :key="index">
+   <div class="p-descrip-box mt-3" v-for="request , index in data" :key="index">
 
 <a @click="requestdirect(request.type,request.id)">
 

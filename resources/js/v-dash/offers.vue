@@ -7,11 +7,13 @@
 
 
 
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==1"  >اخر عروض استشارات هندسية قدمتها </h2>
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==6"  >اخر عروض مناقصات المقاولات التي قدمتها </h2>
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==4"  >اخر عروض مناقصات التكييف التي قدمتها </h2>
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==3"  >اخر عروض مناقصات الحجر التي قدمتها </h2>
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==5"  >اخر عروض مناقصات الديكور الداخلي التي قدمتها </h2>
+            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==1"  >{{$t('The_latest_engineering_consultancy_offers')}} </h2>
+            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==6"  >{{$t('The_latest_contracting_tender_offer')}} </h2>
+            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==4"  >
+            {{$t('The_latest_offers_for_air_conditioning_tenders')}}
+            </h2>
+            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==3"  >{{$t('The_latest_offers_for_stone_tenders')}} </h2>
+            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==5"  >{{$t('The_latest_offers_for_interior_decoration_tenders')}} </h2>
 
                     <div class="p-descrip-box" v-if="IsUser==1" >
                         <div class="">
@@ -72,7 +74,7 @@
 
 <div class="col-6">
 
-                <router-link class="  theme-btn" :to="{name:'project',params:{id:project.tender.id} }">تفاصيل اكتر </router-link>
+                <router-link class="  theme-btn" :to="{name:'project',params:{id:project.tender.id} }">{{$t('more')}}</router-link>
 
 </div>
 

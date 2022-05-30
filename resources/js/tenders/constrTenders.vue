@@ -1,11 +1,11 @@
 <template>
 <div>
-    <h2 class="text-center">مناقصات  المقاولات</h2>
+    <h2 class="text-center">{{$t('Conturction_Tender')}}</h2>
 
     <div class="links-requests mb-3">
     
-<router-link :to="{name:'constrtenders'}" class="theme-color mr-3" > مناقصات المقاولات </router-link>
-<router-link :to="{name:'requestcConstructions'}" class="theme-color">متابعة الطلبات</router-link>
+<router-link :to="{name:'constrtenders'}" class="theme-color mr-3" > {{$t('Conturction_Tender')}}</router-link>
+<router-link :to="{name:'requestcConstructions'}" class="theme-color"> {{$t('FollowUp_Request')}}</router-link>
 </div>
 
 
@@ -22,7 +22,7 @@
         
 
          </router-link>
-         <sup> ({{tendercr.offer_consr.length >0 ?tendercr.offer_consr.length : 0 }})عدد العروض </sup>
+         <sup> ({{tendercr.offer_consr.length >0 ?tendercr.offer_consr.length : 0 }}){{$t('Numbers_Offer')}} </sup>
          <small class="float-right"> {{tendercr.added_at}}</small>
 
 
@@ -36,7 +36,7 @@
 </span>
 
 
-                <button class="  theme-btn float-right" @click="ToredictConsle(tendercr.id)">المزيد من التفاصيل</button>
+                <button class="  theme-btn float-right" @click="ToredictConsle(tendercr.id)">{{$t('more')}}</button>
 
        </div>
 </div>

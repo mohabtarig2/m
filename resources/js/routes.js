@@ -31,6 +31,7 @@ import Example2 from './components/Example2';
  import requestcConstructions from './dashboard/request-construction.vue';
  import requestHvac from './dashboard/request-hvac.vue';
  import requestStone from './dashboard/request-stone.vue';
+ import requestInteior from './dashboard/request-interior.vue';
  import saved from './dashboard/saved.vue';
 
 
@@ -58,6 +59,7 @@ import Example2 from './components/Example2';
 
 
  import login from './auth/login';
+ import partnership from './auth/partnership';
  import reset from './auth/reset';
  import loading from './auth/loading';
  import showAllOfferClient from './auth/showAllOfferClient';
@@ -577,6 +579,14 @@ const routes = [
                     },
 
                     {
+                        path:"/request/interior",
+                        component:requestInteior,
+                        name:'requestInteior',
+                    },
+
+                    
+
+                    {
                         path:"/request/hvac",
                         component:requestHvac,
                         name:'requestHvac',
@@ -760,6 +770,17 @@ const routes = [
      meta: { title :"Login | Amb " }
 
  },
+
+ {
+    path:"/partnership",
+ component:partnership,
+ name:'partnership',
+ meta: { title :"partnership | Amb " }
+
+},
+
+
+ 
 
  {
  path:"/Register",

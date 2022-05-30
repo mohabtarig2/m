@@ -899,7 +899,7 @@
 									<div class="call-action-btn">
 										<a href="/login" class="theme-btn">
                                             <i class='bx bx-log-in' v-if="isLoggedIn"></i>{{$t('login')}}</a>
-										<a href="/partner" class="theme-btn primary">{{$t('join_us')}}</a>
+										<router-link :to="{name:'partnership'}" class="theme-btn primary">{{$t('join_us')}}</router-link>
 									</div>
 								</div>
 							</div>

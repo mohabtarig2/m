@@ -1,10 +1,10 @@
 <template>
 <div>
-<h2 class="text-center">مناقصات الديكور الداخلي</h2>
+<h2 class="text-center">  {{$t('Interior_Tender')}}</h2>
 
 <div class="links-requests mb-3">
-<router-link :to="{name:'InteriorTenders'}" class="theme-color mr-3" > مناقصات الديكور الداخلي</router-link>
-<router-link :to="{name:'requestStone'}" class="theme-color">متابعة الطلبات</router-link>
+<router-link :to="{name:'InteriorTenders'}" class="theme-color mr-3" >{{$t('Interior_Tender')}}</router-link>
+<router-link :to="{name:'requestInteior'}" class="theme-color">{{$t('FollowUp_Request')}}</router-link>
 </div>
  <div class="s-blog-sidebar mb-3" v-for="(tendercr,index) in tenders" :key="index">
 
@@ -13,12 +13,10 @@
 
          <router-link class="font-weight-bold ml-2 text-dark " :to="{name:'InteriorDetails',params:{id:tendercr.id}}">{{tendercr.title.substr(0,90 )}}
 
-        <sup class="badge badge-success pt-2 pb-2 pl-2 pr-2" v-if="tendercr.status==1"> مفتوح</sup>
-        <sup class=" badge badge-warning pt-2 pb-2 pl-2 pr-2" v-if="tendercr.status==0"> تحت المراجعة </sup>
-        <sup class=" text-dark pt-2 pb-2 pl-2 pr-2"    v-if="tendercr.status==2"> closed</sup>
+       <status :status="tendercr.status"></status>
 
          </router-link>
-          <sup>({{tendercr.count}})عدد العروض</sup>
+          <sup>({{tendercr.count}}){{$t('Numbers_Offer')}}</sup>
           <small class="float-right"> {{tendercr.added_at}}</small>
 
 
@@ -32,7 +30,7 @@
 </span>
 
 
-                <button class="  theme-btn float-right" @click="ToredictConsle(tendercr.id)">المزيد من التفاصيل</button>
+                <button class="  theme-btn float-right" @click="ToredictConsle(tendercr.id)">{{$t('more')}}</button>
 
        </div>
 </div>
@@ -45,10 +43,11 @@
 </template>
 
 <script>
+import Status from '../admin/status.vue';
 import AllUae from '../auth/AllUae.vue';
 
 export default {
-  components: { AllUae },
+  components: { AllUae, Status },
 
   data(){
         return{

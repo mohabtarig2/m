@@ -9,15 +9,18 @@
 </div>
         <div  class="col-md-4 " v-else>
 	<div class="s-blog-sidebar sidebar-categories">
-							<h4 class="b-sidebar-title">مناقصاتي</h4>
+							<h4 class="b-sidebar-title">{{$t('MY_Project')}}</h4>
 							<ul class="s-categories-list list-none">
-								<li><router-link :to="{name:'ConslTenders'}"><i class="fa fa-angle-right"></i>استشارات هندسية<span>{{tenders.consulte}}</span></router-link></li>
-								<li><router-link :to="{name:'constrtenders'}"><i class="fa fa-angle-right"></i>مقاولات<span>{{tenders.consr}}</span></router-link></li>
-								<li><router-link :to="{name:'HvacTenders'}"><i class="fa fa-angle-right"></i>التتكييف<span>{{tenders.hvac}}</span></router-link></li>
+								<li><router-link :to="{name:'ConslTenders'}"><i class="fa fa-angle-right"></i>
+                      {{$t('consulting_company')}}
+  <span>{{tenders.consulte}}</span></router-link></li>
+								<li><router-link :to="{name:'constrtenders'}"><i class="fa fa-angle-right"></i>{{$t('construcion_company')}}<span>{{tenders.consr}}</span></router-link></li>
+								<li><router-link :to="{name:'HvacTenders'}"><i class="fa fa-angle-right"></i>
+                {{$t('interior_companies')}}<span>{{tenders.hvac}}</span></router-link></li>
 	<li><router-link :to="{name:'InteriorTenders'}"><i class="fa fa-angle-right"></i>
-  الديكور الداخلي<span>{{tenders.Interior}}</span></router-link></li>
+  {{$t('HVAC_companies')}}<span>{{tenders.Interior}}</span></router-link></li>
 						
-  <li><router-link :to="{name:'StoneTenders'}"><i class="fa fa-angle-right"></i>الحجر<span>
+  <li><router-link :to="{name:'StoneTenders'}"><i class="fa fa-angle-right"></i>{{$t('Stone_companies')}}<span>
     {{tenders.stone}}</span></router-link></li>
 
 

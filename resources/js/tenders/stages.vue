@@ -5,32 +5,34 @@
     <li class="list-group-item">
          <ul class="progressbar">
              <span v-if="stage==0" :dir="$t('directions')">
-               <li class="active" style="background">استقبال العروض</li>
-                <li>مرحلة التنفيذ </li>
-          <li>اكتمال التنفيذ </li>
-         
+               <li class="active" style="background">
+               {{$t('Receiving_offers')}}
+               </li>
+                <li>  {{$t('implementation_phase')}}</li>
+          <li>  {{$t('Implementation_completed')}} </li>
+        
             
 
              </span>
              <span v-if="stage==1">
-                  <li class="active" style="background">استقبال العروض</li>
-                   <li class="active">مرحلة التنفيذ </li>
-              <li>اكتمال التنفيذ </li>
+                  <li class="active" style="background">  {{$t('Receiving_offers')}}</li>
+                   <li class="active">  {{$t('implementation_phase')}}</li>
+              <li>  {{$t('Implementation_completed')}} </li>
          
          
 
              </span>
 
             <span v-if="stage==2">
-                <li class="active" style="background">استقبال العروض</li>
-          <li class="active">مرحلة التنفيذ </li>
+                <li class="active" style="background">  {{$t('Receiving_offers')}}</li>
+          <li class="active">  {{$t('implementation_phase')}}</li>
            
-             <li class="active">اكتمال التنفيذ </li>
+             <li class="active">  {{$t('Implementation_completed')}} </li>
              </span>
               <span v-if="stage==3">
-                 <li class="active" style="background">استقبال العروض</li>
-                    <li class="active">مرحلة التنفيذ </li>
-                <li class="active">اكتمال التنفيذ </li>
+                 <li class="active" style="background">  {{$t('Receiving_offers')}}</li>
+                    <li class="active">  {{$t('implementation_phase')}}</li>
+                <li class="active">  {{$t('Implementation_completed')}} </li>
        
            
              </span>

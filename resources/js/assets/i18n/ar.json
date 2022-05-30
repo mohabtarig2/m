@@ -17,6 +17,14 @@
     "optional":"أختياري",
     "Grant_Provider":"الجهة المقدمة للمنحة",    
     "send":"إرسال",
+    "User_name":"أسم المستخدم",
+    "Categories":"الاقسام",
+    "view":"عرض",
+    "soil_investigation_file":"ملف فحص  التربة",
+    "earth_map_file":"خارطة الارض ",
+    "Receiving_offers":"إستقبال العروض",
+    "implementation_phase":"مرحلة التنفيذ",
+    "Implementation_completed":"اكتمال التنفيذ",
 
     
     "Sheikh_Zayed_Housing_Program":"برنامج الشيخ زايد للاسكان",
@@ -27,6 +35,11 @@
     "Diwan":"الديوان",
     "Grant_Funding_Bank":"البنك الممول اللمنحة ",
     "Approximate_added_amount_Financing_method":"المبلغ المضاف التقريبي لطريقة التمويل",
+    "Follow_up_on_engineering_consultancy_requests":"متابعة طلبات الاستشارات الهندسية",
+    "Flow_Conturction_Tender":"متابعة مناقصة المقاولات",
+    "Flow_Hvac_tender":"متابعة مناقصة التكييف",
+    "Flow_Stone_tender":"متابعة مناقصة الحجر",
+    "Flow_Inteior_tender":"متابعة مناقصة الديكور الداخلي",
 
     
     "home":"الرئيسية",
@@ -98,6 +111,7 @@
     "Find Out":"إكتشف",
     "team_goals":"يعمل بجهد لكسب رضاء العميل وتطوير طرق المناقصات وذلك في سبيل توفير المصداقية والامان للمواطنين والمقيمين",
     "add_tender":"إضف مناقصة",
+    "Join_To_Our_Family":"انضم الي عائلتنا ",
 
     "Going":"   إذهب الي ابعد الحدود في تصميمك ",
     "header_title1":"ابنِ منزل أحلامك من",
@@ -133,6 +147,29 @@
     "header":"قم بتصميم منزلك او مشروعك ",
     "login":"دخول",
     "register":"تسجيل",
+    "You_Register_Successfuly":"لقد تم التسجيل بنجاح",
+    "Grow_your_business":"نمي أعمالك  على أكمل وجه وبسهولة ",
+    "Get_New_Project_and_Client":"احصل على مشروع وعميل جديد",
+    "how_its_work":" كيف يعمل ",
+    "content_its_work":"قم بتقديم اعلاناتك المبوبة ومتابعة المناقصات وتقديم العروض والحصول على العديد  من المشاريع",
+    "what_you_will_get":"ماالذى سوف تحصل عليه ",
+
+
+    
+    "New_Customers":"زبائن جدد",
+    "Ease_of_follow":"سهولة متابعة المشروع",
+    "extra_revenue":"عائدات إضافية",
+    "Get_More_projects":"احصل على المزيد من المشاريع",
+    "project_status":"حالة المشروع",
+    "subtitle_New_Customers":"سهولة فهم المشاريع من خلال المنصة",
+
+    "Ready_To_Join_us":"جاهز للانضمام إلينا",
+    "join_now":"الانضمام الان",
+
+    
+    
+   
+
     "directions":"rtl",
     "text_align":"text-right",
     "add_Your_ads":"اضف اعلانك",
@@ -151,17 +188,21 @@
     "see_All":"الكل ",
     "lang":"_ar",
 
-
+ 
+    "Finishing_type":"نوع التشطيب",
+    "Desired_villa_shape":"شكل الفيلا المطلوب",
     "offer_villa":"عروض الفلل ",
     "modern_villa":"الفلل الحديثة",
     "interior_design":"التصميم الداخلي",
+    "ads_status":"حالة ألاعلانات ",
     "aed":"درهم",
     "rooms":"غرف",
     "classic":"كلاسيك",
     "modern":"حديث",
     "floors":"طوابق",
     "consulting_company":"  شركات الأستشارات ",
-    "consulting":"    استشارات هندسية ",
+    "consulting":"استشارات هندسية ",
+    "Is_a_basement_required":"هل مطلوب سرداب ؟",
     "construcion_company":"شركات المقاولات",
     "HVAC_companies":" شركات التكييف ",
     "Stone_companies":" شركات الحجر ",
@@ -206,6 +247,15 @@
     "message_Execute_the_project":" بعد اختيار العرض المناسب  تواصل مع الشركة المنفذة لمشروعك او الخدمة وابدء بالتنفيذ فوراً ",
     "join_us":"سجل شركتك",
     "amb_story":"كن جزء من قصة اي ام بي ",
+    "Tender_Num":"رقم المناقصة",
+    "Message_update_data":"تم تحديث البيانات بنجاح",
+    "update_data":"تحديث البيانات",
+    "short_descripe":"وصف مختصر",
+    "long_descripe":"وصف مفصل للمشروع",
+    "ground_floor":"طابف أرض",
+    "Service_room_location":"مكان غرفة الخدمات ",
+    "Maidroom_mainkitchen_pantry":"غرفة خادمة + مطبخ رئيسي + مخزن",
+    
 
     "Become_Partner":"كن شريكاً",
     "reach":"الوصول إلى المزيد من العملاء وتحقيق النمو معنا",
@@ -217,6 +267,7 @@
     "New_Offers":"عرض جديد",
     "Desription":"وصف",
     "budget":"الميزانية",
+    "budget_Total_Build":"تكلفة بناء المشروع",
     "bed_rooms":"غرف نوم",
     "Type_Of_Villa":"نوع الفيلا ",
     "master_rooms":"غرف ماستر",
@@ -271,6 +322,7 @@
     "Verify_Your_Email":"قم بالتحقق من البريد الاكتروني  ",
     "Resend_Email_verification":"إعادة ارسال    التحقق من البريد الاكتروني  ",
     "tender_request":"طلب مناقصة",
+    "Login_Now":"سجل دخول الان",
 
 
     "title-tips1":"ابدأ في بناء مشروعك",
@@ -280,13 +332,43 @@
     "tips2":"عندما تتعامل مع شركة من خلال موقع eMB يبقى الموقع وسيطاً بينك وبين الشركة التي تنفذ المشروع ، وسيتم متابعة المشروع بطريقة",
     "tips3.1":"أدخل تفاصيل المشروع بدقة",
     "tips3.2":"املأ جميع الحقول وقدم أمثلة على ما تريد",
+
+    
     "UnderProcess":"تحت المعالجة ",
+    "superVision_monthly":"الأشراف/ شهرياٌ",
+    "You_have_to_write_the_construction_supervision_price_example":" : عليك كتابة سعر الاشراف البناء  مثال ",
+    "design_price":"عليك كتابة سعر التصميم , مثال",
+    "the_proposal":"المقترح",
     "open": "مفتوح",
     "UnderExcute":"قيد التنفيذ",
     "complete":"اكتمال",
     "Draft":"مسودة",
     "Closed":"مغلق",
     "Rejected":"مرفوض",
+    "add_new_ads":"أضف أعلان جديد",
+    "Consulting_Tender":"مناقصة إستشارات",
+    "Conturction_Tender":"مناقصة المقاولات",
+    "FollowUp_Request":"متابعة الطلبات",
+    "Numbers_Offer":"عدد العروض",
+    "File_of_Company":"ملف الشركة",
+    "Offer_details":"تفاصيل العرض",
+    "display_designs":"تصاميم العرض",
+    "open_project":"المشاريع المفتوحة",
+    "Follow_up_on_requests_for_villas":"متابعة طلبات الفلل",
+    "owner":"المالك",
+    "Engineering_Consulting_Office":"مكتب الاستشارات الهندسية",
+
+    "stone_Tender":"مناقصة الحجر",
+    "hvac_Tender":"مناقصة التكييف",
+    "Interior_Tender":"مناقصة الديكور الداخلي",
+    "Group_of_tenders":"مجموع المناقصات",
+    "Latest_ads_added":"اخر اعلانات تمت اضافتها ",
+    "MY_Project":"مشاريعي",
+    "The_latest_engineering_consultancy_offers":"اخر عروض استشارات هندسية قدمتها",
+    "The_latest_contracting_tender_offer":"اخر عروض مناقصات المقاولات التي قدمتها",
+    "The_latest_offers_for_air_conditioning_tenders":" اخر عروض مناقصات التكييف التي قدمتها",
+    "The_latest_offers_for_stone_tenders":"اخر عروض مناقصات الحجر التي قدمتها",
+    "The_latest_offers_for_interior_decoration_tenders":"اخر عروض مناقصات الديكور الداخلي التي قدمتها",
 
 
     "about_us":"تأسست شركة اي ام بي  في عام 2019 بادارة إماراتية ونجحت في تلبية إحتياجات عملاءها الكرام وساهمت في تقليل تكلفة البناء ",
@@ -318,6 +400,7 @@
     "Desgin_Details":"تفاصيل التصميم",
     "desgin":"التصميم",
     "Supervisor":"إشراف",
+    
    
     
 
@@ -332,9 +415,11 @@
     "RequestsVilla":"طلبات تصميم فيلا",
     "Settings":"إعدادات",
     "Add_tender":"اضف مناقصة",
-    "watchlist":"المفضلات"
+    "watchlist":"المفضلات",
     
     
+
+    "whatsapp":"رقم الواتساب"
 
 
 

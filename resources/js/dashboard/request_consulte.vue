@@ -2,12 +2,12 @@
 
    <div>
 
-<h2 class="text-center mb-3">متابعة طلبات الاستشارات الهندسية</h2>
+<h2 class="text-center mb-3">  {{$t('Follow_up_on_engineering_consultancy_requests')}} </h2>
 
 <div class="links-requests mb-3">
-<router-link :to="{name:'ConslTenders'}" class="theme-color mr-3" v-if="IsUser==10" > مناقصات الاستشارات</router-link>
-<router-link :to="{name:'request_consulte'}" class="theme-color  mr-3">متابعة طلبات المناقصات</router-link>
-<router-link :to="{name:'requestVilla'}" class="theme-color  mr-3">متابعة طلبات الفلل</router-link>
+<router-link :to="{name:'ConslTenders'}" class="theme-color mr-3" v-if="IsUser==10">  {{$t('Consulting_Tender')}}</router-link>
+<router-link :to="{name:'request_consulte'}" class="theme-color  mr-3"> {{$t('FollowUp_Request')}}</router-link>
+<router-link :to="{name:'requestVilla'}" class="theme-color  mr-3">{{$t('Follow_up_on_requests_for_villas')}}</router-link>
 </div>
 
 <div v-if="loading">
@@ -23,7 +23,7 @@
 
                       
                       <span>  
-                          طلب رقم : 
+                         {{$t('Tender_Num')}}
                           {{request.id}}</span>
 
                     
