@@ -37,7 +37,7 @@ class notifyAcceptConstructionTenders extends Notification implements ShouldBroa
      */
     public function via($notifiable)
     {
-        return ['database','broadcast'];
+        return ['database','broadcast','mail'];
     }
 
     /**
@@ -49,8 +49,9 @@ class notifyAcceptConstructionTenders extends Notification implements ShouldBroa
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Contracting Tender')
+                    ->line($this->Tender_owner->name.' Your tender has been accepted')
+                    ->action('View Project', url('/#/tenders/construction/'.$this->TenderAccepted->id))
                     ->line('Thank you for using our application!');
     }
 

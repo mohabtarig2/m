@@ -35,7 +35,7 @@ class NotifyAdminConfirmConsulteOffer extends Notification implements ShouldBroa
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -47,9 +47,10 @@ class NotifyAdminConfirmConsulteOffer extends Notification implements ShouldBroa
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+        ->line('Engineering Consultancy Tender')
+        ->line($this->user->name.' Select Proposal')
+        ->action('View Tender', url('/#/admin/Conslute-Tenders/'.$this->tender->id))
+       ->line('Thank you for using our application!');
     }
 
     /**

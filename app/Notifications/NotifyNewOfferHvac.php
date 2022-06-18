@@ -33,7 +33,7 @@ class NotifyNewOfferHvac extends Notification implements ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -45,8 +45,9 @@ class NotifyNewOfferHvac extends Notification implements ShouldBroadcast
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Hvac Tender')
+                    ->line($this->user->name.' Added New Propsal')
+                    ->action('View Tender', url('/#/tenders/hvac/'.$this->offer->tender_id))
                     ->line('Thank you for using our application!');
     }
 

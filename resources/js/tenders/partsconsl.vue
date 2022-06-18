@@ -1,5 +1,5 @@
 <template>
-         <div class="p-descrip-box" >
+         <div class="p-descrip-box"  :dir="$t('direactions')" :class="$t('text_align')">
 
   <ul class="list-group list-group-flush">
 
@@ -181,7 +181,7 @@
 
             <hr>
 
-            <div  class="text-dark text-right" >
+            <div  class="text-dark " >
               {{$t('Is_a_basement_required')}}
                 <div v-show="crypt==1" class="text-success">
                   {{$t('yes')}}
@@ -194,8 +194,8 @@
 
             </div>
             <hr>
-            <div class="text-right">
-<div class="text-right"> {{$t('Desired_villa_shape')}}</div>
+            <div class="">
+<div class=""> {{$t('Desired_villa_shape')}}</div>
              <div class="form-group shapeVilla " style="display: flex;">
               
     <h4  v-if="villaShape=='H'" class="checked"> H</h4>
@@ -208,10 +208,12 @@
 
              </div>
 
+    <div v-if="soil!='null'">
              <div>{{$t('soil_investigation_file')}}</div>
              <a class="btn btn-success" :href="soil" target="_blank"> 
                <i class="fa fa-eye"></i>
                {{$t('view')}} </a>
+        </div>
 
 
                <div class="mt-2">{{$t('earth_map_file')}} </div>

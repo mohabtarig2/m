@@ -40,7 +40,7 @@ class NotifyCompanyConulteConfirmTender extends Notification implements ShouldBr
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -52,8 +52,9 @@ class NotifyCompanyConulteConfirmTender extends Notification implements ShouldBr
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Engineering Consultancy Tender')
+                    ->line('Completion request to continue the project')
+                    ->action('View Request', url('/#/request/consulting/'.$this->request->id))
                     ->line('Thank you for using our application!');
     }
 

@@ -1,6 +1,6 @@
 <template>
     <div class=" form-group mt-3">
-                  <label for="msg theme-color">إرسال رسالة</label>
+                  <label for="msg theme-color"> {{$t('send_message')}}</label>
                   <textarea
                   style="background:#fff"
                     class="form-control"
@@ -9,7 +9,7 @@
                     v-model="newMessage"
                     
 
-                      placeholder=" قم بأرسال رسالتك "
+                     
                        @keyup.enter="sendMessage"
                        
 
@@ -20,7 +20,8 @@
                     :key="'notes' + index"
                   >{{ error }}</div> -->
                           {{newMessage.length}} /100
-<button class="btn btn-download" :disabled="newMessage.length==0" @click="sendMessage">ارسال  </button>
+<button class="btn btn-download" :disabled="newMessage.length==0" @click="sendMessage">
+{{$t('send')}}  </button>
 
                 </div>
                 

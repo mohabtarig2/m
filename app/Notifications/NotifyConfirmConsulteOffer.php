@@ -35,7 +35,7 @@ class NotifyConfirmConsulteOffer extends Notification implements ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -47,8 +47,9 @@ class NotifyConfirmConsulteOffer extends Notification implements ShouldBroadcast
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                     ->line('Engineering Consultancy Tender')
+                     ->line($this->user->name.' Select Your Proposal')
+                     ->action('View Tender', url('/#/Projects/'.$this->tender->id))
                     ->line('Thank you for using our application!');
     }
 

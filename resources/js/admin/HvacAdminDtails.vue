@@ -104,13 +104,13 @@
     </textarea>
     <span class="text-muted">
 
-    {{reason.length > 0 ? reason.length : 0 }} / 2500
+    {{reason.length > 0 ? reason.length : 0 }} / 100
     </span>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">اغلاق</button>
-        <button type="button" class="btn btn-success" @click="TellReason"  :disabled="reason.length>=100">تأكيد</button>
+        <button type="button" class="btn btn-success" @click="TellReason"  :disabled="reason.length<=101">تأكيد</button>
       </div>
     </div>
   </div>
@@ -379,6 +379,7 @@ methods: {
 
     })
     },
+    
     getTender(){
     axios.get('/admin/HvacTenders/'+this.$route.params.id).then(res=>{
         this.details =res.data;

@@ -9,7 +9,7 @@
 
       <div class="modal-body">
         <div class="text-center"><i class='bx bxs-check-circle text-success'></i></div>
-        <div class="text-center font-weight-bold">تم حذف اعلانك بنجاح </div>
+        <div class="text-center font-weight-bold">{{$t('The_has_been_deleted_successfully')}}</div>
 
       </div>
 
@@ -24,17 +24,17 @@
     <div class="modal-content">
          <div class="modal-header">
 
-        <h5 class="modal-title" id="exampleModalLongTitle">مسح إعلان </h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">{{$t('Delete_ads')}}</h5>
     
          </div>
       <div class="">
-        هل انت متاكد تريد حذف
+      {{$t('Do_You_want_Delete')}}
         <span class="font-weight-bold text-danger">{{AdsTitle}} </span>
       </div>
       <div class="mt-3">
           <button type="button" class="btn btn-danger confirm text-light" @click="deleteAds(adsid)"
-         >نعم انا متأكد </button>
-        <button type="button" class="btn btn-light confirm mr-3" data-dismiss="modal">لا</button>
+         >{{$t('yes')}} </button>
+        <button type="button" class="btn btn-light confirm mr-3" data-dismiss="modal">{{$t('no')}}</button>
 
       </div>
     </div>
@@ -49,7 +49,7 @@
 <div class="col-md-12 col-sm-12" :dir="$t('directions')" :class="$t('text_align')">
 
 
-<h1 class="  mb-2 text-center mt-3  mb-0">اخر اعلانات تمت اضافتها  </h1>
+<h1 class="  mb-2 text-center mt-3  mb-0">{{$t('Latest_ads_added')}} </h1>
        <div >
 
 
@@ -84,8 +84,8 @@
 </button>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">تعديل</a>
-    <a class="dropdown-item" data-toggle="modal" data-target="#delete" @click="GetAdsTitle(offer.title,offer.id)">مسح</a>
+          <router-link :to="{name:'offerdetails',params:{id:offer.id}}" class="dropdown-item" href="#">{{$t('edit')}}</router-link>
+    <a class="dropdown-item" data-toggle="modal" data-target="#delete" @click="GetAdsTitle(offer.title,offer.id)">{{$t('delete')}}</a>
   </div>
 </div>
                                             </li>

@@ -48,7 +48,7 @@ export default {
         setAdmin(state, admin) {
             state.admin = admin;
             Echo.connector.pusher.config.auth.headers.Authorization = `Bearer ${state.AdminToken}`
-            Echo.private('App.Mdels.admin.' + state.admin.id)
+            Echo.private('App.Models.admin.' + state.admin.id)
     .notification((notification) => {
         console.log('notifications',notification);
         state.notificationAdminlist.unshift(notification);

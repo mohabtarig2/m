@@ -13,19 +13,6 @@
  <div class=" mb-4 row" :dir="$t('directions')" :class="$t('text_align')">
       <div v-for="(offer,index) in recents.data" :key="index" v-bind="recent" class="col-md-4 col-sm-12">
 
-    <!-- <div class="links">
-
-
-
- <a @click="directTo(recent.id)" >
-
-        <div class="h5 font-weight-bold ">{{recent.title}}
-        <sup v-if="recent.confirmed==0" class="badge badge-dark"></sup>
-        <sup v-if="recent.confirmed==1" class="badge badge-success"></sup>
-        <sup v-if="recent.confirmed==2" class="badge badge-danger"></sup>
-         </div >
-
-<!--  -->
 
 <div class="single-recent-property">
 								<div class="single-r-property-top">
@@ -89,7 +76,7 @@
 											<img :src="company.avatar" alt="#" class="rounded-circle" width="40" height="40">
 											<div class="property-user-title">
 												<p class="at-title mb-0 hs-6"><a href="#">{{company.name}}</a></p>
-												<span>company</span>
+												<span>{{$t('company')}}</span>
 											</div>
 										</div>
 										<div class="property-user-price">
@@ -103,7 +90,7 @@
        
        </div>
        <div class="container">
-<router-link class="theme-btn primary mx-auto mt-3 d-block mb-3" :to="{name:'alloffers'}"> {{$t('all')}} </router-link>
+<router-link class="theme-btn primary  mt-3 mb-3" :to="{name:'alloffers'}"> {{$t('all')}} </router-link>
 
        </div>
 

@@ -82,7 +82,7 @@
 				
 
 		<center class="mt-3">
-			<div class="theme-btn text-center " @click="moreLoad(more)" v-show="count >= more" :disabled="loading">أكثر </div>
+			<div class="theme-btn text-center " @click="moreLoad(more)" v-show="count >= more" :disabled="loading">{{$t('more')}} </div>
 </center>	
 
 

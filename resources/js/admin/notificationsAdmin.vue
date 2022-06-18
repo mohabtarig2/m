@@ -245,6 +245,30 @@
 					</div>
          
 				</div>
+                    <span class="notification-list notification-list--unread" v-else-if="n.data.retender_Hvac_notes">
+                    <div class="notification-list_content">
+                      		<div class="notification-list_img">
+							<img :src="n.data.user.avatar" alt="user">
+						</div>
+  <router-link :to="{name:'HvacAdminDtails',params:{id:n.data.retender_Hvac_notes.id}}"  >
+
+
+        <div class="media-body">
+<div>
+<span>{{n.data.user.name}} </span>
+ <span class="badge badge-success">
+                {{$t('hvac')}}</span>
+</div>  Update Hvac Tender Number :  {{n.data.retender_Hvac_notes.id}}
+
+
+
+
+        		<p class="text-muted"><small>{{n.added_at}}</small></p>
+
+        </div>
+        </router-link>
+        </div>
+        </span>
 
                   <!-- Start Hvac  -->
 
@@ -523,6 +547,10 @@
         </div>
         </router-link>
         </span>
+
+
+
+
 
 
                     <span v-else-if="n.data.copmany_complete_construction_tender">

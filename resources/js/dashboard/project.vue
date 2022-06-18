@@ -26,7 +26,7 @@
 </div>
 
 <!-- {{tenders}} -->
-    <title-tender
+    <title-tender :dir="$t('directions')" :class="$t('text_align')"
 
     @update:data="getNewTenders"
       v-for="(tender, index) in tenders"
@@ -45,22 +45,22 @@
 
      <div class="alert alert-danger" v-if="tender.status==6">
             {{tender.reason_reject}}
-           <b> يرجي تعديل المناقصة</b>
+           <b> {{$t('please_Edit_Tender')}}</b>
              </div>
 
     </div>
 
-    <div class="container">
+    <div class="container" :dir="$t('directions')" :class="$t('text_align')">
       <div class="row">
         <div class="col-md-7">
-          <stages
+          <stages :dir="$t('directions')" :class="$t('text_align')"
             v-for="(tender, index) in tenders"
             :key="index"
             v-bind="tender"
           ></stages>
 
-          <div class="p-descrip-box mt-2">
-            <h5 class=" text-right font-weight-bold">{{$t('description')}}</h5>
+          <div class="p-descrip-box mt-2" :dir="$t('directions')" :class="$t('text_align')" >
+            <h5 class="  font-weight-bold">{{$t('description')}}</h5>
             <div
               v-for="(tender, index) in tenders"
               :key="index"
@@ -307,8 +307,9 @@
 
 
 <!-- Modal -->
-<div class="modal fade text-right" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
-v-if="IsUser == 10" dir="rtl">
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+:dir="$t('direactions')" :class="$t('text_align')"
+v-if="IsUser == 10" >
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
          <div class="modal-header">
@@ -823,7 +824,7 @@ v-model="tab"
         </div>
 
 </div>
-                <button class="theme-btn" v-if="files.length > 0" @click="saveImage">حفظ </button>
+                <button class="theme-btn" v-if="files.length > 0" @click="saveImage">{{$t('save')}} </button>
 
         </div>
           </div>

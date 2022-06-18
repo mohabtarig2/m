@@ -384,7 +384,7 @@ style="position:absolute;
 
 
 
-	<footer class="footer-area  footer-inner" dir="rtl" v-show="$route.name!=='admin'"> 
+	<footer class="footer-area  footer-inner"  v-show="$route.name!=='admin'" :dir="$t('directions')" :class="$t('text_align')"> 
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">
@@ -395,12 +395,12 @@ style="position:absolute;
 								<div class="col-lg-4 col-12">
 								
 									<div class="single-f-widget">
-							<h3 class="widget_title text-right">{{$t('about')}} </h3>
-								<p class="mb-0 text-right">
+							<h3 class="widget_title ">{{$t('about')}} </h3>
+								<p class="mb-0 ">
                                   
                                         {{$t('content_about')}}                
                                                             </p>
-										<ul class="footer-social list-none text-right">
+										<ul class="footer-social list-none ">
 											<li class="active ">
                                                 <a href="https://www.instagram.com/amb.tenders/"><i class="fab fa-instagram  "></i></a></li>
 											<!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -412,8 +412,8 @@ style="position:absolute;
 								<div class="col-lg-4 col-md-6 col-12">
 								
 									<div class="single-f-widget f-services-widget">
-										<h3 class="widget_title text-right">{{$t('services')}}</h3>
-										<ul class="footer-services list-none text-right">
+										<h3 class="widget_title ">{{$t('services')}}</h3>
+										<ul class="footer-services list-none">
                                             
 
                                            
@@ -471,7 +471,7 @@ style="position:absolute;
 								<div class="col-lg-4 col-md-6 col-12">	
 								
 									<div class="single-f-widget">
-										<h3 class="widget_title text-right">{{$t('villa_design')}} </h3>
+										<h3 class="widget_title ">{{$t('villa_design')}} </h3>
                                         
 									
                                     	<div class="f-news-feed" v-for="offer, index in offers" :key="index" >
@@ -480,7 +480,7 @@ style="position:absolute;
 										<img :src="image.path" alt="#" v-if="i==0" style="width:100px;height:100px" class="float-right">
 									</router-link>
 
-											<div class="f-news-content text-right mr-5">
+											<div class="f-news-content  mr-5">
 												<div class="n-feed-meta"><a href=""><i class="fa fa-clock"></i>
                                                 {{offer.Date}}</a></div>
 												<p class="footer-n-title m-0">
@@ -503,7 +503,7 @@ style="position:absolute;
 		
 
 
-		<div class="copyright">
+		<div class="copyright"> 
 			<div class="container">
 				<div class="row">
 					<div class="col-12">

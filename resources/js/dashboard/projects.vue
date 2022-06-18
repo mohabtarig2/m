@@ -11,7 +11,7 @@
 </div>
                 <div class="col-md-8">
 
-                    <div class=" container  h2 mt-2 text-right text-dark">{{$t('open_project')}}</div>
+                    <div class=" container  h2 mt-2 text-dark" :dir="$t('directions')" :class="$t('text_align')">{{$t('open_project')}}</div>
           <div v-for="(project,index) in projects.data" :key="index" v-bind="project">
               <div class="p-descrip-box mt-3 container">
 
@@ -107,7 +107,7 @@
      <div class="offset-md-2">
      </div>
 <div class="col-md-8 col-sm-12">
-<div class="p-descrip-box mt-3 container" v-for="(tender,index) in tenders.data" :key="index">
+<div class="p-descrip-box mt-3 container" v-for="(tender,index) in tenders.data" :key="index" v-show="tenders.data.length>0">
 
 <div class="ml-3">
          <h1 class="font-weight-bold  h4 main-color" >
@@ -172,6 +172,10 @@
 
 
 </div>
+<div class="p-descrip-box mt-3 " v-show="tenders.data.length==0">
+  {{$t('Thers_No_Tender')}}
+</div>
+
 </div>
 <div class="offset-md-2">
 

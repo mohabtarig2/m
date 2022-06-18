@@ -1,23 +1,23 @@
 <template>
   <div class="container mt-3 text-right" dir="rtl">
-    <h1 class="text-center">فروع أخرى</h1>
+    <h1 class="text-center">{{$t('branchs')}}</h1>
     <div class="c-form-inner">
-      <h4>في اي امارة تقع فروعكم الأخرى ؟</h4>
+   
       <label class="checkbox d-block" :dir="$t('directions')" v-show="user.company.emirates!=7">
         <input type="checkbox" v-model="Abudabhi" />
         <span class="check"></span>
-        <span class="mr-4 ml-4"> ابوظبي</span>
+        <span class="mr-4 ml-4"> {{$t('abu_dabhi')}}</span>
       </label>
 
        <div class="" v-if="Abudabhi==true" v-show="user.company.emirates!=7">
-        <h5 class="text-right"> رخصة ابوظبي </h5>
+        <h5 class="text-right">{{$t('abu_dabhi')}} {{$t('Licence')}}</h5>
         <div class="">
           <label class="d-block">
             <span
               class="btn btn-secondary"
               :class="{ 'btn btn-success': ADFile != null }"
               @click="$refs.adfile"
-              >ملف <i class="fa fa-paperclip"></i
+              >{{$t('upload')}} <i class="fa fa-paperclip"></i
             ></span>
 
             <small
@@ -75,17 +75,17 @@
       <label class="checkbox d-block" :dir="$t('directions')" v-if="user.company.emirates!=1">
         <input type="checkbox" v-model="dubai" />
         <span class="check"></span>
-        <span class="mr-4 ml-4"> دبي</span>
+        <span class="mr-4 ml-4"> {{$t('dubai')}} </span>
       </label>
       <div class="" v-if="dubai==true" v-show="user.company.emirates!=1">
-        <h5 class="text-right"> رخصة دبي </h5>
+        <h5 class="text-right"> {{$t('dubai')}} {{$t('Licence')}}</h5>
         <div class="">
           <label class="d-block">
             <span
               class="btn btn-secondary"
               :class="{ 'btn btn-success': DubaiFile != null }"
               @click="$refs.fileinput2"
-              >ملف <i class="fa fa-paperclip"></i
+              >{{$t('upload')}} <i class="fa fa-paperclip"></i
             ></span>
 
             <small
@@ -143,17 +143,17 @@
       <label class="checkbox d-block" :dir="$t('directions')" v-if="user.company.emirates!=5">
         <input type="checkbox" v-model="sharjah" />
         <span class="check"></span>
-        <span class="mr-4 ml-4"> الشارقة</span>
+        <span class="mr-4 ml-4"> {{$t('sharja')}} </span>
       </label>
        <div class="" v-if="sharjah==true" v-show="user.company.emirates!=5">
-        <h5 class="text-right"> رخصة الشارقة </h5>
+        <h5 class="text-right"> {{$t('dubai')}} {{$t('Licence')}} </h5>
         <div class="">
           <label class="d-block">
             <span
               class="btn btn-secondary"
               :class="{ 'btn btn-success': SHFile != null }"
               @click="$refs.fileinputSH"
-              >ملف <i class="fa fa-paperclip"></i
+              >{{$t('upload')}} <i class="fa fa-paperclip"></i
             ></span>
 
             <small
@@ -211,18 +211,18 @@
       <label class="checkbox d-block" :dir="$t('directions')" v-if="user.company.emirates!=6">
         <input type="checkbox" v-model="ajman" />
         <span class="check"></span>
-        <span class="mr-4 ml-4"> عجمان</span>
+        <span class="mr-4 ml-4"> {{$t('ajman')}} </span>
       </label>
 
        <div class="" v-if="ajman==true" v-show="user.company.emirates!=6">
-        <h5 class="text-right"> رخصة عجمان </h5>
+        <h5 class="text-right"> {{$t('ajman')}} {{$t('Licence')}} </h5>
         <div class="">
           <label class="d-block">
             <span
               class="btn btn-secondary"
               :class="{ 'btn btn-success': AJFile != null }"
               @click="$refs.fileinputAJ"
-              >ملف <i class="fa fa-paperclip"></i
+              >{{$t('upload')}} <i class="fa fa-paperclip"></i
             ></span>
 
             <small
@@ -285,14 +285,14 @@
 
 
  <div class="" v-if="um_alqwin==true" v-show="user.company.emirates!=4">
-        <h5 class="text-right"> رخصة أم القيوين </h5>
+        <h5 class="text-right"> {{$t('um_alqwin')}} {{$t('Licence')}}</h5>
         <div class="">
           <label class="d-block">
             <span
               class="btn btn-secondary"
               :class="{ 'btn btn-success': UMFile != null }"
               @click="$refs.fileinputUM"
-              >ملف <i class="fa fa-paperclip"></i
+              >{{$t('upload')}} <i class="fa fa-paperclip"></i
             ></span>
 
             <small
@@ -355,14 +355,14 @@
 
       
  <div class="" v-if="ras_alkhima==true" v-show="user.company.emirates!=3">
-        <h5 class="text-right"> رخصة راس الخيمة  </h5>
+        <h5 class="text-right"> {{$t('ras_alkhima')}} {{$t('Licence')}} </h5>
         <div class="">
           <label class="d-block">
             <span
               class="btn btn-secondary"
               :class="{ 'btn btn-success': RASFile != null }"
               @click="$refs.fileinputRAS"
-              >ملف <i class="fa fa-paperclip"></i
+              >{{$t('upload')}} <i class="fa fa-paperclip"></i
             ></span>
 
             <small
@@ -424,14 +424,14 @@
       </label>
 
        <div class="" v-if="fujairah==true" v-show="user.company.emirates!=2">
-        <h5 class="text-right"> رخصة راس الفجيرة  </h5>
+        <h5 class="text-right"> {{$t('fujairah')}} {{$t('Licence')}}  </h5>
         <div class="">
           <label class="d-block">
             <span
               class="btn btn-secondary"
               :class="{ 'btn btn-success': FUJFile != null }"
               @click="$refs.fileinputFUJ"
-              >ملف <i class="fa fa-paperclip"></i
+              >{{$t('upload')}} <i class="fa fa-paperclip"></i
             ></span>
 
             <small

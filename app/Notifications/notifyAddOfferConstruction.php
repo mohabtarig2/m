@@ -34,7 +34,7 @@ class notifyAddOfferConstruction extends Notification implements ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['database','broadcast'];
+        return ['database','broadcast','mail'];
     }
 
     /**
@@ -46,8 +46,9 @@ class notifyAddOfferConstruction extends Notification implements ShouldBroadcast
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Contracting Tender')
+                    ->line($this->company->name.' Added New Propsal')
+                    ->action('View Project', url('/#/tenders/construction/'.$this->offer->construction_id))
                     ->line('Thank you for using our application!');
     }
 

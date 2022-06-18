@@ -4,7 +4,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" 
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  :dir="$t('directions')" :class="$t('text_align')"
 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -20,7 +20,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
             <form enctype="multipart/form-data" class="c-form-inner">
 
-                <div class="text-right form-group " dir="rtl">
+                <div class=" form-group " >
 
                 <label for=" h6"><span class=" h6 font-weight-bold thm-color">
                     {{$t('title')}}
@@ -64,7 +64,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="h6 mb-3 thm-color font-weight-bold">{{$t('budget')}}</div>
                   <div class="row">
 
-                    <div class="  form-group col-6" dir="rtl">
+                    <div class="  form-group col-6" >
                       <label >{{$t('to')}}</label>
                       <div class="input-group mb-2">
                         <input
@@ -86,7 +86,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         >{{ error }}</div>
                       </div>
                     </div>
-                    <div class="  col-6" dir="rtl">
+                    <div class="  col-6" >
                       <div class="form-group mb-2">
                         <label  >{{$t('from')}}</label>
 
@@ -134,9 +134,9 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                         </div>
               <div class="row">
       <div class="col-6">
-              <div class="font-weight-bold h6 mt-3 text-right thm-color">{{$t('Choose_the_type_of_villa')}}</div>
+              <div class="font-weight-bold h6 mt-3  thm-color">{{$t('Choose_the_type_of_villa')}}</div>
 
-              <div class="form-group text-right ">
+              <div class="form-group  ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
    <input type="radio" name="flexRadioDefault"  value="cassic" v-model="villa_type">
@@ -156,9 +156,9 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
     <div class="col-6">
 
- <div class="font-weight-bold h6 mt-3 text-right thm-color">{{$t('floors')}}</div>
+ <div class="font-weight-bold h6 mt-3  thm-color">{{$t('floors')}}</div>
 
-              <div class="form-group text-right">
+              <div class="form-group ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
   <input type="radio" name="floors" value="1" v-model="floors">
@@ -181,9 +181,9 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 </div>
 <div class="row">
 <div class="col-12">
- <div class="h6 font-weight-bold text-right thm-color">{{$t('Service_room_location')}}  </div>
+ <div class="h6 font-weight-bold  thm-color">{{$t('Service_room_location')}}  </div>
 
-                          <div class="form-group text-right">
+                          <div class="form-group ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
   <input type="radio" name="replacement" value="inside"
@@ -328,7 +328,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 </div>
 
            <div class="form-group">
-                <div class="text-right font-weight-bold theme-color" dir="rtl">
+                <div class=" font-weight-bold theme-color" >
  {{$t('whatsapp')}}
 
                 </div>
@@ -338,7 +338,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 </div>
 
           <div class="form-group">
-                <div class="text-right font-weight-bold theme-color" dir="rtl">
+                <div class=" font-weight-bold theme-color" >
  {{$t('mobile')}}
 
                 </div>
@@ -347,7 +347,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 
 </div>
 
-            <div class="text-right form-group" dir="rtl">
+            <div class=" form-group" >
             <p class="font-weight-bold theme-color"> {{$t('build_by')}}</p>
  
         <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -368,7 +368,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             
 
             <div class="form-group">
-                <div class="text-right font-weight-bold theme-color" dir="rtl">
+                <div class=" font-weight-bold theme-color" >
 {{$t('Mention_the_loan_amount')}}
 <sup class="text-danger"> {{$t('optional')}}</sup>
                 </div>
@@ -377,7 +377,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 </div>
 
 
-        <div class="text-right form-group" dir="rtl">
+        <div class=" form-group" >
 <p class=" font-weight-bold theme-color">{{$t('Grant_Provider')}} </p>
 
              
@@ -416,7 +416,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
         </div>
 
-        <div class="text-right">
+        <div class="">
 
     <p class="theme-color font-weight-bold">{{$t('Grant_Funding_Bank')}} 
 <sup class="text-danger"> ({{$t('optional')}})</sup>
@@ -428,7 +428,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
 
            <div class="form-group">
-                <div class="text-right font-weight-bold theme-color" dir="rtl">
+                <div class=" font-weight-bold theme-color" >
 {{$t('Approximate_added_amount_Financing_method')}}
 <sup class="text-danger"> ({{$t('optional')}})</sup>
                 </div>
@@ -462,7 +462,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
 
            
-                     <div class="d-flex float-right" v-if='IsUser==10 && this.status==0 || this.status==6'>
+                     <div class="d-flex " :class="$t('text_align')" :dir="$t('direactions')" v-if='IsUser==10 && this.status==0 || this.status==6'>
              <!-- <a class=" btn btn-light btn-lg" style="cursor:pointer" @click="editTitle(2)"><i class=" fa fa-edit"></i></a> -->
              <a class=" theme-btn btn-lg" v-if="edit==0" style="cursor:pointer" data-toggle="modal" data-target="#exampleModalCenter">
                  <i class=" bx bx-edit"></i>{{$t('Edit')}}</a>

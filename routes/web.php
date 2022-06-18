@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Middleware;
 use App\CompanyFile;
 use App\CompanyFiles;
 use App\Events\TenderTconulte;
@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Container\Container;
 use Laravel\Ui\Presets\Vue;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
+
 
 
 /*
@@ -27,6 +29,38 @@ Auth::routes();
 Route::group(['middleware' => ['web']], function () {
 Route::post('login', 'Auth/LoginController@login');
 });
+Route::group(['middleware' => ['customer']], function () {
+    
+    Route::post('tenders' ,'TenderController@insert_consl');
+    Route::post('edit/consulte/data' ,'TenderController@updatConsultedata');
+    Route::post('/confirmTender','OfferController@confirmTender');
+    Route::post('user_confirm','RequestTenderController@user_confirm');
+    Route::post('tconstr','constructionController@tender');
+    Route::post('confirm/construction/offer','constructionController@confirmOffer');
+    Route::post('Thvac','constructionController@Hvactender');
+    Route::post('UpdateTitleHvac','constructionController@UpdateTitleHvac');
+Route::post('UpdateTitleStone','constructionController@UpdateTitleStone');
+Route::post('/insertHvacOffer' ,'constructionController@insertHvacOffer');
+Route::post('confirm/hvac/offer','constructionController@confirmHvacOffer');
+Route::post('paymentOffer','RequestVillaController@paymentOffer');
+
+
+
+
+
+});
+
+
+Route::group(['middleware' => ['consr']], function () {
+    
+  
+
+
+
+
+
+});
+
 
 Route::middleware('auth')->post('test','OfferController@test');
 
@@ -122,9 +156,6 @@ Route::post('BranchiFile','CompleteContoller@BranchiFile');
 
 Route::group(['middleware' => 'admins'], function () {
 
-    Route::get('/consulte', function (Request $request) {
-        return view('consulte');
-    })->name('consulte');
  });
 
 
@@ -161,8 +192,8 @@ auth::routes(['verify'=>true]);
 
 Route::post('post_tender_from_request','constructionController@PostTenderFromRequest' );
 
-Route::post('tconstr','constructionController@tender');
-Route::post('Thvac','constructionController@Hvactender');
+
+
 Route::post('HvacFilES','constructionController@InsertHvacFile');
 Route::post('StoneFilES','constructionController@InsertStoneFilES');
 Route::post('InteriorFilES','constructionController@InsertInteriorFilES');
@@ -178,7 +209,7 @@ Route::get('/AllTenderInterior' ,'constructionController@AllTenderInterior');
 
 
 Route::post('/insertOffer' ,'constructionController@insertOffer')->middleware('consr');
-Route::post('/insertHvacOffer' ,'constructionController@insertHvacOffer');
+
 Route::post('/insertInteriorOffer' ,'constructionController@insertInteriorOffer');
 
 Route::post('/insertStoneOffer' ,'constructionController@insertStoneOffer');
@@ -190,8 +221,8 @@ Route::post('UpdateTenderConstruction','constructionController@UpdateTenderConst
 Route::post('UpdateTenderTitle','constructionController@UpdateTenderTitle');
 Route::post('UpdateTenderInteriorTitle','constructionController@UpdateTenderInteriorTitle');
 
-Route::post('confirm/construction/offer','constructionController@confirmOffer');
-Route::post('confirm/hvac/offer','constructionController@confirmHvacOffer');
+
+
 Route::post('confirm/interior/offer','constructionController@confirmInteriorOffer');
 Route::post('confirm/stone/offer','constructionController@confirmStoneOffer');
 Route::post('UpdateTitleConstruction','constructionController@UpdateTitleConstruction');
@@ -202,8 +233,7 @@ Route::post('ConstrFilES','constructionController@InsertConstrFile');
 
 
 
-Route::post('UpdateTitleHvac','constructionController@UpdateTitleHvac');
-Route::post('UpdateTitleStone','constructionController@UpdateTitleStone');
+
 Route::post('UpdateNotesConstruction','constructionController@UpdateNotesConstruction');
 Route::post('update/threedFile','constructionController@updateThreedFile');
 Route::post('update/hvac/threedFile','constructionController@updateHvacThreedFile');
@@ -247,7 +277,7 @@ Route::post('/Achivementfile','FUploadController@AchivementUpload');
 
 
 
-Route::post('tenders' ,'TenderController@insert_consl');
+
 Route::post('soilFile' ,'TenderController@soilFile');
 Route::post('MapFile' ,'TenderController@MapFile');
 
@@ -259,7 +289,7 @@ Route::get('AllMyStoneTender' ,'TenderController@AllMyStoneTender');
 Route::get('AllMyinteriorTender' ,'TenderController@AllMyinteriorTender');
 Route::get('AllMyconslCtender' ,'TenderController@AllMyconslCtender');
 Route::get('AllMyconslCtender/type/{query}' ,'TenderController@AllMyconslCtenderType');
-Route::post('edit/consulte/data' ,'TenderController@updatConsultedata');
+
 Route::post('insert/consulting/image' ,'TenderController@InsertConsultingImage');
 Route::post('delete/consulting/image' ,'TenderController@DeleteConsultingImage');
 Route::post('edit/consulte/part' ,'TenderController@updatePart');
@@ -271,15 +301,24 @@ Route::get('AllMyConsrtender' ,'TenderController@AllMyConsrtender');
 Route::get('/AllMyTenders' ,'TenderController@AllMyCtender');
 Route::get('/letsttenders' ,'TenderController@letsttenders');
 
-Route::get('/AllTenderConsulte' ,'TenderController@AllTenderConsulte')->middleware('consulte');
+
 Route::get('/CountCtender' ,'TenderController@CountCtender');
 Route::get('mytenders/ConslTender/{id}' ,'TenderController@ctender');
-Route::get('mytenders/eng/ConslTender/{id}' ,'TenderController@CEngtender');
+
 Route::get('mytenders/commentTender/{id}' ,'TenderController@commentctender');
 Route::get('mytenders/CountcComment/{id}' ,'TenderController@CountcComment');
 Route::get('mytenders/MyofferIsset/{id}' ,'TenderController@MyofferIsset');
 Route::get('send' ,'TenderController@send');
 
+Route::group(['middleware' => 'consulte'], function () {
+    Route::get('mytenders/eng/ConslTender/{id}' ,'TenderController@CEngtender');
+    Route::get('/AllTenderConsulte' ,'TenderController@AllTenderConsulte');
+    Route::post('/offer_consulte','OfferController@cons_offer');
+    Route::post('save/tender/files','RequestTenderController@SaveFilesTender');
+    Route::post('save/tender/title','RequestTenderController@SavedTitleTender');
+Route::post('save/tender/notes','RequestTenderController@SavedNotesTender');
+
+});
 
 
 
@@ -287,10 +326,9 @@ Route::get('/mytenders/MyOffer/{id}' ,'OfferController@myoffer');
 
 
 
-Route::post('/offer_consulte','OfferController@cons_offer');
 
 
-Route::post('/confirmTender','OfferController@confirmTender');
+
 
 
 
@@ -358,6 +396,11 @@ return view('test1');
 ///admin.php
 
 
+
+Route::group(['middleware' => 'admins'], function () {
+
+
+
 Route::get('CounterOfTenders','AdminController@CounterOfTenders');
 Route::get('countAll','AdminController@countAll');
 Route::get('admin/detailsTenderConsulte','AdminController@detailsTenderConsulte');
@@ -395,6 +438,7 @@ Route::get('AdmingetLastTenNotifications',"AdminController@getLastTenNotificatio
 Route::put('AdminNotificatonsMarkAsRead',"AdminController@NotificatonsMarkAsRead");
 
 Route::post('admin/RejectConstructionTender','AdminController@RejectConstructionTender');
+});
 
 
 
@@ -457,7 +501,7 @@ Route::post('ConvertToTender',"RequestVillaController@ConvertToTender");
 
 
 Route::get('requesterclients/{id}','RequestVillaController@requesterclients');
-Route::post('paymentOffer','RequestVillaController@paymentOffer');
+
 
 Route::post('click/mobile','RequestVillaController@clicked');
 
@@ -490,12 +534,11 @@ Route::post('conracts/tender/Update','RequestTenderController@ConractsUpdateTend
 // Route::get('create/tender/{id}','RequestTenderController@SavedTender');
 Route::get('requestCompany/{type}/{id}','RequestTenderController@requestConstructionsDetailsCompany');
 Route::post('com_confirm','RequestTenderController@com_confirm');
-Route::post('user_confirm','RequestTenderController@user_confirm');
+
 Route::post('user_cancel','RequestTenderController@user_cancel');
 Route::post('com_cancel','RequestTenderController@com_cancel');
-Route::post('save/tender/title','RequestTenderController@SavedTitleTender');
-Route::post('save/tender/notes','RequestTenderController@SavedNotesTender');
-Route::post('save/tender/files','RequestTenderController@SaveFilesTender');
+
+
 Route::post('ConvertToTenderProject',"RequestTenderController@ConvertToTender");
 
 

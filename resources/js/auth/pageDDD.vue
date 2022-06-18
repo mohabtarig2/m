@@ -249,7 +249,7 @@
 				</div>
 				<div class="col-lg-4 col-12" :class="none">
 					<!-- Property Sidebar -->
-					<div class="properties-sidebar">
+					<div class="card" style="box-shadow:none">
 						<!-- Property Sidebar Widget -->
 						<div class="properties-s-widget m-b-30"  >
 							<h4 class="p-sidebar-title">{{$t('unique_ads')}} </h4>
@@ -257,7 +257,7 @@
 							<slick :v-bind="settings" class="properties-s-slider" v-if="randomOffers.length">
 								<!-- Sidebar Slider Widget -->
 								<div class="sidebar-s-widget"  v-for="offer , index in randomOffers " :key="index">
-										<router-link  :to="{name:'pageDetails',params:{id:offer.id}}" style="cursror:pointer">
+										<router-link  :to="{name:'pageDetails',params:{id:offer.id}}" style="cursor:pointer">
 									 <span v-for="image , i in offer.villa_image" :key="i">
 										
 									<img :src="image.path" alt="#" v-if="i==0" class="uinque-image">
@@ -265,7 +265,7 @@
 									<div class="property-for-sale">
 										<ul class="list-none">
 											<!-- <li><a href="#">Hot</a></li> -->
-											<li class="active"><a href="#">إعلان</a></li>
+											<li class="active"><a href="#">{{$t('ads')}}</a></li>
 										</ul>
 									</div>
 									<h4 class="p-sidebar-price m-0">{{offer.price}}</h4>
@@ -449,12 +449,6 @@ created() {
 <style scoped>
 
 
-.slick-slide {
-
-    float: left;
-    height: auto !important;
-    min-height: 1px;
-}
 .filter-grid a {
 
     display: flex;
@@ -724,4 +718,14 @@ button.close {
     background: #60c060;
 }
 
+
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 69% !important;
+    min-height: 1px;
+}
 </style>

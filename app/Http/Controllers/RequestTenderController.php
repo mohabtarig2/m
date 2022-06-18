@@ -19,13 +19,18 @@ use App\Events\companyDoneConstruction;
 use App\Events\companyDoneConsulte;
 use App\Events\CompleteConstructionTender;
 use App\Events\CompleteHvacTender;
+use App\Events\NewConsultantContract;
+use App\Events\NewNotesRequest;
 use App\Events\NewTenderHvac;
+use App\Events\NewTitleRequest;
 use App\Events\UserCancelConstruction;
 use App\Events\UserCancelHvac;
 use App\hvac;
 use App\HvacFiles;
 use App\InteriorFiles;
 use App\Models\admin;
+use App\Notifications\NotiftConsultantContract;
+use App\Notifications\NotifyAdminCompanyConulteConfirmTender;
 use App\Notifications\NotifyAdminCompanyDoneConsulte;
 use App\Notifications\NotifyCompanyCancelConstruction;
 use App\Notifications\NotifyCompanyCancelConsulte;
@@ -36,6 +41,8 @@ use App\Notifications\NotifycompanyDoneHvac;
 use App\Notifications\NotifyCompleteConstructionTender;
 use App\Notifications\NotifyCompleteHvacTender;
 use App\Notifications\NotifyNewTenderHvac;
+use App\Notifications\NotifyNotesRequest;
+use App\Notifications\NotifyTitleRequest;
 use App\Notifications\NotifyUserCancelConstruction;
 use App\Notifications\NotifyUserCancelConsulte;
 use App\Notifications\NotifyUserCancelHvac;
@@ -116,10 +123,22 @@ class RequestTenderController extends Controller
                 'request_id'=>$request->request_id,
                 
             ]);
-    
-         
-    
-            return 'true';
+            
+             $contract->with('request.user')->get()->where('request_id',$contract->request_id);
+             
+             $request_tender = request_tender::find($contract->request_id);
+
+            $user = User::find($request_tender->user_id);
+            $eng = User::find(Auth::id());
+
+            // return $contract;
+
+            
+            broadcast(new NewConsultantContract($eng, $user , $contract));
+
+            // $admins = admin::where('role_id',1)->get();
+            Notification::send($user, new NotiftConsultantContract($eng,$user , $contract));
+           
         }
         
             if($request->hasFile('threeD')){
@@ -300,21 +319,45 @@ class RequestTenderController extends Controller
         }
     }
     public function SavedNotesTender(Request $request){
+        $user_id = Auth::id();
         $id = $request->id;
 
-        $request_tender = saved_tenders::find($id);
-        $request_tender->notes = $request->notes;
+        $saved_tenders = saved_tenders::find($id);
+        $saved_tenders->notes = $request->notes;
+        $saved_tenders->save();
 
-        $request_tender->save();
+        $user = user::find($user_id);
+            
+
+        $request_tender = request_tender::find($saved_tenders->id);
+
+        $owner = user::find($request_tender->user_id);
+
+
+        
+        broadcast(new NewNotesRequest($user,$owner,$saved_tenders));
+        Notification::send($owner,new NotifyNotesRequest($user,$owner,$saved_tenders));
+
     }
     public function SavedTitleTender(Request $request){
-
+            $user_id = Auth::id();
             $id = $request->id;
 
-            $request_tender = saved_tenders::find($id);
-            $request_tender->title = $request->title;
+            $saved_tenders = saved_tenders::find($id);
+            $saved_tenders->title = $request->title;
+            $saved_tenders->save();
 
-            $request_tender->save();
+            $user = user::find($user_id);
+            
+
+            $request_tender = request_tender::find($saved_tenders->id);
+
+            $owner = user::find($request_tender->user_id);
+
+
+            
+            broadcast(new NewTitleRequest($user,$owner,$saved_tenders));
+            Notification::send($owner,new NotifyTitleRequest($user,$owner,$saved_tenders));
     }
     public function SavedTender(Request $request){
        $id =  $request->id ;
@@ -1106,7 +1149,7 @@ class RequestTenderController extends Controller
             $admin = admin::where('role_id',1)->get();
 
             broadcast(new companyAdminConsulteConfirmTender($company,$request_tender));
-            Notification::send($admin, new NotifyCompanyConulteConfirmTender($company,$request_tender));
+            Notification::send($admin, new NotifyAdminCompanyConulteConfirmTender($company,$request_tender));
 
             }
 
@@ -1324,7 +1367,7 @@ return 'true';
 
             broadcast(new companyDoneConsulte($tender->user , $request_tender));
 
-            Notification::send($admin, new NotifyAdminCompanyDoneConsulte($tender->user,$tender));
+            // Notification::send($admin, new NotifyAdminCompanyDoneConsulte($tender->user,$tender));
 
 
             $user->notify(new NotifyAdminCompanyDoneConsulte($tender->user,$request_tender));

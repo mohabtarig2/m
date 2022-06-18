@@ -36,7 +36,7 @@ class Notyifyowner extends Notification implements ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['database','broadcast'];
+        return ['database','broadcast','mail'];
     }
 
     /**
@@ -48,8 +48,9 @@ class Notyifyowner extends Notification implements ShouldBroadcast
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Engineering Consultancy Tender')
+                    ->line($this->offer_owner->name.' Added a new proposal')
+                    ->action('View Project', url('/#/Projects/'.$this->tender->id))
                     ->line('Thank you for using our application!');
     }
 

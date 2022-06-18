@@ -7,7 +7,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
 <img :src="src">
-            <a :href="src" download class="text-center font-weight-bold text-dark"><i class="fa fa-arrow-down"></i> تحميل</a>
+            <a :href="src" download class="text-center font-weight-bold text-dark"><i class="fa fa-arrow-down"></i> {{$t('download')}}</a>
 
         </div>
       </div>
@@ -18,7 +18,7 @@
 
       <div class="modal-body">
         <div class="text-center"><i class='bx bxs-check-circle text-success'></i></div>
-        <div class="text-center font-weight-bold">تم حذف اعلانك بنجاح </div>
+        <div class="text-center font-weight-bold">{{$t('The_has_been_deleted_successfully')}}</div>
 
       </div>
 
@@ -253,7 +253,7 @@
            <!-- <div class="invalid-feedback" v-for="(error, index) in this.errorFor('Service_room_placement')" :key="'Service_room_placement' + index" >{{ error }}</div> -->
       </div>
       <div class="col-md-6 col-sm-12">
-<label for="exampleFormControlSelect1">مساحة البناء  </label>
+<label for="exampleFormControlSelect1"> {{$t('total_area_build')}}  </label>
           <input class="form-control" name="sqft" v-model="ads.sqft" placeholder="2150 Sqft"  >
           <!-- v:class="[{'is-invalid':this.errorFor('sqft')}] -->
                 <!-- <div class="invalid-feedback" v-for="(error, index) in this.errorFor('sqft')" :key="'sqft' + index" >{{ error }}</div> -->
@@ -295,7 +295,7 @@
     <div class="form-group row">
 
       <div class="col-md-12 col-sm-12">
-<label for="exampleFormControlSelect1">سعر التصميم  </label>
+<label for="exampleFormControlSelect1">{{$t('Design_Price')}}   </label>
           <input class="form-control" name="design"  v-model="ads.design" 
            placeholder="">
            <!-- :class="[{'is-invalid':this.errorFor('design')}] -->
@@ -314,7 +314,7 @@
     
 
            <div class="col-md-12 col-sm-12">
-<label for="exampleFormControlSelect1">سعر الاشراف / شهرياً </label>
+<label for="exampleFormControlSelect1">{{$t('superVision_monthly')}} </label>
           <input class="form-control"  name="supervision" v-model="ads.supervision" placeholder=""  >
           <!-- :class="[{'is-invalid':this.errorFor('supervision')}]" -->
 
@@ -327,7 +327,7 @@
      <div class="form-group row">
 
       <div class="col-md-6 col-sm-12">
-<label for="exampleFormControlSelect1"> اسم المشرف(المهندس)  </label>
+<label for="exampleFormControlSelect1"> {{$t('Name_Super_eng')}}  </label>
           <input class="form-control" type="text" v-model="ads.name_eng" placeholder="" name="name_eng" >
           <!-- :class="[{'is-invalid':this.errorFor('tab')}]" -->
                 <!-- <div class="invalid-feedback" v-for="(error, index) in this.errorFor('tab')" :key="'tab' + index" >{{ error }}</div> -->
@@ -336,7 +336,7 @@
       </div>
 
            <div class="col-md-6 col-sm-12">
-<label for="exampleFormControlSelect1">رقم هاتف المشرف </label>
+<label for="exampleFormControlSelect1">{{$t('')}}</label>
           <input class="form-control"  v-model="ads.phone" placeholder="" dir="ltr" name="phone"
           >
           <!-- :class="[{'is-invalid':this.errorFor('supervision')}]" -->
@@ -378,7 +378,7 @@
                                 </div>
 
  <div class="includes">
-<h3 class="mt-3 mb-3 text-muted h5" :class="$t('text_align')">العرض يشمل </h3>
+<h3 class="mt-3 mb-3 text-muted h5" :class="$t('text_align')"> {{$t('price_include')}} </h3>
  <div class="form-group row ">
 <div class="col-6">
 <label class="checkbox d-bolck" :dir="$t('directions')">
@@ -386,19 +386,19 @@
 <!-- {{ads.Consultant_fee==true?ads.Consultant_fee :"false"}} -->
   <input type="checkbox" v-model="ads.Consultant_fee" name="Consultant_fee" :checked="ads.Consultant_fee" >
   <span class="check" ></span>
-  <span class="mr-4 ml-4">رسوم الاستشارات   </span>
+  <span class="mr-4 ml-4">{{$t('Consultant_fee')}}  </span>
 </label>
 <label class="checkbox d-bolck" :dir="$t('directions')" >
 
   <input type="checkbox" v-model="ads.CostGov" name="CostGov">
   <span class="check" ></span>
-  <span class="mr-4 ml-4"> رسوم الدوائر الحكومية</span>
+  <span class="mr-4 ml-4"> {{$t('CostGov')}}</span>
 </label>
 <label class="checkbox d-bolck" :dir="$t('directions')"> 
 
   <input type="checkbox" v-model="ads.tabCost" name="tabCos">
   <span class="check" ></span>
-  <span class="mr-4 ml-4"> تكلفة البناء</span>
+  <span class="mr-4 ml-4">  {{$t('tabCost')}}</span>
 </label>
 
 
@@ -406,20 +406,20 @@
 
   <input type="checkbox" v-model="ads.conditioning" name="conditioning">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> التكييف</span>
+  <span class="mr-4 ml-4"> {{$t('conditioning')}}</span>
 </label>
 
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="ads.the_fence" name="the_fence">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> السور</span>
+  <span class="mr-4 ml-4"> {{$t('the_fence')}}</span>
 </label>
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="ads.electric_pendants" name="electric_pendants">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> المعلقات الكهربائية</span>
+  <span class="mr-4 ml-4">  {{$t('electric_pendants')}}</span>
 </label>
 
 
@@ -430,13 +430,13 @@
 
   <input type="checkbox"  v-model="ads.Bedroom_wardrobes" name="Bedroom_wardrobes">
   <span class="check"></span>
-  <span class="mr-4 ml-4">  خزائن غرف النوم</span>
+  <span class="mr-4 ml-4">    {{$t('Bedroom_wardrobes')}}</span>
 </label>
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="ads.the_elevator" name="the_elevator">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> المصعد</span>
+  <span class="mr-4 ml-4"> {{$t('the_elevator')}}</span>
 </label>
 
 
@@ -445,34 +445,34 @@
 
   <input type="checkbox" v-model="ads.pelvis" name="pelvis">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> الحوض</span>
+  <span class="mr-4 ml-4"> {{$t('pelvis')}}</span>
 </label>
 
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="ads.interior_decoration" name="interior_decoration">
   <span class="check" ></span>
-  <span class="mr-4 ml-4"> الديكور الداخلي</span>
+  <span class="mr-4 ml-4">  {{$t('interior_decoration')}}</span>
 </label>
 
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="ads.Kitchen_Cabinets" name="Kitchen_Cabinets">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> خزائن المطبخ</span>
+  <span class="mr-4 ml-4">  {{$t('Kitchen_Cabinets')}}</span>
 </label>
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="ads.garden_design" name="garden_design">
   <span class="check"></span>
-  <span class="mr-4 ml-4"> تصميم الحدائق</span>
+  <span class="mr-4 ml-4">  {{$t('garden_design')}}</span>
 </label>
 
 <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="checkbox" v-model="ads.gypsum" name="gypsum">
   <span class="check"></span>
-  <span class="mr-4 ml-4">  الجبس</span>
+  <span class="mr-4 ml-4">  {{$t('gypsum')}}</span>
 </label>
   </div>
  </div>

@@ -64,6 +64,7 @@
                       </span>
                       <span class="project-state" v-else-if=" accepted=='reject'">
                           <span class="badge badge-danger">مرفوض</span>
+                          يي
                       </span>
 
                        <span class="project-state" v-else>

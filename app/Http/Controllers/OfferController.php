@@ -58,7 +58,7 @@ class OfferController extends Controller
 
         $admins = admin::where('role_id',1)->get();
 
-        $user->notify(new NotifyConfirmConsulteOffer($posts->user , $posts));
+       
         Notification::send($admins, new NotifyAdminConfirmConsulteOffer($posts->user,$posts));
 
     }

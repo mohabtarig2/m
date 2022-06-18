@@ -202,25 +202,25 @@ const routes = [
         path:'/admin',
         component:admin,
         name:'admin',
-        redirect:"/admin",
+        redirect:"/home",
         // meta: {
         //     requiresAuth: true
         //   },
         children:[
             {
-                path:"/admin",
+                path:"home",
                 component:adminDashboard,
                 name:'adminDashboard',
 
             },
             {
-                path:"/manager",
+                path:"manager",
                 component:admins,
                 name:'admins',
 
             },
             {
-                path:"/users",
+                path:"users",
                 component:users,
                 name:'users',
 
@@ -237,7 +237,7 @@ const routes = [
 
 
             {
-                path:"/consulte",
+                path:"consulte",
                 component:AdminConsulte,
                 name:'AdminConsulte',
 
@@ -251,14 +251,14 @@ const routes = [
 
             },
             {
-                path:"/hvac",
+                path:"hvac",
                 component:AdminHvac,
                 name:'AdminHvac',
 
 
             },
             {
-                path:"/Stone",
+                path:"Stone",
                 component:AdminStone,
                 name:'AdminStone',
 
@@ -268,32 +268,32 @@ const routes = [
 
 
             {
-                path:"/Users/profile/:id",
+                path:"Users/profile/:id",
                 component:profileUsers,
                 name:'profileUsers',
 
             },
             {
-                path:"/consulte/profile/:id",
+                path:"consulte/profile/:id",
                 component:consulteProfile,
                 name:'consulteProfile',
 
             },
             {
-                path:"/constructions/profile/:id",
+                path:"constructions/profile/:id",
                 component:constructionsProfile,
                 name:'constructionsProfile',
 
             },
             {
-                path:"/Hvac/profile/:id",
+                path:"Hvac/profile/:id",
                 component:HvacProfile,
                 name:'HvacProfile',
 
             },
 
             {
-                path:"/stone/profile/:id",
+                path:"stone/profile/:id",
                 component:StoneProfile,
                 name:'StoneProfile',
 
@@ -305,39 +305,39 @@ const routes = [
 
 
             {
-                path:"/ConsrTender",
+                path:"ConsrTender",
                 component:ConsrTender,
                 name:'ConsrTender',
                 },
                 {
-                    path:"/Conslute-Tenders",
+                    path:"Conslute-Tenders",
                     component:ConsluteTender,
                     name:'ConsluteTender',
                     //......
                     },
                 {
-                    path:"/Conslute-Tenders/:id",
+                    path:"Conslute-Tenders/:id",
                     component:tcDtails,
                     name:'tcDtails',
                     // ......
                 },
 
                 {
-                    path:"/Admin/Consulting/Offer",
+                    path:"Consulting/Offer",
                     component:AdminConsultingOffer,
                     name:'AdminConsultingOffer',
                     //......
                     },
 
                     {
-                        path:"/Admin/Consulting/Offer/:id",
+                        path:"Consulting/Offer/:id",
                         component:AdminOfferConsluteDetails,
                         name:'AdminOfferConsluteDetails',
                         //......
                         },
 
                         {
-                            path:"/Admin/Construction/Offer",
+                            path:"Construction/Offer",
                             component:ConstructionsAdminAds,
                             name:'ConstructionsAdminAds',
                             //......
@@ -346,20 +346,20 @@ const routes = [
 
 
                 {
-                    path:"/Hvac-Tenders",
+                    path:"Hvac-Tenders",
                     component:HvacTender,
                     name:'HvacTender',
                     //......
                     },
 
                       {
-                        path:"/Stone-Tenders",
+                        path:"Stone-Tenders",
                         component:tenderStone,
                         name:'tenderStone',
                         //......
                         },
                         {
-                            path:"/Stone-Tenders/:id",
+                            path:"Stone-Tenders/:id",
                             component:StoneAdminDtails,
                             name:'StoneAdminDtails',
                             //......
@@ -490,9 +490,18 @@ const routes = [
 
 
          {
+             
             path:"tenders/consultances",
             component:consultances,
             name:'consultances',
+            // beforeEnter: (to, from, next) => {
+            //     if(store.getters.IsUser==10){
+            //       return  next();
+            //     }else{
+            //        return next({name: 'PageNotFound'});
+            //     }
+            // }
+             
          },
          {
          path:"/tenders/FromOffers/:id",

@@ -1065,6 +1065,10 @@ export default {
       finance: null,
     };
   },
+  mounted(){
+  $('.header-inner').removeClass('d-block');
+                $('.header-inner').addClass('d-none');
+  },
   watch: {
     phone() {
       var x = this.phone

@@ -65,6 +65,7 @@
                     :key="'notes' + index"
                   >{{ error }}</div>
                 </div>
+                
 
                                     <button class="btn theme-btn" @click.prevent="UpdateTitle">حفظ</button>
 
@@ -595,8 +596,8 @@
  <strong>{{company_name}}</strong> هل انت متأكد انك تريد أختيار عرض 
       </div>
       <div class="modal-footer">
-        <button type="button" class="theme-btn primary" data-dismiss="modal">لا</button>
-        <button type="button" class="btn btn-success confirm" :disabled="loading" @click="confirmOffer(Ifconfirm,com_id)">نعم</button>
+        <button type="button" class="theme-btn primary" data-dismiss="modal">{{$t('no')}}</button>
+        <button type="button" class="btn btn-success confirm" :disabled="loading" @click="confirmOffer(Ifconfirm,com_id)">{{$t('yes')}}</button>
       </div>
     </div>
   </div>
@@ -630,13 +631,9 @@
                  <span > <i class="fa fa-clock-o text-muted mt-4" style="font-size:14px"></i> {{tender.added_at}}</span>
                  <span > <i class="fa fa-circle text-success  mt-4" style="font-size:14px"></i>
 
-                  <span  v-if="tender.emirates==2">Fujira</span>
-              <span v-if="tender.emirates==5">sharja</span>
-              <span v-if="tender.emirates==6">ajman</span>
-              <span  v-if="tender.emirates==4">um alqwain</span>
-              <span  v-if="tender.emirates==3">Ras Alkhima</span>
-              <span  v-if="tender.emirates==1">Dubai</span>
-              <span  v-if="tender.emirates==7">Abudabhi</span>
+               <all-uae :emirates="tender.emirates" > </all-uae>
+               
+             
                   </span>
 
 
@@ -741,8 +738,8 @@
                         <p class="text-right">{{comment.items}}</p>
 
                             <div class="text-right h5 main-color">هل اعتمدت جدول مواصفات الاستشاري</div>
-                            <p v-if="comment.Approval==0" class="text-right">لا </p>
-                            <p v-if="comment.Approval==1" class="text-right">نعم </p>
+                            <p v-if="comment.Approval==0" class="text-right">{{$t('no')}}</p>
+                            <p v-if="comment.Approval==1" class="text-right">{{$t('yes')}} </p>
 
                     </div>
 
@@ -767,7 +764,7 @@
 
 <button class="btn btn-success text-right confirm" @click.prevent="confirm(comment.id,comment.user.name,comment.user.id)"
              v-if="userid==tender.user_id && tender.stage==0 " data-toggle="modal" data-target="#exampleModalCenter">
-             <i class="fa fa-check-circle" ></i> اختيار</button>
+             <i class="fa fa-check-circle" ></i> {{$t('confirm')}}</button>
       <span v-for="confirm,i in comment.confirmd" :key="i">
 
 
@@ -809,7 +806,7 @@
 </table>
              <button class="theme-btn primary  confirm"
              v-if="user_ID==confirm.com_id && tender.stage==1  && confirm.offer_id ==comment.id" disabled >
-             <i class="fa fa-check-circle-o" ></i> تم اختيار العرض الذي قدمته </button>
+             <i class="fa fa-check-circle-o" ></i> تم {{$t('confirm')}} العرض الذي قدمته </button>
               <!-- <router-link :to="{name:'RequesttenderDetails',params:{type:confirm.type,id:confirm.id}}"
                class="btn mr-2 theme-btn  confirm"
              v-if="user_ID==confirm.com_id && tender.stage==1  && confirm.offer_id ==comment.id" disabled >
@@ -1181,12 +1178,13 @@
 
 <script>
 import Status from '../admin/status.vue';
+import AllUae from '../auth/AllUae.vue';
 import stages from "./stages.vue";
 import ValidationErrors from "../shared/components/ValidationErrors.vue";
 import validationErrors from "../shared/mixins/validationErrors";
 import TitleTender from "./titleTender.vue";
 export default {
-  components: { stages, TitleTender, Status , ValidationErrors },
+  components: { stages, TitleTender, Status , ValidationErrors ,AllUae},
    mixins: [validationErrors],
   data() {
     return {

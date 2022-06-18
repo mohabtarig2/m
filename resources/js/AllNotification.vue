@@ -31,7 +31,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -61,12 +61,14 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
          
 				</div>
+
+	
 
         
         <div class="notification-list notification-list--unread" v-else-if="n.data.Tender_consulte_reject">
@@ -92,7 +94,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -121,12 +123,104 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
          
 				</div>
+
+							  	<div class="notification-list notification-list--unread" v-if="n.data.ConsultantContract">
+					<div class="notification-list_content">
+              
+						<div class="notification-list_img">
+							<img :src="n.data.eng.avatar" alt="user">
+						</div>
+						<div class="notification-list_detail">
+                  <router-link  :to="{name:'RequesttenderDetails',params: {type:'consulting',id: n.data.ConsultantContract.request_id}}">
+
+							<p><b>{{n.data.eng.name}}</b>
+               {{$t('uploaded_the_engineering_consultancy_contract')}} 
+                <span class="badge badge-new">
+                {{$t('new')}}</span>
+               <span class="badge badge-success">
+                {{$t('consulting')}}</span>
+                </p>
+                 </router-link>
+							<!-- <p class="text-muted">{{n.data.tender.note.substr(0,100)}}</p> -->
+							<p class="text-muted"><small>{{n.added_at}}</small></p>
+						</div>
+              
+					</div>
+					<div class="notification-list_feature-img">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
+            	<i class="fas fa-check-circle fa-2x"></i>
+          </a>
+					</div>
+         
+				</div>
+
+					  	<div class="notification-list notification-list--unread" v-if="n.data.ConsultantTitleTender">
+					<div class="notification-list_content">
+              
+						<div class="notification-list_img">
+							<img :src="n.data.eng.avatar" alt="user">
+						</div>
+						<div class="notification-list_detail">
+                  <router-link  :to="{name:'RequesttenderDetails',params: {type:'consulting',id: n.data.ConsultantTitleTender.request_id}}">
+
+							<p><b>{{n.data.eng.name}}</b>
+               {{$t('Added_Short_description_To_Project')}} 
+                <span class="badge badge-new">
+                {{$t('new')}}</span>
+               <span class="badge badge-success">
+                {{$t('consulting')}}</span>
+                </p>
+                 </router-link>
+							<!-- <p class="text-muted">{{n.data.tender.note.substr(0,100)}}</p> -->
+							<p class="text-muted"><small>{{n.added_at}}</small></p>
+						</div>
+              
+					</div>
+					<div class="notification-list_feature-img">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
+            	<i class="fas fa-check-circle fa-2x"></i>
+          </a>
+					</div>
+         
+				</div>
+
+				
+					  	<div class="notification-list notification-list--unread" v-if="n.data.ConsultantNotesTender">
+					<div class="notification-list_content">
+              
+						<div class="notification-list_img">
+							<img :src="n.data.eng.avatar" alt="user">
+						</div>
+						<div class="notification-list_detail">
+                  <router-link  :to="{name:'RequesttenderDetails',params: {type:'consulting',id: n.data.ConsultantNotesTender.request_id}}">
+
+							<p><b>{{n.data.eng.name}}</b>
+               {{$t('Added_Long_description_To_Project')}} 
+                <span class="badge badge-new">
+                {{$t('new')}}</span>
+               <span class="badge badge-success">
+                {{$t('consulting')}}</span>
+                </p>
+                 </router-link>
+							<!-- <p class="text-muted">{{n.data.tender.note.substr(0,100)}}</p> -->
+							<p class="text-muted"><small>{{n.added_at}}</small></p>
+						</div>
+              
+					</div>
+					<div class="notification-list_feature-img">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
+            	<i class="fas fa-check-circle fa-2x"></i>
+          </a>
+					</div>
+         
+				</div>
+
 
 
         
@@ -156,12 +250,14 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
          
 				</div>
+
+			
 
 
 
@@ -188,7 +284,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -217,7 +313,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -251,7 +347,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -282,7 +378,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -316,8 +412,9 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
+				
           </a>
 					</div>
          
@@ -347,7 +444,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -380,12 +477,42 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
          
 				</div>
+
+						<div class="notification-list notification-list--unread" v-if="n.data.rejected_hvac_tender">
+					<div class="notification-list_content">
+              
+						<div class="notification-list_img">
+							<img :src="n.data.user.avatar" alt="user">
+						</div>
+						<div class="notification-list_detail">
+                <router-link  :to="{name:'HvacDetails',params: {id: n.data.rejected_hvac_tender.id}}">
+
+							<p><b>{{n.data.user.name}}</b>
+               {{$t('You_Tender_rejected')}} 
+			   <span class="badge badge-danger">
+                {{$t('Rejected')}}</span>
+               <span class="badge badge-success">
+                {{$t('hvac')}}</span>
+                </p>
+                 </router-link>
+							<p class="text-muted">{{n.data.rejected_hvac_tender.notes.substr(0,100)}}</p>
+							<p class="text-muted"><small>{{n.added_at}}</small></p>
+						</div>
+              
+					</div>
+					<div class="notification-list_feature-img">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
+            	<i class="fas fa-check-circle fa-2x"></i>
+          </a>
+					</div>
+					</div>
+         
 
          <div class="notification-list notification-list--unread" v-else-if="n.data.copmany_complete_Hvac_tender">
 					<div class="notification-list_content">
@@ -409,12 +536,43 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
          
 				</div>
+
+				  <div class="notification-list notification-list--unread" v-else-if="n.data.New_Request_villa">
+					<div class="notification-list_content">
+              
+						<div class="notification-list_img">
+							<img :src="n.data.user.avatar" alt="user">
+						</div>
+						<div class="notification-list_detail">
+                  <router-link  :to="{name:'requestDetails',params: {id: n.data.New_Request_villa.id}}">
+
+							<p><b>{{n.data.user.name}}</b>
+               {{$t('new_request')}} 
+               <span class="badge badge-info">
+                <i class='bx bx-plus-medical'></i></span>
+               <span class="badge badge-success">
+                {{$t('villa_design')}}</span>
+                </p>
+                 </router-link>
+							<p class="text-muted"><small>{{n.added_at}}</small></p>
+						</div>
+              
+					</div>
+					<div class="notification-list_feature-img">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
+            	<i class="fas fa-check-circle fa-2x"></i>
+          </a>
+					</div>
+         
+				</div>
+
+				
 
                  <div class="notification-list notification-list--unread" v-if="n.data.User_done_Hvac_tender">
 					<div class="notification-list_content">
@@ -439,7 +597,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -475,7 +633,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -507,7 +665,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -537,7 +695,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -575,7 +733,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -605,7 +763,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -651,7 +809,7 @@
               
 					</div>
 					<div class="notification-list_feature-img">
-					<a  :class="n.raed_at ? 'text-muted':'theme-color'" @click="markAsRead(n,$event)">
+					<a  :class="{'text-muted':n.read_at =='null' ,'text-success':n.read_at }" @click="markAsRead(n,$event)">
             	<i class="fas fa-check-circle fa-2x"></i>
           </a>
 					</div>
@@ -709,7 +867,7 @@ export default {
             axios.put('NotificatonsMarkAsRead',{id:n.id}).then(res=>{
                 console.log(res.data);
                 if(res.data.msg=="ok"){
-                    event.target.classList.remove('text-danger');
+                    
                     event.target.classList.add('text-success');
                 }
             }).catch(err=>{

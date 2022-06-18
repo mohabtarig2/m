@@ -20,13 +20,119 @@
     "Save_changes":"Save changes",
     "add_image":"add image",
     "remove":"remove",
+    "Tips_for_starting_your_business":"Tips for starting your business",
+    "new_request":"new request",
+    "Overall_Rating":"Overall Rating",
+    "service_owner":"service owner",
+    "Company_main_branch":"Company main branch",
+    "Company branches":"Company branches",
+    "no_branchs":"no branchs",
+    "Number_of_achievements_in_the_last_three_years":"Number of achievements in the last three years",
+    "since":"since",
+    "business_fair":"business fair",
+    "Achievement_License":"Achievement License",
+    "Business_license":"Business License",
+    
+
     "download":"download",
+    "seller":"seller",
+    "buyer":"buyer",
+    "order":"request",
+    "consulting_tender":"Engineering Consultation Tender",
+    "Required_files":"Required files",
+    "You_must_enter_all_fields":"You must enter all fields",
+
+    "The_first_stage":"The first stage",
+    "The_second_stage":"The second stage",
+    "Confirm_order_completion":"Confirm order completion",
+    "Project_Cancellation":"Project_Cancellation",
+    "consultant_contract":"consultant contract",
+    "canceled":"canceled",
+    "reason":"reason",
+    "cancel":"cancel",
+    "Thers_No_Tender":"Thers No Tender Yet",
+    "company_files":"company files",
+    "review_and_rating":" review & rating",
+      "Achievement_number_since_inception":"Achievement number since inception",
+
+    
+    "Are_you_sure_you_want_to_complete_this_project":"Are you sure you want to complete this project?",
+    "Are_you_sure_you_want_to_cancel_this_order":"Are you sure you want to cancel this order?",
+    "uploaded_the_engineering_consultancy_contract":"uploaded the engineering consultancy contract",
+    "Waiting_for_the_consultant_to_write_a_short_description_title":"Waiting for the consultant to write a short description title",
+    "Waiting_for_the_consultant_to_write_a_short_description":"Waiting for the consultant to write a short description",
+    "Waiting_for_the_consultant_to_upload_the_3D_file":"Waiting for the consultant to upload the 3D file",
+    "The_company_is_waiting_for_me_to_cancel_the_order":"The company is waiting for me to cancel the order",    
+    "complete_request":"complete request",
+    "Waiting_for_the_companys_response":"Waiting for the company's response",
+    "Waiting_for_the_owner_response_to_complete":"Waiting for the owner's response to complete",
+    "Contracting_Tender":"Construction Tender",
+    "Hvac_Tender":"Hvac Tender",
+    "Stone_Tender":"Stone Tender",
+    "Interior_tender":"Interior Tender",
+
+    "3D_File":"3D File",
+    "autocad":"autocad",
+    "Services_file":"Services file",
+    "contatcs":"contacts",
+    "Number_customer":"customer Phone Number ",
+    "Number_Company":" Company Phone Number ",
+    "send_message":"send_message",
+    "Add_Review":"Add Review",
+    "Construction_company_Review":"Construction company Review",
+    "Hvac_company_Review":"Hvac company Review",
+    "Stone_company_Review":"Stone company Review",
+    "Interior_company_Review":"Interior company Review",
+    "Add_Review_Consultancs":"Add a review for the engineering consulting company",
+    "Architectural_drawings_file":"Architectural drawings file",
+    "Waiting_for_the_consultant_to_attach_the_architectural_drawings_file":" Waiting for the consultant to attach the architectural drawings file",
+    "Waiting_for_the_consultant_to_upload_the_services_file":"Waiting for the consultant to upload the services file",
+    "Waiting_for_the_consultant_to_upload_the_specification_file":" Waiting for the consultant to upload the specification file",
+    "Waiting_for_the_consultant_to_raise_the_map_of_the_land":" Waiting for the consultant to attach the map of the land",
+    "Waiting_for_the_consultant_to_attach_the_construction_file":"Waiting for the consultant to attach the construction file",
+
+    "specification_file":"specification file",
+    "Structure_file":"Structure file",
+    "identity":"identity",
+    "Tender_Transfer":"Tender Transfer",
+    "Tender_Contracts":"Tender Contracts",
+    "wait":"wait..",
+    "construction_picture":"construction picture",
+    
+    "contractor_contract":"contractor contract",
+    "Hvac_contract":"Hvac contract ",
+    "Stone_contract":"Stone contract ",
+    "Interior_contract":"Interior contract ",
+    "Follow_up_on_the_construction_phase":"Follow up on the construction phase",
+
+    
+    "The_third_stage":"The Third stage",
+    "The_fourth_stage":"The Fourth stage",
+    "The_fifth_stage":"The Fifth stage",
+    "The_sixth_stage":"The Sixth stage",
+    "The_seventh_stage":"The Seventh stage",
+    "The_eighth_stage":"The Eighth stage",
+
+    "request_number":"request number",
+    "Time_request":"Time Request",
+    "project_files":"project files",
+    "ShouldPdf":"Should Be Pdf",
+
+    "Consultant_offer":"Consultant offer",
+    "Suggested_offer":"Suggested offer",
+    "Approximate_cost":"Approximate cost",
+    "Are_you_sure_you_want_to_complete_this_application":"Are you sure you want to complete this application?",
+
+    
+
+
     "internal_distribution":"internal distribution",
     "You_have_to_write_the_building_area_for_example":"You have to write the building area, for example:",
-    "You_have_to_write_the_approximate_budget_for_the_construction_example":"عليك كتابة الميزانية التقريبية للبناء  مثال :",
+    "You_have_to_write_the_approximate_budget_for_the_construction_example":"You have to write the approximate budget for the construction example:",
     "You_must_write_the_description_not_less_than":"You must write the description not less than",
     "characters":"characters",
     "Are_you_sure_you_want_to_delete_this_photo":"Are you sure you want to delete this photo?",
+    "Are_you_sure_you_want_to_choose":"Are you sure you want to choose",
     
     "Sheikh_Zayed_Housing_Program":"Sheikh Zayed Housing Program",
     "Sheikh_Mohammed_bin_Rashid_Housing_Program":"Sheikh Mohammed bin Rashid Housing Program",
@@ -64,6 +170,21 @@
     "confirm":"confirm",
     "Choose_the_type_of_villa":"Choose the type of villa",
     "Notifications":"Notifications",
+    "The_has_been_deleted_successfully":"The has been deleted successfully",
+    "Delete_ads":" Delete ads ",
+    "Do_You_want_Delete":" Do You Want Delete",
+    "edit":"edit",
+    "delete":"delete",
+    "Design_Price":"Design Price",
+    "Name_Super_eng":"Engineer name (supervisor)",
+    
+    "Supervisor_phone_number":"Supervisor phone number",
+    "must_be_12_digits":"must be 12 digits",
+    
+ 
+
+
+
 
     "Waiting_for_reply":"Waiting for reply",
     "choose":"choose",
@@ -145,13 +266,16 @@
     "my_ads":"My Ads",
     "consr_tender":"constructions Tenders",
     "ads_status":"ads status",
+    "villa_designs":"Ready-made villa designs",
+    "Success_request":"Your request has been successfully sent, we will contact you shortly",
 
 
 
 
 
     "Get_quility":"Get quility",
-    "Villa_offer_describe":"Exclusive deals by consultants approved by government agencies in the United Arab Emirates.",
+    "home_descripe":"AMB tenders for every citizen, resident and investor who holds lands of all kinds from various government agencies and developers, who wish to build their homes on the lands allocated to them with exclusive deals by consultants and contractors, from design to turnkey project",
+    "Villa_offer_describe":"Choose one of the ready-made designs by accredited engineering consultancy companies, where the cost includes the design price, the monthly supervision price and the construction cost by contractors selected by the consultants with the possibility of modifying the design to suit your budget and needs",
     "how_it_work_qoute":"Our goal is to eliminate all side currencies between contracting and consulting.",
     "Find Out":"Find Out",
     "team_goals":"we works hard to gain customer satisfaction and develop bidding methods in order to provide credibility and safety for citizens and residents.",
@@ -165,6 +289,9 @@
     "goal5":"Save time and effort searching for all companies",
     "goal6":"Development of Blockchain Technology and NFT Irreplaceable Tokens in the Construction Industry",
     "Recently_Added":"Recently Added",
+    "Exclusive_Deals":"Exclusive Deals",
+    "please_Edit_Tender":"please UpdateTender",
+
     
 
     "Going":"Go above and beyond in your design",
@@ -199,8 +326,14 @@
     "classic_villa":"Villa Classic",
     "see_All":"see All ",
 
+ 
+    "First_floor":"First floor",
+    "Second_floor":"Second floor",
+    "Surface":"Surface",
 
+    "villa_design_shape":"villa design shape",
     "offer_villa":" offer villa ",
+    "Do_you_want_basement":"Do you want a basement?",
     "modern_villa":" modern villa",
     "interior_design":"interior design",
     "aed":"Aed",
@@ -222,6 +355,7 @@
 
     "How_it_works":" How it works",
     "team_tender":"AMB TEAM",
+    "living_room":"living room",
 
 
 
@@ -241,6 +375,8 @@
     "join_us":"join us",
     "amb_story":"Be a part of the Amb story",
     "villa_excuted":"villa excuted",
+    "add_photos":"add photos",
+    "post_now":"post now",
 
     "Become_Partner":" Become Partner",
     "reach":"Reach more customers and achieve growth with us",
@@ -258,7 +394,13 @@
     "bed_rooms":"bed rooms",
     "Type_Of_Villa":"Type Of Villa",
     "master_rooms":"master rooms",
-    "majlis":"majlis",
+    "write_desc":"write description",
+
+    "The_minimum_value_price_must_be_less_than_the_maximum":"The minimum value price must be less than the maximum",
+   
+    "Type_a_number_in_case_you_dont_want_to_write_a_zero":"Type a number, in case you don't want to write a zero",
+    "Service_room_distribution_site":"Service room distribution site",
+    "subtitle_Service_room_distribution_site":" Nanny's room + main kitchen + store + laundry",    "majlis":"majlis",
     "kitchen":"kitchen",
     "bathroom":"bathroom",
     "dining":"dining room",
@@ -341,12 +483,16 @@
     "Desired_villa_shape":"Desired villa shape",
     "view":"view",
     "soil_investigation_file":"soil investigation file",
-    "earth_map_file":"earth map file",
+    "earth_map_file":"Land map file",
     "budget_Total_Build":"Project construction budget",
 
     "Receiving_offers":"Receiving offers",
     "implementation_phase":"implementation phase",
     "Implementation_completed":"Implementation completed",
+
+    "Added_Short_description_To_Project":"Added Short description To Project",
+    "Added_Long_description_To_Project":"Added Long description To Project",
+   
     
 
 
@@ -397,8 +543,32 @@
 
     "RequestsVilla":"Requests Villa",
 
-    "whatsapp":"whatsapp"
+    "whatsapp":"whatsapp",
 
+
+    "Edit_Profile":"Edit Profile",
+    "Company_name":"Company name",
+    "Manager_Name":"Manager Name",
+    "arabic":"Arabic",
+    "about_Us":"about Us ",
+    "english":"english",
+    "Account_details":"Account details",
+    "branch":"branch",
+
+    "Change_Your_Password":"Change Your Password",
+    "Current_Password":"Current Password",
+    "New_password":"New password",
+    "confirm_New_password":"confirm New password ",
+    "Licence":"Licence",
+    "upload":"upload",
+
+
+    "Less_than_4_letters":"Less than 4 letters",
+
+
+
+    "a":"a"
+    
 
 
 

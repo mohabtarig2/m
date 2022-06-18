@@ -1,5 +1,5 @@
 <template>
-        <div>
+        <div :dir="$t('direactions')" :class="$t('text_align')"> 
 
 
 
@@ -7,19 +7,19 @@
 
 
 
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==1"  >{{$t('The_latest_engineering_consultancy_offers')}} </h2>
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==6"  >{{$t('The_latest_contracting_tender_offer')}} </h2>
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==4"  >
+            <h2 class=" mt-3 text-dark  " v-if="IsUser==1"  >{{$t('The_latest_engineering_consultancy_offers')}} </h2>
+            <h2 class=" mt-3 text-dark  " v-if="IsUser==6"  >{{$t('The_latest_contracting_tender_offer')}} </h2>
+            <h2 class=" mt-3 text-dark  " v-if="IsUser==4"  >
             {{$t('The_latest_offers_for_air_conditioning_tenders')}}
             </h2>
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==3"  >{{$t('The_latest_offers_for_stone_tenders')}} </h2>
-            <h2 class=" mt-3 text-dark text-right " v-if="IsUser==5"  >{{$t('The_latest_offers_for_interior_decoration_tenders')}} </h2>
+            <h2 class=" mt-3 text-dark  " v-if="IsUser==3"  >{{$t('The_latest_offers_for_stone_tenders')}} </h2>
+            <h2 class=" mt-3 text-dark  " v-if="IsUser==5"  >{{$t('The_latest_offers_for_interior_decoration_tenders')}} </h2>
 
                     <div class="p-descrip-box" v-if="IsUser==1" >
                         <div class="">
 
               <div v-for="(project,index) in Myoffers" :key="index" v-bind="project" dir="rtl" >
-              <div class="p-descrip-box mt-3 container text-right ">
+              <div class="p-descrip-box mt-3 container  ">
 
 <div class="ml-3">
          <div class="font-weight-bold    ml-2 ">
@@ -96,12 +96,12 @@
                         <div class="p-descrip-box" v-if="IsUser==6" v-for="(myoffer,index) in Myoffers" :key="index">
                         <div class="card-body">
 
-                      <p class="text-right"> <router-link class="font-weight-bold ml-2 main-color " :to="'tenders/construction/'+myoffer.tender.id">{{myoffer.tender.title}}</router-link>
+                      <p class=""> <router-link class="font-weight-bold ml-2 main-color " :to="'tenders/construction/'+myoffer.tender.id">{{myoffer.tender.title}}</router-link>
                          <span class="text-muted  float-left" dir="ltr">{{myoffer.added_at}}</span>
                       <p>
 
 
-                      <p class="text-right">{{myoffer.textOffer}}</p>
+                      <p class="">{{myoffer.textOffer}}</p>
 
 
 
@@ -119,12 +119,12 @@
                         <div class="p-descrip-box" v-if="IsUser==4" v-for="(myoffer,index) in Myoffers" :key="index">
                         <div class="card-body">
 
-                      <p class="text-right"> <router-link class="font-weight-bold ml-2 main-color " :to="'tenders/hvac/'+myoffer.tender.id">{{myoffer.tender.title}}</router-link>
+                      <p class=""> <router-link class="font-weight-bold ml-2 main-color " :to="'tenders/hvac/'+myoffer.tender.id">{{myoffer.tender.title}}</router-link>
                          <span class="text-muted  float-left" dir="ltr">{{myoffer.added_at}}</span>
                       <p>
 
 
-                      <p class="text-right">{{myoffer.textOffer}}</p>
+                      <p class="">{{myoffer.textOffer}}</p>
 
 
 
@@ -140,12 +140,12 @@
                          <div class="p-descrip-box" v-if="IsUser==3" v-for="(myoffer,index) in Myoffers" :key="index">
                         <div class="card-body">
 
-                      <p class="text-right"> <router-link class="font-weight-bold ml-2 main-color " :to="'tenders/hvac/'+myoffer.tender.id">{{myoffer.tender.title}}</router-link>
+                      <p class=""> <router-link class="font-weight-bold ml-2 main-color " :to="'tenders/hvac/'+myoffer.tender.id">{{myoffer.tender.title}}</router-link>
                          <span class="text-muted  float-left" dir="ltr">{{myoffer.added_at}}</span>
                       <p>
 
 
-                      <p class="text-right">{{myoffer.textOffer}}</p>
+                      <p class="">{{myoffer.textOffer}}</p>
 
 
 
@@ -162,12 +162,12 @@
                          <div class="p-descrip-box" v-if="IsUser==5" v-for="(myoffer,index) in Myoffers" :key="index">
                         <div class="card-body">
 
-                      <p class="text-right"> <router-link class="font-weight-bold ml-2 main-color " :to="'tenders/interior/'+myoffer.tender.id">{{myoffer.tender.title}}</router-link>
+                      <p class=""> <router-link class="font-weight-bold ml-2 main-color " :to="'tenders/interior/'+myoffer.tender.id">{{myoffer.tender.title}}</router-link>
                          <span class="text-muted  float-left" dir="ltr">{{myoffer.added_at}}</span>
                       <p>
 
 
-                      <p class="text-right">{{myoffer.textOffer}}</p>
+                      <p class="">{{myoffer.textOffer}}</p>
 
 
 

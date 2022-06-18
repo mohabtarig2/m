@@ -80,6 +80,7 @@ class Kernel extends HttpKernel
         'consulte' => \App\Http\Middleware\consulte::class,
         'consr' => \App\Http\Middleware\consr::class,
         'admins' => \App\Http\Middleware\admins::class,
+        'customer' => \App\Http\Middleware\customer::class,
 
     ];
 

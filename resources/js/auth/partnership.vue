@@ -14,7 +14,7 @@
 
                             <span >
                                 <i class="fa fa-sign-in"></i>
-                                login
+                                {{$t('login')}}
                             </span>
                             </a></li>
 

@@ -34,7 +34,7 @@ class NotifyrejectHvactTender extends Notification implements  ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -46,8 +46,9 @@ class NotifyrejectHvactTender extends Notification implements  ShouldBroadcast
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Hvac Tender')
+                    ->line( $this->user->name.' Your Tender Has Been Rejected')
+                    ->action('View Project', url('/#/tenders/hvac/'.$this->tender->id))
                     ->line('Thank you for using our application!');
     }
 

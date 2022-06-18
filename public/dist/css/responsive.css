@@ -11,6 +11,7 @@ Version: 1.0.0
 		left: 250px;
 		width: calc(100% - 250px);
 	  }
+	 
 	}
 
 
@@ -2358,6 +2359,9 @@ Version: 1.0.0
 
 	.visible-xs{
 	   display: none !important;
+	}
+	.Images-gallary{
+		top: -5rem;
 	}
 	
 

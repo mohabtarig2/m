@@ -172,6 +172,29 @@ window.Echo.channel("CompleteStoneTender").listen('CompleteStoneTender',function
 });
 
 
+window.Echo.channel("NewConsultantContract").listen('NewConsultantContract',function(e){
+    alert(e.message)
+});
+
+
+window.Echo.channel("NewTitleRequest").listen('NewTitleRequest',function(e){
+    alert(e.message)
+});
+
+window.Echo.channel("UpdateTitleHvac").listen('UpdateTitleHvac',function(e){
+    alert(e.message)
+});
+
+
+window.Echo.channel("NewVillaRequest").listen('NewVillaRequest',function(e){
+    alert(e.message)
+});
+
+
+
+
+
+
 
 
 

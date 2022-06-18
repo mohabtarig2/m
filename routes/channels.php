@@ -77,9 +77,16 @@ Broadcast::channel('RejectConstructionTender.{tender_id}', function ($user , $te
 //     return true;
 // });
 
-// Broadcast::channel('UpdateTitleConstruction.{tender_id}', function ($admin , $tender_id) {
-//     return true;
-// });
+Broadcast::channel('UpdateTitleConstruction.{tender_id}', function ($admin , $tender_id) {
+    return true;
+});
+
+
+Broadcast::channel('UpdateTitleHvac.{tender_id}', function ($admin , $tender_id) {
+    return true;
+});
+
+
 
 Broadcast::channel('CompleteConstructionTender.{tender_id}', function ($user , $tender_id) {
     return true;
@@ -150,6 +157,27 @@ Broadcast::channel('chat.{offer_id}', function ($user , $offer_id) {
     // return Auth::check();
     return true;
 });
+
+
+Broadcast::channel('NewConsultantContract.{request_id}', function ($user , $request_id) {
+    // return Auth::check();
+    return true;
+});
+
+
+Broadcast::channel('NewTitleRequest.{request_id}', function ($user , $request_id) {
+    // return Auth::check();
+    return true;
+});
+
+
+Broadcast::channel('NewVillaRequest.{request_id}', function ($user , $request_id) {
+    // return Auth::check();
+    return true;
+});
+
+
+
 
 
 

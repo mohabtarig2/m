@@ -37,21 +37,29 @@
     </VueSlickCarousel> -->
 
 
-	<section class="hero-area bg-image bg-left" style="background-image:url('img/hero-bg.jpg')">
+	<section class="hero-area bg-image bg-left" style="background-image:url('img/hero-bg.jpg')" >
 		<div class="container hero-container">
 			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="col-lg-6 col-md-6 col-sm-12" >
 					<!-- Hero Content -->
 					<div class="hero-content">
 						<!-- <a href="#" class="hero-play-btn"><i class="fas fa-play"></i></a> -->
-						<span class="hero-subtitle">{{$t('Going')}}</span>
-						<h1 class="hero-title">{{$t('header_title1')}} <span>{{$t('header_title_part')}}</span></h1>
-						<div class="hero-icon-box">
-							<div class="icon"><i class="far fa-comments"></i></div>
-							<div class="media-body">
+						<span class="hero-subtitle" :dir="$t('directions')" :class="$t('text_align')">{{$t('Going')}}</span>
+						<h1 class="hero-title" :dir="$t('directions')" :class="$t('text_align')">{{$t('header_title1')}} <span>{{$t('header_title_part')}}</span></h1>
+						<div class="hero-icon-box"  :class="$t('text_align')"  :dir="$t('directions')">
+
+								<div class="media-body">
+								<span>
+									{{$t('home_descripe')}}
+ </span>
+ <div class="icon"><i class="far fa-comments"></i></div>
 								<span>{{$t('Get_Support')}}</span>
 								<h4 class="mb-0"><a href="mailto:Info@ambtenders.com">Info@ambtenders.com</a></h4>
+								
 							</div>
+
+							
+						
 						</div>
 					</div>
 				</div>
@@ -91,9 +99,9 @@
 	</section>
 	<!-- End Hero Area -->
 
-	<villa-finder></villa-finder>
+	<villa-finder ></villa-finder>
 
-	<section class="about-area section-padding">
+	<section class="about-area section-padding text-center"  >
 		<div class="bg-image bg-img-bottom" style="background-image:url('img/about/about-shape.png')"></div>
 		<div class="container">
 			<div class="row">
@@ -209,7 +217,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6 col-12">
+				<div class="col-lg-6 col-12" :dir="$t('directions')" :class="$t('text_align')">
 					<!-- About Image -->
 					<div class="about-img-area">
 						<div class="about-img">
@@ -306,8 +314,8 @@
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
 					<div class="section-title">
-						<span class="sub-heading">{{$t('villa')}}</span>
-						<h2 class="heading-title">{{$t('Recently_Added')}}</h2>
+						<span class="sub-heading">{{$t('villa_designs')}}</span>
+						<h2 class="heading-title">{{$t('Exclusive_Deals')}}</h2>
 						<p>
                             {{$t('Villa_offer_describe')}}</p>
 					</div>
@@ -362,7 +370,7 @@
 										</div>
                                         <div class="property-ratting-save saved" v-else>
 											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart"></i><b class="visible-xs">
-												{{$t('saveed')}}</b></a>
+												{{$t('saved')}}</b></a>
 										</div>
 									</div>
 								</div>
@@ -460,7 +468,7 @@
 											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i>{{$t('save')}}</a>
 										</div>
                                         <div class="property-ratting-save saved" v-else>
-											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart"></i>Saveed</a>
+											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart"></i>{{$t('saved')}}</a>
 										</div>
 									</div>
 								</div>
@@ -554,7 +562,7 @@
 												{{$t('save')}}</span></a>
 										</div>
                                         <div class="property-ratting-save saved" v-else>
-											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart"></i>{{$t('Saveed')}}</a>
+											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart"></i>{{$t('saved')}}</a>
 										</div>
 									</div>
 								</div>
@@ -716,7 +724,7 @@
 
 			</div>
 		</div>
-		<div class="container" :dir="$t('direactions')" :class="$t('text_align')">
+		<div class="container" :dir="$t('directions')" :class="$t('text_align')">
 			<div class="row g-0">
 				<div class="col-lg-6 offset-lg-6 col-12">
 					<!-- Testimonial Main -->
@@ -732,7 +740,7 @@
 									    <p class="">{{$t('goal3')}}</p>
                                         <p class="">{{$t('goal4')}}</p>
                 						<p class="">{{$t('goal5')}}</p>
-										<p class="">{{$t('goal6')}}</p>
+										<p class="" :dir="$t('directions')">{{$t('goal6')}}</p>
 
 									</div>
 									<!-- Single Testimonial Content -->
@@ -843,8 +851,8 @@
 								</div>
 							</div>
 							<div class="agent-content">
-								<h3 class="agent-title hs-6"><a href="">Mohab Tariq</a></h3>
-								<p class="theme-color">IT administrator</p>
+								<h3 class="agent-title hs-6"><a href="">Mohab T H Mohammed</a></h3>
+								<p class="theme-color">IT Support</p>
 							</div>
 						</div>
 
@@ -911,14 +919,14 @@
 	</section>
 
 
-    <section class="fact-area p-btm-140">
+    <section class="fact-area p-btm-140 "  :dir="$t('directions')">
 		<div class="container">
 			<div class="row g-0 justify-content-between nums">
 				<div class="col-xl-auto col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100" >
 					<!-- Single Fact -->
 					<div class="single-fact">
 						<i class="fa fa-home"></i>
-						<div class="fact-content">
+						<div class="fact-content mr-2">
 							<h3 class="fact-c-title"><span class="counter" data-goal="1000">{{number1}}</span>+</h3>
 							<p class="m-0">{{$t('villa_excuted')}}</p>
 						</div>
@@ -928,7 +936,7 @@
 					<!-- Single Fact -->
 					<div class="single-fact">
 						<i class="fa fa-users"></i>
-						<div class="fact-content">
+						<div class="fact-content mr-2">
 							<h3 class="fact-c-title"><span class="counter" data-goal="10">10</span>k</h3>
 							<p class="m-0">{{$t('Visitors')}}</p>
 						</div>
@@ -938,7 +946,7 @@
 					<!-- Single Fact -->
 					<div class="single-fact">
 						<i class="fa fa-clock"></i>
-						<div class="fact-content">
+						<div class="fact-content mr-2">
 							<h3 class="fact-c-title">{{$t('aed')}}<span class="counter" data-goal="1850000">1850000</span></h3>
 							<p class="m-0">{{$t('Average')}}</p>
 						</div>
@@ -948,7 +956,7 @@
 					<!-- Single Fact -->
 					<div class="single-fact">
 						<i class="fas fa-arrows-alt"></i>
-						<div class="fact-content">
+						<div class="fact-content mr-2">
 							<h3 class="fact-c-title"><span class="counter" data-goal="4300">4300</span>+</h3>
 							<p class="m-0">{{$t('Resource')}}</p>
 						</div>
@@ -1014,6 +1022,7 @@ data(){
             options: ['mohammed','ali'],
             logoTeam:{
             arrows: false,
+			lang:lang,
             infinite: true,
             slidesToShow: 3,
             slidesToScroll: 1,

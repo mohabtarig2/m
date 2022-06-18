@@ -31,7 +31,7 @@ class NotifyRejectConstructionTender extends Notification
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -43,9 +43,10 @@ class NotifyRejectConstructionTender extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+        ->line('Contracting Tender')
+        ->line('Your tender has been Rejected')
+        ->action('View Project', url('/#/tenders/construction/'.$this->tender->id))
+        ->line('Thank you for using our application!');
     }
 
     /**

@@ -53,7 +53,7 @@
 			<div class="row" v-for="row in rows" :key="'row'+row">
 		
 				
-					<div  class="col " v-for="(ads,column) in OfferRow(row)" :key="'row'+row+column">
+					<div  class="col-lg-4 col-sm-12 col-md-6 " v-for="(ads,column) in OfferRow(row)" :key="'row'+row+column">
 					<div class="blog-slider" >
 						<!-- Single Blog -->
 						<div class="single-blog">
@@ -129,9 +129,9 @@
 												
 
 						</div>
-					<slick v-bind="settingsTeam" v-if="users.length" class="agents-slider" >
+					<div v-bind="settingsTeam" v-if="users.length" class="row" >
 				
-					<div v-for="(user, index) in users" :key="index">
+					<div v-for="(user, index) in users" :key="index" class="col-3">
 <router-link :to="{name:'CompanyProfile',params:{id:user.id,type:type}}">
 									
 						<div class="single-agent m-b-50">
@@ -167,7 +167,7 @@
 
 			
 				
-					</slick>
+					</div>
 						</div>
 		</section>
 

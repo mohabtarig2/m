@@ -4,7 +4,7 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
          <ul class="progressbar">
-             <span v-if="stage==0" :dir="$t('directions')">
+             <span v-if="stage==0" >
                <li class="active" style="background">
                {{$t('Receiving_offers')}}
                </li>

@@ -10,6 +10,7 @@
     "Message_success_sign_up":"لقد تم تسجيل حساب بنجاح",
     "You_are_not_authorized":" غير مصرح لك الدخول عليك تسجيل الدخول اولاً",
     "FullName":"الاسم بالكامل",
+    "Required_files":"الملفات المطلوبة",
     "I_agree":"موفق على",
     "Deisgn_request":"طلب تصميم ",
     "add_notes":" أضف ملاحظات ",
@@ -19,7 +20,9 @@
     "send":"إرسال",
     "User_name":"أسم المستخدم",
     "Categories":"الاقسام",
+    "Add_photo":"أضافة صور",
     "view":"عرض",
+    "Attach_examples":"    أرفق أمثلة لما تريد ان أمكن",
     "soil_investigation_file":"ملف فحص  التربة",
     "earth_map_file":"خارطة الارض ",
     "Receiving_offers":"إستقبال العروض",
@@ -27,6 +30,10 @@
     "Implementation_completed":"اكتمال التنفيذ",
     "yes":"نعم",
     "no":"لا",
+    "Time_request":"وقت الطلب",
+    "from":"من",
+    "to":"الي",
+    "specification_file":"ملف المواصفات",
 
     
     "Sheikh_Zayed_Housing_Program":"برنامج الشيخ زايد للاسكان",
@@ -53,19 +60,24 @@
     "login_first":"سجل دخولك اولا لتقديم الطلب",
     "Related_search":"بحث ذات صلة ",
     "posted_by":"نشر بواسطة",
+    "You_must_enter_all_fields":" يجب عليك ادخال كل الحقول",
     
-  
+  "Overal_Rating":"التقييم الكلي ",
+  "service_owner":"صاحب الخدمة",
     
     "content_about":"شركة اماراتية تأسست عام 2020 لتطوير مفهوم البناء على مستوى دول مجلس التعاون والوطن العربي والسوق الاجنبي",
     "contact":"اتصل بنا",
     "All_Rights_Reserved":"مناقصات اي ام بي كل الحقوق محفوظة ",
     "villa":"فلل",
-    "villa_design":"تصاميم فلل",
+    "villa_design":"تصميم الفيلا",
+    "new_request":"طلب جديد ",
+    "villa_designs":"تصاميم فلل جاهزة",
     "modern_villa_designs":"تصاميم فلل حديثة",
     "classic_villa_designs":"تصاميم فلل كلاسيك",
     "unique_villa_designs":"تصاميم فلل مميزة",
     "more":"تفاصيل أكثر",
     "HowItWroks":" طريقة العمل",
+    
     "tenders":"مناقصات",
     "errors":"الايميل او الباسورد الذي ادخلته غير صحيح",
     "Evacuation_responsibilaty":"اخلاء المسؤولية",
@@ -100,6 +112,7 @@
     "amb_Change_privacy":"تحتفظ مناقصات اي ام بي بحق تعديل أو تغيير أو تحديث سياسة الخصوصية هذه في أي وقت بناء علي تقديراتها، وأنت توافق على أن تلتزم بهذه التعديلات أو التغييرات أو التحديثات. ستقوم فلل للإسكان بإخطارك بتغيير مواد سياسة الخصوصية هذه بنشر السياسة المنقحة على هذه الصفحة. إستخدامك المتواصل (بما في ذلك الدخول و/أو التصفح و/أو واستخدام أي سمات تفاعلية) للموقع الإلكتروني يُعتبر موافقة منك على سياسة الخصوصية هذه، وعلى أية تحديثات لها. نحن نشجعك على مراجعة سياسية الخصوصية هذه على نحو دوري لكي تظل على اطّلاع على كيفية حمايتنا للمعلومات الشخصية التي نجمعها.",
     "uniqueServices":"خدماتنا الالكترونية المميزة",
     "uniqueServicesDesc1":"  إختر احد    ",
+    "Success_request":"تم ارسال طلبك بنجاح سيتم التواصل معكم قريباُ ",
     
     "uniqueServicesDesc2":"    المناقصات ",
     "uniqueServicesDesc3":"  نوفر لكم أفضل الصفقات بمعايير تلبي ثقة العميل بكل مصداقية وشفافية ",
@@ -107,8 +120,9 @@
     "save_peoject":" وفر في مشروعك",
     "Get_quility":" احصل علي الجودة العالية",
     "Get_imagination":"حقق خيالك",
-    "Villa_offer_describe":"صفقات حصرية من قبل الاستشارين المعتمدين من الجهات الحكومية في دولة الامارات العربية المتحدة",
-
+    "Villa_offer_describe":"اختر احد التصاميم الجاهزة  من قبل شركات استشارات هندسية المعتمدين ، حيث يشمل التكلفة سعر تصميم وسعر الاشراف الشهري وتكلفة البناء من قبل المقاولين مختارين من قبل الاستشاريين مع امكانية تعديل على التصميم بما يناسب ميزانيتك واحتياجاتك",
+    "Exclusive_Deals":"صفقات حصرية ",
+    "home_descripe":"مناقصات ايه ام بي لكل مواطن ومقيم ومستثمر حاصل  على أراضي بانواعها من مختلف جهات الحكومية و المطورين، الراغبين في بناء منازلهم على الأراضي المخصصة  لهم بصفقات حصرية من قبل الاستشاريين والمقاولين من التصميم الى تسليم مفتاح المشروع",
     "how_it_work_qoute":"هدفنا الغاء جميع العملات الجانبية بين المقاولات والاستشارات",
     "Find Out":"إكتشف",
     "team_goals":"يعمل بجهد لكسب رضاء العميل وتطوير طرق المناقصات وذلك في سبيل توفير المصداقية والامان للمواطنين والمقيمين",
@@ -124,14 +138,27 @@
     "goal3":"الدعم للشركات الوطنية",
     "goal4":"تقليل تكلفة البناء",
     "goal5":"توفير الوقت والجهد في البحث عن جميع الشركات",
-    "goal6":" تطوير تقنية التعاملات الرقمية blockchain و NFT رموز غير للاستبدال في مجال البناء",
+    "goal6":" استخدام تقنية blockchain وnft  في مجال البناء",
 
     "Get_Support":"احصل علي الدعم",
+    "Confirm_order_completion":"تأكيد طلب الاكمال ",
+    "Project_Cancellation":"الغاء المشروع",
+    "The_company_is_waiting_for_me_to_cancel_the_order":"الشركة تنتظر مني إلغاء الطلب",
+    "Waiting_for_the_companys_response":"انتظار رد الشركة",
     "total_area_build":" مساحة البناء ",
     "supervision":"إشراف",
     "services":"خدمات ",    
+    "business_fair":"معرض الأعمال ",    
+    "complete_request":"طلب إكمال",
+    "Waiting_for_the_owner_response_to_complete":"انتظار رد المالك للاكمال",
     "Gallary":"معرض أعمالي ",   
-    "Type Services":"نوع الخدمة", 
+    "Type_Services":"نوع الخدمة", 
+    "canceled":"ملغي",
+    "reason":"السبب",
+    "Are_you_sure_you_want_to_cancel_this_order":"هل انت متأكد تريد الغاء هذا الطلب ؟ ",
+    "consultant_contract":"عقد الاستشاري",
+    "cancel":"إلغاء",
+
 
     "Loan":"قرض",
     "Grant":"منحة",
@@ -144,7 +171,10 @@
     "settings":"الاعدادات",
     "Edit_Account":"تعديل الحساب",
     "Edit":"تعديل  البيانات",
-    "Logout":"تسجيل خروج    ",
+    "edit":"تعديل",
+    "delete":"حذف",
+    "Thers_No_Tender":"ليس هنالك مناقصة مطروحة",
+    "logout":"تسجيل خروج    ",
     "join":"انضم الينا",
     "header":"قم بتصميم منزلك او مشروعك ",
     "login":"دخول",
@@ -155,9 +185,19 @@
     "how_its_work":" كيف يعمل ",
     "content_its_work":"قم بتقديم اعلاناتك المبوبة ومتابعة المناقصات وتقديم العروض والحصول على العديد  من المشاريع",
     "what_you_will_get":"ماالذى سوف تحصل عليه ",
+    "ShouldPdf":"يجب ان يكون ملف pdf ",
+    "uploaded_the_engineering_consultancy_contract":"رفع عقد الاستشارات الهندسية",
+    "Waiting_for_the_consultant_to_write_a_short_description_title":" إنتظار الاستشاري لكتب عنوان وصف مختصر",
+    "Waiting_for_the_consultant_to_write_a_short_description":"إنتظار الاستشاري لكتب وصف مختصر",
+    "Waiting_for_the_consultant_to_upload_the_3D_file":"إنتظار الاستشاري لرفع ملف الثري دي",
+    "3D_File":"ملف الثري دي",
+    "contacts":"التواصل",
+    "autocad":" الاوتوكاد",
+    "Number_customer":"رقم اتصال العميل :",
+    "Number_Company":"رقم اتصال الشركة :",
+    "send_message":"إرسل رسالة",
+    "Add_Review_Consultancs":"اضف تقييم للاستشارات الهندسية",
 
-
-    
     "New_Customers":"زبائن جدد",
     "Ease_of_follow":"سهولة متابعة المشروع",
     "extra_revenue":"عائدات إضافية",
@@ -167,6 +207,14 @@
 
     "Ready_To_Join_us":"جاهز للانضمام إلينا",
     "join_now":"الانضمام الان",
+
+    "Waiting_for_the_consultant_to_attach_the_architectural_drawings_file":"إنتظار الاستشاري لرفع ملف المخططات",
+    "Waiting_for_the_consultant_to_upload_the_services_file":" إنتظار الاستشاري لرفع ملف الخدمات",
+    "Waiting_for_the_consultant_to_upload_the_specification_file":" إنتظار الاستشاري لرفع ملف المواصفات",
+
+    "Waiting_for_the_consultant_to_raise_the_map_of_the_land":" إنتظار الاستشاري لرفع خارطة الارض",
+    "Waiting_for_the_consultant_to_attach_the_construction_file":" إنتظار الاستشاري ارفاق الملف الانشائي",
+
 
     
     
@@ -204,6 +252,8 @@
     "floors":"طوابق",
     "consulting_company":"  شركات الأستشارات ",
     "consulting":"استشارات هندسية ",
+    "consulting_tender":"مناقصة إستشارات هندسية",
+    "please_Edit_Tender":"يرجي تعديل المناقصة",
     "Is_a_basement_required":"هل مطلوب سرداب ؟",
     "construcion_company":"شركات المقاولات",
     "HVAC_companies":" شركات التكييف ",
@@ -217,6 +267,7 @@
     "price_include":"السعر يشمل الاتي ",
 
      "Recently_Added":"اضيفت مؤخرا",
+     
     "How_it_works":"كيف يعمل",
     "unique":"مميز",
     "villa_excuted":"فيلل تم تنفيذها",
@@ -230,6 +281,7 @@
     "good":"جيد",
     "deluxe":"ديلوكس",
     "superdeluxe":"سوبر ديلوكس",
+    "Excel":"إكسل",
 
     "Notifications":"إشعارات",
     "team_tender":"   فريق عمل اي ام بي",
@@ -255,16 +307,24 @@
     "update_data":"تحديث البيانات",
     "short_descripe":"وصف مختصر",
     "long_descripe":"وصف مفصل للمشروع",
-    "ground_floor":"طابف أرض",
+    "ground_floor":"دور أرضي",
+    "First_floor":"دور أول",
+    "Second_floor":" دور ثاني",
+    "Surface":"سطح",
+    "Do_you_want_basement":"هل تريد سرداب",
+    "villa_design_shape":"شكل تصميم الفيلا",
     "Service_room_location":"مكان غرفة الخدمات ",
     "Maidroom_mainkitchen_pantry":"غرفة خادمة + مطبخ رئيسي + مخزن",
-    
+    "Type_a_number_in_case_you_dont_want_to_write_a_zero":" اكتب رقم , في حالة لاتريد اكتب صفر",
 
-    "Become_Partner":"كن شريكاً",
+    "Become_Partner":"كن شريكاً",    
+    "The_minimum_value_price_must_be_less_than_the_maximum":"سعر القيمة الادني يجب ان تكون اقل من الحد الاعلى",
     "reach":"الوصول إلى المزيد من العملاء وتحقيق النمو معنا",
     "Build_your_Design":"صمم مشروعك الخاص",
     "team_partner":"     كن جزء في تطوير مفهوم البناء    ",
     "next":"التالي",
+    "Service_room_distribution_site":"مكان توزيع غرفة الخدمات",
+    "subtitle_Service_room_distribution_site":" غرفة مربية + مطبخ رئيسي + مخزن + الغسيل",
 
     "title":"العنوان",
     "New_Offers":"عرض جديد",
@@ -274,10 +334,14 @@
     "bed_rooms":"غرف نوم",
     "Type_Of_Villa":"نوع الفيلا ",
     "master_rooms":"غرف ماستر",
+    "Tips_for_starting_your_business":"نصائح لبدء مشروعك ",
     "majlis":" المجالس",
     "dining":"غرف طعام",
     "kitchen":"المطبخ",
-    "living room":"غرف المعيشة",
+    "kitchens":"مطابخ",
+    "post_now":"نشر الان",
+    "must_be_12_digits":"يجب ان تكون 12 رقم",
+    "living_room":"غرف المعيشة",
     "bathroom":"حمام",
     "Service_room_placement":"غرفة الخدمات",
     "price":"السعر",
@@ -288,12 +352,18 @@
     "New_offer_add":"تم اضافة عرض جديد",
     "Type_of_Ads":"نوع الاعلان",
     "offer":"عرض خاص",
+    "Contracting_Tender":"مناقصة المقاولات",
+    "Transfer_of_tenders_by_the_client":"تحويل المناقصة من قبل العميل",
+
+    "Hvac_Tender":"مناقصة التكييف ",
+    "Stone_Tender":"مناقصة الحجر ",
+    "Interior_tender":" مناقصة الديكور الداخلي",
     
     "description":"الوصف",
     "submit_an_app":"ارسل طلب  ",
     "Consultant_fee": " الأستشارات   ",
     "tabCost":"تكلفة البناء ",
-    "CostGov":"الدوائر الحكومية",
+    "CostGov":" رسوم الدوائر الحكومية ",
     "conditioning": "التكييف",
     "gypsum": "الجبس",
     "interface_design":"تصميم الواجهة ",
@@ -309,19 +379,57 @@
     "garden_design": "تصميم الحدائق ",
     "the_fence": "السور",
     "Items_not_covered":"البنود  المشمولة",
+    "seller":"مشتري",
+    "buyer":"بائع",
+    "order":"الطلب",
+    "Consultant_offer":"عرض الاستشاري",
+
+    
+    "The_first_stage":"  المرحلة الاولى",
+    "The_second_stage":" المرحلة الثانية ",
+
+    
+    "The_third_stage":" المرحلة الثالثة  ",
+    "The_fourth_stage":"المرحلة الرابع  ",
+    "The_fifth_stage":" المرحلة الخامسة ",
+    "The_sixth_stage":"المرحلة السادسة  ",
+    "The_seventh_stage":" المرحلة السابعة ",
+    "The_eighth_stage":" المرحلة الثامنة ",
+
+    "request_number":"رقم الطلب ",
     "notes":"ملاحظات",
+    "Services_file":"ملف الخدمات",
     "bank":"البنك",
     "mbr":" محمد بن راشد للاسكان",
     "szp":" برنامج الشيخ زايد  ",
     "Special_grant":"تمويل خاص ",
     "Emirates_id":"الهوية الاماراتية ",
     "land_map":"خريطة الارض",
+    "Structure_file":"ملف الأنشائي",
+    "identity":"الهوية",
+    "Tender_Transfer":"تحويل المناقصة",
+    "Architectural_drawings_file":"ملف المخططات المعماري",
+    "Tender_Contracts":"عقود المناقصات",
+    "construction_picture":"صور البناء",
+    "contractor_contract":"عقد المقاول ",
+    "Hvac_contract":"عقد التكييف ",
+    "Stone_contract":"عقد الحجر ",
+    "wait":"انتظر..",
+    "Completion_date":"تاريخ الانجاز ",
+    
+    "Interior_contract":"عقد الديكور الداخلي ",
+    "Follow_up_on_the_construction_phase":"متابعة مرحلة البناء",
+    "Added_Short_description_To_Project":"تمت إضافة وصف قصير للمشروع",
+    "Added_Long_description_To_Project":"تمت إضافة وصف مفصل للمشروع",
+   
+    
     "build_by":"طريقة البناء ",
     "request":"تم ارسال طلبك بنجاح",
     "sqft":" قدم مربع",
     "Email":"البريد الأكتروني",
     "Password":" كلمة السر",
     "mobile":"رقم هاتف ",
+    "write_desc":" اكتب وصف ",
     "Confirm_Password":"  تأكيد كلمة السر ",
     "confirm":"تأكيد",
     "Are_you_sure_you_want_to_choose":"هل انت متأكد انك تريد أختيار ",
@@ -331,6 +439,14 @@
     "tender_request":"طلب مناقصة",
     "Login_Now":"سجل دخول الان",
     "The_image_has_been_deleted_successfully":"تم حذف الصورة بنجاح",
+    "The_has_been_deleted_successfully":"تم حذف  بنجاح",
+    "Delete_ads":"مسح إعلان ",
+    "Do_You_want_Delete":" هل انت متاكد تريد حذف",
+    "Suggested_offer" :"العرض المقترح",
+    
+    "Are_you_sure_you_want_to_complete_this_application":" هل انت متأكد تريد أكمال هذا الطلب؟",
+    "project_files":" ملفات المشروع ",
+    
 
 
     "title-tips1":"ابدأ في بناء مشروعك",
@@ -344,8 +460,13 @@
     
     "UnderProcess":"تحت المعالجة ",
     "superVision_monthly":"الأشراف/ شهرياٌ",
+    "Name_Super_eng":"اسم المهندس(المشرف)",
+    "Supervisor_phone_number":"رقم هاتف المشرف",
+
     "You_have_to_write_the_construction_supervision_price_example":" : عليك كتابة سعر الاشراف البناء  مثال ",
     "design_price":"عليك كتابة سعر التصميم , مثال",
+    "Design_Price":"سعر التصميم",
+    "design":"تصميم",
     "the_proposal":"المقترح",
     "open": "مفتوح",
     "UnderExcute":"قيد التنفيذ",
@@ -364,7 +485,7 @@
     "This_offer_has_been_selected":"تم اختيار هذا العرض",
     "Your_offer_has_been_selected":" تم اختيار هذا العرض الذي قدمته",
     "Waiting_for_reply":"في انتظار الرد",
-    "internal_distributionW":"التوزيع الداخلي",
+    "internal_distribution":"التوزيع الداخلي",
     "You_have_to_write_the_approximate_budget_for_the_construction_example":"عليك كتابة الميزانية التقريبية للبناء  مثال :",
     "followup_the_request":"قم بمتابعة الطلب",
     "You_have_to_write_the_building_area_for_example":"عليك كتابة مساحة البناء  مثال :",
@@ -377,6 +498,7 @@
     "Numbers_Offer":"عدد العروض",
     "File_of_Company":"ملف الشركة",
     "Offer_details":"تفاصيل العرض",
+    "Approximate_cost":"التكلفة التقريبية",
     "display_designs":"تصاميم العرض",
     "open_project":"المشاريع المفتوحة",
     "Follow_up_on_requests_for_villas":"متابعة طلبات الفلل",
@@ -412,12 +534,30 @@
     "Complete_Request":"تم قبول طلب إكمال المشروع     ",
     "Added_review":"اضاف تقييم",
     "review":" تقييم",
+    "Overall_Rating":"التقييم الكلي",
+    "Add_Review":"إضف تقييم",
     "update":"تحديث",
     "new":"جديد",
+    "Construction_company_Review":"تقييم شركة المقاولات  ",
+    "Hvac_company_Review":"تقييم شركة التكييف  ",
+    "Stone_company_Review":"تقييم شركة الحجر  ",
+    "Interior_company_Review":"تقييم شركة الديكور الداخلي  ",
+    "Company_main_branch":"الفرع الرئيسي",
+    "Company branches":"فروع الشركة",
+    "no_branchs":"ليس هنالك فروع",
+    "company_files":"ملفات الشركة",
+    "review_and_rating":"مراجعة & وتقييم",
+    "Business_license":"الرخصة التجارية",
+    "Achievement_License":"رخصة الانجازات",
+    "Achievement_number_since_inception":"عدد الانجاز منذ التأسيس",
+    "since":"منذ",
+  "Number_of_achievements_in_the_last_three_years":"عدد الانجازات اخر ثلاث سنين ",
+    
 
     "construction":"مقاولات",
     "hvac":"تكييف",
     "stone":"حجر",
+    
     
 
     "Done_choosed":"تم اختيار عرض",
@@ -425,6 +565,7 @@
     "Desgin_Details":"تفاصيل التصميم",
     "desgin":"التصميم",
     "Supervisor":"إشراف",
+
     
    
     
@@ -444,7 +585,32 @@
     
     
 
-    "whatsapp":"رقم الواتساب"
+    "whatsapp":"رقم الواتساب",
+
+
+    "Edit_Profile":"تعديل الحساب",
+    "Company_name":"اسم الشركة ",
+    "Manager_Name":"اسم المدير",
+    "arabic":"عربي",
+    "about_Us":"حولنا ",
+    "english":"انجليزي",
+    "Account_details":"بيانات الحساب" ,
+    "branchs":"أقسام",
+    
+    "Change_Your_Password":"غير كلمة السر",
+    "Current_Password":"كلمة السر الحالية ",
+    "New_password":"كلمة السر الجديدة ",
+    "confirm_New_password":"تأكيد كلمة السر الجديدة  ",
+
+    "Licence":"رخصة",
+    "upload":"تحميل",
+    "Are_you_sure_you_want_to_complete_this_project":"هل انت متأكد تريد أكمال هذا المشروع ؟",
+
+    "Less_than_4_letters":"اقل من 4 احرف",
+    "a":"a"
+
+
+   
 
 
 

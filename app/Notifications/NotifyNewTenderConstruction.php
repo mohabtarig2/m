@@ -34,7 +34,7 @@ class NotifyNewTenderConstruction extends Notification implements ShouldBroadcas
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -46,8 +46,9 @@ class NotifyNewTenderConstruction extends Notification implements ShouldBroadcas
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Contracting Tender')
+                    ->line($this->user->name.' Added New  Tender Please Review To Confirm')
+                    ->action('View Tender', url('/#/admin/construction-Tenders/'.$this->tender->id))
                     ->line('Thank you for using our application!');
     }
 

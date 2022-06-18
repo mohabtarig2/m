@@ -33,7 +33,7 @@ class NotifyRetenderConstruction extends Notification implements ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -45,9 +45,10 @@ class NotifyRetenderConstruction extends Notification implements ShouldBroadcast
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+        ->line('Contracting Tender')
+        ->line($this->user->name.' Update The Tender ')
+        ->action('View Project', url('/#/admin/construction-Tenders/'.$this->tender->id))
+        ->line('Thank you for using our application!');
     }
 
     /**

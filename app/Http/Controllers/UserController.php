@@ -195,9 +195,12 @@ class UserController extends Controller
 
     public function getAllNotificatons(){
         $notifications = Auth::user()->notifications;
+       
+
         foreach ($notifications as $notification) {
             $notification->setAttribute('added_at', $notification->created_at->diffForHumans());
         }
+        
         return response()->json($notifications);
     }
     public function NotificatonsMarkAsRead(Request $request){

@@ -11,11 +11,13 @@ use App\contractsHvac;
 use App\contractsInterior;
 use App\contractsStone;
 use App\Events\NewTenderHvac;
+use App\Events\NewVillaRequest;
 use App\hvac;
 use App\HvacFiles;
 use App\InteriorFiles;
 use App\Models\admin;
 use App\Notifications\NotifyNewTenderHvac;
+use App\Notifications\NotifyVillaRequest;
 use App\offer_villa;
 use App\offersvillafiles;
 use App\request_tender;
@@ -960,7 +962,7 @@ return 'true';
                 
             ]);
     
-            return 'true';
+          
           
         }else{
             if($reques_villa->supervision && $reques_villa->sqft && $reques_villa->design){
@@ -975,11 +977,14 @@ return 'true';
                     
                 ]);
         
-                return 'true';
+               
               }
               
         }
-        
+        $cUser = user::find($reques_villa->eng_id);
+        $user = user::find(Auth::id());
+        broadcast(new NewVillaRequest($reques_villa,$user));
+        Notification::send($cUser, new NotifyVillaRequest($reques_villa,$user));
 
             return response()->json("true");
     }

@@ -1,5 +1,5 @@
 <template>
-    <div class="service_ads">
+    <div class="service_ads" >
         
  
          <span  v-for="offer,index in ads " :key="index">
@@ -27,7 +27,7 @@
 
             	<div class="single-rr overall-rating">
                    
-											<h5> التقييم الكلي </h5>
+											<h5> {{$t('Overall_Rating')}} </h5>
 											<div class="main-rating-line">
 												<p class="main-r-title fs-40 m-0">{{FinalReivew}}</p>
 												<Review :rating="TruncatedReivew"></Review>
@@ -37,7 +37,7 @@
 								
                                 		</div>
                                         <div>
-            <h5>صاحب الخدمة </h5>
+            <h5>{{$t('service_owner')}} </h5>
 
 
             <span v-if="offer.company.avatar">
@@ -53,17 +53,17 @@
                  </router-link>
              </div>
                  <div>
-                 <span>{{type=="stone" ? 'حجر ': ''}} </span>
-                 <span>{{type=="interior" ? 'ديكور داخلي ': ''}} </span>
-                 <span>{{type=="hvac" ? 'تكييف ': ''}} </span>
-                 <span>{{type=="consulting" ? 'الاستشارات الهندسية ': ''}} </span>
-                 <span>{{type=="construction" ? ' المقاولات ': ''}} </span>
+                 <span>{{type=="stone" ? $t('stone'): ''}} </span>
+                 <span>{{type=="interior" ? $t('interior_decoration'): ''}} </span>
+                 <span>{{type=="hvac" ? $t('hvac'): ''}} </span>
+                 <!-- <span>{{type=="consulting" ? 'الاستشارات الهندسية ': ''}} </span> -->
+                 <span>{{type=="construction" ?  $t('construction'): ''}} </span>
                  </div>
                                         </div>
 
 
                                         <div class="contact">
-                                                <h5> التواصل</h5>
+                                                <h5> {{$t('contacts')}}</h5>
                                                 <a  class="btn btn-download" :href="'tel:'+offer.company.company.phone"> 
                                                     
                                                     {{offer.company.company.phone}}
@@ -80,7 +80,7 @@
         </div>
     </div>
     <div class="col-md-8 col-sm-12">
-            <div class="properties-s-widget" >
+            <div class="card" >
                 <slick :v-bind="settings" v-if="offer.image.length>0" >
                     <span v-for="image,i in offer.image " :key="i" >
 
@@ -101,7 +101,7 @@
 
    <div  v-if="Myview==1">
 <button    class="theme-btn  text-right confirm" data-toggle="modal" data-target="#Review"
- ><i class="bx bxs-star" ></i>اضف تقييم</button>
+ ><i class="bx bxs-star" ></i>{{$t('Add_Review')}}</button>
 
 
 <div class="modal fade" id="Review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -132,7 +132,6 @@
                     rows="6"
                     v-model="ReviewContent"
 
-                      placeholder=" رأيك   "
 
                   ></textarea>
                   <!-- <div
@@ -143,8 +142,8 @@
                 </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="theme-btn primary" data-dismiss="modal">إغلاق</button>
-        <button type="button" class="theme-btn" @click.prevent="SubmiitReview(offer.user_id,offer.com_id,offer.id)">إرسال </button>
+        <button type="button" class="theme-btn primary" data-dismiss="modal">{{$t('close')}}</button>
+        <button type="button" class="theme-btn" @click.prevent="SubmiitReview(offer.user_id,offer.com_id,offer.id)">{{$t('send')}} </button>
       </div>
     </div>
   </div>
@@ -157,10 +156,10 @@
 <div v-if="review" >
     
   	<div class="p-descrip-box rating mt-5" >
-						<h4 class="pr-d-title"> تقييم الخدمة </h4>
+						<h4 class="pr-d-title"> {{$t('review')}}  </h4>
 						<div class="rating-reviews-main">
 							<div class="review-add">
-								<h4 class="review-add-title fs-20">{{offer.CountReview}} مراجعة</h4>
+								<h4 class="review-add-title fs-20">{{offer.CountReview}} {{$t('review')}}</h4>
 								<div class="review-add-main">
 									<div class="review-img">
 										<img :src="review.user.avatar" alt="#" width="126" height="126" style="

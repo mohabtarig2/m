@@ -7,14 +7,14 @@
 
     <div class=" mt-3">
         <router-link :to="{name:'editprofile'}" class="mr-4 font-weight-bold text-dark">
-        <i class="fa fa-user"></i><span class="pr-5"> بيانات الحساب </span></router-link></div>
+        <i class="fa fa-user"></i><span class="pr-5">  {{$t('Account_details')}} </span></router-link></div>
 
         <div class=" mt-3"><router-link :to="{name:'password'}" class="mr-4 font-weight-bold text-dark"><i class="fa fa-unlock-alt"></i><span class="pr-5">
-             كلمة السر </span></router-link></div>
+             {{$t('Password')}}</span></router-link></div>
 
              <div class=" mt-3"><router-link :to="{name:'editBranch'}" class="mr-4 font-weight-bold text-dark" v-if="IsUser!=10">
                  <i class="fa fa-list   "></i><span class="pr-5">
-             الفروع </span></router-link></div>
+             {{$t('branchs')}} </span></router-link></div>
 
 
 </div>

@@ -375,9 +375,6 @@ public function updatConsultedata(Request $request){
 
 
 
-
-
-
       Notification::send($admins, new NotifyRetenderConsulte($tender->user,$tender));
 
 
@@ -627,7 +624,7 @@ public function AllMyconslCtender(Request $request)
                     $tender->setAttribute('comments',$commnets);
                     $tender->setAttribute('count',$count);
                     
-                     $tender->setAttribute('added_at',$tender->created_at->diffForHumans());
+                     $tender->setAttribute('added_at',$tender->updated_at->diffForHumans());
     
             }
     
@@ -724,7 +721,7 @@ public function AllMyconslCtender(Request $request)
                     $offer = Toffers::where('tender_id',$uid)->get();
 
                     $tender->setAttribute('count',$offer->count());
-                    $tender->setAttribute('added_at',$tender->created_at->diffForHumans());
+                    $tender->setAttribute('added_at',$tender->updated_at->diffForHumans());
                 
                 return response()->json($tenders);
             }

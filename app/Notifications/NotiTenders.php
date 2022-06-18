@@ -39,7 +39,7 @@ class NotiTenders extends Notification implements ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['database','broadcast'];
+        return ['database','broadcast','mail'];
     }
 
     /**
@@ -51,8 +51,9 @@ class NotiTenders extends Notification implements ShouldBroadcast
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line($this->tender->note)
+                    ->line('You have a new engineering consultancy tender, under review')
+                    ->action('View Tender', url('/#/admin/Conslute-Tenders/'.$this->tender->id))
                     ->line('Thank you for using our application!');
     }
 
@@ -69,7 +70,7 @@ class NotiTenders extends Notification implements ShouldBroadcast
             'tender'=>$this->tender
         ];
     }
-    public function ToBroadcast($notifiable){
+    public function ToBroadcast($notifiable){   
 
         return new BroadcastMessage([
             'data'=>[

@@ -1,9 +1,11 @@
 <template>
     <div :class="$t('text_align')">
-<div class="h2 mb-5 text-muted">نصائح لبدء مشروعك </div>
+<div class="h2 mb-5 text-muted">
+    {{$t('Tips_for_starting_your_business')}}
+     </div>
 
       <div class="font-weight-bold  h5"> <img :src="'assets/img/build.svg'" width="20"> {{$t('title-tips1')}}</div>
-      <!-- <button @click="copy($t('tips1'))">copy</button> -->
+      <button @click="copy($t('tips1'))">copy</button>
 <p  class="text-dark">{{$t('tips1')}}
 </p >
 

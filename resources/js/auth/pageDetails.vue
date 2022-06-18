@@ -14,13 +14,15 @@
 
       <div class="modal-body">
         <div class="text-center"><i class='bx bxs-check-circle text-success'></i></div>
-        <div class="text-center font-weight-bold">.تم ارسال طلبك بنجاح سيتم التواصل معكم قريباُ </div>
+        <div class="text-center font-weight-bold">{{$t('Success_request')}}</div>
 
       </div>
 
     </div>
   </div>
 </div>
+
+
 
 
 
@@ -69,6 +71,8 @@
 			</div>
 		</div>
 	</section>
+
+
 	<!-- End Breadcrumbs Area -->
 
 
@@ -77,7 +81,7 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="top-head-inner">
-						<div class="row">
+						<div class="row" :dir="$t('directions')" :class="$t('text_align')">
 							<div class="col-lg-8 col-md-7 col-12">
 								<div class="property-top-head">
 									<div class="pt-list">
@@ -98,7 +102,29 @@
 							<div class="col-lg-4 col-md-5 col-12">
 								<div class="p-single-pr m-t-50">
 									<div class="price-amount">
-										<span>{{$t('aed')}}</span><b class="theme-color">{{offer.price}}</b></div>
+									<b class="theme-color">{{offer.price}}</b>	<span>{{$t('aed')}}</span></div>
+                    <div class="mt-3">
+                    <div>
+                    <span class="badge badge-primary"> {{$t('tabCost')}}</span> 
+                    
+                     <span class="badge badge-primary"> {{$t('villa_design')}}
+                      {{offer.design}} 
+                      
+                      {{$t('aed')}}
+                      </span>
+                    
+                 
+                    
+<span class="badge badge-primary">
+{{$t('supervision')}}
+  {{offer.supervision}} 
+  {{$t('aed')}}
+  </span>
+</div>
+
+</div>
+
+ 
 								</div>
 							</div>
 						</div>
@@ -159,19 +185,31 @@
 					<!-- Property Gallery Slider -->
 
 					  <div class="" >
-                <slick :v-bind="settings" v-if="offer.villa_image.length>0" >
-                    <span v-for="image,i in offer.villa_image " :key="i" >
+              <slick ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true"  v-if="offer.villa_image.length">
+  <div v-for="image,i in offer.villa_image " :key="i" >
+  
 
-  <img :src="image.path" alt="Card image cap" width="100%" class="img_ads img-fluid" @click="OpenImage(image.path)"
-    style="cursor:pointer">
-                    </span>
-                </slick>
-                <span v-else>
-                       <span v-for="image,i in offer.image " :key="i" >
+   
+     <img :src="image.path" alt="Card image cap" width="100%" class="img_ads img-fluid"
+    style="cursor:pointer" >
+    
+    </div>
+    
+    
 
-  <img :src="image.path" alt="Card image cap" width="100%" class="img_ads"  @click="OpenImage(image.path)" style="cursor:pointer">
-                    </span>
-                </span>
+</slick>
+
+
+<slick ref="c2" :asNavFor="$refs.c1" :slidesToShow="4" v-if="offer.villa_image.length">
+   <div v-for="image,i in offer.villa_image " :key="i" class="mr-3 ml-3">
+    <img :src="image.path"  data-toggle="modal" data-target="#ResImage" >
+   </div>
+
+</slick>
+
+
+
+               
 					  </div>
 
 
@@ -427,45 +465,7 @@
 
 							
 
-									   	<div class="col-xl-3 col-md-4 col-12">
-									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
-										
-										<div class="pr-desc">
-											<span>
-                                                {{$t('villa_design')}}
-                                            </span>
-
-            <p class="pr-des-title m-0">
-                   {{offer.design}} 
-
-                                            </p>
-										</div>
-										<div class="pr-icon">
-                                            <i class="fas fa-map-marked"></i></div>
-									</div>
-									<!-- End Single Property Detail -->
-								</div>
-
-									   	<div class="col-xl-3 col-md-4 col-12">
-									<!-- Single Property Detail -->
-									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
-										
-										<div class="pr-desc">
-											<span>
-                                                {{$t('supervision')}}
-                                            </span>
-
-            <p class="pr-des-title m-0">
-                   {{offer.supervision}} 
-
-                                            </p>
-										</div>
-										<div class="pr-icon">
-                                            <i class="fas fa-user"></i></div>
-									</div>
-									<!-- End Single Property Detail -->
-								</div>
+								
 
 
 								
@@ -523,7 +523,8 @@
                    ' float-right ':lang=='ar'}"></i></li>
 					<li>{{$t('interior_decoration')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.interior_decoration!='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></li>
-                    <li>{{$t('garden_design')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.garden_design!='true','text-left float-left ':lang=='en',
+                    <li>{{$t('garden_design')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.garden_design!='true',
+                    'text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></li>
 					<li>{{$t('pelvis')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.pelvis!='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></li>
@@ -557,7 +558,7 @@
 
 
 					<!-- Propery Features -->
-					<div class="p-descrip-box rating">
+					<div class="p-descrip-box rating" :dir="$t('directions')" :class="$t('text_align')">
 						<h4 class="pr-d-title">{{$t('review')}} </h4>
 						<div class="rating-reviews-main">
 							<div class="rating-r-top">
@@ -586,11 +587,11 @@
 					</div>
 					<!-- End Property Features -->
 					<!-- Similar Property -->
-					<div class="similar-property">
+					<div class="similar-property" :dir="$t('directions')" :class="$t('text_align')">
 						<h4 class="similar-property-title">{{$t('Related_search')}}</h4>
 						<div class="row">
 							<div class="col-12">
-                   <slick   v-bind="ralted" v-if="smilirs.length"  class="recent-property-slider  ">
+                   <slick   v-bind="ralted" v-if="smilirs.length"  class="recent-property-slider" style="height:10">
 					
 
                         <div class="single-p-slider" v-for="offer , index in smilirs " :key="index">
@@ -665,7 +666,7 @@
 													<router-link :to="{name:'CompanyProfile',params:{id:company.id,type:'consulting'}}">
 														{{company.name}}</router-link>
 														</p>
-												<span>استشارات هندسية</span>
+												<span>{{$t('consulting')}}</span>
 											</div>
 										</div>
 										<div class="property-user-price">
@@ -899,14 +900,18 @@ import { mapState, mapGetters } from "vuex";
 import AllUae from './AllUae.vue';
 import Unique from './unique.vue';
 import Review from '../dashboard/review.vue';
+import Lightbox from '@morioh/v-lightbox'
 
 
 export default {
- components: { slick ,AllUae, Unique, Review },
+ components: { slick ,AllUae, Unique, Review, Lightbox },
  data() {
      return {
+      keyIndex:0,
        lang:localStorage.getItem('lang'),
-       ResImage:null,
+           c1: undefined,
+    c2: undefined,
+ ResImage:null,
          priceGrant:null,
          BankProvider:null,
          Provider:null,
@@ -990,7 +995,30 @@ export default {
  		dots: true
 
 		
-      }
+      },
+      images: [
+                    "https://i.wifegeek.com/200426/f9459c52.jpg",
+                    "https://i.wifegeek.com/200426/5ce1e1c7.jpg",
+                    "https://i.wifegeek.com/200426/5fa51df3.jpg",
+                    "https://i.wifegeek.com/200426/663181fe.jpg",
+                    "https://i.wifegeek.com/200426/2d110780.jpg",
+                    "https://i.wifegeek.com/200426/e73cd3fa.jpg",
+                    "https://i.wifegeek.com/200426/15160d6e.jpg",
+                    "https://i.wifegeek.com/200426/d0c881ae.jpg",
+                    "https://i.wifegeek.com/200426/a154fc3d.jpg",
+                    "https://i.wifegeek.com/200426/71d3aa60.jpg",
+                    "https://i.wifegeek.com/200426/d17ce9a0.jpg",
+                    "https://i.wifegeek.com/200426/7c4deca9.jpg",
+                    "https://i.wifegeek.com/200426/64672676.jpg",
+                    "https://i.wifegeek.com/200426/de6ab9c6.jpg",
+                    "https://i.wifegeek.com/200426/d8bcb6a7.jpg",
+                    "https://i.wifegeek.com/200426/4085d03b.jpg",
+                    "https://i.wifegeek.com/200426/177ef44c.jpg",
+                    "https://i.wifegeek.com/200426/d74d9040.jpg",
+                    "https://i.wifegeek.com/200426/81e24a47.jpg",
+                    "https://i.wifegeek.com/200426/43e2e8bb.jpg"
+
+                ],
     }
   ]
 },
@@ -1000,6 +1028,12 @@ export default {
 
     },
 	  mounted() {
+    
+  
+
+    this.c1 = this.$refs.c1;
+    this.c2 = this.$refs.c2;
+ 
 
                 $('.header-inner').removeClass('d-none');
                 $('.header-inner').addClass('d-block');
@@ -1029,7 +1063,9 @@ watch:{
     
 },
     methods:{
-
+shift(i){
+this.keyIndex=i;
+},
 OpenImage(event){
 this.ResImage = event;
 // console.log(this.ResImage);
@@ -1397,6 +1433,10 @@ computed:{
 </script>
 
 <style scoped>
+.slick-slide img{
+
+    padding: 10;
+}
 
 .page-center {
 	    position: absolute;
@@ -1686,6 +1726,10 @@ button.close {
     z-index: 2 !important;
 
   }
+  .slick-slider {
+    position: relative;
+    height: 70%;
+  }
   .img_ads{
         min-width: 100%;
     min-height: 100%;
@@ -1774,6 +1818,15 @@ button.close {
 </style>
 
 <style scoped>
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 50% !important;
+    min-height: 1px;
+}
  .gallaryModel{
       position: relative !important;
     display: flex !important;

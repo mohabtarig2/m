@@ -1,7 +1,7 @@
 
 <template>
 
-  <div class="container text-right" :dir="$t('directions')">
+  <div class="container " :dir="$t('directions')" :class="$t('text_align')">
  
 
 
@@ -10,14 +10,13 @@
  role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content alert alert-danger text-danger">
-     يجب عليك ادخال كل الحقول
+     {{$t('You_must_enter_all_fields')}}
     </div>
   </div>
 </div>
 
- <h1 class=" text-muted text-center"> مناقصة استشارات هندسية</h1>
+ <h1 class=" text-muted text-center">   {{$t('consulting_tender')}}</h1>
  <div class="links-requests mb-3">
-<router-link :to="{name:'ConslTenders'}" class="theme-color mr-3" > مناقصات الاستشارات</router-link>
 
 
 </div>
@@ -27,10 +26,10 @@
           <div class="card-body">
             <form @submit.prevent="formSubmit" enctype="multipart/form-data" class="c-form-inner">
 
-              <div class="text-right form-group " dir="rtl">
+              <div class=" form-group " >
 
                 <label for=" h6"><span class=" h6 font-weight-bold thm-color">
-                    العنوان
+                    {{$t('title')}}
                     </span>
                     </label>
                 <input
@@ -43,21 +42,22 @@
                    , 'is-invalid':Checktitle =='false',
                    }
                     ]"
-                  placeholder="وصف مختصر للمشروع"
+                  :placeholder="$t('short_descripe')"
                 />
                 <div
                   class="invalid-feedback"
                   v-for="(error, index) in this.errorFor('title')"
                   :key="'title' + index"
                 >{{ error }}</div>
-                <div v-if="msg!=null" class="invalid-feedback" :class="msg" >اقل من 4 احرف </div>
+                <div v-if="msg!=null" class="invalid-feedback" :class="msg" >
+              {{$t('Less_than_4_letters')}} </div>
               </div>
 
 <div class="row">
     <div class="col-md-6 col-sm-12">
-              <div class="font-weight-bold h6 mt-3 text-right thm-color">اختار نوع الفيلا</div>
+              <div class="font-weight-bold h6 mt-3  thm-color">{{$t('Choose_the_type_of_villa')}}</div>
 
-              <div class="form-group text-right ">
+              <div class="form-group  ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
    <input type="radio" name="flexRadioDefault" value="classic" v-model="villa">
@@ -77,28 +77,29 @@
 
     <div class="col-md-6 col-sm-12">
 
- <div class="font-weight-bold h6 mt-3 text-right thm-color">الطوابق</div>
+ <div class="font-weight-bold h6 mt-3  thm-color">{{$t('floors')}}</div>
 
-              <div class="form-group text-right">
+              <div class="form-group ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
   <input type="radio" name="floors" value="0" v-model="floor">
   <span class="check" style="border-radius:10px"></span>
-   <span class="mr-4 ml-4">دور ارضي </span>
+   <span class="mr-4 ml-4"> {{$t('ground_floor')}} </span>
 </label>
 
  <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="radio" name="floors" value="1" v-model="floor">
   <span class="check" style="border-radius:10px"></span>
-  <span class="mr-4 ml-4"> دور اول + دور ارضي </span>
+  <span class="mr-4 ml-4">{{$t('ground_floor')}} +  {{$t('First_floor')}} </span>
 </label>
 
  <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="radio" name="floors" value="2" v-model="floor">
   <span class="check" style="border-radius:10px"></span>
-  <span class="mr-4 ml-4"> سطح + دور اول + دور ارضي  </span>
+  <span class="mr-4 ml-4">{{$t('ground_floor')}} + {{$t('First_floor')}}+  
+   {{$t('Surface')}} </span>
 </label>
                                 </div>
 
@@ -110,27 +111,27 @@
 <div class="row">
   
 <div class="col-md-6 col-sm-12">
-                <div class="font-weight-bold h6 mt-3 text-right thm-color">  هل تريد سرداب ؟</div>
+                <div class="font-weight-bold h6 mt-3  thm-color">  {{$t('Do_you_want_basement')}}</div>
 
  <div class="form-group">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
   <input type="radio" name="serdap" v-model="crypt" value="0" checked>
   <span class="check" style="border-radius:10px"></span>
-  <span class="mr-4 ml-4"> نعم</span>
+  <span class="mr-4 ml-4"> {{$t('yes')}}</span>
 </label>
 
  <label class="checkbox d-bolck" :dir="$t('directions')">
 
   <input type="radio" name="serdap" v-model="crypt" value="1">
   <span class="check" style="border-radius:10px"></span>
-  <span class="mr-4 ml-4"> لا </span>
+  <span class="mr-4 ml-4"> {{$t('no')}} </span>
 </label>
                                 </div>
 
 </div>
 <div class="col-md-6 col-sm-12">
-                <div class="font-weight-bold h6 mt-3 text-right thm-color">     شكل تصميم الفيلا</div>
+                <div class="font-weight-bold h6 mt-3  thm-color">     {{$t('villa_design_shape')}}</div>
 
  <div class="form-group shapeVilla" style="display: flex;">
    <h4  @click="VillaShape('H')" :class="{'checked':square=='H'}">
@@ -141,18 +142,18 @@
    <h4 @click="VillaShape('L')" :class="{'checked':square=='L'}"> L</h4>
    <h4 @click="VillaShape('U')" :class="{'checked':square=='U'}"> U</h4>
    <h4 @click="VillaShape('F')" :class="{'checked':square=='F'}"> F</h4>
-   <h4 @click="VillaShape('square')" :class="{'checked':square=='square'}"
-   ><p class="square" :class="{'checked':square==4}"></p></h4>
+   <h4 @click="VillaShape('square')" :class="{'checked':square=='square'}">
+   <p :class="{'checked':square=='4'}" class="square"  ></p>
+   </h4>
    <br>
-<!-- <div>
-    <small @click="VillaShape('other')" class="btn btn-download "
-     :class="{'checked':square=='other'}"> نوع اخر</small>
+ <!-- <div>
+    <small @click="VillaShape('other')" class="btn btn-download" :class="{'checked':square=='other'}"> نوع اخر</small>
 
 <br>
     <input v-model="other" v-show="square=='other'" placeholder='اكتب شكل الفيلا'>
    
 
-</div> -->
+</div>  -->
 
 
 
@@ -203,11 +204,11 @@
               <!-- ---------End Type floors-------------------------------------!-->
 
               <div class="rooms mt-3">
-                <div class="row text-right" >
+                <div class="row " >
                   <div class="col-md-6 col-sm-12 " >
                     <div class="form-group">
                     <label for="customRange3">
-                       <span class="h6 thm-color font-weight-bold"> عدد غرف ماستر</span>
+                       <span class="h6 thm-color font-weight-bold"> {{$t('master_rooms')}}</span>
                         </label>
                     <input
                       type="number"
@@ -218,13 +219,14 @@
                          'is-valid':CheckMaster=='true'
                         ,'is-invalid':CheckMaster =='false',
                       }]"
-                       placeholder="مثال : 5" min="0"
+                       placeholder="  5" min="0"
 
                     />
 
             <div v-if="CheckMaster!=''"   
             class="invalid-feedback" :class="msg"> 
-            اكتب رقم , في حالة لاتريد اكتب صفر
+           
+            {{$t('Type_a_number_in_case_you_dont_want_to_write_a_zero')}}
              </div>
 
                     <div
@@ -239,7 +241,7 @@
                     <div class="form-group">
                     <label for="customRange3">
                          <span class="h6 thm-color font-weight-bold">
-                        عدد غرف النوم </span></label>
+                      {{$t('bed_rooms')}} </span></label>
                     <input
                       type="number"
                       class="form-control"
@@ -248,11 +250,11 @@
                                 'is-valid':CheckRoom=='true'
                                 ,'is-invalid':CheckRoom =='false',
                       }]"
-                       placeholder="مثال : 5" min="0"
+                       placeholder="  5" min="0"
                     />
                        <div v-if="CheckRoom!=''"   
             class="invalid-feedback" :class="msg"> 
-            اكتب رقم , في حالة لاتريد اكتب صفر
+           {{$t('Type_a_number_in_case_you_dont_want_to_write_a_zero')}}
              </div>
                     <div
                       class="invalid-feedback"
@@ -265,7 +267,9 @@
 
                 <div class="row">
                   <div class="form-group col-md-4 col-sm-12">
-                    <label for="customRange3"> <span class="h6 thm-color font-weight-bold"> عدد غرف المعيشة</span></label>
+                    <label for="customRange3"> <span class="h6 thm-color font-weight-bold"> 
+                      {{$t('living_room')}}
+                    </span></label>
                     <input
                       type="number"
                       class=" form-group form-control"
@@ -276,11 +280,11 @@
                       },
                                 
                       ]"
-                       placeholder="مثال : 5" min="0"
+                       placeholder="  5" min="0"
                     />
                     <div v-if="CheckLiving!=''"   
             class="invalid-feedback" :class="msg"> 
-            اكتب رقم , في حالة لاتريد اكتب صفر
+           {{$t('Type_a_number_in_case_you_dont_want_to_write_a_zero')}}
              </div>
                     <div
                     
@@ -292,7 +296,7 @@
 
                   <div class=" form-group col-md-4 col-sm-12">
                     <label for="customRange3"> <span class="h6 thm-color font-weight-bold">
-                        عدد المجالس
+                       {{$t('majlis')}}
                         </span>
                         </label>
                     <input
@@ -303,12 +307,12 @@
                                 'is-valid':CheckMajlis=='true'
                               ,'is-invalid':CheckMajlis =='false',
                       }]"
-                      placeholder="مثال : 5" min="0"
+                      placeholder="5" min="0"
 
                     />
                       <div v-if="CheckMajlis!=''"   
             class="invalid-feedback" :class="msg"> 
-            اكتب رقم , في حالة لاتريد اكتب صفر
+           {{$t('Type_a_number_in_case_you_dont_want_to_write_a_zero')}}
              </div>
                     <div
                       class="invalid-feedback"
@@ -319,7 +323,7 @@
                   <div class="form-group  col-md-4 col-sm-12">
                     <label for="customRange3">
                          <span class="h6 thm-color font-weight-bold">
-                        عدد المطابخ
+                        {{$t('kitchens')}}
                          </span>
                         </label>
                     <input
@@ -329,12 +333,13 @@
                       :class="[{'is-invalid': errorFor('kitchens') 
                       ,'is-valid':CheckKitchen=='true'
                       ,'is-invalid':CheckKitchen =='false',}]"
-                      placeholder="مثال : 5" min="0"
+                      placeholder="  5" min="0"
 
                     />
                       <div v-if="CheckKitchen!=''"   
             class="invalid-feedback" :class="msg"> 
-            اكتب رقم , في حالة لاتريد اكتب صفر
+                       {{$t('Type_a_number_in_case_you_dont_want_to_write_a_zero')}}
+
              </div>
                     <div
                       class="invalid-feedback"
@@ -347,24 +352,23 @@
                 <div class="row">
                   <div class=" form-group   col-md-6 col-sm-12">
                     <label for="customRange3"> <span class="h6 thm-color font-weight-bold">
-                        عدد غرف الطعام
+                       {{$t('dining')}}
                         </span>
                          </label>
                     <input
                       type="number"
                       class="form-control"
                       v-model="dining_room"
+                       placeholder="5" min="0"
                       :class="[{'is-invalid': errorFor('dining_room')
                                 ,'is-valid':CheckDining=='true'
-                              ,'is-invalid':CheckDining =='false'
-                      
-                      }]"
-                     placeholder="مثال : 5" min="0"
+                              ,'is-invalid':CheckDining =='false'}]"/>
+                              
 
-                    />
                       <div v-if="CheckDining!=''"   
             class="invalid-feedback" :class="msg"> 
-            اكتب رقم , في حالة لاتريد اكتب صفر
+                                   {{$t('Type_a_number_in_case_you_dont_want_to_write_a_zero')}}
+
              </div>
                     <div
                       class="invalid-feedback"
@@ -375,7 +379,7 @@
                   <div class=" form-group col-md-6 col-sm-12">
                     <label for="customRange3">
                          <span class="h6 thm-color font-weight-bold">
-                        الحمام
+                        {{$t('bathroom')}}
                          </span>
                         </label>
                     <input
@@ -385,43 +389,41 @@
 
                       :class="[{'is-invalid': errorFor('bathroom')
                          ,'is-valid':CheckBath=='true'
-                              ,'is-invalid':CheckBath =='false'
-                      }]"
-                     placeholder="مثال : 5" min="0"
-
-                    />
+                              ,'is-invalid':CheckBath =='false' }]"
+                     placeholder="  5" min="0" />
                       <div v-if="CheckBath!=''"   
             class="invalid-feedback" :class="msg"> 
-            اكتب رقم , في حالة لاتريد اكتب صفر
+  {{$t('Type_a_number_in_case_you_dont_want_to_write_a_zero')}}
+
              </div>
                     <div
                       class="invalid-feedback"
                       v-for="(error, index) in this.errorFor('bathroom')"
                       :key="'bathroom' + index"
-                      placeholder="مثال : 5" min="0"
+                      placeholder="5" min="0"
 
                     >{{ error }}</div>
                   </div>
                 </div>
 
 
-                <div class="h6 font-weight-bold text-right thm-color">    
+                <div class="h6 font-weight-bold  thm-color">    
                    
-                    مكان توزيع الخدمات  
+                    {{$t('Service_room_distribution_site')}}
                     <span class="text-muted">
                   (
-                       غرفة مربية + مطبخ رئيسي + مخزن + الغسيل
+                       {{$t('subtitle_Service_room_distribution_site')}}
                   )
                     </span>
                      </div>
 
-                          <div class="form-group text-right">
+                          <div class="form-group ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
   <input type="radio" name="replacement" value="inside"
                     v-model="position">
   <span class="check" style="border-radius:10px"></span>
-   <span class="mr-4 ml-4">   داخل الفيلا
+   <span class="mr-4 ml-4">  {{$t('inside')}}
    
         </span>
 </label>
@@ -432,7 +434,8 @@
                     v-model="position">
   <span class="check" style="border-radius:10px"></span>
   <span class="mr-4 ml-4 ">
-      خارج الفيلا
+   {{$t('outside')}}
+   
 
       </span>
 </label>
@@ -488,11 +491,11 @@
 <input type="range" id="points" name="points" min="5000" max="5000" v-model="Maxval"> -->
 
                 <div class="budget">
-                  <div class="h6 mb-3 thm-color font-weight-bold">الميزانية</div>
+                  <div class="h6 mb-3 thm-color font-weight-bold">{{$t('budget')}}</div>
                   <div class="row">
-                    <div class="  col-md-6 col-sm-12" dir="rtl">
+                    <div class="  col-md-6 col-sm-12" >
                       <div class="form-group mb-2">
-                        <label  >من</label>
+                        <label  >{{$t('from')}}</label>
 
                         <input
                         
@@ -508,8 +511,7 @@
                      
                           <div v-if=" CheckMax < CheckMin  "   
             class="invalid-feedback" :class="msg"> 
-            سعر القمية الادني يجب ان تكون  اقل  من الحد الاعلى
-             </div>
+{{$t('The_minimum_value_price_must_be_less_than_the_maximum')}}             </div>
                         <!-- <div class="input-group-prepend">
                            <div class="input-group-text">{{$t('aed')}}</div>
                         </div> -->
@@ -521,7 +523,7 @@
                       </div>
                     </div>
                     <div class="  form-group col-md-6 col-sm-12" dir="rtl">
-                      <label >الي</label>
+                      <label >{{$t('to')}}</label>
                       <div class="input-group mb-2">
                         <input
                       
@@ -586,7 +588,7 @@
 
                   <!-- <label for="date">الامارة</label>
                   <select
-                    class="form-control text-right"
+                    class="form-control "
                     v-model="emirates"
                     :class="[{'is-invalid': errorFor('emirates')}]"
                   >
@@ -606,7 +608,7 @@
                 </div>
 
                 <div class=" form-group mt-3">
-                  <label for="exampleFormControlTextarea1">الوصف</label>
+                  <label for="exampleFormControlTextarea1">{{$t('Desription')}}</label>
                   <textarea
                   style="background:#fff"
                     class="form-control"
@@ -617,7 +619,7 @@
                              {'is-invalid':CheckNotes=='false'},
                              {'is-valid':CheckNotes=='true'}
                     ]"
-                      placeholder=" أدخل وصفاً مفصلاً لمشروعك   "
+                      :placeholder="$t('long_descripe')"
 
                   ></textarea>
                           <div
@@ -628,19 +630,33 @@
                 </div>
                     <div v-if="CheckNotes=='false'"   
             class="invalid-feedback" :class="msg"> 
-            اكتب وصف 
+            {{$t('write_desc')}}
              </div>
              <div class="form-group">
-    <p class="theme-color text-right font-weight-bold">       رقم الموبايل</p>
+    <p class="theme-color  font-weight-bold">      {{$t('mobile')}}</p>
 
-  <input type="text" class="form-control" placeholder="Mob : (971) - XXX-XXXXXX" v-model="phone" dir="ltr">
+  <input type="text" class="form-control" placeholder="(971) XXX-XXXXXX" v-model="phone" dir="ltr"
+  
+   :class="[{'is-invalid':CheckLMobile=='false' }, {'is-valid':CheckLMobile=='true'}]">
                 
 </div>
 
-<div class="form-group">
-    <p class="theme-color text-right font-weight-bold">       رقم الواتساب</p>
+    <div v-if="CheckLMobile=='false'"   
+            class="invalid-feedback" :class="msg"> 
+            {{$t('must_be_12_digits')}}
+             </div>
 
-  <input type="text" class="form-control" placeholder="Whatsapp : (971) - XXX-XXXXXX" v-model="whatsapp" dir="ltr">
+<div class="form-group">
+    <p class="theme-color  font-weight-bold">        {{$t('whatsapp')}}</p>
+
+  <input type="text" class="form-control" placeholder="(971) XXX-XXXXXX" v-model="whatsapp" dir="ltr" 
+  :class="[{'is-invalid':CheckLWhatsapp=='false'}, {'is-valid':CheckLWhatsapp=='true'}]">
+
+       <div v-if="CheckLWhatsapp=='false'"   
+            class="invalid-feedback" :class="msg"> 
+            {{$t('must_be_12_digits')}}
+             </div>
+            
                 
 </div>
 
@@ -649,7 +665,7 @@
   
           <label class="  ">
             
-                <span class="btn btn-secondary" :class="{'btn btn-success':map!=null}"  @click="$refs.fileinputMap" >
+ <span class="btn btn-secondary" :class="{'btn btn-success':map!=null}"  @click="$refs.fileinputMap" >
                   <!-- <i class="fa fa-file"></i> -->
                     {{$t('land_map')}}
                     </span>
@@ -675,7 +691,7 @@
             </label>
 </div> -->
 
-            <div class="text-right form-group" dir="rtl">
+            <div class=" form-group" dir="rtl">
             <p class="font-weight-bold theme-color"> {{$t('build_by')}}</p>
 
         <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -693,57 +709,57 @@
             
 
             <div class="form-group">
-                <div class="text-right font-weight-bold theme-color" dir="rtl">
-أذكر  قيمة القرض
-<sup class="text-danger"> (اختياري)</sup>
+                <div class=" font-weight-bold theme-color" dir="rtl">
+{{$t('Mention_the_loan_amount')}}
+<sup class="text-danger"> ({{$t('optional')}})</sup>
                 </div>
   <input type="text" class="form-control" placeholder="" v-model="priceGrant">
                 
 </div>
 
 
-        <div class="text-right form-group" dir="rtl">
-<p class=" font-weight-bold theme-color">الجهة المقدمة للمنحة </p>
+        <div class=" form-group" dir="rtl">
+<p class=" font-weight-bold theme-color">  {{$t('Grant_Provider')}} </p>
 
              
     <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="1" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشيخ زايد للاسكان</span>
+            <span class="mr-4 ml-4">   {{$t('Sheikh_Zayed_Housing_Program')}}</span>
     </label>
      <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="2" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشيخ محمد بن راشد للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('Sheikh_Mohammed_bin_Rashid_Housing_Program')}}</span>
      </label>
      <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="3" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج ابوظبي للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('AbuDhabi_Housing_Program')}}</span>
      </label>
       <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="4" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشارقة للاسكان</span>
+            <span class="mr-4 ml-4">{{$t('Sharjah_Housing_Program')}}</span>
       </label>
 
       <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="5" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">برنامج الشارقة للاسكان اسناد</span>
+            <span class="mr-4 ml-4">{{$t('Sharjah_Esnad_Housing_Program')}}</span>
       </label>
    <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="6" name="Provider" aria-label="Checkbox for following text input" v-model="Provider">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">  الديوان</span>
+            <span class="mr-4 ml-4">  {{$t('Diwan')}}</span>
    </label>
 
         </div>
 
-        <div class="text-right">
+        <div class="">
 
-    <p class="theme-color font-weight-bold">البنك الممول اللمنحة  
-<sup class="text-danger"> (اختياري)</sup>
+    <p class="theme-color font-weight-bold">{{$t('Grant_Funding_Bank')}} 
+<sup class="text-danger"> ({{$t('optional')}})</sup>
     </p>
 <div class="form-group">
 <input type="text" class="form-control" placeholder="" v-model="BankProvider">
@@ -752,9 +768,9 @@
 
             
             <div class="form-group">
-                <div class="text-right font-weight-bold theme-color" dir="rtl">
-المبلغ المضاف التقريبي لطريقة التمويل
-<sup class="text-danger"> (اختياري)</sup>
+                <div class=" font-weight-bold theme-color" dir="rtl">
+{{$t('Approximate_added_amount_Financing_method')}}
+<sup class="text-danger"> ({{$t('optional')}})</sup>
                 </div>
   <input type="text" class="form-control" placeholder="" v-model="finance">
                 
@@ -766,9 +782,9 @@
 
 
                              <span class="thm-color">
-                                 أرفق أمثلة لما تريد ان أمكن.
+                                 {{$t('Attach_examples')}}
                                   </span>
-                                  <small> (اختياري )</small>
+                                  <small> ({{$t('optional')}}) </small>
                                  
 
                                   
@@ -793,7 +809,7 @@
 
       </label>
 
-                                <span class="ttm-color">     اضافة صور  . </span>
+                                <span class="ttm-color">      {{$t('add_photos')}}  . </span>
 
                 </div>
 
@@ -835,7 +851,9 @@
 
 
                     <button class=" btn btn-download  mt-3 font-weight-bold" :disabled="loading"
-                     >نشر الان </button>
+                     >
+                     {{$t('post_now')}}
+                     </button>
                    
 
 
@@ -917,6 +935,8 @@ export default {
         CheckMajlis:'',
         CheckKitchen:'',
         CheckLiving:'',
+        CheckLMobile:'',
+        CheckLWhatsapp:'',
         CheckDining:'',
         min: null,
         max: null,
@@ -955,13 +975,19 @@ export default {
     
 
     watch:{
- phone() {
+ phone(value) {
+         this.CheckVal(value,'mobile')
+
         var x = this.phone.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,6})/);
   this.phone = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+   
     },
-	 whatsapp() {
+	 whatsapp(value) {
+      this.CheckVal(value,'whatsapp')
         var x = this.whatsapp.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,6})/);
   this.whatsapp = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+ 
+  
     },
     priceGrant(newValue){
             const result = newValue.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -1087,6 +1113,29 @@ this.resultSize = size+' MB' ;
       console.log(this.square)
     },
   CheckVal(value , value2){
+
+        if(value2=='mobile'){
+        if(value.length <= 0){
+           this.CheckLMobile= 'false'
+          this.msg="text text-danger"
+         
+        }else{
+          this.CheckLMobile= 'true'
+           this.msg=null
+           
+        }   
+    }
+           if(value2=='whatsapp'){
+        if(value.length <= 0){
+           this.CheckLWhatsapp= 'false'
+          this.msg="text text-danger"
+         
+        }else{
+          this.CheckLWhatsapp= 'true'
+           this.msg=null
+           
+        }   
+    }
       if(value2=='living'){
         if(value.length <= 0){
            this.CheckLiving= 'false'

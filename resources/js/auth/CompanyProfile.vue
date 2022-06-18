@@ -1,5 +1,5 @@
 <template>
-<div>
+<div :dir="$t('directions')" :class="$t('text_align')">
 <!-- agent Detail Area  -->
 
 <div v-for="user , index in company" :key="index">
@@ -48,13 +48,13 @@
 							<ul class="agent-d-list list-none">
 							
 								
-								<li><i class="fa fa-layer-group"></i>since {{user.company.date_create}}</li>
+								<li><i class="fa fa-layer-group"></i>{{$t('since')}} {{user.company.date_create}}</li>
 								<li><i class="fa fa-phone"></i>{{user.company.phone}}</li>
 								<li><a href="#"><i class="fa fa-envelope"></i>{{user.email}}</a></li>
 								<!-- <li><a href="#"><i class="fa fa-globe"></i>www.gear-house.com</a></li> -->
 							</ul>
 							<div class="agent-d-about">
-								<h4 class="t-about-title">حول </h4>
+								<h4 class="t-about-title">{{$t('about')}} </h4>
 								<p class="m-0">
                                     {{user.company.about_us}}
                                     </p>
@@ -64,7 +64,7 @@
 							
 
 										 				 
-							<h4 class="b-sidebar-title">فرع رئيسي شركة  </h4>
+							<h4 class="b-sidebar-title">{{$t('Company_main_branch')}} </h4>
 							<ul class="s-tags-inner list-none mb-3"  >
 								<li ><a style="background:#3454d1; color:#fff">
 												<all-uae :emirates="user.company.emirates"></all-uae>
@@ -72,13 +72,18 @@
 									</li>
 				
 							</ul>
-				
-							<h4 class="b-sidebar-title">فروع شركة  </h4>
-							<ul class="s-tags-inner list-none" v-if="user.branch" >
+
+					
+							<h4 class="b-sidebar-title">{{$t('Company branches')}} </h4>
+							<ul class="s-tags-inner list-none" v-if="user.branch.length > 0" >
 								<li v-for="branch , index in user.branch" :key="index"><a>
 									<all-uae :emirates="branch.emirates"></all-uae></a></li>
 				
 							</ul>
+							<div v-else>
+								{{$t('no_branchs')}}
+							</div>
+						
 						
 						</div>
 						</div>
@@ -98,11 +103,11 @@
 
                         <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link " :class="{ 'active'  : active1}" @click="tabs(1)" >ملفات الشرك</a>
+    <a class="nav-link " :class="{ 'active'  : active1}" @click="tabs(1)" >{{$t('company_files')}}</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" :class="{ 'active'  : active2}" @click="tabs(2)">
-      المراجعات & التقيم</a>
+    {{$t('review_and_rating')}}</a>
   </li>
 
 
@@ -141,55 +146,62 @@
 								<div class="review-add-main"  >
 
 
-
-
+						<div class="properties-s-widget page-center mt-3 mr-3 ml-3">
+										
                         <div class="timeline-item">
 							
-
-
-                          <h5 class="timeline-header"><a href="#">رخصة تجارية </a> </h5>
+                          <h5 class="timeline-header"><a >{{$t('Achievement_License')}} </a> </h5>
 
                           <div class="timeline-body">
-                           <a :href="user.companyfile.path" class="btn btn-primary btn-sm" target="_blank">فتح</a>
+                           <a :href="user.companyfile.path" class="btn btn-primary btn-sm" target="_blank">{{$t('view')}}</a>
                           </div>
                           <div class="timeline-footer">
-                            
-
-
-		
+                           
                           </div>
                         </div>
-
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
+						</div>
 
 
+                 
+                      
+						
+
+			<div class=" properties-s-widget page-center mt-3  mr-3 ml-3">
                         <div class="timeline-item">
-							
-										
-														
-
-
-
-                          <h5 class="timeline-header text-success"><a href="#">رخصة الانجازات </a> </h5>
+						
+                          <h5 class="timeline-header text-success"><a href="#">{{$t('Business_license')}} </a> </h5>
 
                           <div class="timeline-body">
                           
-							 <a :href="user.achivement_file.path" class="btn btn-success btn-sm" target="_blank">فتح</a>
+							 <a :href="user.achivement_file.path" class="btn btn-success btn-sm" target="_blank">{{$t('view')}}</a>
                           </div>
                           <div class="timeline-footer">
                            
 
                           </div>
                         </div>
+						</div>
 
-						<div>عدد الانجاز منذ التأسيس <span class="badge badge-dark text-light"> 	
-{{user.achivement_file.AchiveSinceCreate}}</span></div>
-<div>عدد الانجازات اخر ثلاث سنين   <span class="badge badge-dark text-light"> 
-{{user.achivement_file.AchiveThreeYears}}</span></div>
+						<div class=" properties-s-widget page-center mt-3  mr-3 ml-3">
+							
+									<div>
+																<span class="badge badge-dark text-light"> 	
+{{user.achivement_file.AchiveSinceCreate}}</span>
+										{{$t('Achievement_number_since_inception')}}
+									</div>
 
-                      </div>
+						
+
+<div><span class="badge badge-dark text-light"> 
+{{user.achivement_file.AchiveThreeYears}}</span>{{$t('Number_of_achievements_in_the_last_three_years')}}  </div>
+						</div>
+
+					
+
+				
+
+
+                      
 
 
 
@@ -206,10 +218,11 @@
 
 	<!-- Blog Area -->
 	<span v-if="type!='consulting'">
-				  <a class="mr-3" :class="{'theme-color font-weight-bolde':TypeService==1}" @click="switchServicdes(1)">خدمات  </a>
- <a class="mr-3" :class="{'theme-color font-weight-bold':TypeService==2}" @click="switchServicdes(2)">  معرض الاعمال </a>
+				  <a class="mr-3"  @click="switchServicdes(1)" :class="{'theme-color font-weight-bolde':TypeService=='1'}">
+				  {{$t('services')}}  </a>
+ <a class="mr-3" :class="{'theme-color font-weight-bold':TypeService=='2'}" @click="switchServicdes(2)">  {{$t('business_fair')}} </a>
 
-	<section class="blog-area section-padding" v-for="ads , index in user.service_ads" :key="index" v-bind="ads" v-if="TypeService==1">
+	<section class="blog-area section-padding"  v-if="TypeService==1">
 		<div class="container">
 			
 			<div class="row">
@@ -218,14 +231,14 @@
 					
 					<div class="section-title">
 						
-						<span class="sub-heading">خدمات</span>
-						<h2 class="heading-title">اخر اعلانات </h2>
+						<span class="sub-heading">{{$t('services')}}</span>
+						<h2 class="heading-title">{{$t('Latest_ads_added')}}</h2>
 
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-4">
+				<div class="col-md-4 col-sm-12"   v-for="ads , index in user.service_ads" :key="index" >
 					<div class="blog-slider" data-aos="fade-up" data-aos-delay="200">
 						<!-- Single Blog -->
 						<div class="single-blog">
@@ -258,20 +271,20 @@
 		</div>
 	</section>
 
-		<section class="blog-area section-padding" v-for="ads , index in user.works" :key="index" 
-		v-bind="ads" v-if="TypeService==2">
+		<section class="blog-area section-padding"  v-if="TypeService==2">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
 					<div class="section-title">
-						<span class="sub-heading">معرض الأعمال</span>
-						<h2 class="heading-title">أخر الأعمال </h2>
+						<span class="sub-heading">{{$t('business_fair')}}</span>
+						<h2 class="heading-title">{{$t('Latest_ads_added')}} </h2>
 
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-4">
+				<div class="col-md-4 col-sm-12" v-for="ads , index in user.works" :key="index" 
+		v-bind="ads">
 					<div class="blog-slider" data-aos="fade-up" data-aos-delay="200">
 						<!-- Single Blog -->
 						<div class="single-blog">
@@ -336,7 +349,7 @@
 													<li><i class="fa fa-star"></i></li>
 													<li><i class="fa fa-star-half-alt"></i></li>
 												</ul>
-												<span>2 Comment</span>
+												// <span>2 Comment</span>
 											</div>
 										</div>
 										<!-- <div class="property-ratting-save" v-if="offer.saved_villa==null">

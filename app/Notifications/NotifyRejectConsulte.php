@@ -40,7 +40,7 @@ class NotifyRejectConsulte extends Notification implements ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['database','broadcast'];
+        return ['database','broadcast','mail'];
     }
 
     /**
@@ -52,8 +52,9 @@ class NotifyRejectConsulte extends Notification implements ShouldBroadcast
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Engineering Consultancy Tender')
+                    ->line('Your Tender Has Been rejected')
+                    ->action('View Tender', url('/#/Projects/'.$this->tender->id))
                     ->line('Thank you for using our application!');
     }
 

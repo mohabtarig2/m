@@ -1,6 +1,6 @@
 <template>
     <!-- Property Tab Area -->
-	<div class="property-details-area">
+	<div class="property-details-area" :dir="$t('direactions')" :class="$t('text_align')">
 		<div class="container-fluid">
 			<div class="property-tab-top">
 				<div class="row mx-0">
@@ -30,7 +30,7 @@
 												<div class="property-tab-d-inner">
 													<form >
 														<div class="row">
-															<div class="col-xl-3 col-md-3 col-12">
+															<div class="col-xl-3 col-md-3 col-12" >
 
 																<div class="single-property-details">
 																	<label>{{$t('Emirates')}} </label>
@@ -38,7 +38,7 @@
                                                                         <span class="current">
 
 
-                                                                            <all-uae :emirates="emirates_selected">
+                                                                            <all-uae :emirates="emirates_selected"  @click="emirates(7)" :dir="$t('directions')">
                                                                                 
                                                                             </all-uae>
 
@@ -46,17 +46,17 @@
 
 
 
-                                                                            </span><ul class="list">
-                                                                                <li data-value="1" class="option " @click="emirates(7)">
+                                                                            </span><ul class="list"  >
+                                                                                <li data-value="1" class="option " @click="emirates(7)" :dir="$t('directions')" :class="$t('text_align')">
                                                                                   {{$t('abu_dabhi')}}</li>
-                                                                                    <li data-value="2" class="option" @click="emirates(1)">
+                                                                                    <li data-value="2" class="option" @click="emirates(1)" :dir="$t('directions')" :class="$t('text_align')">
                                                                                       {{$t('dubai')}}
                                                                                         </li>
-                                                                             <li data-value="3" class="option"  @click="emirates(5)">{{$t('sharja')}}</li>
-                                                                             <li data-value="3" class="option"  @click="emirates(6)">{{$t('ajman')}}</li>
-                                                                             <li data-value="3" class="option"  @click="emirates(4)">{{$t('um_alqwin')}} </li>
-                                                                             <li data-value="3" class="option"  @click="emirates(3)"> {{$t('ras_alkhima')}}</li>
-                                                                             <li data-value="3" class="option"  @click="emirates(2)">{{$t('fujairah')}} </li>
+                                                                             <li data-value="3" class="option"  @click="emirates(5)" :dir="$t('directions')" :class="$t('text_align')">{{$t('sharja')}}</li>
+                                                                             <li data-value="3" class="option"  @click="emirates(6)" :dir="$t('directions')" :class="$t('text_align')">{{$t('ajman')}}</li>
+                                                                             <li data-value="3" class="option"  @click="emirates(4)" :dir="$t('directions')" :class="$t('text_align')">{{$t('um_alqwin')}} </li>
+                                                                             <li data-value="3" class="option"  @click="emirates(3)" :dir="$t('directions')" :class="$t('text_align')"> {{$t('ras_alkhima')}}</li>
+                                                                             <li data-value="3" class="option"  @click="emirates(2)" :dir="$t('directions')" :class="$t('text_align')">{{$t('fujairah')}} </li>
                                                                                         </ul>
                                                                                 </div>
 
@@ -71,12 +71,12 @@
                                                         <div class="single-property-details">
                                                             <label>{{$t('Type_Of_Villa')}}</label>
                                                             <div class="nice-select" :class="open_type_select" tabindex="0" @click="open('type')">
-                                                                <span class="current" v-if="type_villa == 'classic'">{{$t('classic')}}</span>
-                                                                <span class="current" v-if="type_villa == 'modern'">{{$t('modern')}}</span>
+                                                                <span class="current" v-if="type_villa == 'classic'"  @click="emirates(7)" :dir="$t('directions')">{{$t('classic')}}</span>
+                                                                <span class="current" v-if="type_villa == 'modern'"  @click="emirates(7)" :dir="$t('directions')">{{$t('modern')}}</span>
                                                                     <ul class="list">
-                                                                        <li data-value="1" class="option " @click="villType('classic')">
+                                                                        <li data-value="1" class="option " @click="villType('classic')" :dir="$t('directions')" :class="$t('text_align')">
                                                                             {{$t('classic')}}</li>
-                                                                            <li data-value="2" class="option" @click="villType('modern')">
+                                                                            <li data-value="2" class="option" @click="villType('modern')" :dir="$t('directions')" :class="$t('text_align')">
                                                                                   {{$t('modern')}}
                                                                                 </li>
 
@@ -91,30 +91,32 @@
                             <div class="single-property-details">
                                 <label>{{$t('bed_rooms')}}</label>
                                 <div class="nice-select" :class="open_bedrooms_select" tabindex="0" @click="open('bedrooms')">
-                                    <span class="current" v-if="bedrooms_numbers">{{bedrooms_numbers}} {{$t('bed_rooms')}}
+                                    <span class="current" v-if="bedrooms_numbers"  @click="emirates(7)" :dir="$t('directions')">{{bedrooms_numbers}} {{$t('bed_rooms')}}
                                         </span>
                                         <ul class="list">
-                                            <li data-value="1" class="option " @click="bedrooms(2)">
+                                             <li data-value="1" class="option " @click="bedrooms(1)" :dir="$t('directions')" :class="$t('text_align')">
+                                                1</li>
+                                            <li data-value="1" class="option " @click="bedrooms(2)" :dir="$t('directions')" :class="$t('text_align')">
                                                 2</li>
-                                                <li data-value="2" class="option" @click="bedrooms(3)">
+                                                <li data-value="2" class="option" @click="bedrooms(3)" :dir="$t('directions')" :class="$t('text_align')">
                                                     3 
                                                     </li>
-                                                    <li data-value="2" class="option" @click="bedrooms(4)">
+                                                    <li data-value="2" class="option" @click="bedrooms(4)" :dir="$t('directions')" :class="$t('text_align')">
                                                     4 
                                                     </li>
-                                                    <li data-value="2" class="option" @click="bedrooms(5)">
+                                                    <li data-value="2" class="option" @click="bedrooms(5)" :dir="$t('directions')" :class="$t('text_align')">
                                                     5 
                                                     </li>
-                                                    <li data-value="2" class="option" @click="bedrooms(6)">
+                                                    <li data-value="2" class="option" @click="bedrooms(6)" :dir="$t('directions')" :class="$t('text_align')">
                                                     6 
                                                     </li>
-                                                    <li data-value="2" class="option" @click="bedrooms(7)">
-                                                    7 
+                                                    <li data-value="2" class="option" @click="bedrooms(7)" :dir="$t('directions')" :class="$t('text_align')">
+                                                    7  
                                                     </li>
 
-                                                    <li data-value="2" class="option" @click="bedrooms('  +8 bedrooms')">
+                                                    <!-- <li data-value="2" class="option" @click="bedrooms('  +8 bedrooms')" :dir="$t('directions')" :class="$t('text_align')">
                                                         +7 
-                                                    </li>
+                                                    </li> -->
 
                                                     </ul>
                                             </div>

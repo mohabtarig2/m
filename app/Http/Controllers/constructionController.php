@@ -19,6 +19,7 @@ use App\Events\NewTenderStone;
 use App\Events\RetenderConstruction;
 use App\Events\UpdateTenderHvacTitle;
 use App\Events\UpdateTitleConstruction;
+use App\Events\UpdateTitleHvac;
 use App\hvac;
 use App\hvac_offer_image;
 use App\hvacAdditionalfiles;
@@ -37,6 +38,7 @@ use App\Notifications\NotifyNewTenderConstruction;
 use App\Notifications\NotifyNewTenderHvac;
 use App\Notifications\NotifyNewTenderStone;
 use App\Notifications\NotifyRetenderConstruction;
+use App\Notifications\NotifyRetenderHvac;
 use App\Notifications\NotifyUpdateTenderHvacTitle;
 use App\offerconsr;
 use App\OfferHvac;
@@ -872,10 +874,9 @@ class constructionController extends Controller
         $posts->status = 0;
         $posts->save();
 
-        // broadcast(new UpdateTitleConstruction($posts));
-        // $admin = admin::where('role_id',1)->get();
-        // Notification::send($admin, new NotifyRetenderConstruction($posts));
-        // return $posts->title;
+        broadcast(new UpdateTitleHvac($posts));
+        $admin = admin::where('role_id',1)->get();
+        Notification::send($admin, new NotifyRetenderHvac($posts));
 
 
     }
@@ -900,9 +901,10 @@ class constructionController extends Controller
         $posts->status = 0;
         $posts->save();
 
-        // broadcast(new UpdateTitleConstruction($posts));
+        // broadcast(new UpdateTitleHvac($posts));
         // $admin = admin::where('role_id',1)->get();
-        // Notification::send($admin, new NotifyRetenderConstruction($posts));
+        // Notification::send($admin, new NotifyRetenderHvac($posts));
+       
         // return $posts->title;
 
 
@@ -2145,19 +2147,22 @@ public function InteriorTender(Request $request){
     {
             $user_id = Auth::id();
 
-            $emirates=companies::select('emirates')->where('user_id',$user_id)->get();
+            $emirates= companies::where('user_id',$user_id)->first();
 
             $branchs  = branch::where('company_id',$user_id)->where('status',1)->pluck('emirates')->all();
+
+   
 
             // return $branchs;
 
 
 
 
-            
+            $tenders = Tconstr::latest()->whereIn('emirates',$branchs)->where('status',1)->where('stage',0)->
+            Orwhere('emirates',$emirates->emirates)->where('status',1)->where('stage',0)->paginate(5);
 
-        $tenders = Tconstr::latest()->where('status', 1)->where('stage', 0)->whereIn('emirates',$branchs)->
-        Orwhere('emirates',$emirates)->paginate(5);
+        // $tenders = Tconstr::latest()->where('status', 1)->where('stage', 0)->whereIn('emirates',$branchs)->
+        // Orwhere('emirates',$emirates)->paginate(5);
         // $tenders = Tconstr::latest()->where('status', 1)->where('emirates', $emirates)->paginate(5);
 
 
@@ -2417,7 +2422,7 @@ public function insertInteriorOffer(Request $request)
 
 
         broadcast(new NewOfferHvac($offer_consr->user, $offer_consr));
-        Notification::send($admin, new NotifyNewOfferHvac($offer_consr->user, $offer_consr));
+        // Notification::send($admin, new NotifyNewOfferHvac($offer_consr->user, $offer_consr));
         Notification::send($user, new NotifyNewOfferHvac($offer_consr->user, $offer_consr));
 
         return response()->json('added offer successfuly');
@@ -2501,7 +2506,7 @@ public function insertInteriorOffer(Request $request)
         $user = $offer_consr->user;
         broadcast(new commentConsr($offer_consr->user, $offer_consr, $poster))->toOthers();
 
-        Notification::send($admin , new notifyAddOfferConstruction($offer_consr->user, $offer_consr, $poster));
+        // Notification::send($admin , new notifyAddOfferConstruction($offer_consr->user, $offer_consr, $poster));
         Notification::send($poster , new notifyAddOfferConstruction($offer_consr->user, $offer_consr, $poster));
 
 
@@ -2559,7 +2564,7 @@ public function insertInteriorOffer(Request $request)
         $admin = admin::where('role_id',1)->get();
 
         $user = User::find($request->com_id);
-        Notification::send($admin,new NotifyconfirmHvacOffer($posts->user , $request,$posts));
+        // Notification::send($admin,new NotifyconfirmHvacOffer($posts->user , $request,$posts));
         Notification::send($user,new NotifyconfirmHvacOffer($posts->user , $request,$posts));
 
 
@@ -2619,7 +2624,7 @@ public function insertInteriorOffer(Request $request)
 
         broadcast(new ConfirRequestmOfferConsturction($user,$posts,$request_tender));
 
-        Notification::send($admin, new notifyConfirRequestmOfferConsturction($user,$posts,$request_tender));
+        // Notification::send($admin, new notifyConfirRequestmOfferConsturction($user,$posts,$request_tender));
         Notification::send($userOwner, new notifyConfirRequestmOfferConsturction($user,$posts,$request_tender));
 
 

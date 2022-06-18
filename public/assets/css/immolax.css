@@ -4089,7 +4089,8 @@ Version: 1.0.0
     cursor: pointer !important;
     color: #0e0e0e !important;
     border: px solid #fff !important;
-    background: #ffffff47 !important;
+    background: #37373775 !important;
+
   
   }
   .slick-arrow {
@@ -4498,6 +4499,7 @@ Version: 1.0.0
     margin-top: 50px;
     border: 2px solid #F4F4F4;
   }
+  
 
   .single-mindset:hover .mindset-icon i {
     background: #3454d1;
@@ -6234,16 +6236,16 @@ Version: 1.0.0
 
   .footer-services li::before {
     position: relative;
-    font-size: 14px;
+    font-size: 8px;
     font-family: 'Font Awesome 5 Free';
     font-weight: 600;
-    content: "\f30a";
+    content: "\f111";
     margin-left: 10px;
     transition: all 0.3s ease;
   }
 
   .footer-services li a {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 400;
   }
 

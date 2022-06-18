@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-3">
+    <div class="mt-3" :dir="$t('direactions')" :class="$t('text_align')">
         
 
             <h3 class="h5 mt-4 font-weight-bold theme-color">  {{$t('build_by')}} </h3>

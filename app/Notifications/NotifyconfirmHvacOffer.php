@@ -36,7 +36,16 @@ class NotifyconfirmHvacOffer extends Notification implements ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
+    }
+    public function toMail($notifiable)
+    {
+        return (new MailMessage)
+
+                    ->line('Hvac Tender')
+                    ->line($this->user->name.' Choose Your Prposal')
+                    ->action('View Request', url('/#/tenders/hvac/'.$this->tender->id))
+                    ->line('Thank you for using our application!');
     }
 
     /**

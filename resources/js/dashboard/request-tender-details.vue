@@ -35,13 +35,13 @@
 
 
       <div class="p-descrip-box mt-4">
-           <div class=" h5 mb-3 font-weight-bold text-right">الوصف </div>
+           <div class=" h5 mb-3 font-weight-bold text-right">{{$t('description')}} </div>
             <p class="text-right">{{confirm.tender.notes}}</p>
 
       </div>
 
   <div class="p-descrip-box mt-4">
-           <div class=" h5 mb-3 font-weight-bold text-right">البنود المشمولة </div>
+           <div class=" h5 mb-3 font-weight-bold text-right">{{$t('Items_not_covered')}} </div>
             <p class="text-right">{{confirm.items}}</p>
 
       </div>
@@ -59,7 +59,7 @@
 
         <div class="p-descrip-box mt-4">
            <div class=" h5 mb-3 font-weight-bold text-right"> هل تم اعتماد جدول مواصفات الاستشاري   </div>
-            <p class="text-right" v-if="confirm.Approval==1">نعم</p>
+            <p class="text-right" v-if="confirm.Approval==1">{{$t('yes')}}</p>
             <p class="text-right" v-if="confirm.Approval==0">لا</p>
 
       </div>
@@ -140,6 +140,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>      اضف تقي�
                   style="background:#fff"
                     class="form-control"
                     id="exampleFormControlTextarea1"
+
                     rows="6"
                     v-model="ReviewContent"
 
@@ -219,11 +220,11 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>      اضف تقي�
     <div class="modal-content">
 
       <div class="modal-body">
-       هل انت متأكد تريد تأكيد هذا الطلب ؟
+       هل انت متأكد تريد {{$t('confirm')}}  هذا الطلب ؟
       </div>
       <div class="modal-footer">
         <button type="button" class="theme-btn primary" data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn  text-right "  @click="user_confirm()">نعم </button>
+        <button type="button" class="theme-btn  text-right "  @click="user_confirm()">{{$t('yes')}} </button>
       </div>
     </div>
   </div>
@@ -238,7 +239,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>      اضف تقي�
       </div>
       <div class="modal-footer">
         <button type="button" class="theme-btn primary" data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn  text-right " @click="com_confirm()">نعم </button>
+        <button type="button" class="theme-btn  text-right " @click="com_confirm()">{{$t('yes')}} </button>
       </div>
     </div>
   </div>
@@ -250,7 +251,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>      اضف تقي�
 
       <div class="form-group">
           <h6>
-       هل انت متأكد تريد إلغاء هذا الطلب
+       هل انت متأكد تريد {{$t('cancel')}} هذا الطلب
 
 
         <strong>  :: السبب  </strong>
@@ -473,7 +474,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       </div>
       <div class="modal-footer">
         <button type="button" class="theme-btn primary" data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn  text-right "  @click="user_confirm()">نعم </button>
+        <button type="button" class="theme-btn  text-right "  @click="user_confirm()">{{$t('yes')}} </button>
       </div>
     </div>
   </div>
@@ -488,7 +489,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       </div>
       <div class="modal-footer">
         <button type="button" class="theme-btn primary" data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn  text-right " @click="com_confirm()">نعم </button>
+        <button type="button" class="theme-btn  text-right " @click="com_confirm()">{{$t('yes')}} </button>
       </div>
     </div>
   </div>
@@ -500,7 +501,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       <div class="form-group">
           <h6>
-       هل انت متأكد تريد إلغاء هذا الطلب
+       هل انت متأكد تريد {{$t('cancel')}} هذا الطلب
 
 
         <strong>  The Reason : </strong>
@@ -568,7 +569,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
         <div class="p-descrip-box mt-4">
            <div class=" h5 mb-3 font-weight-bold text-right"> هل تم اعتماد جدول مواصفات الاستشاري   </div>
-            <p class="text-right" v-if="confirm.Approval==1">نعم</p>
+            <p class="text-right" v-if="confirm.Approval==1">{{$t('yes')}}</p>
             <p class="text-right" v-if="confirm.Approval==0">لا</p>
 
       </div>
@@ -730,7 +731,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       </div>
       <div class="modal-footer">
         <button type="button" class="theme-btn primary" data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn  text-right "  @click="user_confirm()">نعم </button>
+        <button type="button" class="theme-btn  text-right "  @click="user_confirm()">{{$t('yes')}} </button>
       </div>
     </div>
   </div>
@@ -745,7 +746,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       </div>
       <div class="modal-footer">
         <button type="button" class="theme-btn primary" data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn  text-right " @click="com_confirm()">نعم </button>
+        <button type="button" class="theme-btn  text-right " @click="com_confirm()">{{$t('yes')}} </button>
       </div>
     </div>
   </div>
@@ -757,7 +758,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       <div class="form-group">
           <h6>
-       هل انت متأكد تريد إلغاء هذا الطلب
+       هل انت متأكد تريد {{$t('cancel')}} هذا الطلب
 
 
         <strong>  The Reason : </strong>
@@ -825,7 +826,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
         <div class="p-descrip-box mt-4">
            <div class=" h5 mb-3 font-weight-bold text-right"> هل تم اعتماد جدول مواصفات الاستشاري   </div>
-            <p class="text-right" v-if="confirm.Approval==1">نعم</p>
+            <p class="text-right" v-if="confirm.Approval==1">{{$t('yes')}}</p>
             <p class="text-right" v-if="confirm.Approval==0">لا</p>
 
       </div>
@@ -850,7 +851,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 <button    class="theme-btn text-right confirm" data-toggle="modal" data-target="#done"
  v-if="offer.com_confirm==1 && offer.user_confirm==0 && offer.result==null ">
  <i class="fa fa-check-circle-o"></i>
- التأكيد على إكمال الطلب</button>
+ ال{{$t('confirm')}}  على إكمال الطلب</button>
 
  <button    class="theme-btn primary  text-right confirm"
  v-if="offer.com_confirm==0 && offer.user_confirm!==1" disabled >انتظار الطرف الثاني لاكمال الطلب</button>
@@ -858,7 +859,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
  <button    class="theme-btn primary text-right confirm"
  v-if="offer.com_confirm==1 && offer.user_confirm==1 " disabled > Done!</button>
 <button class="theme-btn primary  text-right ml-2 mr-2"  data-toggle="modal" data-target="#cancel"
- v-if="offer.user_confirm==0 "><i class="fas fa-times"></i> إلغاء المشروع </button>
+ v-if="offer.user_confirm==0 "><i class="fas fa-times"></i> {{$t('cancel')}} المشروع </button>
 </div>
 <div v-else>
 <div class="badge badge-danger">ملغي</div>
@@ -870,9 +871,9 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 <button    class="theme-btn text-right confirm" data-toggle="modal" data-target="#Complete"
   v-if="offer.com_confirm==0  &&  offer.user_confirm==0  && offer.result==null" ><i class="fa fa-check-circle-o" ></i>إكمال</button>
 <button    class="theme-btn primary text-right confirm" data-toggle="modal" data-target="#Complete"
- v-if="offer.com_confirm==1 && offer.user_confirm==0 && offer.result==null" ><i class="fa fa-check-circle-o" ></i>  انتظر حتي يقوم المالك بالتأكيد</button>
+ v-if="offer.com_confirm==1 && offer.user_confirm==0 && offer.result==null" ><i class="fa fa-check-circle-o" ></i>  انتظر حتي يقوم المالك بال{{$t('confirm')}} </button>
 <button class="theme-btn primary  text-right ml-2 mr-2"  data-toggle="modal" data-target="#cancel"
-v-if="offer.com_confirm==0 " ><i class="fas fa-times"></i> إلغاء المشروع </button>
+v-if="offer.com_confirm==0 " ><i class="fas fa-times"></i> {{$t('cancel')}} المشروع </button>
 
 
 <button   class="theme-btn  text-right confirm" data-toggle="modal" data-target="#Complete"  v-if="offer.com_confirm==1 && offer.user_confirm==1" disabled><i class="fa fa-check-circle-o" ></i>     Done!</button>
@@ -990,7 +991,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       </div>
       <div class="modal-footer">
         <button type="button" class="theme-btn primary" data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn  text-right "  @click="user_confirm()">نعم </button>
+        <button type="button" class="theme-btn  text-right "  @click="user_confirm()">{{$t('yes')}} </button>
       </div>
     </div>
   </div>
@@ -1005,7 +1006,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       </div>
       <div class="modal-footer">
         <button type="button" class="theme-btn primary" data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn text-right " @click="com_confirm()" :disabled="loading">نعم </button>
+        <button type="button" class="theme-btn text-right " @click="com_confirm()" :disabled="loading">{{$t('yes')}} </button>
       </div>
     </div>
   </div>
@@ -1029,10 +1030,10 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
         <small>{{value}}/{{maxlength}}</small>
         <div class="invalid-feedback" v-for="(error, index) in errorFor('reason_cancel')" :key="'reason_cancel' + index" >{{ error }}</div>
          <button type="button" class="theme-btn text-right mt-2" @click="cancel_user()"
-          v-if="IsUser==10" :disabled="reason==null || loading ">تأكيد </button>
+          v-if="IsUser==10" :disabled="reason==null || loading ">{{$t('confirm')}}  </button>
          <button type="button" class="theme-btn primary text-right" @click="cancel_com()" v-if="IsUser==6"
          :disabled="reason==null || loading">
-             تأكيد </button>
+             {{$t('confirm')}}  </button>
              </div>
 
 
@@ -1052,11 +1053,12 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
     <div class="" v-for="confirm , index in offer.confirm" :key="index">
 
-   <h1>المرحلة الاولى</h1>
+   <h1>{{$t('The_first_stage')}}</h1>
             <h4 class="theme-color">
               
       <i class="fas fa-check-circle text-success" ></i>
-         الطلب 
+       {{$t('order')}}
+       
       </h4>
 
                     <div class="p-descrip-box">
@@ -1072,16 +1074,16 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
            
         </div>
         <div class="list-item">
-        <span class="text-dark"><i  class="fa fa-bookmark grey"></i>   رقم الطلب : {{offer.id}}</span>
+        <span class="text-dark"><i  class="fa fa-bookmark grey"></i>  {{$t('request_number')}}: {{offer.id}}</span>
         <span class="text-dark"><i  class="fa fa-user grey"></i>  
         <span v-if="IsUser==1">
-               المشتري : 
+               {{$t('buyer')}} : 
                <span v-for="buyer , index in confirm.buyer " :key="index" >{{buyer.user.name}}
                </span>
 
           </span>
           <span v-if="IsUser==10">
-               البائع : {{name_eng = confirm.user.name}}
+               {{$t('seller')}}  : {{name_eng = confirm.user.name}}
 
           </span>
               <!-- <span v-if="IsUser==10" >
@@ -1095,9 +1097,9 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
           </span> -->
         </span>
 
-        <span class="text-dark" v-if="confirm.budget"><i  class="fa fa-money grey"></i>  الميزانية :
+        <span class="text-dark" v-if="confirm.budget"><i  class="fa fa-money grey"></i>  {{$t('budget')}} :
          {{confirm.budget}}{{$t('aed')}}</span>
-        <span class="text-dark"> <i  class="fa fa-clock grey"></i>وقت الطلب :{{offer.added_at}}</span>
+        <span class="text-dark"> <i  class="fa fa-clock grey"></i> {{$t('Time_request')}} :{{offer.added_at}}</span>
         </div>
                 </div>
                 <!-- end of new commpnent -->
@@ -1111,51 +1113,51 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
   <div class="col-md-8">
 
   <div class="p-descrip-box mt-4">
-           <div class=" h5 mb-3 font-weight-bold text-right theme-color">وصف المشروع </div>
-            <p class="text-right">{{confirm.tender.note}}</p>
+           <div class=" h5 mb-3 font-weight-bold theme-color">{{$t('description')}} </div>
+            <p class="">{{confirm.tender.note}}</p>
 
       </div>
 
 
 <div class="p-descrip-box" >
-       <h1>المرحلة الثانية </h1>
+       <h1>{{$t('The_second_stage')}} </h1>
     <h4 class=theme-color>
      
       <i class="fas fa-check-circle text-success" ></i>
-       عرض الاستشاري 
+       {{$t('Consultant_offer')}}
     </h4>
       
-          <div class=" mt-4 text-right">
-           <div class=" h5 mb-3 font-weight-bold text-right theme-color">العرض المقترح </div>
+          <div class=" mt-4 ">
+           <div class=" h5 mb-3 font-weight-bold  theme-color"> {{$t('Suggested_offer')}} </div>
            {{confirm.comment}}
 
 
       </div>
 
         <div class="p-descrip-box mt-4">
-           <div class=" h5 mb-3 font-weight-bold text-right theme-color"> تفاصيل  </div>
+           <div class=" h5 mb-3 font-weight-bold  theme-color"> {{$t('Offer_details')}}  </div>
            <table class="table font-weight-bold " :dir="$t('directions')">
   <thead class="thead">
     <tr>
-      <th scope="col">التكلفة التقريبية</th>
+      <th scope="col">{{$t('Approximate_cost')}}</th>
       <th scope="col">{{confirm.budget}}{{$t('aed')}}</th>
 
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">إشراف</th>
+      <th scope="row">{{$t('Supervisor')}}</th>
      
       <td colspan="4">{{confirm.Supervisor}}{{$t('aed')}}</td>
 
     </tr>
     <tr>
-      <th scope="row">مساحة البناء</th>
-      <td colspan="4">{{confirm.TotalAreaBuild}} <small class="text-muted">قدم مربع</small> </td>
+      <th scope="row">{{$t('total_area_build')}}</th>
+      <td colspan="4">{{confirm.TotalAreaBuild}} <small class="text-muted">{{$t('sqft')}}</small> </td>
 
     </tr>
     <tr>
-           <th scope="col">التصميم</th>
+           <th scope="col">{{$t('villa_design')}}</th>
       <th scope="col">{{confirm.design}}{{$t('aed')}}</th>
 
     </tr>
@@ -1166,22 +1168,22 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
     <div v-if="offer.reason_user==null   ">
 
-<button    class="theme-btn text-right confirm" data-toggle="modal" data-target="#done"
+<button    class="theme-btn  confirm" data-toggle="modal" data-target="#done"
  v-if="offer.com_confirm==1 && offer.user_confirm==0 ">
  <i class="fa fa-check-circle-o"></i>
- تأكيد طلب الاكمال </button>
+ {{$t('Confirm_order_completion')}}</button>
 
  <button    class="theme-btn text-right confirm"
  v-if="offer.com_confirm==0 && offer.user_confirm!==1 && offer.reason_com==null" disabled="disabled" >
- انتظار رد الشركة
+{{$t('Waiting_for_the_companys_response')}}
   </button>
 
-  <button class="theme-btn primary text-right ml-2 mr-2"  data-toggle="modal" data-target="#cancel"
-  v-show=" offer.result==null" ><i class="fas fa-times"></i> الغاء المشروع  </button>
+  <button class="theme-btn primary  ml-2 mr-2"  data-toggle="modal" data-target="#cancel"
+  v-show=" offer.result==null" ><i class="fas fa-times"></i> {{$t('Project_Cancellation')}}  </button>
 </div>
 <div v-else>
-<div class="badge badge-danger" v-if="offer.reason_com==null">انتظار الشركة لي الغاء الطلب    </div>
-<div class="badge badge-danger" v-else>ملغي</div>
+<div class="badge badge-danger" v-if="offer.reason_com==null">{{$t('The_company_is_waiting_for_me_to_cancel_the_order')}}   </div>
+<div class="badge badge-danger" v-else>{{$t('cancel')}}</div>
 </div>
 
 </div>
@@ -1189,16 +1191,16 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 <div  v-if="IsUser==1">
 
     <div v-if="offer.result!='cancel'">
-<button    class="theme-btn text-right confirm" data-toggle="modal" data-target="#Complete"  v-if="offer.com_confirm==0
-&& com_help!==1 && offer.user_confirm==0  && offer.reason_user==null " ><i class="fa fa-check-circle-o" ></i> طلب اكمال</button>
-<button    class="theme-btn primary text-right confirm" data-toggle="modal" data-target="#Complete"
+<button    class="theme-btn confirm" data-toggle="modal" data-target="#Complete"  v-if="offer.com_confirm==0
+&& com_help!==1 && offer.user_confirm==0  && offer.reason_user==null " ><i class="fa fa-check-circle-o" ></i> {{$t('complete_request')}}</button>
+<button    class="theme-btn primary  confirm" data-toggle="modal" data-target="#Complete"
 v-if="offer.com_confirm==1 && offer.user_confirm==0  " disabled >
-<i class="fa fa-check-circle-o" ></i>  انتظار رد المالك للاكمال </button>
+<i class="fa fa-check-circle-o" ></i>  {{$t('Waiting_for_the_owner_response_to_complete')}} </button>
     </div>
 
-<button class="theme-btn primary text-right ml-2 mr-2"
+<button class="theme-btn primary  ml-2 mr-2"
         data-toggle="modal" data-target="#cancel" v-show=" offer.result==null  " >
-    <i class="fas fa-times"></i> الغاء المشروع
+    <i class="fas fa-times"></i> {{$t('Project_Cancellation')}}
     </button>
 
 
@@ -1206,26 +1208,26 @@ v-if="offer.com_confirm==1 && offer.user_confirm==0  " disabled >
 v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-light" ></i>     تم الانتهاء من الطلب </button> -->
 
 <!-- <div class="badge badge-danger" v-if="offer.reason_user=null">Wating the owner To Cancel</div> -->
-<div class="badge badge-danger" v-if="offer.reason_user!=null && offer.reason_com!=null">ملغي</div>
+<div class="badge badge-danger" v-if="offer.reason_user!=null && offer.reason_com!=null">{{$t('canceled')}}</div>
 </div>
 
       </div>
 
       
       
-<div v-if="offer.com_confirm!=null && offer.user_confirm!=null">
+<div v-if="offer.com_confirm==1 && offer.user_confirm==1 ">
 
       <div class="form-group second-stage"  >
-            <h1>المرحلة الثالثة</h1>
+            <h1>{{$t('The_third_stage')}}</h1>
             <div class="p-descrip-box">
             <h4 class="theme-color">
                <i class="fas fa-check-circle text-secondary" :class="{'text-success':offer.contract!=null}" ></i>
-      عقد الاستشاري </h4>
+      {{$t('consultant_contract')}}</h4>
       
 
-           <span v-if="offer.contract==null" >
-        <small class="text-muted" v-if="IsUser==1">(pdf, jpg , png )</small>
-        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">إجباري</small>
+           <span v-if="offer.contract==null " >
+        <small class="text-muted" v-if="IsUser==1">(Pdf)</small>
+        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">{{$t('Mandatory')}}</small>
         
                 <div class="modal fade" id="Contractfile" v-if="offer.contract==null" 
          tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1235,7 +1237,8 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
       <div class="modal-header">
         <h5 class="modal-title theme-color " id="exampleModalLabel">
             
-        <span >   عقد الاستشاري</span>
+        <span >     {{$t('consultant_contract')}}</span>
+        <!-- الاستشاري -->
 
 
 
@@ -1247,10 +1250,10 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
       <div class="modal-body">
        
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-            <small class="text-muted">(pdf, xlsx)</small>
-                        <small class=" float-right text-danger font-weight-bold">إجباري</small>
+            <small class="text-muted">(pdf)</small>
+                        <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
@@ -1258,10 +1261,11 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
                    <span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.cont" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">     عقد الاستشاري</span>
-                <input type="file" class="form-control"  @change.prevent="ContaractFile($event)" style="display:none" ref="cont">
+          <span class="">      {{$t('consultant_contract')}}</span>
+                <input type="file" class="form-control"  @change.prevent="ContaractFile($event)" 
+                style="display:none" ref="cont">
 
-               <div class=" text-danger" v-if="FileNotContractsAllowd!=null">{{FileNotContractsAllowd}}</div>
+               <div class=" text-danger" v-if="FileNotContractsAllowd!=null">{{$t('ShouldPdf')}}</div>
 
 
 
@@ -1284,8 +1288,8 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('contract')"> حفظ</button>
+                <button type="button" class="btn theme-btn" @click="UpdateFile('contract')"> {{$t('save')}}</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
       </div>
     </div>
     </div>
@@ -1295,7 +1299,7 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
   <button v-if="IsUser==1  "  class="btn btn-light"  
                 data-toggle="modal" data-target="#Contractfile">
             <i class='fas fa-folder-open'   style="font-size:10px"></i>
-            <small class="text-muted"> تحميل</small>
+            <small class="text-muted"> {{$t('upload')}}</small>
             </button> 
           
         </span>
@@ -1303,7 +1307,7 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
                <p class="alert alert-light"> 
               <a :href="offer.contract.ContractPath" target="_blank" class="btn btn-success">
                 <i class="fa fa-eye"></i>
-                عرض
+                {{$t('view')}}
               
               </a>
               </p>
@@ -1315,19 +1319,19 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
  
  
             <div  v-if="offer.contract">
-              <h1>المرحلة الرابعة</h1>
+              <h1>{{$t('The_fourth_stage')}}</h1>
             <div >
              <h4 class="theme-color"> 
                      <i class="fas fa-check-circle text-success" ></i>
 
-               ملفات المشروع </h4>
+              {{$t('project_files')}}</h4>
                             <form  class="c-form-inner" style="background:#fff;padding:16px">
 
 
 
 <span v-for="tender,index in offer.saved_tenders " :key="index">
   <div class="p-descrip-box">
-    <label class="theme-color"> عنوان </label>
+    <label class="theme-color">   {{$t('title')}} </label>
 
     <div v-if="tender.title!=null">
 <p class="">{{tender.title}}  </p>
@@ -1336,18 +1340,20 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
 <div v-else-if="tender.title==null" >
 
          <div class="form-group" v-show="IsUser==1">
-    <input class="form-control mb-2" type="text" placeholder="وصف مختصر للمشروع" 
+    <input class="form-control mb-2" type="text" :placeholder="$t('short_descripe')" 
      v-model="title" :class="[{'is-invalid': errorFor('title')}]">
    
-            <button  class="btn btn-download" :disabled='title.length  <=  4' @click.prevent="saveTinder('title',tender.id)">حفظ</button>
+            <button  class="btn btn-download" :disabled='title.length  <=  
+            4 || loading==true' @click.prevent="saveTinder('title',tender.id)" >
+            {{loading==true ?$t('wait') :$t('save')}}</button>
              </div>
              <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لكتب عنوان وصف مختصر
-             </div>
+      {{$t('Waiting_for_the_consultant_to_write_a_short_description_title')}}
+</div>
     </div>
 
     <div v-if="tender.notes!=null" class="container">
-        <label class="theme-color"> وصف </label>
+        <label class="theme-color"> {{$t('description')}} </label>
 
 <p class="text-lg-start">{{tender.notes}}  </p>
 
@@ -1355,7 +1361,7 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
     <div v-else >
 <div v-show="IsUser==1">
     <div class=" form-group mt-3">
-                  <label for="exampleFormControlTextarea1 theme-color">الوصف</label>
+                  <label for="exampleFormControlTextarea1 theme-color">{{$t('description')}}</label>
                   <textarea
                   style="background:#fff"
                     class="form-control"
@@ -1363,33 +1369,37 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
                     rows="4"
                     v-model="notes"
                     :class="[{'is-invalid': errorFor('Notes')}]"
-                      placeholder=" أدخل وصفاً مفصلاً لمشروعك   "
+                    :placeholder="$t('long_descripe')"
 
                   ></textarea>
+                  {{notes.length==''? 0 : notes.length}} / 100
                   <!-- <div
                     class="invalid-feedback"
                     v-for="(error, index) in this.errorFor('notes')"
                     :key="'notes' + index"
                   >{{ error }}</div> -->
                 </div>
-                <button  class="btn btn-download" :disabled='notes.length  <=  100
-            ' @click.prevent="saveTinder('notes',tender.id)">حفظ</button>
+                <button  class="btn btn-download" :disabled='notes.length  <=  99 || loading==true
+            ' @click.prevent="saveTinder('notes',tender.id)" >
+            {{loading==true ? $t('wait') :$t('save')}}
+           
+            </button>
     </div>
 <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لكتب وصف مختصر
+              {{$t('Waiting_for_the_consultant_to_write_a_short_description')}}
              </div>
     </div>
        
 
 
   <div v-if="tender.threeDName!=null" class="alert alert-light">
-        <label class="theme-color"> ملف الثري دي PDF </label>
+        <label class="theme-color"> {{$t('3D_File')}} {{$t('pdf')}} </label>
 
 <div class="thm-color  container">
   <a :href="tender.threeDPath" target="_blank" class="btn btn-success">
  
     <i class="fa fa-eye"></i>
-عرض
+{{$t('view')}}
  
     </a>
     </div>
@@ -1397,24 +1407,24 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
     </div>
     <div v-else class="file-style" >
       <div v-show="IsUser==1"  >
-        ملف الثري دي
-        <button @click.prevent="HandleFile('threed',tender.id)" class="btn btn-download "  data-toggle="modal" 
+        {{$t('3D_File')}}
+  <button @click.prevent="HandleFile('threed',tender.id)" class="btn btn-download "  data-toggle="modal" 
         data-target="#editFile">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
       </div>
 
                <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  ملف الثري دي 
-             </div>
+        {{$t('Waiting_for_the_consultant_to_upload_the_3D_file')}}
+</div>
     </div>
 
       <div v-if="tender.ThreeDDWG!=null" class="alert alert-light">
-        <label class="theme-color"> ملف الثري دي AutoCad </label>
+        <label class="theme-color">  {{$t('3D_File')}} <b> ({{$t('autocad')}}) </b></label>
 
 <div class="thm-color  container"><a :href="tender.ThreeDDWG" download="download" class="btn btn-secondary">
-<i class='bx bxs-down-arrow-circle' ></i>    تحميل
+<i class='bx bxs-down-arrow-circle' ></i>    {{$t('upload')}}
     </a>
     </div>
 
@@ -1422,44 +1432,44 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
     <div v-else class="file-style" >
       <div v-show="IsUser==1"  >
 
-                 ملف الثري دي
- الاوتوكاد<button @click.prevent="HandleFile('threedDwg',tender.id)" class="btn btn-success "  data-toggle="modal" data-target="#editFileDwg">
+                  {{$t('3D_File')}}
+ ({{$t('autocad')}})<button @click.prevent="HandleFile('threedDwg',tender.id)" class="btn btn-success "  data-toggle="modal" data-target="#editFileDwg">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
       </div>
 
                <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  ملف الثري ديAutoCad     
+             {{$t('Waiting_for_the_consultant_to_upload_the_3D_file')}}   ({{$t('autocad')}})
              </div>
     </div>
 
 
 
      <div v-if="tender.ArchitectName!=null" class="alert alert-light">
-        pdf <label> ملف المخططات المعمارية   </label>
+        pdf <label> {{$t('Architectural_drawings_file')}}  </label>
 
 <div class="thm-color  container">
   <a :href="tender.ArchitectPath" target="_blank" class="btn btn-success">
  
     <i class="fa fa-eye"></i>
-    عرض
+    {{$t('view')}}
     </a>
     </div>
 
     </div>
     <div v-else class="file-style">
       <div   v-show="IsUser==1">
-pdf    ملف المخططات المعمارية
+{{$t('pdf')}}    {{$t('Architectural_drawings_file')}} 
         <button @click.prevent="HandleFile('Architect',tender.id)" class="btn btn-download "
           data-toggle="modal" data-target="#editFileArch">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
       </div>
       
                <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  ملف المخططات   
+              {{$t('Waiting_for_the_consultant_to_attach_the_architectural_drawings_file')}} 
              </div>
     </div>
 
@@ -1469,196 +1479,199 @@ pdf    ملف المخططات المعمارية
 
 
          <div v-if="tender.ArchitectDWG!=null" class="alert alert-light">
-        AUTOCAD <label> ملف المخططات المعمارية   </label>
+        {{$t('autocad')}} <label> {{$t('Architectural_drawings_file')}}  </label>
 
 <div class="thm-color  container"><a :href="tender.ArchitectDWG" target="_blank" class="btn btn-secondary">
   <i class='bx bxs-down-arrow-circle' ></i>
- تحميل
+ {{$t('upload')}}
     </a>
     </div>
 
     </div>
     <div v-else class="file-style">
       <div   v-show="IsUser==1">
-autocad    ملف المخططات المعمارية
+{{$t('autocad')}}    {{$t('Architectural_drawings_file')}}
         <button @click.prevent="HandleFile('Architect',tender.id)" class="btn btn-download "
           data-toggle="modal" data-target="#editFileArchDWG">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
       </div>
       
                <div v-if="IsUser==10" class="text-danger">
-         autocad       إنتظار الاستشاري لرفع  ملف المخططات   
-             </div>
+        {{$t('Waiting_for_the_consultant_to_attach_the_architectural_drawings_file')}} ({{$t('autocad')}})
+  </div>
     </div>
     
       <div v-if="tender.servicesName!=null" class="alert alert-light">
-        <label> ملف الخدمات    </label>
+        <label> {{$t('Services_file')}}     </label>
 
 <div class="thm-color  container"><a :href="tender.servicesPath" download="download" class="btn btn-success">
-<i class='fa fa-eye' ></i>    عرض
+<i class='fa fa-eye' ></i>    {{$t('view')}}
     </a>
     </div>
 
     </div >
     <div v-else  class="file-style">
       <div  v-show="IsUser==1">
-    ملف الخدمات
+  {{$t('Services_file')}}  
         <button @click.prevent="HandleFile('Services',tender.id)" class="btn btn-success "
           data-toggle="modal" data-target="#editFileServic">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
       </div>
          <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  ملف الخدمات   
-             </div>
+ {{$t('Waiting_for_the_consultant_to_upload_the_services_file')}} 
+              </div>
     </div>
 
        <div v-if="tender.servicesDWG!=null" class="alert alert-light">
-        <label> ملف الخدمات  اوتوكاد  </label>
+        <label> {{$t('Services_file')}}  {{$t('autocad')}}  </label>
 
 <div class="thm-color  container"><a :href="tender.servicesDWG" target="_blank" class="btn btn-secondary">
   <i class='bx bxs-down-arrow-circle' ></i>
-    تحميل
+    {{$t('upload')}}
     </a>
     </div>
 
     </div >
     <div v-else  class="file-style">
       <div  v-show="IsUser==1">
-    ملف الخدمات اوتوكاد
+   {{$t('Services_file')}}  {{$t('autocad')}}
         <button @click.prevent="HandleFile('Services',tender.id)" class="btn btn-download "  data-toggle="modal" data-target="#editFileSErvicesDwg">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
       </div>
          <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  ملف الخدمات الاوتوكاد   
+        {{$t('Waiting_for_the_consultant_to_attach_the_architectural_drawings_file')}} 
+                <b> ({{$t('autocad')}}) </b>
+
              </div>
     </div>
 
      <div v-if="tender.SpecificationsName!=null" v-show="IsUser==1" class="alert alert-light">
-        <label> ملف المواصفات    </label>
+        <label> {{$t('specification_file')}}  </label>
 
 <div class="thm-color  container"><a :href="tender.SpecificationsPath" target="_blank"  class="btn btn-success">
-<i class='bx bxs-down-arrow-circle' ></i>    عرض
+<i class='bx bxs-down-arrow-circle' ></i>    {{$t('view')}}
     </a>
     </div>
 
     </div>
     <div v-else class="file-style">
       <div  v-show="IsUser==1">
-    ملف المواصفات
+ {{$t('specification_file')}}
         <button @click.prevent="HandleFile('spec',tender.id)" class="btn btn-download "  data-toggle="modal" data-target="#editFileSpec">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
 
             </div>
          <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  ملف المواصفات   
+                {{$t('Waiting_for_the_consultant_to_upload_the_specification_file')}} 
              </div>
     </div>
 
         <div v-if="tender.SpecificationsEXCEL!=null" v-show="IsUser==1" class="alert alert-light">
-        <label> ملف المواصفات الاكسل    </label>
+        <label> {{$t('specification_file')}} {{$t('Excel')}}   </label>
 
 <div class="thm-color  container"><a :href="tender.SpecificationsEXCEL" target="_blank" class="btn btn-secondary">
 
   <i class='bx bxs-down-arrow-circle' ></i> 
-تحميل
+{{$t('upload')}}
     </a>
     </div>
 
     </div>
     <div v-else class="file-style">
       <div  v-show="IsUser==1">
-    ملف المواصفات الاكسل
+  {{$t('specification_file')}} {{$t('Excel')}} 
         <button @click.prevent="HandleFile('spec',tender.id)" class="btn btn-download "  data-toggle="modal" data-target="#editFileSpecDWG">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
 
             </div>
          <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  ملف المواصفات الاكسل   
-             </div>
+    {{$t('Waiting_for_the_consultant_to_upload_the_specification_file')}} 
+                {{$t('Excel')}}               </div>
     </div>
 
 
       <div v-if="tender.mapName!=null" class="alert alert-light">
-        <label> خارطة الارض     </label>
+        <label> {{$t('land_map')}}   </label>
 
 <div class="thm-color  container"><a :href="tender.mapPath" target="_blank" class="btn btn-success">
   
 <i class="fa fa-eye"></i>
-عرض    </a>
+{{$t('view')}}    </a>
     </div>
 
     </div>
     <div v-else class="file-style" >
           
             <div v-show="IsUser==1">
-                خارطة الارض
-        <button @click.prevent="HandleFile('map',tender.id)" class="btn btn-download "  data-toggle="modal" data-target="#editFileMap">
+{{$t('earth_map_file')}}
+<button @click.prevent="HandleFile('map',tender.id)" class="btn btn-download "  data-toggle="modal" data-target="#editFileMap">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
             </div>
              <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  خارطة الارض    
+              {{$t('Waiting_for_the_consultant_to_raise_the_map_of_the_land')}} 
              </div>
     </div>
 
 
         <div v-if="tender.StructureName!=null" class="alert alert-light">
-        <label>  الملف الانشائي     </label>
+        <label>  {{$t('Structure_file')}}    </label>
 
 <div class="thm-color  container"><a :href="tender.StructurePath" target="_blank" class="btn btn-success">
      <i class="fa fa-eye"></i>
-    عرض
+    {{$t('view')}}
     </a>
     </div>
 
     </div>
     <div v-else class="file-style" >
       <div v-show="IsUser==1">
-         الملف الانشائي
+          {{$t('Structure_file')}}
         <button @click.prevent="HandleFile('Structure',tender.id)" class="btn btn-download "  data-toggle="modal" data-target="#editFileStructure">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
             </div>
             <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  الملف الانشائي     
+             {{$t('Waiting_for_the_consultant_to_attach_the_construction_file')}}  
              </div>
 
             
     </div>
 
             <div v-if="tender.StructureDWG!=null" class="alert alert-light">
-        <label>  الملف الانشائي اوتوكاد    </label>
+        <label>   {{$t('Structure_file')}} {{$t('autocad')}}  </label>
 
 <div class="thm-color  container"><a :href="tender.StructureDWG" download="download" class="btn btn-secondary">
 <i class="fa fa-eye"></i>
-تحميل
+{{$t('upload')}}
     </a>
     </div>
 
     </div>
     <div v-else class="file-style" >
       <div v-show="IsUser==1">
-         الملف الانشائي اوتوكاد
+          {{$t('Structure_file')}} ({{$t('autocad')}})
         <button @click.prevent="HandleFile('Structure',tender.id)" class="btn btn-download "  
         data-toggle="modal" data-target="#editFilestructureDWG">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
             </div>
             <div v-if="IsUser==10" class="text-danger">
-               إنتظار الاستشاري لرفع  الملف الانشائي اوتوكاد    
+               {{$t('Waiting_for_the_consultant_to_attach_the_construction_file')}}
+               ({{$t('autocad')}})
              </div>
 
             
@@ -1666,22 +1679,22 @@ autocad    ملف المخططات المعمارية
 
 
       <div v-if="tender.identityName!=null" class="alert alert-light">
-        <label>   الهوية     </label>
+        <label>   {{$t('identity')}}     </label>
 
 <div class="thm-color  container"><a :href="tender.identityPath" target="_blank" class="btn btn-success">
     <i class="fa fa-eye"></i>
-    عرض
+    {{$t('view')}}
     </a>
     </div>
 
     </div>
     <div v-else class="file-style">
       <div  v-show="IsUser==1">
-         الهوية
+          {{$t('identity')}} 
         <button @click.prevent="HandleFile('Ident',tender.id)" class="btn btn-download " 
          data-toggle="modal" data-target="#editFileIdent">
             <i class='fas fa-file'   style="font-size:10px"></i>
-            <small class=""> تحميل</small>
+            <small class=""> {{$t('upload')}}</small>
             </button>
       </div>
     </div>
@@ -1702,8 +1715,8 @@ autocad    ملف المخططات المعمارية
                     && tender.ArchitectPath!=null && tender.mapPath!=null &&
                      tender.SpecificationsPath!=null && tender.servicesPath!=null &&
                      tender.threeDName!=null" >
-                     <h1>المرحلة الخامسة </h1>
-                      <h5>تحويل المناقصة </h5>
+                     <h1>{{$t('The_fifth_stage')}} </h1>
+                      <h5> {{$t('Tender_Transfer')}} </h5>
               
 <div>
  
@@ -1721,7 +1734,7 @@ autocad    ملف المخططات المعمارية
    
   
     <button class="btn btn-download"  @click.prevent="sendTender(1,tender) ">
-      نشر 
+      {{$t('post_now')}} 
     </button>
 </label>
 <span class="ttm-color">    {{$t('construcion_company')}}   </span>
@@ -1730,14 +1743,14 @@ autocad    ملف المخططات المعمارية
   <div v-else-if="TypeTender1" class="mt-3">
 
       <router-link :to="{name:'consrDetails',params:{id:TypeTenderId1}}" class="theme-btn " >
-                            الذهاب الي مناقصة المقاولات
+                            {{$t('Contracting_Tender')}}
                             </router-link>
   </div>
 
       <div class="form-group container file-style"  v-if="TypeTender2==null" >
  <label class=" mt-2 ">
     <button class="btn btn-download " @click="sendTender(2,tender)">
-      نشر 
+   {{$t('post_now')}} 
     </button>
 </label>
 <span class="ttm-color">    {{$t('HVAC_companies')}}   </span>
@@ -1746,7 +1759,7 @@ autocad    ملف المخططات المعمارية
   <div v-else-if="TypeTender2" class="mt-3">
 
       <router-link :to="{name:'HvacDetails',params:{id:TypeTenderId2}}" class="theme-btn " >
-            الذهاب الي مناقصة التكييف
+            {{$t('Hvac_Tender')}}
             </router-link>
 
   </div>
@@ -1754,7 +1767,7 @@ autocad    ملف المخططات المعمارية
    <div class="form-group container file-style" v-if="TypeTender3==null"> 
  <label class=" mt-2 ">
     <button class="btn btn-download"  @click="sendTender(3,tender)">
-      نشر 
+     {{$t('post_now')}}
     </button>
 </label>
 <span class="ttm-color">    {{$t('Stone_companies')}}   </span>
@@ -1763,14 +1776,14 @@ autocad    ملف المخططات المعمارية
    <div v-else-if="TypeTender3" class="mt-3">
     
       <router-link :to="{name:'StoneDetails',params:{id:TypeTenderId3}}" class="theme-btn " >
-            الذهاب الي مناقصة الحجر
+            {{$t('Stone_Tender')}}
             </router-link>
 
   </div>
     <div class="form-group container file-style" v-if="TypeTender4==null"> 
  <label class=" mt-2 ">
     <button class="btn btn-download"  @click="sendTender(4,tender)">
-      نشر 
+    {{$t('post_now')}}
     </button>
 </label>
 <span class="ttm-color">    {{$t('interior_decoration')}}   </span>
@@ -1780,14 +1793,15 @@ autocad    ملف المخططات المعمارية
      <div v-else-if="TypeTender4" class="mt-3">
 
            <router-link :to="{name:'InteriorDetails',params:{id:TypeTenderId4}}" class="theme-btn " >
-            الذهاب الي مناقصة الحجر
+            {{$t('Stone_Tender')}}
             </router-link>
      </div>
   
 </div>
 <div v-else>
-<p class=" text-success">تحويل المناقصات من قبل العميل </p>
+<p class=" text-success">{{$t('Transfer_of_tenders_by_the_client')}}</p>
 </div>
+
 
 
 
@@ -1797,16 +1811,16 @@ autocad    ملف المخططات المعمارية
 
 
 <div class="">
-<h1>المرحلة السادسة </h1>
-    <h5>عقود المناقصات </h5>
+<h1>{{$t('The_sixth_stage')}} </h1>
+    <h5>{{$t('Tender_Contracts')}} </h5>
    
 <h6>
    <i :class="{'fas fa-check-circle text-success':offer.toffers.contracts_consrcution!=null}"></i>
-  عقد المقاول
+{{$t('Tender_Contracts')}}
   </h6>
              <span v-if="offer.toffers.contracts_consrcution==null && IsUser==1" >
-        <small class="text-muted" v-if="IsUser==1">(pdf, jpg , png ) </small>
-        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">إجباري</small>
+        <small class="text-muted" v-if="IsUser==1">(pdf) </small>
+        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">{{$t('Mandatory')}} </small>
                 <div class="modal fade" id="contractFiles"
          tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
          v-if="offer.toffers.contracts_consrcution==null">
@@ -1817,7 +1831,7 @@ autocad    ملف المخططات المعمارية
         <h5 class="modal-title theme-color " id="contractFiles">
            
             
-        <span >   عقد المقاول</span>
+        <span >   {{$t('contractor_contract')}} </span>
 
 
 
@@ -1829,10 +1843,10 @@ autocad    ملف المخططات المعمارية
       <div class="modal-body">
        
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
             <small class="text-muted">(pdf)</small>
-                        <small class=" float-right text-danger font-weight-bold">إجباري</small>
+                        <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
@@ -1869,9 +1883,9 @@ autocad    ملف المخططات المعمارية
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
         <button type="button" :id="offer.toffers.id" class="btn theme-btn"
-         @click="updateContracts('construction',offer.toffers.id)"> حفظ</button>
+         @click="updateContracts('construction',offer.toffers.id)"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -1881,7 +1895,7 @@ autocad    ملف المخططات المعمارية
   <button v-if="IsUser==1 && offer.toffers.contracts_consrcution==null"  class="btn btn-light" @click.prevent
                 data-toggle="modal" data-target="#contractFiles">
             <i class='fas fa-folder-open'   style="font-size:10px"></i>
-            <small class="text-muted"> تحميل</small>
+            <small class="text-muted"> {{$t('upload')}}</small>
             </button> 
           
         </span>
@@ -1891,7 +1905,7 @@ autocad    ملف المخططات المعمارية
             <p class="alert alert-light"> 
               <a :href="offer.toffers.contracts_consrcution.ContractPath" target="_blank" class="btn btn-success">
     <i class="fa fa-eye"></i>
-    عرض
+    {{$t('view')}}
               </a>
               </p>
               <hr>
@@ -1899,11 +1913,11 @@ autocad    ملف المخططات المعمارية
 
                 <h6>
    <i :class="{'fas fa-check-circle text-success':offer.toffers.contracts_stone!=null}"></i>
-  عقد الحجر
+  {{$t('Stone_contract')}}
   </h6>
                 <span v-if="offer.toffers.contracts_stone==null">
-        <small class="text-muted" v-if="IsUser==1">(pdf, jpg , png ) </small>
-        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">إجباري</small>
+        <small class="text-muted" v-if="IsUser==1">(pdf) </small>
+        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">{{$t('Mandatory')}} </small>
                 <div class="modal fade" id="Contractfile"
          tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
          v-if="offer.toffers.contracts_stone==null">
@@ -1913,7 +1927,7 @@ autocad    ملف المخططات المعمارية
       <div class="modal-header">
         <h5 class="modal-title theme-color " id="exampleModalLabel">
             
-        <span >   عقد الحجر</span>
+        <span >    {{$t('Stone_contract')}}</span>
 
 
 
@@ -1925,17 +1939,17 @@ autocad    ملف المخططات المعمارية
       <div class="modal-body">
        
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-            <small class="text-muted">(pdf, xlsx)</small>
-                        <small class=" float-right text-danger font-weight-bold">إجباري</small>
+            <small class="text-muted">(pdf)</small>
+                        <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.contracstone" v-if="contracstone==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.contracstone" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">     عقد الحجر</span>
+          <span class="">     {{$t('Stone_contract')}}</span>
                 <input type="file" class="form-control"  @change="ContaracStoneFile" style="display:none" ref="contracstone">
 
                <div class=" text-danger" v-if="FileNotcontracstoneAllowd  !=null">{{FileNotcontracstoneAllowd  }}</div>
@@ -1963,8 +1977,8 @@ autocad    ملف المخططات المعمارية
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="updateContracts('contractStone',offer.toffers.id)"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="updateContracts('contractStone',offer.toffers.id)"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -1974,7 +1988,7 @@ autocad    ملف المخططات المعمارية
   <button v-if="IsUser==1 && offer.toffers.contracts_stone==null"  class="btn btn-light"
                 data-toggle="modal" data-target="#contractFile">
             <i class='fas fa-folder-open'   style="font-size:10px"></i>
-            <small class="text-muted"> تحميل</small>
+            <small class="text-muted"> {{$t('upload')}}</small>
             </button> 
           
         </span>
@@ -1984,18 +1998,18 @@ autocad    ملف المخططات المعمارية
             <p class="alert alert-light"> 
               <a :href="offer.toffers.contracts_stone.ContractPath" target="_blank" class="btn btn-success">
     <i class="fa fa-eye"></i>
-    عرض
+    {{$t('view')}}
               </a>
               </p>
               <hr>
         </span>
         <h6>
            <i :class="{'fas fa-check-circle text-success':offer.toffers.contracts_hvac!=null}"></i>
-  عقد التكييف
+ {{$t('Hvac_contract')}}
   </h6>
                 <span v-if="offer.toffers.contracts_hvac==null">
-        <small class="text-muted" v-if="IsUser==1">(pdf, jpg , png ) </small>
-        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">إجباري</small>
+        <small class="text-muted" v-if="IsUser==1">(pdf) </small>
+        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">{{$t('Mandatory')}} </small>
                 <div class="modal fade" id="ContractHvactfile"
          tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
          v-if="offer.toffers.contracts_hvac==null">
@@ -2005,7 +2019,7 @@ autocad    ملف المخططات المعمارية
       <div class="modal-header">
         <h5 class="modal-title theme-color " id="exampleModalLabel">
             
-        <span >   عقد التكييف</span>
+        <span >  {{$t('Hvac_contract')}}</span>
 
 
 
@@ -2017,17 +2031,17 @@ autocad    ملف المخططات المعمارية
       <div class="modal-body">
        
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
             <small class="text-muted">(pdf, xlsx)</small>
-                        <small class=" float-right text-danger font-weight-bold">إجباري</small>
+                        <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.contrachvac" v-if="contrachvac==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.contrachvac" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">     عقد التكييف</span>
+          <span class="">    {{$t('Hvac_contract')}}</span>
                 <input type="file" class="form-control"  @change="ContaracHvacFile" style="display:none" ref="contrachvac">
 
                <div class=" text-danger" v-if="FileNotcontrachvacAllowd !=null">{{FileNotcontrachvacAllowd }}</div>
@@ -2054,8 +2068,8 @@ autocad    ملف المخططات المعمارية
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="updateContracts('contractHvac',offer.toffers.id)"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="updateContracts('contractHvac',offer.toffers.id)"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -2065,7 +2079,7 @@ autocad    ملف المخططات المعمارية
   <button v-if="IsUser==1 && offer.toffers.contracts_hvac==null"  class="btn btn-light"
                 data-toggle="modal" data-target="#ContractHvactfile">
             <i class='fas fa-folder-open'   style="font-size:10px"></i>
-            <small class="text-muted"> تحميل</small>
+            <small class="text-muted"> {{$t('upload')}}</small>
             </button> 
           
         </span>
@@ -2073,9 +2087,9 @@ autocad    ملف المخططات المعمارية
         
 
             <p class="alert alert-light"> 
-              <a :href="offer.toffers.contracts_hvac.ContractPath"target="_blank" class="btn btn-success">
+              <a :href="offer.toffers.contracts_hvac.ContractPath" target="_blank" class="btn btn-success">
     <i class="fa fa-eye"></i>
-    عرض
+    {{$t('view')}}
               </a>
               </p>
               <hr>
@@ -2086,11 +2100,11 @@ autocad    ملف المخططات المعمارية
            <span v-if="offer.toffers.contracts_interior">
              <i :class="{'fas fa-check-circle text-success':offer.toffers.contracts_interior.ContractName}"></i>
            </span>
-  عقد الديكور الداخلي
+{{$t('Interior_contract')}}
   </h6>
                 <span v-if="offer.toffers.contracts_interior==null">
-        <small class="text-muted" v-if="IsUser==1">(pdf, jpg , png ) </small>
-        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">إجباري</small>
+        <small class="text-muted" v-if="IsUser==1">(pdf) </small>
+        <small class=" float-right text-danger font-weight-bold" v-if="IsUser==1">{{$t('Mandatory')}} </small>
                 <div class="modal fade" id="ContractInteriortfile"
          tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
          v-if="offer.toffers.contracts_interior==null">
@@ -2100,7 +2114,7 @@ autocad    ملف المخططات المعمارية
       <div class="modal-header">
         <h5 class="modal-title theme-color " id="exampleModalLabel">
             
-        <span >   عقد الديكور الداخلي</span>
+        <span > {{$t('Interior_contract')}}</span>
 
 
 
@@ -2112,17 +2126,17 @@ autocad    ملف المخططات المعمارية
       <div class="modal-body">
        
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-            <small class="text-muted">(pdf, xlsx)</small>
-                        <small class=" float-right text-danger font-weight-bold">إجباري</small>
+            <small class="text-muted">(pdf)</small>
+                        <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.contracinterior" v-if="contracinterior==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.contracinterior" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">     عقد الديكور الداخلي</span>
+          <span class="">   {{$t('Interior_contract')}}</span>
                 <input type="file" class="form-control"  @change="ContaracInteriortFile" style="display:none" ref="contracinterior">
 
                <div class=" text-danger" v-if="FileNotcontracinteriorAllowd !=null">{{FileNotcontracinteriorAllowd }}</div>
@@ -2147,8 +2161,8 @@ autocad    ملف المخططات المعمارية
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="updateContracts('contractInterior',offer.toffers.id)"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="updateContracts('contractInterior',offer.toffers.id)"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -2158,7 +2172,7 @@ autocad    ملف المخططات المعمارية
   <button v-if="IsUser==1 && offer.toffers.contracts_interior==null"  class="btn btn-light"
                 data-toggle="modal" data-target="#ContractInteriortfile">
             <i class='fas fa-folder-open'   style="font-size:10px"></i>
-            <small class="text-muted"> تحميل</small>
+            <small class="text-muted"> {{$t('upload')}}</small>
             </button> 
           
         </span>
@@ -2168,7 +2182,7 @@ autocad    ملف المخططات المعمارية
             <p class="alert alert-light"> 
               <a :href="offer.toffers.contracts_interior.ContractPath" target="_blank" class="btn btn-success">
     <i class="fa fa-eye"></i>
-    عرض
+    {{$t('view')}}
               </a>
               </p>
               <hr>
@@ -2178,8 +2192,8 @@ autocad    ملف المخططات المعمارية
         </div>
 
         <div class="">
-<h1>المرحلة السابعة </h1>
-    <h5> متابعة مرحلة البناء </h5>
+<h1>{{$t('The_seventh_stage')}}</h1>
+    <h5>   {{$t('Follow_up_on_the_construction_phase')}} </h5>
 
     <div class="row c-form-inner" v-if="IsUser==1">
       <div class="col-md-6">
@@ -2212,12 +2226,12 @@ autocad    ملف المخططات المعمارية
       </div>
       <div class="col-md-6">
         <div class="form-group">
-        <input type="date" v-model="dateFlow" placeholder="تاريخ الانجاز">
+        <input type="date" v-model="dateFlow" :placeholder="Completion_date">
         </div>
 
       </div>
               <button type="button" class="btn btn-download" @click="updateContracts('FlowUp',offer.toffers.id)" :disabled="loading || dateFlow==null">
-                 {{loading==true ? 'انتظر ..':'حفظ'}}
+                 {{loading==true ? $t('wait'):$t('save')}}
                  </button>
 
 </div>
@@ -2227,8 +2241,8 @@ autocad    ملف المخططات المعمارية
  
       
       <th scope="col"> #</th>
-      <th scope="col"> صورة البناء</th>
-      <th scope="col">تاريخ الانجاز</th>
+      <th scope="col"> {{$t('construction_picture')}}</th>
+      <th scope="col"> {{$t('Completion_date')}}</th>
     </tr>
   </thead>
   <tbody>
@@ -2281,7 +2295,7 @@ autocad    ملف المخططات المعمارية
             </div>
             <div class="" v-show="offer.toffers.contracts_consrcution">
 
-<h1>المرحلة الثامنة </h1>
+<h1>{{$t('The_eighth_stage')}}</h1>
  
 
     <div class="" v-if="IsUser==10">
@@ -2290,25 +2304,25 @@ autocad    ملف المخططات المعمارية
             <p class="font-weight-bold theme-color"> هل تم الانتهاء من البناء بالشكل المطلوب ؟</p>
 <span v-if="offer.status_project==0">
 <div class="badge badge-primary">
-لا
+{{$t('no')}}
 </div>
 </span>
 <span v-else-if="offer.status_project==1">
 <div class="badge badge-primary">
-نعم
+{{$t('yes')}}
 </div>
 </span>
 <span v-else>
         <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="yes" name="done"  v-model="done">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">نعم</span>
+            <span class="mr-4 ml-4">{{$t('yes')}}</span>
          </label>
              <label class="checkbox d-bolck" :dir="$t('directions')" >
             
            <input type="radio" value="no"  name="done"  v-model="done">
             <span class="check" style="border-radius:10px"></span>
-            <span class="mr-4 ml-4">لا</span>
+            <span class="mr-4 ml-4">{{$t('no')}}</span>
              </label>
 </span>
 
@@ -2320,14 +2334,14 @@ autocad    ملف المخططات المعمارية
             <div class="form-group ">
 
               <span v-if="offer.notes">
-                                                <label for="exampleFormControlTextarea1"> ملاحظات</label>
+                                                <label for="exampleFormControlTextarea1"> {{$t('notes')}}</label>
 
 <div class="alert alert-primary">
 {{offer.notes}}
 </div>
 </span>
 <span v-else>
-                                <label for="exampleFormControlTextarea1">أضافة ملاحظات</label>
+                                <label for="exampleFormControlTextarea1">{{$t('add_notes')}}</label>
 
  <textarea
                   style="background:#fff"
@@ -2340,7 +2354,7 @@ autocad    ملف المخططات المعمارية
  <button class="btn btn-success mt-3" @click="DoneOrNo"
   :disabled="notesdone==null
    || done==null||
-    loading" v-show="offer.notes==null ||offer.status_project==null ">ارسال </button>
+    loading" v-show="offer.notes==null ||offer.status_project==null ">{{$t('send')}} </button>
 </div>
 
 
@@ -2354,8 +2368,7 @@ autocad    ملف المخططات المعمارية
         <div class="contact-form ">
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
-          ملف 
-        <span >  3d</span>
+         {{$t('3D_File')}}
      
 
 
@@ -2368,10 +2381,10 @@ autocad    ملف المخططات المعمارية
       <div class="modal-body">
 
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
         <small class="text-muted">(Dwg)</small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
 
              <div class="form-group container file-style ">
@@ -2381,8 +2394,9 @@ autocad    ملف المخططات المعمارية
                  fa fa-paperclip" ></span></span>
 
                 <span class="btn btn-light " @click="$refs.Excel" v-else><span class="fa fa-paperclip" ></span></span>
-          <span class="">  تصميم الفيلا</span>
-          <span class=""> 3D </span>
+          <span class=""> {{$t('3D_File')}}</span>
+               
+
              <small class=" font-weight-bold text-danger" v-if="FileNotthreeDExcelAllowd!=null">{{FileNotthreeDExcelAllowd}}</small>
                 <input type="file" class="form-control"  @change="threedExcelFile" style="display:none" ref="Excel">
 
@@ -2412,8 +2426,8 @@ autocad    ملف المخططات المعمارية
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('threeDDWG')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('threeDDWG')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -2426,7 +2440,7 @@ autocad    ملف المخططات المعمارية
         <div class="contact-form ">
       <div class="modal-header">
         <h5 class="modal-title theme-color " id="exampleModalLabel">
-              ملف المواصفات
+              {{$t('specification_file')}}
     
 
 
@@ -2439,10 +2453,10 @@ autocad    ملف المخططات المعمارية
       <div class="modal-body">
        <span v-if="SpecFile">{{SpecFile}}</span>
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-            <small class="text-muted">(pdf, xlsx)</small>
-                        <small class=" float-right text-danger font-weight-bold">إجباري</small>
+            <small class="text-muted">(pdf)</small>
+                        <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
@@ -2450,7 +2464,7 @@ autocad    ملف المخططات المعمارية
 
                 <span class="btn btn-primary " @click="$refs.specifications" v-else>
                   <span class="fa fa-paperclip" ></span> </span>
-          <span class="">    جدول المواصفات</span>
+          <span class="">        {{$t('specification_file')}}</span>
                 <input type="file" class="form-control"  @change="SpecificationsFile" style="display:none" ref="specifications">
 
                <div class=" text-danger" v-if="FileNotSpecificationsAllowd!=null">{{FileNotSpecificationsAllowd}}</div>
@@ -2476,8 +2490,8 @@ autocad    ملف المخططات المعمارية
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('spec')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('spec')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -2496,7 +2510,7 @@ autocad    ملف المخططات المعمارية
         <div class="contact-form ">
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
-             ملف الانشائي
+             {{$t('Structure_file')}} 
   
 
 
@@ -2509,17 +2523,17 @@ autocad    ملف المخططات المعمارية
       <div class="modal-body">
    
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-        <small class="text-muted">Pdf , dwg (autocad file)</small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+        <small class="text-muted">Pdf </small>
+                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.struc" v-if="Structure==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.struc" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">  الملف الانشائي</span>
+           <span class=""> {{$t('Structure_file')}} </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotStructureAllowd!=null">{{FileNotStructureAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="StructureFile" style="display:none" ref="struc">
@@ -2545,8 +2559,8 @@ autocad    ملف المخططات المعمارية
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('structure')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('structure')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -2560,7 +2574,7 @@ autocad    ملف المخططات المعمارية
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
            
-        ملف الخدمات
+         {{$t('Services_file')}}
 
 
 
@@ -2572,17 +2586,17 @@ autocad    ملف المخططات المعمارية
       <div class="modal-body">
        
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-        <small class="text-muted">Pdf , dwg (autocad file)</small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+        <small class="text-muted">Pdf </small>
+                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.services" v-if="services==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.services" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">   ملف الخدمات</span>
+           <span class="">  {{$t('Services_file')}} </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotservicesAllowd!=null">{{FileNotservicesAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="ServicesFile" style="display:none" ref="services">
@@ -2607,8 +2621,8 @@ autocad    ملف المخططات المعمارية
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('services')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('services')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -2622,8 +2636,8 @@ autocad    ملف المخططات المعمارية
         <div class="contact-form ">
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
-          ملف 
-        <span >  3d</span>
+          {{$t('3D_File')}} 
+    
 
 
 
@@ -2635,10 +2649,10 @@ autocad    ملف المخططات المعمارية
       <div class="modal-body">
 
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-        <small class="text-muted">(pdf, jpg , png )</small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+        <small class="text-muted">(pdf)</small>
+                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
 
              <div class="form-group container file-style ">
@@ -2647,8 +2661,7 @@ autocad    ملف المخططات المعمارية
                  <span class="btn btn-light" @click="$refs.threeD" v-if="threeD==null"><span class=" fa fa-paperclip" ></span></span>
 
                 <span class="btn btn-light " @click="$refs.threeD" v-else><span class="fa fa-paperclip" ></span></span>
-          <span class="">  تصميم الفيلا</span>
-          <span class=""> 3D </span>
+          <span class=""> {{$t('3D_File')}}</span>
              <small class=" font-weight-bold text-danger" v-if="FileNotthreeDAllowd!=null">{{FileNotthreeDAllowd}}</small>
                 <input type="file" class="form-control"  @change="threedFile" style="display:none" ref="threeD">
 
@@ -2678,8 +2691,8 @@ autocad    ملف المخططات المعمارية
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('threeD')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('threeD')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -2712,7 +2725,7 @@ autocad    ملف المخططات المعمارية
               ></provider>
 
 
- <div class="h5 mt-4">  التواصل</div>
+ <div class="h5 mt-4">  {{$t('contacts')}}</div>
               <div class="contact">
                   <span class="btn btn-light" v-if="IsUser==1">{{confirm.buyer.email}}</span>
                   <span class="btn btn-light" v-if="IsUser==10">{{confirm.user.email}}</span>
@@ -2764,15 +2777,15 @@ autocad    ملف المخططات المعمارية
           <div class="p-descrip-box">
                  <span  v-for="buyer , index in confirm.buyer" :key="index" v-show="IsUser==1">
 
-                        رقم اتصال العميل : 
-                                    <div>
+                                {{$t('Number_customer')}}
+                                     <div>
                         <a :href="'tel:'+buyer.user.mobile" class="theme-btn" dir="ltr">{{buyer.user.mobile}}</a>
                           </div>
                      </span>  
 
                             <span  v-show="IsUser==10">
 
-                        رقم اتصال الشركة : 
+                        {{$t('Number_Company')}}
                                     <div>
                         <a :href="'tel:'+ confirm.user.mobile" class="theme-btn" dir="ltr">{{ confirm.user.mobile}}</a>
                           </div>
@@ -2853,15 +2866,16 @@ autocad    ملف المخططات المعمارية
                 </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="theme-btn primary" data-dismiss="modal">إغلاق</button>
-        <button type="button" class="theme-btn" @click.prevent="SubmiitReview(offer.user_id,offer.com_id,offer.id)">إرسال </button>
+        <button type="button" class="theme-btn primary" data-dismiss="modal">{{$t('close')}}</button>
+        <button type="button" class="theme-btn" @click.prevent="SubmiitReview(offer.user_id,offer.com_id,offer.id)">{{$t('send')}} </button>
       </div>
     </div>
   </div>
 </div>
 <div v-show="offer.review==null">
 <button    class="theme-btn  text-right confirm" data-toggle="modal" data-target="#Review" @click="handleReview(1)"
-v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقييم للاستشارات الهندسية</button>
+v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>  
+   {{$t('Add_Review_Consultancs')}}</button>
 
 
 
@@ -2872,10 +2886,10 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
 <div v-if="offer.review" >
   	<div class="p-descrip-box rating" >
-						<h4 class="pr-d-title">Rating & Reviews</h4>
+						<h4 class="pr-d-title">{{$t('Add_Review')}}</h4>
 						<div class="rating-reviews-main">
 							<div class="review-add">
-								<h4 class="review-add-title fs-20">1 Review</h4>
+								<h4 class="review-add-title fs-20">{{$t('review')}}</h4>
 								<div class="review-add-main">
 									<div class="review-img">
 										<img :src="offer.review.user.avatar" alt="#" width="126" height="126" style="
@@ -2911,7 +2925,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
 <span v-if="offer.construction_review">
 <div class="p-descrip-box rating" >
-						<h4 class="pr-d-title">:تقييم شركة المقاولات</h4>
+						<h4 class="pr-d-title">{{$t('Construction_company_Review')}}</h4>
 						<div class="rating-reviews-main">
 							<div class="review-add">
 								<h4 class="review-add-title fs-20">
@@ -2957,14 +2971,14 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 <button    class="theme-btn  text-right confirm" data-toggle="modal"
  data-target="#Review" @click="handleReview(6)"
  v-show="TypeTenderId1"
- ><i class="bx bxs-star" ></i>     اضف تقييم المقاولات </button>
+ ><i class="bx bxs-star" ></i>       {{$t('Construction_company_Review')}} </button>
 
 </span>
 
 
 <span v-if="offer.stone_review">
 <div class="p-descrip-box rating" >
-						<h4 class="pr-d-title">:تقييم شركة الحجر</h4>
+						<h4 class="pr-d-title">{{$t('Stone_company_Review')}}</h4>
 						<div class="rating-reviews-main">
 							<div class="review-add">
 								<h4 class="review-add-title fs-20">
@@ -3012,14 +3026,14 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 <button    class="theme-btn  text-right confirm" data-toggle="modal"
  data-target="#Review" @click="handleReview(3)"
  v-show="TypeTenderId3"
- ><i class="bx bxs-star" ></i>     اضف تقييم الحجر </button>
+ ><i class="bx bxs-star" ></i>       {{$t('Stone_company_Review')}} </button>
 
 
 </span>
 
 <span v-if="offer.hvac_review">
 <div class="p-descrip-box rating" >
-						<h4 class="pr-d-title">:تقييم شركة التكييف</h4>
+						<h4 class="pr-d-title"> {{$t('Hvac_company_Review')}}</h4>
 						<div class="rating-reviews-main">
 							<div class="review-add">
 								<h4 class="review-add-title fs-20">
@@ -3064,13 +3078,13 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
  <button    class="theme-btn  text-right confirm" data-toggle="modal"
  data-target="#Review" @click="handleReview(4)"
  v-show="TypeTenderId2"
- ><i class="bx bxs-star" ></i>     اضف تقييم التكييف </button>
+ ><i class="bx bxs-star" ></i>    {{$t('Hvac_company_Review')}} </button>
 
  </span>
 
 <span v-if="offer.interior_review">
 <div class="p-descrip-box rating" >
-						<h4 class="pr-d-title">:تقييم شركة الديكور الداخلي</h4>
+						<h4 class="pr-d-title">{{$t('Interior_company_Review')}}</h4>
 						<div class="rating-reviews-main">
 							<div class="review-add">
 								<h4 class="review-add-title fs-20">
@@ -3115,7 +3129,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
  <button    class="theme-btn  text-right confirm" data-toggle="modal"
  data-target="#Review" @click="handleReview(5)"
  v-show="TypeTenderId4"
- ><i class="bx bxs-star" ></i>     اضف تقييم الديكور الداخلي </button>
+ ><i class="bx bxs-star" ></i>     {{$t('Interior_company_Review')}} </button>
 
 
 
@@ -3146,8 +3160,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
         <div class="contact-form ">
       <div class="modal-header">
         <h5 class="modal-title theme-color " id="exampleModalLabel">
-             تبديل الملف
-        <span v-if="SpecFile">  ملف المواصفات</span>
+             تبديل ال{{$t('3D_File')}}
+        <span v-if="SpecFile">  {{$t('3D_File')}} المواصفات</span>
 
 
 
@@ -3159,10 +3173,10 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
        <span v-if="SpecFile">{{SpecFile}}</span>
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
             <small class="text-muted">(pdf, xlsx)</small>
-                        <small class=" text-right text-danger font-weight-bold">إجباري</small>
+                        <small class=" text-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
@@ -3195,8 +3209,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('spec')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('spec')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3209,8 +3223,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
         <div class="contact-form ">
       <div class="modal-header">
         <h5 class="modal-title theme-color " id="exampleModalLabel">
-             تبديل
-        <span v-if="MapFile">   خارطة الارض</span>
+         
+           {{$t('earth_map_file')}}
 
 
 
@@ -3222,17 +3236,17 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
        <span v-if="MapFile">{{MapFile}}</span>
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-        <small class="text-muted"> Pdf , dwg (autocad file)</small>
-                    <small class=" text-right text-danger font-weight-bold">إجباري</small>
+        <small class="text-muted"> Pdf</small>
+                    <small class=" text-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
             <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.ele" v-if="map==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.ele" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">   خارطة الارض  </span>
+           <span class="">   {{$t('earth_map_file')}}  </span>
                 <input type="file" class="form-control"  @change="MapUpload" style="display:none" ref="ele">
 
                <div class=" text-danger" v-if="FileNotMapAllowd!=null">{{FileNotMapAllowd}}</div>
@@ -3257,8 +3271,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('map')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('map')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3274,7 +3288,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-header">
         <h5 class="modal-title theme-color " id="exampleModalLabel">
 
-      الهوية
+      {{$t('identity')}}
 
 
 
@@ -3284,19 +3298,19 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
         </button>
       </div>
       <div class="modal-body">
-       <span v-if="IdentFile">{{IdentFile}}</span>
+       
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-        <small class="text-muted">(pdf, xlsx)</small>
-            <small class=" text-right text-danger font-weight-bold">إجباري</small>
+        <small class="text-muted">(pdf)</small>
+            <small class=" text-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
             <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.idfile" v-if="identity==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.idfile" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">     الهوية</span>
+          <span class="">     {{$t('identity')}}</span>
                 <input type="file" class="form-control"  @change="idFile" style="display:none" ref="idfile">
 
                <div class=" text-danger" v-if="FileNotidentityAllowd!=null">{{FileNotidentityAllowd}}</div>
@@ -3322,8 +3336,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('ident')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('ident')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3337,7 +3351,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
 
-        <span >  الملف الانشائي</span>
+        <span >  {{$t('Structure_file')}} </span>
 
 
 
@@ -3349,17 +3363,17 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
        <span v-if="StrutureFile">{{StrutureFile}}</span>
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-        <small class="text-muted">Pdf , dwg (autocad file)</small>
-                    <small class=" text-right text-danger font-weight-bold">إجباري</small>
+        <small class="text-muted">Pdf </small>
+                    <small class=" text-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.struc" v-if="Structure==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.struc" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">  الملف الانشائي</span>
+           <span class="">  {{$t('Structure_file')}} </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotStructureAllowd!=null">{{FileNotStructureAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="StructureFile" style="display:none" ref="struc">
@@ -3385,8 +3399,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('structure')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('structure')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3400,7 +3414,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
 
-         ملف الخدمات
+      {{$t('Services_file')}}
 
 
         </h5>
@@ -3411,17 +3425,17 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
        <span v-if="serviceFile">{{serviceFile}}</span>
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-        <small class="text-muted">Pdf , dwg (autocad file)</small>
-                    <small class=" text-right text-danger font-weight-bold">إجباري</small>
+        <small class="text-muted">Pdf </small>
+                    <small class=" text-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.services" v-if="services==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.services" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">   ملف الخدمات</span>
+           <span class="">     {{$t('Services_file')}}</span>
               <small class=" font-weight-bold text-danger" v-if="FileNotservicesAllowd!=null">{{FileNotservicesAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="ServicesFile" style="display:none" ref="services">
@@ -3446,8 +3460,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('services')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('services')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3460,7 +3474,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
         <div class="contact-form ">
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
-           المخطط المعماري
+          {{$t('Architectural_drawings_file')}}
 
 
 
@@ -3473,17 +3487,17 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
        <span v-if="Archictfile">{{Archictfile}}</span>
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-    <small class="text-muted"> Pdf , dwg (autocad file)</small>
-    <small class=" text-right text-danger font-weight-bold">إجباري</small>
+    <small class="text-muted"> Pdf </small>
+    <small class=" text-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
              <div class="file-style">
 
                  <label>
                  <span class="btn btn-light" @click="$refs.fileinput2" v-if="Architect==null"><span class=" fa fa-paperclip" ></span></span>
 
                 <span class="btn btn-light " @click="$refs.fileinput2" v-else><span class="fa fa-paperclip" ></span></span>
-              <span class=""> الملف المخططات المعماري </span>
+              <span class="">{{$t('Architectural_drawings_file')}} </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotMapAllowd!=null">{{FileNotMapAllowd}}</small>
                 <input type="file" class="form-control"  @change="ArchitectFile" style="display:none" ref="fileinput2" >
 
@@ -3509,8 +3523,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('arch')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('arch')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3524,8 +3538,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
            
-        ملف الخدمات 
-اوتوكاد
+       {{$t('Services_file')}}
+({{$t('autocad')}})
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -3534,17 +3548,20 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
        
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
         <small class="text-muted"> dwg (autocad file)</small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.servicesDWG" v-if="servicesDWG==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.servicesDWG" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">   ملف الخدمات</span>
+           <span class="">  
+                   {{$t('Services_file')}}
+
+           </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotservicesDWGAllowd!=null">{{FileNotservicesDWGAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="servicesDWGFile" style="display:none" ref="servicesDWG">
@@ -3569,8 +3586,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('servicesDWG')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('servicesDWG')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3585,7 +3602,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-header">
         <h5 class="modal-title theme-color " id="exampleModalLabel">
             
-              ملف المواصفات (اكسل)
+             {{$t('specification_file')}}
+             {{$t('excel')}}
     
 
 
@@ -3598,10 +3616,10 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
 
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
             <small class="text-muted">( xlsx)</small>
-                        <small class=" float-right text-danger font-weight-bold">إجباري</small>
+                        <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
@@ -3609,7 +3627,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
                 <span class="btn btn-primary " @click="$refs.SpecificationsDWG" v-else>
                   <span class="fa fa-paperclip" ></span> </span>
-          <span class="">    جدول المواصفات</span>
+          <span class="">    {{$t('specification_file')}}</span>
                 <input type="file" class="form-control"  @change="SpecificationsDWGFile" style="display:none" ref="SpecificationsDWG">
 
                <div class=" text-danger" v-if="FileNotSpecificationsDWGAllowd!=null">{{FileNotSpecificationsDWGAllowd}}</div>
@@ -3635,8 +3653,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('SpecificationsDWG')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('SpecificationsDWG')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3650,7 +3668,10 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
           
-        <span >   مخطط المعماري اوتوكاد</span>
+        <span > 
+          {{$t('Architectural_drawings_file')}}
+          {{$t('autocad')}}
+        </span>
 
 
 
@@ -3662,17 +3683,18 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
     
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
     <small class="text-muted">  dwg (autocad file)</small>
-    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
              <div class="file-style">
 
                  <label>
                  <span class="btn btn-light" @click="$refs.ArchitectdWG" v-if="ArchitectDWG==null"><span class=" fa fa-paperclip" ></span></span>
 
                 <span class="btn btn-light " @click="$refs.ArchitectdWG" v-else><span class="fa fa-paperclip" ></span></span>
-              <span class=""> الملف المخططات المعماري </span>
+              <span class="">           {{$t('Architectural_drawings_file')}}
+ </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotArchitectDWGAllowd!=null">
                 {{FileNotArchitectDWGAllowd}}</small>
                 <input type="file" class="form-control"  @change="ArchitectDwgFile" style="display:none" ref="ArchitectdWG" >
@@ -3704,8 +3726,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('archDWG')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('archDWG')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3718,7 +3740,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
         <div class="contact-form ">
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
-             ملف الانشائي
+             {{$t('Structure_file')}}
+             {{$t('autocad')}}
   
 
 
@@ -3731,17 +3754,18 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
    
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-        <small class="text-muted">Pdf , dwg (autocad file)</small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+        <small class="text-muted">  dwg (autocad file)</small>
+                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.structureDWG" v-if="structureDWG==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.structureDWG" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">  الملف الانشائي</span>
+           <span class="">                {{$t('Structure_file')}}
+</span>
               <small class=" font-weight-bold text-danger" v-if="FileNotstructureDWGAllowd!=null">{{FileNotstructureDWGAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="structureDWGFile" style="display:none" ref="structureDWG">
@@ -3767,8 +3791,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('structureDWG')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('structureDWG')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3781,8 +3805,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
         <div class="contact-form ">
       <div class="modal-header">
         <h5 class="modal-title theme-color" id="exampleModalLabel">
-              اضافة ملف
-        <span >  3d</span>
+         <span class=""> {{$t('3D_File')}}</span>
 
 
 
@@ -3794,10 +3817,10 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <div class="modal-body">
        <span v-if="threeDfile">{{threeDfile}}</span>
 
-        <h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+        <h5 class="text-right mt-3   mb-3 text-muted">{{$t('Required_files')}}  </h5>
 <div class="form-group">
-        <small class="text-muted">(pdf, jpg , png )</small>
-                    <small class=" text-right text-danger font-weight-bold">إجباري</small>
+        <small class="text-muted">(pdf)</small>
+                    <small class=" text-right text-danger font-weight-bold">{{$t('Mandatory')}} </small>
 
 
              <div class="form-group container file-style ">
@@ -3806,8 +3829,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
                  <span class="btn btn-light" @click="$refs.threeD" v-if="threeD==null"><span class=" fa fa-paperclip" ></span></span>
 
                 <span class="btn btn-light " @click="$refs.threeD" v-else><span class="fa fa-paperclip" ></span></span>
-          <span class="">  تصميم الفيلا</span>
-          <span class=""> 3D </span>
+          <span class=""> {{$t('3D_File')}}</span>
+       
              <small class=" font-weight-bold text-danger" v-if="FileNotthreeDAllowd!=null">{{FileNotthreeDAllowd}}</small>
                 <input type="file" class="form-control"  @change="threedFile" style="display:none" ref="threeD">
 
@@ -3837,8 +3860,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn theme-btn primary" data-dismiss="modal">إلغاء</button>
-        <button type="button" class="btn theme-btn" @click="UpdateFile('threeD')"> حفظ</button>
+        <button type="button" class="btn theme-btn primary" data-dismiss="modal">{{$t('cancel')}}</button>
+        <button type="button" class="btn theme-btn" @click="UpdateFile('threeD')"> {{$t('save')}}</button>
       </div>
     </div>
     </div>
@@ -3854,7 +3877,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
 
 
-    <h2 class="text-center text-muted">  الرسائل  </h2>
+    <h2 class="text-center text-muted">  {{$t('message')}}  </h2>
 
    <div class="p-descrip-box  mb-4" style="background:#f6f6f6 !important">
 
@@ -3886,11 +3909,13 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
     <div class="modal-content">
 
       <div class="modal-body">
-      هل انت متأكد تريد أكمال هذا الطلب؟
+
+{{$t('Are_you_sure_you_want_to_complete_this_application')}}
       </div>
       <div class="modal-footer">
-        <button type="button" class="theme-btn primary " data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn  text-right "  @click="user_confirm()">نعم </button>
+            <button type="button" class="theme-btn  text-right "  @click="user_confirm()">{{$t('yes')}} </button>
+        <button type="button" class="theme-btn primary " data-dismiss="modal">{{$t('no')}}</button>
+
       </div>
     </div>
   </div>
@@ -3901,12 +3926,12 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
     <div class="modal-content">
 
       <div class="modal-body">
-           هل انت متأكد تريد أكمال هذا المشروع ؟
+           {{$t('Are_you_sure_you_want_to_complete_this_project')}}
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="theme-btn primary " data-dismiss="modal">لا</button>
-        <button type="button" class="theme-btn text-right " @click="com_confirm()">نعم </button>
+        <button type="button" class="theme-btn primary " data-dismiss="modal">{{$t('no')}}</button>
+        <button type="button" class="btn btn-success confirm text-light " @click="com_confirm()">{{$t('yes')}} </button>
       </div>
     </div>
   </div>
@@ -3918,10 +3943,11 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
 
       <div class="form-group">
           <h6>
-      هل انت متأكد تريد الغاء هذا الطلب ؟ 
+      {{$t('Are_you_sure_you_want_to_cancel_this_order')}}
+      
 
 
-        <strong>  السبب </strong>
+        <strong>  {{$t('reason')}} </strong>
           </h6>
 
 
@@ -3938,7 +3964,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
                     name="desc"
                     v-model="reason"
                     :class="[{'is-invalid': errorFor('Notes')}]"
-                      placeholder=" أدخل سبب الغاء الطلب     "
+                      :placeholder="$t('reason') "
 
                   ></textarea>
 
@@ -3946,8 +3972,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
         <small>{{value}}/{{maxlength}}</small>
         <div class="invalid-feedback" v-for="(error, index) in errorFor('reason_cancel')" :key="'reason_cancel' + index" >{{ error }}</div>
          <button type="button" class="theme-btn text-right mt-2" @click="cancel_user()" v-if="IsUser==10"
-          :disabled="reason==null  ">تأكيد </button>
-         <button type="button" class="theme-btn  text-right" @click="cancel_com()" v-if="IsUser==1" :disabled="reason==null">Confirm </button>
+          :disabled="reason==null  ">{{$t('confirm')}}  </button>
+         <button type="button" class="theme-btn  text-right" @click="cancel_com()" v-if="IsUser==1" :disabled="reason==null">{{$t('confirm')}}  </button>
              </div>
 
 
@@ -5157,8 +5183,8 @@ console.log('hi testing code from contracConstruction ')
 
         const result3 = getFileExtension(this.Contracts.name);
 
-                    if(!this.Contracts.type.match('application/pdf')  && result3 !='xlsx'){
-                        this.FileNotContractsAllowd =`should Pdf Or Dwg (autocad file) `;
+                    if(!this.Contracts.type.match('application/pdf') ){
+                        this.FileNotContractsAllowd =`should  Be Pdf  `;
                             return ;
                         }
 
@@ -6069,7 +6095,7 @@ console.log('hi testing code from contracConstruction ')
                 }
 
                 if(event == 'contract'){
-                  console.log('hi im in contract')
+                  
                                 data.append('contract', this.Contracts,this.Contracts.name);
                       
 
@@ -6301,7 +6327,7 @@ console.log(result1);
 
 
                 if(!file.type.match('application/pdf')){
-                   this.FileNotAllowd ="يجب ان يكون الملف pdf";
+                   this.FileNotAllowd ="يجب ان يكون ال{{$t('3D_File')}} pdf";
                     return ;
                 }
 
@@ -6619,6 +6645,7 @@ this.threeDExcel=null
 
     },
      saveTinder(event,value){
+      this.loading=true;
          let data = new FormData();
          data.append('id',value);
            if(event=='title'){
@@ -6627,6 +6654,8 @@ this.threeDExcel=null
 
                axios.post('save/tender/title',data).then(res=>{
                    this.getRequestDetails();
+                     this.loading=false;
+                 
                })
 
            }
@@ -6636,6 +6665,7 @@ this.threeDExcel=null
 
                axios.post('save/tender/notes',data).then(res=>{
                    this.getRequestDetails();
+                     this.loading=false;
                })
 
            }

@@ -18,7 +18,7 @@
                   @click="editPost(file,$event)"></i>
 
      </a> -->
-    <h1 class="text-center font-weight-bold " style="font-size:2rem">Edit Profile </h1>
+    <h1 class="text-center font-weight-bold " style="font-size:2rem">{{$t('Edit_Profile')}}  </h1>
 
 <div class="alert alert-success" v-if="success!=null">{{success}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -31,7 +31,7 @@
 
 
     <div class="list-group-item form-group">
-         <span class="h5 mb-5">Company name <sup> (arabic)</sup> </span>
+         <span class="h5 mb-5">{{$t('Company_name')}}  <sup> ({{$t('arabic')}})</sup> </span>
         <input class="pr-5 mt-2 form-control " required type="text" name="company_ar" :value="file.company_ar" :class="[{'is-invalid': errorFor('company_ar')}]" >
             <div  class="invalid-feedback" v-for="(error, index) in errorFor('company_ar')" :key="'company_ar' + index" >{{ error }}</div>
 
@@ -46,7 +46,7 @@
     <div class="list-group-item mt-2 form-group">
 
 
-         <span class="h5 mb-5">Company name <sup> (english)</sup> </span>
+         <span class="h5 mb-5">{{$t('Company_name')}} <sup> ({{$t('english')}})</sup> </span>
         <input class="pr-5 mt-2 form-control" name="company_en" :value="file.company_en" :class="[{'is-invalid': errorFor('company_en')}]">
                     <div  class="invalid-feedback" v-for="(error, index) in errorFor('company_en')" :key="'company_en' + index" >{{ error }}</div>
 
@@ -57,7 +57,7 @@
             <li class="list-group-item mt-3 form-group">
 
 
-         <span class="h5 mb-5">manager  name <sup> (arabic)</sup> </span>
+         <span class="h5 mb-5">{{$t('Manager_Name')}} <sup> (arabic)</sup> </span>
         <input class="pr-5 mt-3 form-control" name="manager_ar" :value="file.manager_ar" :class="[{'is-invalid': errorFor('manager_ar')}]">
             <div  class="invalid-feedback" v-for="(error, index) in errorFor('manager_ar')" :key="'manager_ar' + index" >{{ error }}</div>
 
@@ -67,7 +67,7 @@
              <li class="list-group-item mt-3 form-group">
 
 
-         <span class="h5 mb-5">manager  name <sup> (english)</sup> </span>
+         <span class="h5 mb-5">{{$t('Manager_Name')}} <sup> ({{$t('english')}})</sup> </span>
 
         <input class="pr-5 mt-3 form-control" type="text" name="manager_en"  :value="file.manager_en" :class="[{'is-invalid': errorFor('manager_en')}]">
                     <div  class="invalid-feedback" v-for="(error, index) in errorFor('manager_en')" :key="'manager_en' + index" >{{ error }}</div>
@@ -77,15 +77,16 @@
             </li>
 
             <li class="list-group-item mt-3 form-group">
-                <span class="h5 mb-5">about Us </span>
+                <span class="h5 mb-5">{{$t('about_Us')}} </span>
                 <textarea  :value="file.about_us"  name="about_us" class="form-control" :class="[{'is-invalid': errorFor('about_us')}]">
 
 
                 </textarea>
-                   <div  class="invalid-feedback" v-for="(error, index) in errorFor('about_us')" :key="'about_us' + index" >{{ error }}</div>
+                   <div  class="invalid-feedback" v-for="(error, index) in errorFor('about_us')" :key="'about_us'
+                    + index" >{{ error }}</div>
             </li>
 
-            <button @click="savedata()" class="btn btn-bus" :disabled="disabled">save</button>
+            <button @click="savedata()" class="btn btn-bus" :disabled="disabled">{{$t('save')}}</button>
 
 
 
@@ -107,7 +108,7 @@
                   @click="editPost(file,$event)"></i>
 
      </a> -->
-    <h1 class="text-center font-weight-bold " style="font-size:2rem">Edit Profile </h1>
+    <h1 class="text-center font-weight-bold " style="font-size:2rem">{{$t('Edit_Profile')}} </h1>
 
 
 <div class="" >
@@ -116,9 +117,11 @@
 
 
     <div class="list-group-item form-group">
-         <span class="h5 mb-5">full name <sup></sup> </span>
-        <input class="pr-5 mt-2 form-control " required type="text" name="name" :value="Currentuser.name" :class="[{'is-invalid': errorFor('name')}]" >
-            <div  class="invalid-feedback" v-for="(error, index) in errorFor('name')" :key="'name' + index" >{{ error }}</div>
+         <span class="h5 mb-5">{{$t('FullName')}}  <sup></sup> </span>
+        <input class="pr-5 mt-2 form-control " required type="text"
+         name="name" :value="Currentuser.name" :class="[{'is-invalid': errorFor('name')}]" >
+            <div  class="invalid-feedback" v-for="(error, index) in errorFor('name')" :key="'name' 
+            + index" >{{ error }}</div>
 
 
 
@@ -131,7 +134,7 @@
     <div class="list-group-item mt-2 form-group">
 
 
-         <span class="h5 mb-5">Email  </span>
+         <span class="h5 mb-5">{{$t('Email')}}  </span>
         <input class="pr-5 mt-2 form-control" name="email" :value="Currentuser.email"  :class="[{'is-invalid': errorFor('email')}]">
                     <div  class="invalid-feedback" v-for="(error, index) in errorFor('email')" :key="'email' + index" >{{ error }}</div>
 
@@ -142,9 +145,11 @@
     <div class="list-group-item mt-2 form-group">
 
 
-         <span class="h5 mb-5">mobile <sup> </sup> </span>
-        <input class="pr-5 mt-2 form-control" name="mobile" :value="Currentuser.mobile" :class="[{'is-invalid': errorFor('mobile')}]">
-                    <div  class="invalid-feedback" v-for="(error, index) in errorFor('mobile')" :key="'mobile' + index" >{{ error }}</div>
+         <span class="h5 mb-5">{{$t('mobile')}} <sup> </sup> </span>
+        <input class="pr-5 mt-2 form-control" name="mobile" :value="Currentuser.mobile" 
+        :class="[{'is-invalid': errorFor('mobile')}]">
+                    <div  class="invalid-feedback" v-for="(error, index) in errorFor('mobile')" 
+                      :key="'mobile' + index" >{{ error }}</div>
 
 
 
@@ -155,7 +160,7 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-            <button @click="usersavedata()" class="theme-btn" :disabled="disabled">save</button>
+            <button @click="usersavedata()" class="theme-btn" :disabled="disabled">{{$t('save')}}</button>
 
 
 

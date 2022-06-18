@@ -28,6 +28,7 @@ class notifyAcceptTenders extends Notification  implements ShouldBroadcast
         $this->TenderAccepted = $TenderAccepted;
     }
 
+    
 
     /**
      * Get the notification's delivery channels.
@@ -37,7 +38,7 @@ class notifyAcceptTenders extends Notification  implements ShouldBroadcast
      */
     public function via($notifiable)
     {
-        return ['database','broadcast'];
+        return ['database','broadcast','mail'];
     }
 
     /**
@@ -49,8 +50,10 @@ class notifyAcceptTenders extends Notification  implements ShouldBroadcast
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+
+                    ->line('Engineering Consultancy Tender')
+                    ->line('Your bid has been accepted. Now you can receive the offers of engineering consulting companies')
+                    ->action('View Project', url('/#/Projects/'.$this->TenderAccepted->id))
                     ->line('Thank you for using our application!');
     }
 

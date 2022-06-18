@@ -14,13 +14,13 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-    <h1 class="text-center">Change Your Password</h1>
+    <h1 class="text-center">{{$t('Change_Your_Password')}}</h1>
     <form >
         <div class="form-group">
-            <label for="email">Current Password</label>
+            <label for="email">{{$t('Current_Password')}}</label>
             <input type="password"
              name="email"
-             placeholder="Enter your Email"
+        
               class="form-control"
               v-model="Current_Password"
              :class="[{'is-invalid': errorFor('Current_Password')}]"
@@ -28,10 +28,10 @@
           <v-errors :errors="errorFor('Current_Password')"></v-errors>
         </div>
         <div class="form-group">
-            <label for="password">New password</label>
+            <label for="password">{{$t('New_password')}}</label>
             <input type="password"
              name="password"
-             placeholder="Enter your password"
+          
               class="form-control"
               v-model="New_password"
              :class="[{'is-invalid': errorFor('New_password')}]"
@@ -40,17 +40,18 @@
         </div>
 
         <div class="form-group">
-            <label for="password">confirm password</label>
+            <label for="password">{{$t('confirm_New_password')}}</label>
             <input type="password"
              name="password"
-             placeholder="Enter your password"
+
               class="form-control"
               v-model="confirm_password"
              :class="[{'is-invalid': errorFor('confirm_password')}]"
           />
           <v-errors :errors="errorFor('identify')"></v-errors>
         </div>
-        <button type="submit" class="btn btn-bus btn-lg btn-block" :disabled="loading" @click.prevent="save">save</button>
+        <button type="submit" class="btn btn-bus btn-lg btn-block"
+         :disabled="loading" @click.prevent="save">{{$t('save')}}</button>
  </form>
 </div>
 </div>

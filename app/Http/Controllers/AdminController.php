@@ -902,7 +902,7 @@ return response()->json([
          }
 
          public function getAllNotificatons(){
-             $notifications = Auth::guard('admin')->user()->notifications;
+             $notifications = Auth::guard('admin')->user()->notifications->whereNull('read_at');
              foreach($notifications as $notification){
              
                 $notification->setAttribute('added_at',$notification->created_at->diffForHumans());

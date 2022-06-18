@@ -34,7 +34,7 @@ class notifyConfirRequestmOfferConsturction extends Notification
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -46,8 +46,9 @@ class notifyConfirRequestmOfferConsturction extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line('Construction Tender')
+                    ->line($this->user->name.' Chose your offer ')
+                    ->action('View Project', url('/#/tenders/construction/'.$this->tender->tender_id))
                     ->line('Thank you for using our application!');
     }
 

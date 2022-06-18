@@ -34,7 +34,7 @@ class NotifyAdminCompanyDoneConsulte extends Notification
      */
     public function via($notifiable)
     {
-        return ['broadcast','database'];
+        return ['broadcast','database','mail'];
     }
 
     /**
@@ -46,9 +46,11 @@ class NotifyAdminCompanyDoneConsulte extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+        ->line('Engineering Consultancy Tender')
+        ->line('The owner has confirmed the request to complete the project')
+        ->line('Please Prepare The consultant contract')
+        ->action('View Request', url('/#/request/consulting/'.$this->tender->id))
+        ->line('Thank you for using our application!');
     }
 
     /**

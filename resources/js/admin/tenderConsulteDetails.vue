@@ -146,6 +146,11 @@
                {{detail.title}} <sup class="h6">
                <span class="project-state" >
                       <status :status="detail.status"></status>
+                    
+                       <div v-if="detail.status==6" class="text-danger mt-2">
+                       <h4 class="font-weight-bold">  {{$t('Reason')}}</h4>
+                        <span>{{detail.reason_reject}}</span>
+                      </div>
                       </span>
 
                </sup>   </h3>
@@ -265,7 +270,7 @@ data(){
     return{
         details:'',
         comments:'',
-        success:'',
+        success:'Your Tender Has Been Success',
         accepted:'accept',
         classes:'',
         reason:''
@@ -300,7 +305,7 @@ methods: {
 this.classes="text-dark";
  $('button').addClass('btn btn-sm btn-success').attr("disabled", 'disabled');
         axios.get('/admin/accept/'+this.$route.params.id).then(res=>{
-        this.success = res.data.success;
+       
 
  this.accepted = 'accepted';
 
