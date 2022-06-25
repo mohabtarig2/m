@@ -626,9 +626,7 @@
 					<div class="section-title">
 						<span class="sub-heading">{{$t('Find Out')}}</span>
 						<h2 class="heading-title">{{$t('how_it_work')}}</h2>
-						<p>
-                            {{$t('how_it_work_qoute')}}
-                             </p>
+					
 					</div>
 				</div>
 			</div>
@@ -1099,7 +1097,7 @@ seetingsWork: {
   slidesToShow: 3,
   slidesToScroll: 4,
   initialSlide: 0,
-  dots:true,
+  
   responsive: [
     {
       breakpoint: 1024,
