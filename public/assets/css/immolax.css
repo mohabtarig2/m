@@ -1254,13 +1254,7 @@ Version: 1.0.0
     padding: 0;
   }
 
-  .hero-title {
-    font-size: 60px;
-    line-height: 75px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
+
 
   .hero-title span {
     color: #3454d1;
@@ -1268,7 +1262,7 @@ Version: 1.0.0
 
   .hero-content p {
     font-weight: 500;
-    font-size: 17px;
+    font-size: 14px;
     margin: 0;
     text-align: justify;
   }
@@ -6081,7 +6075,7 @@ Version: 1.0.0
       margin-right: 15px;
     }
     .logo {
-      max-width: 175px;
+      max-width: 200px;
     }
     .gx-60 {
       --bs-gutter-x:30px;
@@ -6111,10 +6105,7 @@ Version: 1.0.0
     .hero-container {
       max-width: 1250px;
     }
-    .hero-title {
-      font-size: 65px;
-      line-height: 80px;
-    }
+  
     .login-area {
       padding-left: 80px ;
       position: initial;

@@ -142,7 +142,7 @@
     "Diwan":"Diwan",
     "Grant_Funding_Bank":"Grant Funding Bank",
     "Approximate_added_amount_Financing_method":"Approximate added amount Financing method",
-    "Follow_up_on_requests_for_villas":"  Follow up on requests for villas",
+    "Follow_up_on_requests_for_villas":"Follow up on requests for designs",
     "Follow_up_on_engineering_consultancy_requests":"Follow up on engineering consultancy requests",
 
 
@@ -168,7 +168,7 @@
     "This_offer_has_been_selected":"This offer has been selected.",
     "Your_offer_has_been_selected":" This offer has been selected",
     "confirm":"confirm",
-    "Choose_the_type_of_villa":"Choose the type of villa",
+    "Choose_the_type_of_villa":" type of villa",
     "Notifications":"Notifications",
     "The_has_been_deleted_successfully":"The has been deleted successfully",
     "Delete_ads":" Delete ads ",
@@ -274,7 +274,7 @@
 
 
     "Get_quility":"Get quility",
-    "home_descripe":"AMB tenders for every citizen, resident and investor who holds lands of all kinds from various government agencies and developers, who wish to build their homes on the lands allocated to them with exclusive deals by consultants and contractors, from design to turnkey project",
+    "home_descripe":"amb tenders for every citizen, resident and investor who owns lands of all kinds who wish to build their homes on the lands allocated to them with exclusive deals by consultants and contractors, from design to turnkey project",
     "Villa_offer_describe":"Choose one of the ready-made designs by accredited engineering consultancy companies, where the cost includes the design price, the monthly supervision price and the construction cost by contractors selected by the consultants with the possibility of modifying the design to suit your budget and needs",
     "how_it_work_qoute":"Our goal is to eliminate all side currencies between contracting and consulting.",
     "Find Out":"Find Out",
@@ -530,7 +530,7 @@
     "construction":"consturiction",
     "short_descripe":"Brief description of the project",
     "long_descripe":"Detailed description of the project",
-    "ground_floor":"ground floor",
+    "ground_floor":"G Floor",
     "Service_room_location":" Service room position  ",
     "Maidroom_mainkitchen_pantry":"Maid room + main kitchen + pantry",
 

@@ -2019,8 +2019,8 @@ Version: 1.0.0
 	}
 
 	.hero-title {
-		font-size: 52px !important;
-		line-height: 66px !important;
+		font-size: 43px !important;
+		line-height: 22px !important;
 	}
 
 	.hero-subtitle {
@@ -2111,8 +2111,16 @@ Version: 1.0.0
 
 
 }
+@media only screen and (max-width: 767px){
+	.about-content-widget {
+		padding: 14px 10px !important;
+		width: 190px !important;
+		margin-top: 30px !important;
+	}
+}
 
 @media only screen and (max-width: 992px) {
+
 	.hero-title {
 		font-size: 32px !important;
 		line-height: 48px !important;
@@ -2208,7 +2216,9 @@ Version: 1.0.0
 
 
 @media only screen and (max-width: 768px) {
-
+	.mt-mds-5{
+		margin-top: 4rem !important;
+	}
 }
 
 @media only screen and (max-width: 576px) {

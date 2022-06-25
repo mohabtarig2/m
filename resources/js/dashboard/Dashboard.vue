@@ -728,7 +728,7 @@ left: -100;
   top: 0;
   height: 100%;
   width: 78px;
-  background: #3454d1;
+  background: #899be4;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -879,7 +879,7 @@ left: -100;
 .sidebar li a:hover .links_name,
 .sidebar li a:hover i{
   transition: all 0.5s ease;
-  color: #3454d1;
+  color: #435dc8;
 }
 .sidebar li i{
   height: 50px;

@@ -1,27 +1,27 @@
 <template>
-    <!-- Property Tab Area -->
-	<div class="property-details-area" :dir="$t('direactions')" :class="$t('text_align')">
+    <!-- Property Tab Area --> 
+	<div class="property-details-area " :dir="$t('direactions')" :class="$t('text_align')">
 		<div class="container-fluid">
 			<div class="property-tab-top">
 				<div class="row mx-0">
 					<div class="col-12" data-aos="fade-up" data-aos-delay="100">
 						<!-- Property Tab Inner -->
 						<div class="property-tab-inner">
-							<div class="row">
-								<div class="col-12">
+							<div class="row ">
+								<div class="col-12 mt-mds-5 ">
 									<!-- Property Tab Menu -->
-									<div class="property-tab-menu">
+									<div class="property-tab-menu" :class="{'float-right margin-right-50':lang=='ar'}">
 										<div class="list-group" id="list-tab" role="tablist">
 											<!-- <a class="list-group-item" data-bs-toggle="list" href="#list-rent" role="tab">Rent</a> -->
 											<a class="list-group-item active" data-bs-toggle="list" href="#list-buy" role="tab">
-                                                {{$t('villa_design')}}
+                                                {{$t('villa_design')}} 
                                                 </a>
 											<!-- <a class="list-group-item" data-bs-toggle="list" href="#list-sell" role="tab">Sell</a> -->
 										</div>
 									</div>
 								</div>
                                 
-								<div class="col-12">
+								<div class="col-12 ">
 									<!-- Property Tab Details -->
 									<div class="property-tab-details">
 										<div class="tab-content" id="nav-tabContent">
@@ -211,7 +211,9 @@ export default {
           props:{bathroom:Number,dining_room:Number,bedroom:Number}, 
 
    data(){
+      const lang = localStorage.getItem('lang') || localStorage.setItem('lang','ar');
        return{
+        lang:lang,
                  open_select:null,
         emirates_selected:null,
         open_type_select:null,
@@ -407,3 +409,10 @@ let bedrooms_numbers = this.bedrooms_numbers == null ? this.bedrooms_selected : 
    }
 }
 </script>
+
+
+<style scoped>
+.margin-right-50{
+    margin-right:50px
+}
+</style>

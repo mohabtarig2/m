@@ -101,7 +101,7 @@
 	</section>
 	<!-- End Hero Area -->
 
-	<villa-finder ></villa-finder>
+	<villa-finder class="mt-5"></villa-finder>
 
 	<section class="about-area section-padding text-center"  >
 		<div class="bg-image bg-img-bottom" style="background-image:url('img/about/about-shape.png')"></div>
@@ -131,23 +131,23 @@
 									
 										<i class='bx bxs-home-smile'></i>
                                         <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('consulting_company')}}</h6>
+										<h6 class="mt-3">{{$t('consulting')}}</h6>
 										</router-link>
 									</div>
 									 <div class="about-content-widget">
 										<router-link :to="{name:'StoneTender'}">
 										<i class="fas fa-igloo"></i>
                                         <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('Stone_companies')}}</h6>
+										<h6 class="mt-3">{{$t('stone')}}</h6>
 										</router-link>
 									</div>
-                                    <div class="about-content-widget">
+                                    <div class="about-content-widget  ">
 										
 										<i class="fas fa-couch"></i>
 
                                         <span class="">{{$t('tender')}}</span>
 										<h6 class="mt-3">{{$t('Soil_testing')}}</h6>
-										{{$t('soon')}}
+									<span class="soon">{{$t('soon')}}</span>	
 									</div>
 
                                    
@@ -158,7 +158,7 @@
 										<router-link :to="{name:'constructionTender'}">
 										<i class="fas fa-hard-hat"></i>
                                         <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('construcion_company')}}</h6>
+										<h6 class="mt-3">{{$t('construction')}}</h6>
 										</router-link>
 									</div>
 
@@ -166,14 +166,14 @@
 											<router-link :to="{name:'interiorTender'}">
 										<i class="fas fa-couch"></i>
                                         <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('interior_decoration')}}</h6>
+										<h6 class="mt-3">{{$t('interior')}}</h6>
 											</router-link>
 									</div>
-									   <div class="about-content-widget">
+									   <div class="about-content-widget " style="position:relative ; overflow: hidden;">
 										<i class="fas fa-toolbox"></i>
                                         <span>{{$t('tender')}}</span>
 											<h6 class="mt-3">{{$t('maintenance')}}</h6>
-																					{{$t('soon')}}
+																				<span class="soon">{{$t('soon')}}</span>	
 
 									</div>
 
@@ -187,7 +187,7 @@
 									<router-link :to="{name:'hvac'}">
 										<i class="fa fa-fan"></i>
                                         <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('HVAC_companies')}}</h6>
+										<h6 class="mt-3">{{$t('hvac')}}</h6>
 									</router-link>
 									</div> 
                                    
@@ -783,11 +783,7 @@
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
-									<ul class="agent-social-hover list-none">
-										<li><a href="#"><i class="fab fa-facebook-f item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-dribbble item-center"></i></a></li>
-									</ul>
+								
 								</div>
 							</div>
 							<div class="agent-content">
@@ -803,11 +799,7 @@
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
-									<ul class="agent-social-hover list-none">
-										<li><a href="#"><i class="fab fa-facebook-f item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-dribbble item-center"></i></a></li>
-									</ul>
+								
 								</div>
 							</div>
 							<div class="agent-content">
@@ -823,11 +815,7 @@
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
-									<ul class="agent-social-hover list-none">
-										<li><a href="#"><i class="fab fa-facebook-f item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-dribbble item-center"></i></a></li>
-									</ul>
+								
 								</div>
 							</div>
 							<div class="agent-content">
@@ -843,11 +831,7 @@
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
-									<ul class="agent-social-hover list-none">
-										<li><a href="#"><i class="fab fa-facebook-f item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-dribbble item-center"></i></a></li>
-									</ul>
+								
 								</div>
 							</div>
 							<div class="agent-content">
@@ -863,11 +847,7 @@
 								</div>
 								<div class="agent-social">
 									<a class="plus"><i class="fa fa-plus item-center"></i></a>
-									<ul class="agent-social-hover list-none">
-										<li><a href="#"><i class="fab fa-facebook-f item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter item-center"></i></a></li>
-										<li><a href="#"><i class="fab fa-dribbble item-center"></i></a></li>
-									</ul>
+								
 								</div>
 							</div>
 							<div class="agent-content">
@@ -1130,7 +1110,8 @@ seetingsWork: {
 },
 
 settingsTeam: {
-//   dots: true,
+  dots: false,
+  arrows:false,
   infinite: false,
   speed: 500,
   slidesToShow: 4,
@@ -1583,5 +1564,20 @@ computed: {
 .all:hover{
 	color:blue;
 	
+}
+
+.about-content-overflow{
+	    position: relative;
+    overflow: hidden;
+}
+
+.about-content-overflow .soon{
+	      position: relative;
+    background: red;
+    color: rgb(255, 255, 255);
+    padding: 1px;
+    top: -127px;
+    left: 49px;
+    transform: rotate(45deg);
 }
 </style>

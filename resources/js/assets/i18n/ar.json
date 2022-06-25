@@ -46,10 +46,10 @@
     "Diwan":"الديوان",
     "Grant_Funding_Bank":"البنك الممول للمنحة ",
     "Approximate_added_amount_Financing_method":"المبلغ المضاف التقريبي لطريقة التمويل",
-    "Follow_up_on_engineering_consultancy_requests":"متابعة طلبات الاستشارات الهندسية",
-    "Flow_Conturction_Tender":"متابعة مناقصة المقاولات",
-    "Flow_Hvac_tender":"متابعة مناقصة التكييف",
-    "Flow_Stone_tender":"متابعة مناقصة الحجر",
+    "Follow_up_on_engineering_consultancy_requests":"متابعة طلبات الاستشارات ",
+    "Flow_Conturction_Tender":"متابعة مناقصات المقاولات",
+    "Flow_Hvac_tender":"متابعة مناقصات التكييف",
+    "Flow_Stone_tender":"متابعة مناقصات الحجر",
     "Flow_Inteior_tender":"متابعة مناقصة الديكور الداخلي",
 
     
@@ -294,7 +294,7 @@
     "tender":"مناقصة",
     "how_it_work":"كيف يعمل",
     "Choose_tender":" اختار نوع المناقصة",
-    "Choose_the_type_of_villa":"اختار نوع الفيلا",
+    "Choose_the_type_of_villa":"نوع الفيلا",
     "Add_Project":"اضف مشروع",
     "Choose_the_right_offer":"اختار العرض المناسب",
     "message_add_project":"أضف تفاصيل مشروعك وأمثلة من ما تريد والمهارات المطلوبة لإكماله وابدأ في تلقي عروض الشركات",
@@ -503,7 +503,7 @@
     "Approximate_cost":"التكلفة التقريبية",
     "display_designs":"تصاميم العرض",
     "open_project":"المشاريع المفتوحة",
-    "Follow_up_on_requests_for_villas":"متابعة طلبات الفلل",
+    "Follow_up_on_requests_for_villas":"متابعة طلبات التصاميم الجاهزة",
     "owner":"المالك",
     "Engineering_Consulting_Office":"مكتب الاستشارات الهندسية",
 

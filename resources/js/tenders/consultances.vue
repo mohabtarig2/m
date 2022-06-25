@@ -29,7 +29,7 @@
           <div class="card-body">
             <form @submit.prevent="formSubmit" enctype="multipart/form-data" class="c-form-inner">
 
-              <div class=" form-group " >
+              <!-- <div class=" form-group " >
 
                 <label for=" h6"><span class=" h6 font-weight-bold thm-color">
                     {{$t('title')}}
@@ -54,7 +54,29 @@
                 >{{ error }}</div>
                 <div v-if="msg!=null" class="invalid-feedback" :class="msg" >
               {{$t('Less_than_4_letters')}} </div>
-              </div>
+              </div> -->
+
+                  <div class=" form-group mt-3">
+                  <label for="exampleFormControlTextarea1">{{$t('Desription')}}</label>
+                  <textarea
+                  style="background:#fff"
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="4"
+                    v-model="Notes"
+                    :class="[{'is-invalid': errorFor('Notes')},
+                             {'is-invalid':CheckNotes=='false'},
+                             {'is-valid':CheckNotes=='true'}
+                    ]"
+                      :placeholder="$t('long_descripe')"
+
+                  ></textarea>
+                          <div
+                    class="invalid-feedback"
+                    v-for="(error, index) in this.errorFor('Notes')"
+                    :key="'Notes' + index"
+                  >{{ error }}</div>
+                </div>
 
 <div class="row">
     <div class="col-md-6 col-sm-12">
@@ -207,7 +229,7 @@
 
               <div class="rooms mt-3">
                 <div class="row " >
-                  <div class="col-md-6 col-sm-12 " >
+                  <div class="col-6  " >
                     <div class="form-group">
                     <label for="customRange3">
                        <span class="h6 thm-color font-weight-bold"> {{$t('master_rooms')}}</span>
@@ -239,7 +261,7 @@
                   </div>
                   </div>
 
-                  <div class="col-md-6 col-sm-12">
+                  <div class="col-6 ">
                     <div class="form-group">
                     <label for="customRange3">
                          <span class="h6 thm-color font-weight-bold">
@@ -268,7 +290,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="form-group col-md-4 col-sm-12">
+                  <div class="form-group col-4 ">
                     <label for="customRange3"> <span class="h6 thm-color font-weight-bold"> 
                       {{$t('living_room')}}
                     </span></label>
@@ -296,7 +318,7 @@
                     >{{ error }}</div>
                   </div>
 
-                  <div class=" form-group col-md-4 col-sm-12">
+                  <div class=" form-group col-4">
                     <label for="customRange3"> <span class="h6 thm-color font-weight-bold">
                        {{$t('majlis')}}
                         </span>
@@ -322,7 +344,7 @@
                       :key="'majlis' + index"
                     >{{ error }}</div>
                   </div>
-                  <div class="form-group  col-md-4 col-sm-12">
+                  <div class="form-group col-4">
                     <label for="customRange3">
                          <span class="h6 thm-color font-weight-bold">
                         {{$t('kitchens')}}
@@ -352,7 +374,7 @@
                 </div>
 
                 <div class="row">
-                  <div class=" form-group   col-md-6 col-sm-12">
+                  <div class=" form-group   col-6 ">
                     <label for="customRange3"> <span class="h6 thm-color font-weight-bold">
                        {{$t('dining')}}
                         </span>
@@ -378,7 +400,7 @@
                       :key="'dining_room' + index"
                     >{{ error }}</div>
                   </div>
-                  <div class=" form-group col-md-6 col-sm-12">
+                  <div class=" form-group col-6 ">
                     <label for="customRange3">
                          <span class="h6 thm-color font-weight-bold">
                         {{$t('bathroom')}}
@@ -493,9 +515,9 @@
 <input type="range" id="points" name="points" min="5000" max="5000" v-model="Maxval"> -->
 
                 <div class="budget">
-                  <div class="h6 mb-3 thm-color font-weight-bold">{{$t('budget')}}</div>
+                  <div class="h3 mb-3 thm-color font-weight-bold">{{$t('budget')}}</div>
                   <div class="row">
-                    <div class="  col-md-6 col-sm-12" >
+                    <div class="  col-md-6 col-sm-12"  dir="ltr">
                       <div class="form-group mb-2">
                         <label  >{{$t('from')}}</label>
 
@@ -505,6 +527,7 @@
                           id="inlineFormInputGroup"
                           placeholder="0.00 "
                           v-model="min"
+                          
                           :class="[{'is-invalid': errorFor('min'),
                                     'is-invalid': CheckMax < CheckMin ,
                                     'is-valid': CheckMax > CheckMin
@@ -524,7 +547,7 @@
                         >{{ error }}</div>
                       </div>
                     </div>
-                    <div class="  form-group col-md-6 col-sm-12" dir="rtl">
+                    <div class="  form-group col-md-6 col-sm-12" dir="ltr">
                       <label >{{$t('to')}}</label>
                       <div class="input-group mb-2">
                         <input
@@ -609,27 +632,7 @@
                   </select> -->
                 </div>
 
-                <div class=" form-group mt-3">
-                  <label for="exampleFormControlTextarea1">{{$t('Desription')}}</label>
-                  <textarea
-                  style="background:#fff"
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="4"
-                    v-model="Notes"
-                    :class="[{'is-invalid': errorFor('Notes')},
-                             {'is-invalid':CheckNotes=='false'},
-                             {'is-valid':CheckNotes=='true'}
-                    ]"
-                      :placeholder="$t('long_descripe')"
-
-                  ></textarea>
-                          <div
-                    class="invalid-feedback"
-                    v-for="(error, index) in this.errorFor('Notes')"
-                    :key="'Notes' + index"
-                  >{{ error }}</div>
-                </div>
+            
                     <div v-if="CheckNotes=='false'"   
             class="invalid-feedback" :class="msg"> 
             {{$t('write_desc')}}
@@ -1015,9 +1018,9 @@ export default {
         this.CheckVal(value,'Notes')
       },
 
-      title(value){
-        this.CheckVal(value,'title')
-      },
+      // title(value){
+      //   this.CheckVal(value,'title')
+      // },
       mastar_room(value){
        
            this.CheckVal(value,'master')
@@ -1396,8 +1399,8 @@ console.log(result1);
        },
 
     formSubmit() {
-    
-    if(this.title.length==0 ||  this.villa==null ||
+    // this.title.length==0 ||
+    if(  this.villa==null ||
         this.floor=='' || this.position=='' ||
         this.mastar_room=='' || this.bedroom=='' ||
         this.living_room=='' || this.majlis=='' ||
