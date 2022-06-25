@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :dir="$t('directions')" :class="$t('text_align')">
 
 
 
@@ -16,10 +16,9 @@
 
 </div>
 
-        <div class="s-blog-sidebar   mb-3" v-for="(tender,index) in tenders" :key="index" >
+        <div class="" v-for="(tender,index) in tenders" :key="index" >
 
-    <div class="">
-
+    <div class="s-blog-sidebar   mb-3">
 
 
 
@@ -27,7 +26,7 @@
 
          <router-link class="font-weight-bold text-dark ml-2" :to="'/Projects/'+tender.id+''" >{{tender.title}}
                  <status :status="tender.status"></status>
-        </router-link>
+       
           <sup>({{tender.all_offers.length>0 ? tender.all_offers.length :0}}){{$t('Numbers_Offer')}}</sup>
    <small class="float-right"> {{tender.added_at}}</small>
 
@@ -47,9 +46,7 @@
 <span class="badge badge-custom-orange main-color  font-weight-bold mt-0 pt-2 pb-2 pr-2 pl-2" style="border-radius:20px">
 {{$t('rooms')}} :{{tender.bedroom}}
 </span>
-{{id}}
-<router-link class="   theme-btn     mx-auto float-right" :to="'/Projects/'+tender.id+''">{{$t('more')}}
-     </router-link>
+{{id}} </router-link>
 
     </div>
 

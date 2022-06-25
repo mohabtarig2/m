@@ -370,7 +370,10 @@ methods:{
 
 <style lang="scss">
 // @import "lesshat";
-
+.blog-img img {
+    width: 370px !important;
+    height: 197px !important;
+}
 #ad-pop-img {
 	position:relative;
 	bottom:0;

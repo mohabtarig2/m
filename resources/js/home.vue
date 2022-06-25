@@ -44,14 +44,16 @@
 					<!-- Hero Content -->
 					<div class="hero-content">
 						<!-- <a href="#" class="hero-play-btn"><i class="fas fa-play"></i></a> -->
-						<span class="hero-subtitle" :dir="$t('directions')" :class="$t('text_align')">{{$t('Going')}}</span>
+						<span class="hero-subtitle" :dir="$t('directions')" :class="$t('text_align')">
+						
+						{{$t('Going')}} </span>
 						<h1 class="hero-title" :dir="$t('directions')" :class="$t('text_align')">{{$t('header_title1')}} <span>{{$t('header_title_part')}}</span></h1>
 						<div class="hero-icon-box"  :class="$t('text_align')"  :dir="$t('directions')">
 
 								<div class="media-body">
-								<span>
+								<p>
 									{{$t('home_descripe')}}
- </span>
+ </p	>
  <div class="icon"><i class="far fa-comments"></i></div>
 								<span>{{$t('Get_Support')}}</span>
 								<h4 class="mb-0"><a href="mailto:Info@ambtenders.com">Info@ambtenders.com</a></h4>
@@ -243,7 +245,7 @@
 								
 							</div>
 							<div class="a-property-btn">
-							<router-link :to="{name:'tenders'}" class="theme-btn">{{$t('start')}}</router-link>
+							<router-link :to="{name:'consultances'}" class="theme-btn">{{$t('start')}}</router-link>
 							</div>
 						</div>
 					</div>
@@ -366,7 +368,7 @@
 											</div>
 										</div>
 										<div class="property-ratting-save" v-if="offer.saved_villa==null">
-											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i><b class="visible-xs">Save</b></a>
+											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i><b class="visible-xs">{{$t('save')}}</b></a>
 										</div>
                                         <div class="property-ratting-save saved" v-else>
 											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart"></i><b class="visible-xs">
@@ -445,7 +447,7 @@
 									</div>
 									<div class="property-for-sale visible-xs">
 										<ul class="list-none">
-											<li><a href="#">{{offer.type_villa==1 ?offer.type =  $t('classic')  : offer.type=  $t('modern')}}</a></li>
+											<li><a href="#">{{offer.type_villa==1 ? $t('classic')  :  $t('modern')}}</a></li>
 
 										</ul>
 									</div>
@@ -538,7 +540,7 @@
 									</div>
 									<div class="property-for-sale visible-xs">
 										<ul class="list-none">
-											<li><a href="#">{{offer.type_villa==1 ?offer.type =  $t('classic')  : offer.type=  $t('modern')}}</a></li>
+											<li><a href="#">{{offer.type_villa==1 ?  $t('classic')  :  $t('modern')}}</a></li>
 
 										</ul>
 									</div>
@@ -1097,6 +1099,7 @@ seetingsWork: {
   slidesToShow: 3,
   slidesToScroll: 4,
   initialSlide: 0,
+  dots:true,
   responsive: [
     {
       breakpoint: 1024,

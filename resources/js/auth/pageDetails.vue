@@ -324,7 +324,7 @@
 					</div>
 					<!-- End Descreption Box -->
 					<!-- Property Details -->
-					<div class="p-descrip-box pro-details">
+					<div class="p-descrip-box pro-details" :dir="$t('directions')" :class="$t('text_align')">
 						<h4 class="pr-d-title"  :dir="$t('directions')" :class="$t('text_align')">{{$t('Desgin_Details')}}</h4>
 						<div class="pr-details-main">
 							<div class="row"  >
@@ -587,11 +587,11 @@
 					</div>
 					<!-- End Property Features -->
 					<!-- Similar Property -->
-					<div class="similar-property" :dir="$t('directions')" :class="$t('text_align')">
+					<div class="similar-property mb-5 " >
 						<h4 class="similar-property-title">{{$t('Related_search')}}</h4>
 						<div class="row">
 							<div class="col-12">
-                   <slick   v-bind="ralted" v-if="smilirs.length"  class="recent-property-slider" style="height:10">
+                   <slick   v-bind="ralted" v-if="smilirs.length"  class="recent-property-slider  " style="height:100%">
 					
 
                         <div class="single-p-slider" v-for="offer , index in smilirs " :key="index">
@@ -963,7 +963,7 @@ export default {
     swipeToSlide  : true
      },
 		ralted: {
-  dots: true,
+  // dots: true,
   infinite: false,
   speed: 500,
   slidesToShow: 2,
@@ -976,7 +976,7 @@ export default {
         slidesToShow: 3,
         slidesToScroll: 3,
         infinite: true,
-        dots: true
+        // dots: true
       }
     },
     {
@@ -992,7 +992,7 @@ export default {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
- 		dots: true
+ 		// dots: true
 
 		
       },

@@ -202,6 +202,7 @@
    <h4 v-show="villaShape=='L'" class='checked'> L</h4>
    <h4 v-show="villaShape=='U'" class='checked'> U</h4>
    <h4 v-show="villaShape=='F'" class='checked'> F</h4>
+   <h4 v-show="villaShape=='other'" class='checked'> {{$t('other')}}</h4>
    <h4 v-show="villaShape=='square'" class="checked"
    ><p class="square checked"></p></h4>
    <br>

@@ -1,6 +1,14 @@
 <template>
-  <div class="container mr-5 mt-5">
-            	<section class="section-50">
+  <div class="   mr-5 mt-5">
+
+<div class="row">
+	
+        <div class="offset-md-2">
+     </div>
+
+    <div class="col-md-8">
+      
+            	<section class="">
 
 		<div class="container">
 			<h3 class="m-b-50 heading-line">{{$t('Notifications')}} <i class="fa fa-bell text-muted"></i></h3>
@@ -828,14 +836,19 @@
 
 		</div>
 	</section>
-  
+	</div>
+    <div class="offset-md-2">
+     </div>
+  </div>
   </div>
 </template>
 
 <script>
 export default {
     date(){
-        return{
+          const lang = localStorage.getItem('lang') || localStorage.setItem('lang','ar') ;
+return{
+         lang:lang,
             notifications:[],
             type:null,
         }

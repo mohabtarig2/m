@@ -17,6 +17,112 @@
 
         </div>
         <div v-else >
+          
+         <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" @click="slide()"
+        role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+       <a class="nav-link" href="\"><i class="fa fa-eye"></i> {{$t('home')}}</a>
+      </li>
+      <!-- <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li> -->
+    </ul>
+
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+     
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+         
+ <a v-if="IsUser==10" class="font-weight-bold" >
+<i class='bx bx-grid-alt'></i>     
+    <span class="links_name">{{$t('MY_Project')}}</span>
+         </a>        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="overflow:revert;    height: 0;">
+      
+          
+               <div  class="">
+	<div class="s-blog-sidebar sidebar-categories">
+						
+							<ul class="s-categories-list list-none">
+								<li><router-link :to="{name:'ConslTenders'}"><i class="fa fa-angle-right"></i>
+                      {{$t('consulting_company')}}
+  </router-link></li>
+								<li><router-link :to="{name:'constrtenders'}"><i class="fa fa-angle-right"></i>{{$t('construcion_company')}}</router-link></li>
+								<li><router-link :to="{name:'HvacTenders'}"><i class="fa fa-angle-right"></i>
+                {{$t('interior_companies')}}</router-link></li>
+	<li><router-link :to="{name:'InteriorTenders'}"><i class="fa fa-angle-right"></i>
+  {{$t('HVAC_companies')}}></router-link></li>
+						
+  <li><router-link :to="{name:'StoneTenders'}"><i class="fa fa-angle-right"></i>{{$t('Stone_companies')}}</router-link></li>
+
+
+              </ul>
+  </div>
+
+
+</div>
+        </div>
+      </li>
+
+          <li class="nav-item ">
+        <router-link :to="{name:'AllNotification'}"  class="nav-link" >
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">
+            
+            <span v-if="notificationlist.length>0"> {{notificationlist.length}}</span></span>
+           
+         </router-link>
+      </li>
+
+              
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" >
+          <!-- <i class="far fa-bell"></i> -->
+         <div class="badge badge-secondary text-uppercase rounded-circle " style="font-size:15px; padding:5px">
+          {{user.name.substr(0,1 )}}
+         </div>
+           
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right"
+         style="    height: auto; padding: 15px; overflow-y: auto !important;" 
+         :dir="$t('directions')" :class="$t('text_align')">
+          <a class="dropdown-item">
+            {{user.name}}
+          </a>
+           <div class="dropdown-divider"></div>
+         
+         <router-link :to="{name:'Settings'}" class="dropdown-item">
+            {{$t('Settings')}}
+         </router-link>
+          <div class="dropdown-divider"></div>
+        <router-link :to="{name:'saved'}"   class="dropdown-item">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">{{$t('watchlist')}}</span>
+        </router-link>
+          <div class="dropdown-divider"></div>
+          <a @click="logout()"   class="dropdown-item">
+         <i class='bx bx-log-out' ></i>
+         <span class="links_name">{{$t('logout')}}</span>
+        </a>
+      
+        </div>
+      </li>
+ 
+    </ul>
+  </nav>
+  <!-- /.navbar -->
      
             <div class="sidebar MainSidebar " :class="open" v-show="$route.name!=='home'" >
     <div class="logo-details">
@@ -95,7 +201,7 @@
   </div>
 <div class="home-section">
 
-<a class="mt-5 ml-3" href="\"><i class="fa fa-eye"></i> Home</a>
+
        <span class="mt-5 ">
                          <small> <a class="" @click="switchLang('ar')" v-show="lang=='en'">
                          <img src="https://img.icons8.com/color/20/000000/united-arab-emirates.png"/>عربي</a></small>
@@ -105,7 +211,7 @@
                     </span>
 
 
-<router-view></router-view>
+<router-view :dir="$t('directions')" :class="$t('text_align')"></router-view>
 </div>
 
     </div>
@@ -118,45 +224,132 @@
     <!-- For User -->
        <div v-if="user.roles.name =='user'">
 
+         <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" @click="slide()"
+        role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+       <a class="nav-link" href="\"><i class="fa fa-eye"></i> {{$t('home')}}</a>
+      </li>
+      <!-- <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li> -->
+    </ul>
+
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+     
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+         
+ <a v-if="IsUser==10" class="font-weight-bold" >
+<i class='bx bx-grid-alt'></i>     
+    <span class="links_name">{{$t('MY_Project')}}</span>
+         </a>        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="overflow:revert;    height: 0;">
+      
+          
+               <div  class="">
+	<div class="s-blog-sidebar sidebar-categories">
+						
+							<ul class="s-categories-list list-none">
+								<li><router-link :to="{name:'ConslTenders'}"><i class="fa fa-angle-right"></i>
+                      {{$t('consulting_company')}}
+  </router-link></li>
+								<li><router-link :to="{name:'constrtenders'}"><i class="fa fa-angle-right"></i>{{$t('construcion_company')}}</router-link></li>
+								<li><router-link :to="{name:'HvacTenders'}"><i class="fa fa-angle-right"></i>
+                {{$t('interior_companies')}}</router-link></li>
+	<li><router-link :to="{name:'InteriorTenders'}"><i class="fa fa-angle-right"></i>
+  {{$t('HVAC_companies')}}></router-link></li>
+						
+  <li><router-link :to="{name:'StoneTenders'}"><i class="fa fa-angle-right"></i>{{$t('Stone_companies')}}</router-link></li>
+
+
+              </ul>
+  </div>
+
+
+</div>
+        </div>
+      </li>
+
+          <li class="nav-item ">
+        <router-link :to="{name:'AllNotification'}"  class="nav-link" >
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">
+            
+            <span v-if="notificationlist.length>0"> {{notificationlist.length}}</span></span>
+           
+         </router-link>
+      </li>
+
+              
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" >
+          <!-- <i class="far fa-bell"></i> -->
+         <div class="badge badge-secondary text-uppercase rounded-circle " style="font-size:15px; padding:5px">
+          {{user.name.substr(0,1 )}}
+         </div>
+           
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right"
+         style="    height: auto; padding: 15px; overflow-y: auto !important;" 
+         :dir="$t('directions')" :class="$t('text_align')">
+          <a class="dropdown-item">
+            {{user.name}}
+          </a>
+           <div class="dropdown-divider"></div>
+         
+         <router-link :to="{name:'Settings'}" class="dropdown-item">
+            {{$t('Settings')}}
+         </router-link>
+          <div class="dropdown-divider"></div>
+        <router-link :to="{name:'saved'}"   class="dropdown-item">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">{{$t('watchlist')}}</span>
+        </router-link>
+          <div class="dropdown-divider"></div>
+          <a @click="logout()"   class="dropdown-item">
+         <i class='bx bx-log-out' ></i>
+         <span class="links_name">{{$t('logout')}}</span>
+        </a>
+      
+        </div>
+      </li>
+ 
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
 
           <div class="  sidebar " :class="open" v-show="$route.name!=='home'" >
     <div class="logo-details">
 
         <div class="h6 logo_name">{{user.name}}</div>
-        <i class='bx bx-menu' id="btn" @click="slide()"></i>
+        <!-- <i class='bx bx-menu' id="btn" @click="slide()"></i> -->
     </div>
     <ul class="nav-list">
-        <li>
-         <a  href="/">
-          <i class='bx bx-home-circle'></i>
-          <span class="links_name">{{$t('home')}}</span>
-         </a>
-         <span class="tooltip">{{$t('home')}}</span>
-      </li>
+  
 
       <li>
-         <router-link to="/dashboard"  href="#">
+         <router-link :to="{name:'mytenders'}"  href="#">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">{{$t('dashboard')}}</span>
          </router-link>
          <span class="tooltip">{{$t('dashboard')}}</span>
       </li>
-      <li>
-         <router-link :to="{name:'mytenders'}" v-if="IsUser==10" >
-<i class='bx bx-list-ul'></i>     
-    <span class="links_name">{{$t('MY_Project')}}</span>
-         </router-link>
-       <span class="tooltip">{{$t('MY_Project')}} </span>
-     </li>
+ 
 
-     <li>
-         <router-link :to="{name:'AllNotification'}" >
-         <i class='bx bx-bell'></i>
-         <span class="badge badge-danger" v-if="notificationlist.length>0"> {{notificationlist.length}}</span>
-         <span class="links_name">{{$t('notification')}}</span>
-         </router-link>
-       <span class="tooltip">{{$t('notification')}}</span>
-     </li>
+
 
 
 
@@ -180,27 +373,7 @@
        <span class="tooltip">Files</span>
      </li> -->
 
-     <li>
-        <router-link :to="{name:'saved'}" >
-         <i class='bx bx-heart' ></i>
-         <span class="links_name">{{$t('watchlist')}}</span>
-        </router-link>
-       <span class="tooltip">{{$t('saved')}}</span>
-     </li>
-     <li>
-       <router-link :to="{name:'Settings'}">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">{{$t('Settings')}}</span>
-       </router-link>
-       <span class="tooltip">{{$t('Settings')}}</span>
-     </li>
-     <li >
-         <a @click="logout()">
-    <i class='bx bx-log-out' id="log_out" ></i>
-             <span class="links_name">{{$t('logout')}}</span>
-         </a>
-         <span class="tooltip">{{$t('logout')}}</span>
-     </li>
+
     </ul>
   </div>
 
@@ -215,19 +388,19 @@
 
 <div class="home-section">
 
-<a class="mt-3 ml-3" href="\"><i class="fa fa-eye"></i> {{$t('home')}}</a>
 
 
-  {{windowWidth}}
+
+  <!-- {{windowWidth}}
    <span class="mt-5 ">
                          <small> <a class="" @click="switchLang('ar')" v-show="lang=='en'">
                          <img src="https://img.icons8.com/color/20/000000/united-arab-emirates.png"/>عربي</a></small>
                                         <small><a @click="switchLang('en')" v-show="lang=='ar'">
                                            <img src="https://img.icons8.com/color/20/000000/usa.png"/> English
                                             </a></small>
-                    </span>
+                    </span> -->
 
-<router-view></router-view>
+<router-view :dir="$t('directions')" :class="$t('text_align')" class="mt-3"></router-view>
 </div>
 
 
@@ -255,14 +428,16 @@ import Login from '../auth/login.vue';
 import NotificationBar from '../notificationBar.vue'
 import StatsticUser from './statsticUser.vue'
 import branch from './branch.vue'
+import mytenders from '../tenders/mytenders.vue';
 export default {
   
-  components: { complete, Achive, FileUpload, StatsticUser, NotificationBar, Login ,branch},
+  components: { complete, Achive, FileUpload, StatsticUser, NotificationBar, Login ,branch,mytenders},
     data(){
        const lang = localStorage.getItem('lang') || localStorage.setItem('lang','ar') ;
         return{
         users:null,
         seen:false,
+        sidebarCollapse:null,
         lang:lang,
         status_upload:0,
         ContentWrapper:'content-wrapper',
@@ -320,7 +495,10 @@ export default {
             this.windowWidth = window.innerWidth
                  if(this.windowWidth >=1000)
             {
-              this.open='open'
+              // this.open='open'
+              this.open=''
+              this.ContentWrapper='content-wrapper';
+                $('body').addClass('sidebar-collapse');
             }else  if(this.windowWidth <=1000){
               this.open=''
             }
@@ -343,10 +521,13 @@ export default {
            if(this.open=='open'){
              this.open=''
              this.ContentWrapper='';
+            //  this.sidebarCollapse="sidebar-collapse",
+             $('body').addClass('sidebar-collapse');
             
            }else{
               this.open='open'
               this.ContentWrapper='content-wrapper';
+               $('body').removeClass('sidebar-collapse');
 
            }
 
@@ -543,7 +724,7 @@ cursor: pointer;
 
 .sidebar{
   position: fixed;
-  left: 0;
+left: -100;
   top: 0;
   height: 100%;
   width: 78px;
@@ -554,6 +735,7 @@ cursor: pointer;
 }
 .sidebar.open{
   width: 250px;
+  left: 0;
 }
 .sidebar .logo-details{
   height: 60px;
@@ -757,16 +939,7 @@ cursor: pointer;
   width: 50px;
   background: none;
 }
-.home-section{
-  position: relative;
-  background: #E4E9F7;
-  min-height: 100vh;
-  top: 0;
-  left: 78px;
-  width: calc(100% - 78px);
-  transition: all 0.5s ease;
- 
-}
+
 
 
 .home-section .text{
@@ -775,6 +948,13 @@ cursor: pointer;
   font-size: 25px;
   font-weight: 500;
   margin: 18px
+}
+
+.dropdown .dropdown-item {
+    color: #242424;
+    cursor: pointer;
+    font-weight:bold;
+    font-size: 14px;
 }
 
 

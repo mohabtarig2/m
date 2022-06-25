@@ -21,6 +21,9 @@
 
 </div>
     <div class="row mt-4">
+        <div class="col-md-4">
+        <conditions></conditions>
+      </div>
       <div class="col-md-8">
         <div class="contact-form">
           <div class="card-body">
@@ -134,26 +137,25 @@
                 <div class="font-weight-bold h6 mt-3  thm-color">     {{$t('villa_design_shape')}}</div>
 
  <div class="form-group shapeVilla" style="display: flex;">
-   <h4  @click="VillaShape('H')" :class="{'checked':square=='H'}">
+   <h4  @click="VillaShape('H')" :class="{'checked, btn btn-succes':square=='H'}">
      H
      
    </h4>
 
-   <h4 @click="VillaShape('L')" :class="{'checked':square=='L'}"> L</h4>
-   <h4 @click="VillaShape('U')" :class="{'checked':square=='U'}"> U</h4>
-   <h4 @click="VillaShape('F')" :class="{'checked':square=='F'}"> F</h4>
-   <h4 @click="VillaShape('square')" :class="{'checked':square=='square'}">
-   <p :class="{'checked':square=='4'}" class="square"  ></p>
+   <h4 @click="VillaShape('L')" :class="{'checked btn btn-success':square=='L'}"> L</h4>
+   <h4 @click="VillaShape('U')" :class="{'checked btn btn-success':square=='U'}"> U</h4>
+   <h4 @click="VillaShape('F')" :class="{'checked btn btn-success':square=='F'}"> F</h4>
+   <h4 @click="VillaShape('square')" :class="{'checked btn btn-success ':square=='square'}">
+   <p :class="{'checked  btn btn-success':square=='4'}" class="fa fa-square"  ></p>
    </h4>
    <br>
- <!-- <div>
-    <small @click="VillaShape('other')" class="btn btn-download" :class="{'checked':square=='other'}"> نوع اخر</small>
+ <div>
+    <h4 @click="VillaShape('other')" class="hs-6" :class="{'checked btn btn-success':square=='other'}">{{$t('other')}}</h4>
 
-<br>
-    <input v-model="other" v-show="square=='other'" placeholder='اكتب شكل الفيلا'>
+
    
 
-</div>  -->
+</div> 
 
 
 
@@ -219,7 +221,7 @@
                          'is-valid':CheckMaster=='true'
                         ,'is-invalid':CheckMaster =='false',
                       }]"
-                       placeholder="  5" min="0"
+                       :placeholder="$t('count')" min="0"
 
                     />
 
@@ -250,7 +252,7 @@
                                 'is-valid':CheckRoom=='true'
                                 ,'is-invalid':CheckRoom =='false',
                       }]"
-                       placeholder="  5" min="0"
+                       :placeholder="$t('count')" min="0"
                     />
                        <div v-if="CheckRoom!=''"   
             class="invalid-feedback" :class="msg"> 
@@ -280,7 +282,7 @@
                       },
                                 
                       ]"
-                       placeholder="  5" min="0"
+                       :placeholder="$t('count')" min="0"
                     />
                     <div v-if="CheckLiving!=''"   
             class="invalid-feedback" :class="msg"> 
@@ -307,7 +309,7 @@
                                 'is-valid':CheckMajlis=='true'
                               ,'is-invalid':CheckMajlis =='false',
                       }]"
-                      placeholder="5" min="0"
+                      :placeholder="$t('count')" min="0"
 
                     />
                       <div v-if="CheckMajlis!=''"   
@@ -333,7 +335,7 @@
                       :class="[{'is-invalid': errorFor('kitchens') 
                       ,'is-valid':CheckKitchen=='true'
                       ,'is-invalid':CheckKitchen =='false',}]"
-                      placeholder="  5" min="0"
+                      :placeholder="$t('count')" min="0"
 
                     />
                       <div v-if="CheckKitchen!=''"   
@@ -359,7 +361,7 @@
                       type="number"
                       class="form-control"
                       v-model="dining_room"
-                       placeholder="5" min="0"
+                       :placeholder="$t('count')" min="0"
                       :class="[{'is-invalid': errorFor('dining_room')
                                 ,'is-valid':CheckDining=='true'
                               ,'is-invalid':CheckDining =='false'}]"/>
@@ -390,7 +392,7 @@
                       :class="[{'is-invalid': errorFor('bathroom')
                          ,'is-valid':CheckBath=='true'
                               ,'is-invalid':CheckBath =='false' }]"
-                     placeholder="  5" min="0" />
+                     :placeholder="$t('count')" min="0" />
                       <div v-if="CheckBath!=''"   
             class="invalid-feedback" :class="msg"> 
   {{$t('Type_a_number_in_case_you_dont_want_to_write_a_zero')}}
@@ -400,7 +402,7 @@
                       class="invalid-feedback"
                       v-for="(error, index) in this.errorFor('bathroom')"
                       :key="'bathroom' + index"
-                      placeholder="5" min="0"
+                      :placeholder="$t('count')" min="0"
 
                     >{{ error }}</div>
                   </div>
@@ -767,7 +769,7 @@
         </div>
 
             
-            <div class="form-group">
+            <div class="form-group" v-show="!hidden">
                 <div class=" font-weight-bold theme-color" dir="rtl">
 {{$t('Approximate_added_amount_Financing_method')}}
 <sup class="text-danger"> ({{$t('optional')}})</sup>
@@ -862,9 +864,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <conditions></conditions>
-      </div>
+    
     </div>
 
   </div>
@@ -883,7 +883,7 @@ export default {
 
   data() {
     return {
-
+        hidden:true,
          FileNotMapAllowd:null,
         FileNotpassportAllowd:null,
         filePassportName:null,

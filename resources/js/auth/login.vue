@@ -164,9 +164,7 @@ data() {
 
             this.getUnreadNotificatons();
 
-                $('.header-inner').addClass('d-none');
-                $('.footer-area').addClass('d-none');
-  
+    
         },
    methods: {
     async login() {

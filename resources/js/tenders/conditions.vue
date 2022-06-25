@@ -4,26 +4,24 @@
     {{$t('Tips_for_starting_your_business')}}
      </div>
 
-      <div class="font-weight-bold  h5"> <img :src="'assets/img/build.svg'" width="20"> {{$t('title-tips1')}}</div>
-      <button @click="copy($t('tips1'))">copy</button>
-<p  class="text-dark">{{$t('tips1')}}
+      <div class="font-weight-bold  theme-color h5"> <img :src="'assets/img/build.svg'" width="20"> {{$t('title-tips1')}}</div>
+      
+<p  class="color-primary">{{$t('tips1')}}
 </p >
 
 
 
-  <div class="font-weight-bold h5 mt-5 "><img :src="'assets/img/check.svg'" width="20">  {{$t('title-tips2')}}</div>
-<p class="text-dark">{{$t('tips2')}}
-</p>
+
 
 <h2 class="h3 mt-5"></h2>
 
-  <div class="font-weight-bold h5 mt-5 "><img :src="'assets/img/lightbulb.svg'" width="30"> {{$t('title-tips3')}}</div>
-<p><ul>
+  <div class="font-weight-bold h5 mt-5 theme-color"><img :src="'assets/img/lightbulb.svg'" width="30"> {{$t('title-tips3')}}</div>
+<ul>
 
-    <li  class="mt-3">{{$t('tips3.1')}}</li>
-    <li class="mt-3">{{$t('tips3.2')}}</li>
+    <li  class="mt-3 ml-4 mr-4">{{$t('tips3.1')}}</li>
+    <li class="mt-3 ml-4 mr-4">{{$t('tips3.2')}}</li>
 </ul>
-</p>
+
 
     </div>
 

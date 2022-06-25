@@ -43,7 +43,7 @@ style="position:absolute;
       
                 <!-- offcanvas-menu start -->
                 <nav id="offcanvas-menu" class="offcanvas-menu">
-                    <ul class="list-none">
+                    <ul class="list-none" >
 <li class=" "><router-link :to="{name:'home'}" >{{$t('home')}}</router-link ></li>
 
 
@@ -53,8 +53,9 @@ style="position:absolute;
 
 
 <li v-if="!isLoggedIn"><router-link :to="'/login'"> {{ $t('login') }}</router-link></li>
-<li v-if="!isLoggedIn"><router-link :to="'register'"   > {{ $t('register') }} </router-link>
-  <li v-if="isLoggedIn"> <router-link to="/dashboard"  class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
+<li v-if="!isLoggedIn"><router-link :to="'register'"   > {{ $t('register') }} </router-link></li>
+  <li v-if="isLoggedIn"> <router-link :to="{name:'mytenders'}"  class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
+  <li v-if="isLoggedIn"> <router-link :to="{name:'mytenders'}"  class="font-weight-bold" >{{ $t('logout') }} </router-link></li>
   <li class><a data-toggle="modal" @click="HideMenue()" data-target="#myModal" class="font-weight-bold" >
                                                     <i class="item-center fa fa-play"></i>{{$t('How_it_works')}}</a ></li>
 
@@ -94,7 +95,7 @@ style="position:absolute;
 
 													</ul>
 						</li> -->
-                      		<li class="menu-arrow" :class="{ 'active' : active3}">
+                      		<li class="menu-arrow" :class="{ 'active' : active3}" >
                                   <a href="#" @click="active('villa')">{{$t('villa_design')}}</a>
 													<ul class="sub-menu">
 												<li>
@@ -361,7 +362,7 @@ style="position:absolute;
 									<ul class="header-details-inner list-none">
                                     <li v-if="!isLoggedIn"><router-link :to="'/login'"> {{ $t('login') }}</router-link></li>
 									<li v-if="!isLoggedIn"><router-link :to="'register'"   > {{ $t('register') }} </router-link>
-                                    <li v-if="isLoggedIn"> <router-link to="/dashboard"  class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
+                                    <li v-if="isLoggedIn"> <router-link :to="{name:'mytenders'}"ذ class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
                                     <li class="" style="cursor:pointer"> 
                                      <small> <a class="" @click="switchLang('ar')" v-show="lang=='en'"><img src="https://img.icons8.com/color/20/000000/united-arab-emirates.png"/>عربي</a></small>
                                         <small><a @click="switchLang('en')" v-show="lang=='ar'">
@@ -408,6 +409,9 @@ style="position:absolute;
 											<li><a href="#"><i class="fab fa-youtube"></i></a></li> -->
 										</ul>
 									</div>
+                                       
+                                      
+                              
 								</div>
 								<div class="col-lg-4 col-md-6 col-12">
 								
@@ -417,12 +421,12 @@ style="position:absolute;
                                             
 
                                            
-														<li>
+														<!-- <li>
                                                             <router-link :to="{name:'services',params:{type:'consulting'}}">
                                                                 {{$t('consulting_company')}}
                                                                 </router-link>
 
-                                                            </li>
+                                                            </li> -->
                                                            <li>
                                                             <router-link :to="{name:'services',params:{type:'construction'}}">
                                                                 {{$t('construcion_company')}}
@@ -447,17 +451,7 @@ style="position:absolute;
                                                                 {{$t('interior_companies')}}
                                                                 </router-link>
                                                             </li>
-                                                                <li>
-                                                                <router-link :to="{name:'termsConditions'   }">
-                                                                {{$t('termsConditions')}}
-                                                                </router-link>
-                                                            </li>
-
-                                                               <li>
-                                                                <router-link :to="{name:'responsibilaty'   }">
-                                                                {{$t('Evacuation_responsibilaty')}}
-                                                                </router-link>
-                                                            </li>
+                                                          
 
 
 
@@ -469,6 +463,7 @@ style="position:absolute;
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-6 col-12">	
+                              
 								
 									<div class="single-f-widget">
 										<h3 class="widget_title ">{{$t('villa_design')}} </h3>
@@ -506,10 +501,29 @@ style="position:absolute;
 		<div class="copyright"> 
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-sm-12 col-md-6 text-center">
 <p class="mb-0">© {{new Date().getFullYear()}} 
 
-                        <a>{{$t('All_Rights_Reserved')}}</a></p>					</div>
+                        <a>{{$t('All_Rights_Reserved')}}</a></p>
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-center" >
+
+                        
+                      
+                               
+                                                                <router-link :to="{name:'termsConditions'   }" class="mr-3 ml-3">
+                                                                {{$t('termsConditions')}}
+                                                                </router-link>
+                                                           
+
+                                                               
+                                                                <router-link :to="{name:'responsibilaty'   }"  class="mr-3 ml-3">
+                                                                {{$t('Evacuation_responsibilaty')}}
+                                                                </router-link>
+                                                            
+                       
+                        
+                        					</div>
 				</div>
 			</div>
 		</div>
@@ -626,6 +640,20 @@ axios.get('api/ads/showOffeUnique').then(res=>{
                            }
                         });
        },
+           logout() {
+     
+
+        axios.post("/logout").then((response) => {
+             this.$store.dispatch("logout");
+           this.$router.push({ name: "login"});
+        })
+        .catch((error) => {
+        this.$store.dispatch("logout");
+          // location.reload();
+        })
+       
+    },
+    
 
        active(event){
 
@@ -1026,7 +1054,7 @@ color:#fff !important; background:#fc7651 !important;
       height: 14px;
       width: 14px;
       background-color: white;
-      border: 2px solid #2343f8;
+         border:1px solid #d8d8d8;
       border-radius:5px;
 
       &:after {
