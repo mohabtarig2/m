@@ -1,6 +1,9 @@
 <template>
 <div class="container" :dir="$t('directions')" :class="$t('text_align')" >
     <div class="row  mt-4">
+             <div class=" col-md-4 col-sm-12">
+<conditions></conditions>
+  </div>
         <div class="col-md-8 col-sm-12 ">
 
 
@@ -432,9 +435,7 @@
             <!-- /.card -->
 <FileStyle></FileStyle>
         </div>
-         <div class=" col-md-4 col-sm-12">
-<conditions></conditions>
-  </div>
+  
     </div>
 </div>
 </template>
