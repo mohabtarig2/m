@@ -20,7 +20,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
             <form enctype="multipart/form-data" class="c-form-inner">
 
-                <div class=" form-group " >
+                <!-- <div class=" form-group " >
 
                 <label for=" h6"><span class=" h6 font-weight-bold thm-color">
                     {{$t('title')}}
@@ -38,7 +38,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   v-for="(error, index) in this.errorFor('title')"
                   :key="'title' + index"
                 >{{ error }}</div>
-              </div>
+              </div> -->
 
                <div class=" form-group mt-3" :class="$t('text_align')" :dir="$t('direactions')">
                   <label for="exampleFormControlTextarea1 "><div class="thm-color">{{$t('description')}}</div></label>
@@ -455,7 +455,10 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
 <h4>
 
-                 {{title}}
+                 
+        {{$t('Tender_Num')}} : 
+        {{tender_id}}
+       
 </h4>
 
 

@@ -2,6 +2,7 @@
 
     "log":"log",
     "in":"in",
+    "count":"No of",
     "Dont_have_an_account":"Don’t have an account?",
     "do_you_have_an_account":"Do you have an account",
     "Forgot_Account":"Forgot Account?",
@@ -202,7 +203,7 @@
     "edit_on_offer":"Edit and submit an application",
     "price_include":"the price includes",
     "tender_request":"Tender Request",
-    "CostGov":"Government department fees",
+    "CostGov":"Government fees",
     "Desgin_Descrpition":"Desgin Descrpition",
     "total_area_build":"total area build",
     "supervision":"supervision",

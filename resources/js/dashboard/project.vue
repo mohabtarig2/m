@@ -60,7 +60,7 @@
           ></stages>
 
           <div class="p-descrip-box mt-2" :dir="$t('directions')" :class="$t('text_align')" >
-            <h5 class="  font-weight-bold">{{$t('description')}}</h5>
+            <h5 class="  font-weight-bold">{{$t('notes')}}</h5>
             <div
               v-for="(tender, index) in tenders"
               :key="index"

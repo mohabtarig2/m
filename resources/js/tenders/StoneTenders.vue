@@ -79,12 +79,13 @@ created() {
 
 <style lang="scss" scoped>
 
+
  a.router-link-exact-active{
-     border-bottom: 2px solid #3454d1;
-     color: #3454d1 !important;
-     font-weight: bold;
-    
-     text-decoration:none;
-     color: #3454d1 !important;
+    font-weight: bold;
+    text-decoration: none;
+    background: #3454d1 !important;
+    padding: 8px;
+    color: #ffffff !important;
+    border-radius: 11px;
  }
 </style>

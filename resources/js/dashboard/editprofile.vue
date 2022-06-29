@@ -10,7 +10,7 @@
 
 <div class="mx-auto align-items-center" >
 
-<div class="p-descrip-box card-body" v-for="file,index in data" :key="index" style="font-size:20px">
+<div class="p-descrip-box " v-for="file,index in data" :key="index" style="font-size:20px">
     <!-- <a href="#editPostModal" class="edit text-muted text-right d-block" data-toggle="modal" >
         <i class="fa fa-edit"
                   data-toggle="tooltip"
@@ -100,7 +100,7 @@
 </div>
 
 <v v-else>
-<div class="card card-body">
+<div class="c-form-inner">
     <!-- <a href="#editPostModal" class="edit text-muted text-right d-block" data-toggle="modal" >
         <i class="fa fa-edit"
                   data-toggle="tooltip"

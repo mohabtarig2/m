@@ -360,12 +360,15 @@
     "Hvac_Tender":"مناقصة التكييف ",
     "Stone_Tender":"مناقصة الحجر ",
     "Interior_tender":" مناقصة الديكور الداخلي",
+    "interior":"ديكور داخلي ",
+    "previous":"السابق",
+    
     
     "description":"الوصف",
     "submit_an_app":"ارسل طلب  ",
     "Consultant_fee": " الأستشارات   ",
     "tabCost":"تكلفة البناء ",
-    "CostGov":" رسوم الدوائر الحكومية ",
+    "CostGov":" رسوم الحكومية ",
     "conditioning": "التكييف",
     "gypsum": "الجبس",
     "interface_design":"تصميم الواجهة ",

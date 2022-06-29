@@ -129,7 +129,7 @@ import Example2 from './components/Example2';
  import CompanyProfile from './auth/CompanyProfile';
  import CompanyAdsDetails from './auth/CompanyAdsDetails';
  import store from './store';
- import test from './tesstt';
+ import test from './auth/tesstt';
 
 
 
@@ -872,6 +872,7 @@ function Navbar(){
 
 
 
+
 router.beforeEach((to, from, next) => {
     const loggedIn = store.state.isLoggedIn;
 
@@ -910,4 +911,5 @@ Navbar();
         document.title = to.meta.title || "Amb - Home ";
     })
 });
+
 export default router ;

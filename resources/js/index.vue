@@ -204,7 +204,7 @@ style="position:absolute;
 					<div class="col-auto">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="/"><img src="img/logo.png" alt="#"></a>
+							<a href="/"><img src="img/websiteLogo.svg" style="width:185px" alt="#"></a>
 						</div>
 					</div>
 					<div class="col-auto">
@@ -283,7 +283,7 @@ style="position:absolute;
 											<!-- Main Menu -->
 											<ul class="nav-menu navigation list-none">
 												
-												
+												  <li class=" "><a href="#HowItWroks">{{$t('HowItWroks')}}</a></li> 
 												<li class="menu-item-has-children"><a href="#">{{$t('villa_design')}}</a>
 													<ul class="sub-menu">
 														<li>
@@ -339,10 +339,8 @@ style="position:absolute;
 												</li>
 
   <li class=" "><router-link :to="{name:'home'}">{{$t('home')}}</router-link ></li>
-   <li class><a data-toggle="modal" @click="HideMenue()" data-target="#myModal" class="font-weight-bold" >
-                                                    {{$t('How_it_works')}}
-                                                    </a ></li>
-  <!-- <li class=" "><a href="#HowItWroks">{{$t('HowItWroks')}}</a></li> -->
+
+
 
                                              
 
@@ -1051,8 +1049,8 @@ color:#fff !important; background:#fc7651 !important;
     .check {
       position: absolute;
       top: 7px;
-      height: 14px;
-      width: 14px;
+      height: 16px;
+      width: 16px;
       background-color: white;
          border:1px solid #d8d8d8;
       border-radius:5px;
@@ -1062,8 +1060,9 @@ color:#fff !important; background:#fc7651 !important;
         position: absolute;
         display: none;
 
-        left: 3px;
-        top: 1px;
+        
+        left: 4px;
+        top: 3px;
         width: 4px;
         height: 7px;
         border: 3px solid white;

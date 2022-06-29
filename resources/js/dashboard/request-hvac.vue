@@ -90,5 +90,13 @@ created() {
 .card{
     padding: 20px;
 }
+ a.router-link-exact-active{
+    font-weight: bold;
+    text-decoration: none;
+    background: #3454d1 !important;
+    padding: 8px;
+    color: #ffffff !important;
+    border-radius: 11px;
+ }
 
 </style>

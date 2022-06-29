@@ -52,9 +52,9 @@
 
 
 
-    <div class="p-descrip-box" :class="$t('text_align')" :dir="$t('directions')"  style="padding: 0 40px;">
+    <div class="" :class="$t('text_align')" :dir="$t('directions')"  style="padding: 0 40px;">
         <h1 class="main-color text-center mt-5 mb-2"> {{$t('Join_To_Our_Family')}} </h1>
-      <form>
+      <form class="c-form-inner">
 
         <div class="form-group">
           <!-- <label for="name">{{$t('User_name')}}</label> -->

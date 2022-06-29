@@ -328,7 +328,7 @@
 						<h4 class="pr-d-title"  :dir="$t('directions')" :class="$t('text_align')">{{$t('Desgin_Details')}}</h4>
 						<div class="pr-details-main">
 							<div class="row"  >
-								<div class="col-xl-3 col-md-4 col-12">
+								<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single m-0" :dir="$t('directions')"  :class="{'text-right float-right':lang=='ar'}">
 										
@@ -341,19 +341,21 @@
 									</div>
 									<!-- End Single Property Detail -->
 								</div>
-								<div class="col-xl-3 col-md-4 col-12">
+								<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single m-0" :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
 											<span>{{$t('floors')}}</span>
 											<p class="pr-des-title m-0">  {{offer.floors}}</p>
 										</div>
-										<div class="pr-icon"><i class="fa fa-warehouse"></i></div>
+										<div class="pr-icon"><i class="material-symbols-outlined" style="font-size: 20px;">
+location_city
+</i></div>
 
 									</div>
 									<!-- End Single Property Detail -->
 								</div>
-								<div class="col-xl-3 col-md-4 col-12">
+								<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single m-0" :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
@@ -365,7 +367,7 @@
 									</div>
 									<!-- End Single Property Detail -->
 								</div>
-								<div class="col-xl-3 col-md-4 col-12">
+								<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single m-0" :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
@@ -377,7 +379,7 @@
 									</div>
 									<!-- End Single Property Detail -->
 								</div>
-								<div class="col-xl-3 col-md-4 col-12">
+								<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
@@ -389,7 +391,7 @@
 									</div>
 									<!-- End Single Property Detail -->
 								</div>
-								<div class="col-xl-3 col-md-4 col-12">
+								<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
@@ -403,19 +405,19 @@
 									<!-- End Single Property Detail -->
 								</div>
 
-                                	<div class="col-xl-3 col-md-4 col-12">
+                                	<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
 											<span>{{$t('majlis')}}</span>
 											<p class="pr-des-title m-0">  {{offer.majlis}}</p>
 										</div>
-										<div class="pr-icon"><i class="fas fa-utensils"></i></div>
+										<div class="pr-icon"><i class="fas fa-couch"></i></div>
 
 									</div>
 									<!-- End Single Property Detail -->
 								</div>
-								<div class="col-xl-3 col-md-4 col-12">
+								<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										<div class="pr-desc">
@@ -427,7 +429,7 @@
 									</div>
 									<!-- End Single Property Detail -->
 								</div>
-								<div class="col-xl-3 col-md-4 col-12">
+								<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
@@ -442,8 +444,24 @@
 									</div>
 									<!-- End Single Property Detail -->
 								</div>
+                	<div class="col-xl-3 col-md-4 col-6">
+									<!-- Single Property Detail -->
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
+										
+										<div class="pr-desc">
+											<span>{{$t('living_room')}}</span>
+											<p class="pr-des-title m-0">
+                                                {{offer.living_room}}
+                                            </p>
+										</div>
+										<div class="pr-icon">
+                                            <i class="fas fa-tv"></i></div>
+									</div>
+									<!-- End Single Property Detail -->
+								</div>
 
-                                	<div class="col-xl-3 col-md-4 col-12">
+
+                                	<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
 									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
 										
@@ -475,64 +493,98 @@
 					<!-- End Property Details -->
 
 					<!-- Property Features -->
-					<div class="p-descrip-box pro-features " :class="{'text-left ':lang=='en' ,'text-right ':lang=='ar'}" >
+					<div class="p-descrip-box pro-features   " :class="{'text-left ':lang=='en' ,'text-right ':lang=='ar'}" >
 						<h4 class="pr-d-title">{{$t('price_include')}}</h4>
 							
-						<ul class="single-pro-f list-none" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
-							<li>{{$t('Consultant_fee')}} 
-                 <span v-show="offer.CostGov"> + 
-                  {{$t('CostGov')}} </span>
-                  <i class="fas fa-check-circle"
+						<div class="row" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
+							<div class="col-xl-3 col-md-4 col-12">{{$t('Consultant_fee')}} 
+            
+                  <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
                    :class="{'text-muted':offer.Consultant_fee!='true',
                    'text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar' }"></i></li>
-					<!-- <li>
+                   'text-right float-right ':lang=='ar' }"></i>
+              </div>
+					<div class="col-xl-3 col-md-4 col-12">
           
-            {{$t('CostGov')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.CostGov!='true'}"></i></li> -->
+            {{$t('CostGov')}}<i class="mr-2 ml-2 mt-1 mr-2 ml-2 mt-1 fas fa-check-circle" :class="{
+              'text-muted':offer.CostGov!='true','theme-color':offer.CostGov=='true',
+                   'text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar' }" ></i>
+              </div>
 
-							<li>
+							<div class="col-xl-3 col-md-4 col-12">
                 
                 <span  >{{$t('gypsum')}}</span>
-              <i class="fas fa-check-circle" :class="{'text-muted':offer.gypsum!='true','text-left float-left ':lang=='en',
+              <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
+               :class="{'text-muted':offer.gypsum!='true','text-left float-left ':lang=='en','theme-color':offer.gypsum=='true',
                    'text-right float-right ':lang=='ar'}"></i>
-              </li>
+              </div>
 
-							<li>{{$t('the_fence')}}<i class="fas fa-check-circle"
-               :class="{'text-muted':offer.the_fence!='true', 'text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></li>
-	<li>{{$t('conditioning')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.conditioning!='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></li>
+					
+
+	<div class="col-xl-3 col-md-4 col-12">{{$t('conditioning')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
+  :class="{'text-muted':offer.conditioning!='true', 'theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></div>
 
 
 
-						</ul>
-						<ul class="single-pro-f list-none" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
+						</div>
+
+
+          
+						<div class="row mt-1" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
                           
-						    <li>{{$t('electric_pendants')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.electric_pendants!='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></li>
-                            <li>{{$t('tabCost')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.tabCost!='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></li>
-							<li>{{$t('Bedroom_wardrobes')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.Bedroom_wardrobes!='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></li>
-							<li>{{$t('Kitchen_Cabinets')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.Kitchen_Cabinets!='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></li>
+						   <div class="col-xl-3 col-md-4 col-12">{{$t('electric_pendants')}}
+                <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
+                 :class="{'text-muted':offer.electric_pendants!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></div>
 
-						</ul>
-						<ul class="single-pro-f list-none" :class="{'text-right  ':lang=='ar','text-left ':lang=='en'}">
-					<li>{{$t('the_elevator')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.the_elevator!='true','text-left float-left ':lang=='en',
-                   ' float-right ':lang=='ar'}"></i></li>
-					<li>{{$t('interior_decoration')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.interior_decoration!='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></li>
-                    <li>{{$t('garden_design')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.garden_design!='true',
+                            <div class="col-xl-3 col-md-4 col-12">
+                              {{$t('tabCost')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
+                               :class="{'text-muted':offer.tabCost!='true','theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></div>
+							<div class="col-xl-3 col-md-4 col-12">
+                {{$t('Bedroom_wardrobes')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
+                 :class="{'text-muted':offer.Bedroom_wardrobes!='true','theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></div>
+							<div class="col-xl-3 col-md-4 col-12">
+                {{$t('Kitchen_Cabinets')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
+                :class="{'text-muted':offer.Kitchen_Cabinets!='true','theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></div>
+
+						</div>
+              
+						<div class="row mt-1" :class="{'text-right  ':lang=='ar','text-left ':lang=='en'}">
+
+              		<div class="col-xl-3 col-md-4 col-12">{{$t('the_fence')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
+               :class="{'text-muted':offer.the_fence!='true', 'theme-color':offer.the_fence=='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i>
+                   
+              </div>
+
+					<div class="col-xl-3 col-md-4 col-12">{{$t('the_elevator')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.the_elevator!='true','text-left float-left ':lang=='en',
+                   ' float-right ':lang=='ar'}"></i></div>
+					<div class="col-xl-3 col-md-4 col-12">{{$t('interior_decoration')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.interior_decoration!='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></div>
+                    <div class="col-xl-3 col-md-4 col-12">{{$t('garden_design')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.garden_design!='true',
                     'text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></li>
-					<li>{{$t('pelvis')}}<i class="fas fa-check-circle" :class="{'text-muted':offer.pelvis!='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></li>
+                   'text-right float-right ':lang=='ar'}"></i></div>
+					
 
-						</ul>
-						
+						</div>
+							<div class="row mt-1" :class="{'text-right  ':lang=='ar','text-left ':lang=='en'}">
+                <div class="offset-md-10">
+
+</div>
+    
+<div class="col-xl-2 col-md-2 col-12">{{$t('pelvis')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
+:class="{'text-muted':offer.pelvis!='true','text-muted':offer.pelvis=='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></div>
+            </div>
 					
 					</div>
+
+          
 							<a data-toggle="modal" data-target="#exampleModalCenter" v-if="IsUser==10 && isLoggedIn"
 										class="  theme-btn mb-3">
 										 <i class="bx bxs-home-smile text-light"></i

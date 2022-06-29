@@ -41,7 +41,9 @@
                 </div>
                 <div class="col-6 ">
                    <div class="pr-single m-0">
-										<div class="pr-icon"><i class="fa fa-warehouse"></i></div>
+										<div class="pr-icon"><i class="material-symbols-outlined" style="font-size: 20px;">
+location_city
+</i></div>
 										<div class="pr-desc">
 											<span>{{$t('floors')}}</span>
 											<p class="pr-des-title m-0" >  {{floors}}</p>

@@ -122,9 +122,9 @@
 
 													                                      
 						<!-- About Content Bottom -->
-						<div class="about-content-bottom">
+						<div class="about-content-bottom ">
 							<div class="row gx-1 g-lg-4">
-								<div class="col-lg-4 col-md-4 col-auto" data-aos="fade-up" data-aos-delay="200">
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
 									<div class="about-content-widget">
 										<router-link :to="{name:'consultances'}">
 
@@ -153,7 +153,7 @@
                                    
 								</div>
 								
-								<div class="col-lg-4 col-md-4 col-auto" data-aos="fade-up" data-aos-delay="300">
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
 									<div class="about-content-widget">
 										<router-link :to="{name:'constructionTender'}">
 										<i class="fas fa-hard-hat"></i>
@@ -181,7 +181,7 @@
 
 									
 								</div>
-								<div class="col-lg-4 col-md-4 col-auto" data-aos="fade-up" data-aos-delay="400">
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
 
 									 <div class="about-content-widget">
 									<router-link :to="{name:'hvac'}">
@@ -197,19 +197,19 @@
 								</div>
 							</div>
                             <!-- <div class="row gx-1 g-lg-4">
-								<div class="col-lg-4 col-md-4 col-auto" data-aos="fade-up" data-aos-delay="200">
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
 									<div class="about-content-widget">
 										<i class="fa fa-house-user"></i>
 										<span>Safe Life</span>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-auto" data-aos="fade-up" data-aos-delay="300">
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
 									<div class="about-content-widget">
 										<i class="fa fa-user-secret"></i>
 										<span>Office</span>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-auto" data-aos="fade-up" data-aos-delay="400">
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
 									<div class="about-content-widget">
 										<i class="fa fa-building"></i>
 										<span>Apartment</span>

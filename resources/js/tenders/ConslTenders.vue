@@ -15,7 +15,13 @@
 
 
 </div>
+<!-- 
+<div v-if="tenders.length==0">
+<img src="https://jerickson.net/img/loading%20icon.png">
+</div> -->
 
+
+<!-- <div v-else-if="tenders.length!=0"> -->
         <div class="" v-for="(tender,index) in tenders" :key="index" >
 
     <div class="s-blog-sidebar   mb-3">
@@ -24,11 +30,12 @@
 
 
 
-         <router-link class="font-weight-bold text-dark ml-2" :to="'/Projects/'+tender.id+''" >{{tender.title}}
+         <router-link class="font-weight-bold text-dark ml-2" :to="'/Projects/'+tender.id+''" >
+        {{$t('Tender_Num')}} :  {{tender.id}} 
                  <status :status="tender.status"></status>
        
           <sup>({{tender.all_offers.length>0 ? tender.all_offers.length :0}}){{$t('Numbers_Offer')}}</sup>
-   <small class="float-right"> {{tender.added_at}}</small>
+
 
 
  
@@ -48,14 +55,16 @@
 </span>
 {{id}} </router-link>
 
+   <small  :class="{'float-right':lang=='en', 'float-left':lang=='ar',}"> {{tender.added_at}}</small>
+
     </div>
 
 
 
-
+        </div>
 </div>
 
-    </div>
+    
 </template>
 
 <script>
@@ -66,7 +75,10 @@ import offerTender from './offerTender.vue';
 export default {
      components: { offerTender ,Status, AllUae},
     data(){
-        return{
+         const lang = localStorage.getItem('lang') || localStorage.setItem('lang','ar') ;
+
+return{
+         lang:lang,
         tenders:null,
         id:null,
         searchType:null,
@@ -116,6 +128,10 @@ export default {
      mounted() {
 
             console.log(this.title);
+            
+     $('.header-inner').addClass('d-none');
+               
+ 
         },
         methods: {
                GetTenderId(event){
@@ -162,11 +178,11 @@ this.loading = false;
 <style lang="scss" scoped>
 
  a.router-link-exact-active{
-     border-bottom: 2px solid #3454d1;
-     color: #3454d1 !important;
-     font-weight: bold;
-    
-     text-decoration:none;
-     color: #3454d1 !important;
+    font-weight: bold;
+    text-decoration: none;
+    background: #3454d1 !important;
+    padding: 8px;
+    color: #ffffff !important;
+    border-radius: 11px;
  }
 </style>

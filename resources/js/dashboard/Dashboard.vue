@@ -1,6 +1,7 @@
 <template>
 <div >
 
+
 <div v-if=" isLoggedIn">
 
 
@@ -17,6 +18,8 @@
 
         </div>
         <div v-else >
+
+       
           
          <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -46,7 +49,7 @@
          
  <a v-if="IsUser==10" class="font-weight-bold" >
 <i class='bx bx-grid-alt'></i>     
-    <span class="links_name">{{$t('MY_Project')}}</span>
+    <span class="links_name font18">{{$t('MY_Project')}}</span>
          </a>        </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="overflow:revert;    height: 0;">
       
@@ -77,7 +80,7 @@
 
           <li class="nav-item ">
         <router-link :to="{name:'AllNotification'}"  class="nav-link" >
-          <i class="far fa-bell"></i>
+          <i class="far fa-bell font18"></i>
           <span class="badge badge-warning navbar-badge">
             
             <span v-if="notificationlist.length>0"> {{notificationlist.length}}</span></span>
@@ -201,14 +204,14 @@
   </div>
 <div class="home-section">
 
-
+<!-- 
        <span class="mt-5 ">
                          <small> <a class="" @click="switchLang('ar')" v-show="lang=='en'">
                          <img src="https://img.icons8.com/color/20/000000/united-arab-emirates.png"/>عربي</a></small>
                                         <small><a @click="switchLang('en')" v-show="lang=='ar'">
                                            <img src="https://img.icons8.com/color/20/000000/usa.png"/> English
                                             </a></small>
-                    </span>
+                    </span> -->
 
 
 <router-view :dir="$t('directions')" :class="$t('text_align')"></router-view>
@@ -225,19 +228,24 @@
        <div v-if="user.roles.name =='user'">
 
          <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-dark" style="    padding: 20px;">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" @click="slide()"
         role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-       <a class="nav-link" href="\"><i class="fa fa-eye"></i> {{$t('home')}}</a>
-      </li>
-      <!-- <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
       </li> -->
+    
+      <li class="nav-item d-none d-sm-inline-block">
+        <div class="logo">
+							<a href="/"><img src="img/websiteLogo2.svg" style="width:185px" alt="#"></a>
+						</div>
+      </li>
+        <li class="nav-item  d-md-none">
+        <div class="logo">
+							<a href="/"><img src="img/websiteLogo3.svg" style="width:50px" alt="#"></a>
+						</div>
+      </li>
     </ul>
 
 
@@ -245,15 +253,37 @@
     <ul class="navbar-nav ml-auto">
 
      
+     <li class="nav-item ">
+        <router-link :to="{name:'AllNotification'}"  class="nav-link" >
+          <i class="far fa-bell font18"></i>
+          <span class="badge badge-warning navbar-badge">
+            
+            <span v-if="notificationlist.length>0"> {{notificationlist.length}}</span></span>
+           
+         </router-link>
+      </li>
 
+    
+      
       <!-- Messages Dropdown Menu -->
+      
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
+    <router-link :to="{name:'tenders'}"  class="font-weight-bold nav-link " >
+<i class='fa fa-plus font18'></i>
+   <span class="links_name visible-xs font18">{{$t('Add_tender')}}</span>
+        </router-link>
+      </li>
+
+  
+
+      <li class="nav-item dropdown">
+        
          
- <a v-if="IsUser==10" class="font-weight-bold" >
-<i class='bx bx-grid-alt'></i>     
-    <span class="links_name">{{$t('MY_Project')}}</span>
-         </a>        </a>
+ <a v-if="IsUser==10" class="font-weight-bold nav-link" data-toggle="dropdown" >
+<i class='bx bx-grid-alt font18'></i>     
+    <span class="links_name font18">{{$t('MY_Project')}}</span>
+         </a>        
+      
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="overflow:revert;    height: 0;">
       
           
@@ -281,23 +311,19 @@
         </div>
       </li>
 
-          <li class="nav-item ">
-        <router-link :to="{name:'AllNotification'}"  class="nav-link" >
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">
-            
-            <span v-if="notificationlist.length>0"> {{notificationlist.length}}</span></span>
-           
-         </router-link>
-      </li>
+      
+
+     
 
               
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" >
           <!-- <i class="far fa-bell"></i> -->
-         <div class="badge badge-secondary text-uppercase rounded-circle " style="font-size:15px; padding:5px">
-          {{user.name.substr(0,1 )}}
+         <div class="badge badge-primary text-uppercase rounded-circle " style="font-size:18px; width:36px; height:36px;    display: flex;
+    align-items: center;
+    justify-content: center;">
+          <span>{{user.name.substr(0,1 )}}</span>
          </div>
            
         </a>
@@ -331,7 +357,7 @@
   <!-- /.navbar -->
 
 
-          <div class="  sidebar " :class="open" v-show="$route.name!=='home'" >
+          <div class="  sidebar " :class="open" v-show="$route.name!=='home' || show" >
     <div class="logo-details">
 
         <div class="h6 logo_name">{{user.name}}</div>
@@ -388,7 +414,7 @@
 
 <div class="home-section">
 
-
+ <a class="nav-link" href="\"><i class="fa fa-eye"></i> {{$t('home')}}</a>
 
 
   <!-- {{windowWidth}}
@@ -438,6 +464,7 @@ export default {
         users:null,
         seen:false,
         sidebarCollapse:null,
+        show:true,
         lang:lang,
         status_upload:0,
         ContentWrapper:'content-wrapper',
@@ -487,6 +514,7 @@ export default {
   
 
     methods: {
+      
        switchLang(event){
            localStorage.setItem('lang',event)
            location.reload();
@@ -556,6 +584,10 @@ export default {
     },
     created(){
     this.onResize();
+  
+  if(this.$route.from.name=="login"){
+    location.reload();
+  }
 
     
     }
@@ -966,7 +998,9 @@ left: -100;
  
 
 }
-
+.font18{
+      font-size: 18px;
+}
 
 
 </style>

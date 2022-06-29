@@ -31,7 +31,7 @@
 
               <!-- <div class=" form-group " >
 
-                <label for=" h6"><span class=" h6 font-weight-bold thm-color">
+                <label for=" h6"><span class=" h6 font-weight-bold theme-color">
                     {{$t('title')}}
                     </span>
                     </label>
@@ -56,31 +56,11 @@
               {{$t('Less_than_4_letters')}} </div>
               </div> -->
 
-                  <div class=" form-group mt-3">
-                  <label for="exampleFormControlTextarea1">{{$t('Desription')}}</label>
-                  <textarea
-                  style="background:#fff"
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="4"
-                    v-model="Notes"
-                    :class="[{'is-invalid': errorFor('Notes')},
-                             {'is-invalid':CheckNotes=='false'},
-                             {'is-valid':CheckNotes=='true'}
-                    ]"
-                      :placeholder="$t('long_descripe')"
-
-                  ></textarea>
-                          <div
-                    class="invalid-feedback"
-                    v-for="(error, index) in this.errorFor('Notes')"
-                    :key="'Notes' + index"
-                  >{{ error }}</div>
-                </div>
+               
 
 <div class="row">
     <div class="col-md-6 col-sm-12">
-              <div class="font-weight-bold h6 mt-3  thm-color">{{$t('Choose_the_type_of_villa')}}</div>
+              <div class="font-weight-bold h6 mt-3  theme-color">{{$t('Choose_the_type_of_villa')}}</div>
 
               <div class="form-group  ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -102,7 +82,7 @@
 
     <div class="col-md-6 col-sm-12">
 
- <div class="font-weight-bold h6 mt-3  thm-color">{{$t('floors')}}</div>
+ <div class="font-weight-bold h6 mt-3  theme-color">{{$t('floors')}}</div>
 
               <div class="form-group ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -136,7 +116,7 @@
 <div class="row">
   
 <div class="col-md-6 col-sm-12">
-                <div class="font-weight-bold h6 mt-3  thm-color">  {{$t('Do_you_want_basement')}}</div>
+                <div class="font-weight-bold h6 mt-3  theme-color">  {{$t('Do_you_want_basement')}}</div>
 
  <div class="form-group">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -156,28 +136,27 @@
 
 </div>
 <div class="col-md-6 col-sm-12">
-                <div class="font-weight-bold h6 mt-3  thm-color">     {{$t('villa_design_shape')}}</div>
+                <div class="font-weight-bold h6 mt-3  theme-color">     {{$t('villa_design_shape')}}</div>
 
- <div class="form-group shapeVilla" style="display: flex;">
-   <h4  @click="VillaShape('H')" :class="{'checked, btn btn-succes':square=='H'}">
+ <div class="form-group shapeVilla"  style="display: flex;">
+   <h4  @click="VillaShape('H')" class="btn btn-outline-success" :class="{'checked btn btn-success':square=='H'}">
      H
      
    </h4>
 
-   <h4 @click="VillaShape('L')" :class="{'checked btn btn-success':square=='L'}"> L</h4>
-   <h4 @click="VillaShape('U')" :class="{'checked btn btn-success':square=='U'}"> U</h4>
-   <h4 @click="VillaShape('F')" :class="{'checked btn btn-success':square=='F'}"> F</h4>
-   <h4 @click="VillaShape('square')" :class="{'checked btn btn-success ':square=='square'}">
-   <p :class="{'checked  btn btn-success':square=='4'}" class="fa fa-square"  ></p>
+   <h4 @click="VillaShape('L')" class="btn btn-outline-success" :class="{'checked btn btn-success':square=='L'}"> L</h4>
+   <h4 @click="VillaShape('U')" class="btn btn-outline-success" :class="{'checked btn btn-success':square=='U'}"> U</h4>
+   <h4 @click="VillaShape('F')" class="btn btn-outline-success" :class="{'checked btn btn-success':square=='F'}"> F</h4>
+   <h4 @click="VillaShape('square')" class="btn btn-outline-success" :class="{'checked btn btn-success ':square=='square'}">
+   <span :class="{'checked  btn btn-success':square=='4'}" class="fa fa-square"  ></span>
    </h4>
-   <br>
- <div>
-    <h4 @click="VillaShape('other')" class="hs-6" :class="{'checked btn btn-success':square=='other'}">{{$t('other')}}</h4>
+
+    <h4 @click="VillaShape('other')" class="btn btn-outline-success" 
+    :class="{'checked btn btn-success':square=='other'}">{{$t('other')}}</h4>
 
 
    
 
-</div> 
 
 
 
@@ -189,8 +168,9 @@
 
 <div class="row">
   <div class="col-12">
-<div class="single-property-details">
-<label>{{$t('finshing')}}
+<div class="single-property-details"  :dir="$t('directions')" :class="$t('text_align')">
+<label>
+  <span class="theme-color">{{$t('finshing')}}</span>
         <div class="nice-select form-control" :class="[open_select_finshing
          ,{'is-valid':finshing_selected !=''}
          ]"
@@ -232,7 +212,7 @@
                   <div class="col-6  " >
                     <div class="form-group">
                     <label for="customRange3">
-                       <span class="h6 thm-color font-weight-bold"> {{$t('master_rooms')}}</span>
+                       <span class=" theme-color font-weight-bold count"> {{$t('count')}} {{$t('master_rooms')}}</span>
                         </label>
                     <input
                       type="number"
@@ -243,7 +223,7 @@
                          'is-valid':CheckMaster=='true'
                         ,'is-invalid':CheckMaster =='false',
                       }]"
-                       :placeholder="$t('count')" min="0"
+                       min="0"
 
                     />
 
@@ -264,8 +244,8 @@
                   <div class="col-6 ">
                     <div class="form-group">
                     <label for="customRange3">
-                         <span class="h6 thm-color font-weight-bold">
-                      {{$t('bed_rooms')}} </span></label>
+                         <span class=" theme-color font-weight-bold count">
+                    {{$t('count')}}  {{$t('bed_rooms')}} </span></label>
                     <input
                       type="number"
                       class="form-control"
@@ -274,7 +254,7 @@
                                 'is-valid':CheckRoom=='true'
                                 ,'is-invalid':CheckRoom =='false',
                       }]"
-                       :placeholder="$t('count')" min="0"
+                       min="0"
                     />
                        <div v-if="CheckRoom!=''"   
             class="invalid-feedback" :class="msg"> 
@@ -291,8 +271,8 @@
 
                 <div class="row">
                   <div class="form-group col-4 ">
-                    <label for="customRange3"> <span class="h6 thm-color font-weight-bold"> 
-                      {{$t('living_room')}}
+                    <label for="customRange3"> <span class="h6 theme-color font-weight-bold count"> 
+                     {{$t('count')}} {{$t('living_room')}}
                     </span></label>
                     <input
                       type="number"
@@ -304,7 +284,7 @@
                       },
                                 
                       ]"
-                       :placeholder="$t('count')" min="0"
+                       min="0"
                     />
                     <div v-if="CheckLiving!=''"   
             class="invalid-feedback" :class="msg"> 
@@ -319,8 +299,8 @@
                   </div>
 
                   <div class=" form-group col-4">
-                    <label for="customRange3"> <span class="h6 thm-color font-weight-bold">
-                       {{$t('majlis')}}
+                    <label for="customRange3"> <span class="h6 theme-color font-weight-bold count">
+                     {{$t('count')}}  {{$t('majlis')}}
                         </span>
                         </label>
                     <input
@@ -331,7 +311,7 @@
                                 'is-valid':CheckMajlis=='true'
                               ,'is-invalid':CheckMajlis =='false',
                       }]"
-                      :placeholder="$t('count')" min="0"
+                      min="0"
 
                     />
                       <div v-if="CheckMajlis!=''"   
@@ -346,8 +326,8 @@
                   </div>
                   <div class="form-group col-4">
                     <label for="customRange3">
-                         <span class="h6 thm-color font-weight-bold">
-                        {{$t('kitchens')}}
+                         <span class="h6 theme-color font-weight-bold count">
+                        {{$t('count')}} {{$t('kitchens')}}
                          </span>
                         </label>
                     <input
@@ -357,7 +337,7 @@
                       :class="[{'is-invalid': errorFor('kitchens') 
                       ,'is-valid':CheckKitchen=='true'
                       ,'is-invalid':CheckKitchen =='false',}]"
-                      :placeholder="$t('count')" min="0"
+                      min="0"
 
                     />
                       <div v-if="CheckKitchen!=''"   
@@ -375,15 +355,15 @@
 
                 <div class="row">
                   <div class=" form-group   col-6 ">
-                    <label for="customRange3"> <span class="h6 thm-color font-weight-bold">
-                       {{$t('dining')}}
+                    <label for="customRange3"> <span class="h6 theme-color font-weight-bold count">
+                      {{$t('count')}} {{$t('dining')}}
                         </span>
                          </label>
                     <input
                       type="number"
                       class="form-control"
                       v-model="dining_room"
-                       :placeholder="$t('count')" min="0"
+                       min="0"
                       :class="[{'is-invalid': errorFor('dining_room')
                                 ,'is-valid':CheckDining=='true'
                               ,'is-invalid':CheckDining =='false'}]"/>
@@ -402,8 +382,8 @@
                   </div>
                   <div class=" form-group col-6 ">
                     <label for="customRange3">
-                         <span class="h6 thm-color font-weight-bold">
-                        {{$t('bathroom')}}
+                         <span class="h6 theme-color font-weight-bold count">
+                       {{$t('count')}} {{$t('bathroom')}}
                          </span>
                         </label>
                     <input
@@ -414,7 +394,7 @@
                       :class="[{'is-invalid': errorFor('bathroom')
                          ,'is-valid':CheckBath=='true'
                               ,'is-invalid':CheckBath =='false' }]"
-                     :placeholder="$t('count')" min="0" />
+                     min="0" />
                       <div v-if="CheckBath!=''"   
             class="invalid-feedback" :class="msg"> 
   {{$t('Type_a_number_in_case_you_dont_want_to_write_a_zero')}}
@@ -424,14 +404,14 @@
                       class="invalid-feedback"
                       v-for="(error, index) in this.errorFor('bathroom')"
                       :key="'bathroom' + index"
-                      :placeholder="$t('count')" min="0"
+                      min="0"
 
                     >{{ error }}</div>
                   </div>
                 </div>
 
 
-                <div class="h6 font-weight-bold  thm-color">    
+                <div class="h6 font-weight-bold  theme-color">    
                    
                     {{$t('Service_room_distribution_site')}}
                     <span class="text-muted">
@@ -515,7 +495,7 @@
 <input type="range" id="points" name="points" min="5000" max="5000" v-model="Maxval"> -->
 
                 <div class="budget">
-                  <div class="h3 mb-3 thm-color font-weight-bold">{{$t('budget')}}</div>
+                  <div class="h3 mb-3 theme-color font-weight-bold">{{$t('budget')}}</div>
                   <div class="row">
                     <div class="  col-md-6 col-sm-12"  dir="ltr">
                       <div class="form-group mb-2">
@@ -587,7 +567,8 @@
 														<div class="row">
 <div class="col-12">
 <div class="single-property-details">
-<label>{{$t('Emirates')}}
+<label>
+     <span class="theme-color">{{$t('Emirates')}}</span>
         <div class="nice-select form-control "
          :class="[open_select,{'is-valid':emirates_selected !=''}]" tabindex="0" @click="open('emirates')">
             <span class="current">
@@ -630,6 +611,29 @@
                 <option value=3>{{$t('ras_alkhima')}}</option>
                 <option value=2>{{$t('fujairah')}}</option>
                   </select> -->
+                </div>
+
+                   <div class=" form-group mt-3">
+                  <label for="exampleFormControlTextarea1 ">
+                    <span class="theme-color">{{$t('notes')}}</span></label>
+                  <textarea
+                  style="background:#fff"
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="4"
+                    v-model="Notes"
+                    :class="[{'is-invalid': errorFor('Notes')},
+                             {'is-invalid':CheckNotes=='false'},
+                             {'is-valid':CheckNotes=='true'}
+                    ]"
+                      :placeholder="$t('long_descripe')"
+
+                  ></textarea>
+                          <div
+                    class="invalid-feedback"
+                    v-for="(error, index) in this.errorFor('Notes')"
+                    :key="'Notes' + index"
+                  >{{ error }}</div>
                 </div>
 
             
@@ -786,7 +790,7 @@
   
 
 
-                             <span class="thm-color">
+                             <span class="theme-color">
                                  {{$t('Attach_examples')}}
                                   </span>
                                   <small> ({{$t('optional')}}) </small>
@@ -1485,7 +1489,7 @@ console.log(result1);
 
       axios
         .post(`/tenders`, data)
-        .then(response=>{
+        .then(response=>{ 
           this.status = response.data;
           let id = this.status;
           this.loading=true
@@ -1521,18 +1525,24 @@ console.log(result1);
 };
 </script>
 <style scoped>
-.shapeVilla{
-  
-}
+
 .shapeVilla h4{
   
-  padding: 5px;
+ 
   margin-left: 5px;
   margin-right: 5px;
-  border:1px solid rgb(155, 155, 155);
-  background: #fff;
-  border-radius: 10px;
+ 
+  border-radius: 5px;
   cursor: pointer;
+}
+.shapeVilla h4 span {
+      display: block;
+    z-index: 3;
+
+    font-size: 14px;
+    position: relative;
+    margin-top: 24.75%;
+    margin-bottom: 24.75%;
 }
 .shapeVilla h4.checked , p.checked{
 
@@ -1540,29 +1550,14 @@ console.log(result1);
   color: #0ed678;
 
 }
-.square {
 
-    height: 20px;
-    width: 20px;
-    border: 2px solid black;
-    border-radius: 5px;
 
-}
 
-.single-property-details .nice-select {
-    width: 100%;
-    height: 60px;
-    border-radius: 12px;
-    border: 1px solid #cfc9c9;
-    box-shadow: none;
-    color: #818790;
-    font-size: 14px;
-    padding: 15px 30px;
-    font-weight: 400;
-    margin: 0;
-}
 </style>
 
 <style scoped>
+.count{
+  font-size: 0.8rem;
+}
 
 </style>

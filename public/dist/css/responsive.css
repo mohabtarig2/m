@@ -2113,8 +2113,8 @@ Version: 1.0.0
 }
 @media only screen and (max-width: 767px){
 	.about-content-widget {
-		padding: 14px 10px !important;
-		width: 190px !important;
+		padding: 14px 0px !important;
+		width: 100%;
 		margin-top: 30px !important;
 	}
 }
@@ -2372,13 +2372,7 @@ Version: 1.0.0
 	}
 	
 
-}
 
-@media screen and (max-width: 361px)  {
 
-	.about-content-widget {
-		padding: 14px 10px  !important;
-		width: 165px  !important;
-		margin-top: 30px  !important;
-	}
+
 }

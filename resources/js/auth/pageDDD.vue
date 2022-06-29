@@ -119,7 +119,9 @@
 								<ul class="single-bed-property list-none">
 									<li><b>{{offer.rooms}}</b><span><i class="fa fa-bed"></i></span></li>
 									<li><b>{{offer.bathroom}}</b><span><i class="fa fa-shower"></i></span></li>
-									<li><b>{{offer.floors}}</b><span><i class="fa fa-warehouse"></i></span></li>
+									<li><b>{{offer.floors}}</b><span><i class="material-symbols-outlined" style="font-size: 20px;">
+location_city
+</i></span></li>
 								</ul>
 							</div>
 							<!-- Property User -->
@@ -204,7 +206,9 @@
 								<ul class="single-bed-property list-none">
 									<li><b>{{offer.rooms}}</b><span><i class="fa fa-bed"></i></span></li>
 									<li><b>{{offer.bathroom}}</b><span><i class="fa fa-shower"></i></span></li>
-									<li><b>{{offer.floors}}</b><span><i class="fa fa-warehouse"></i></span></li>
+									<li><b>{{offer.floors}}</b><span><i class="material-symbols-outlined" style="font-size: 20px;">
+location_city
+</i></span></li>
 								</ul>
 							</div>
 							<!-- Property User -->

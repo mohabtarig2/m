@@ -7,7 +7,7 @@
 
 
 
-<div class="card card-body ">
+<div class="c-form-inner ">
     <div class="alert alert-danger alert-dismissible fade show" role="alert" :class="match">
   <strong>new  password and  </strong> confirm Password not match
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -50,7 +50,7 @@
           />
           <v-errors :errors="errorFor('identify')"></v-errors>
         </div>
-        <button type="submit" class="btn btn-bus btn-lg btn-block"
+        <button type="submit" class="theme-btn btn-lg btn-block"
          :disabled="loading" @click.prevent="save">{{$t('save')}}</button>
  </form>
 </div>

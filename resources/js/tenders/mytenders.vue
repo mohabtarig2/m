@@ -38,7 +38,12 @@ data() {
       active:null
 
     };
+    
   },
+mounted(){
+  $('.header-inner').removeClass('d-block');
+  $('.header-inner').addClass('d-none');
+},
 computed: {
 
     IsUser(){

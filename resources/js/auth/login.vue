@@ -1,7 +1,8 @@
 
 
 <template>
-
+<div>
+  
 <div v-if="!isLoggedIn" style="width:500px " class="mt-5">
 
 
@@ -119,6 +120,7 @@
 	</section>
 	<!-- End Login Area -->
 </div>
+</div>
 </template>
 
 <script>
@@ -147,10 +149,14 @@ data() {
 
   },
   computed: {
+   
 
      user_ID(){
                 return this.$store.getters.userid
     },
+       IsUser(){
+            return this.$store.getters.IsUser
+        },
     ...mapState({
 
       isLoggedIn: "isLoggedIn"
@@ -184,9 +190,11 @@ data() {
         logIn();
         this.$store.dispatch("loadUser");
         this.$store.dispatch("loadStoredState");
+        var ISuser = this.$store.getters.IsUser;
 
-
-       this.$router.push(this.$route.query.redirect || '/');
+     
+        this.$router.push(this.$route.query.redirect || '/');
+     
 
 
         // location.reload()

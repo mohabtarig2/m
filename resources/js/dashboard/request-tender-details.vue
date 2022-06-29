@@ -1067,7 +1067,8 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
   <div class=" h5 mb-3 title">
               <router-link class="theme-color h4 " target="_blank" 
            :to="{name:'project',params:{id:confirm.tender.id}}" >
-            {{confirm.tender.title}}
+           {{$t('Tender_Num')}} :
+            {{confirm.tender.id}}
             <i class="fas fa-external-link-alt grey"></i>
            
            </router-link>

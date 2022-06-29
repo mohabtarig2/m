@@ -490,6 +490,7 @@ this.email=resendemail;
 
  async created() {
 
+ 
          this.GetCounts();
 
 
