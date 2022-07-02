@@ -7,11 +7,11 @@
 
 
 
-<h2 class="text-center">{{$t('Consulting_Tender')}}</h2>
-<div class="links-requests mb-3">
-<router-link :to="{name:'ConslTenders'}" class="theme-color mr-3" v-if="IsUser==10">  {{$t('Consulting_Tender')}}</router-link>
-<router-link :to="{name:'request_consulte'}" class="theme-color  mr-3"> {{$t('FollowUp_Request')}}</router-link>
-<router-link :to="{name:'requestVilla'}" class="theme-color  mr-3">{{$t('Follow_up_on_requests_for_villas')}}</router-link>
+<h2 class="text-center">{{$t('consulting')}}</h2>
+<div class="links-requests p-descrip-box mb-3" >
+<router-link :to="{name:'ConslTenders'}" class="text-dark mr-3" v-if="IsUser==10">  {{$t('tenders')}}</router-link>
+<router-link :to="{name:'request_consulte'}" class="text-dark  mr-3"> {{$t('FollowUp_Request')}}</router-link>
+<router-link :to="{name:'requestVilla'}" class="text-dark  mr-3">{{$t('Follow_up_on_requests_for_villas')}}</router-link>
 
 
 </div>
@@ -21,7 +21,7 @@
 </div> -->
 
 
-<!-- <div v-else-if="tenders.length!=0"> -->
+<div v-if="tenders.length>0">
         <div class="" v-for="(tender,index) in tenders" :key="index" >
 
     <div class="s-blog-sidebar   mb-3">
@@ -62,6 +62,10 @@
 
 
         </div>
+</div>
+<div v-else>
+<b>{{$t('there_is_no_Tender')}}</b>
+</div>
 </div>
 
     
@@ -180,9 +184,15 @@ this.loading = false;
  a.router-link-exact-active{
     font-weight: bold;
     text-decoration: none;
-    background: #3454d1 !important;
-    padding: 8px;
-    color: #ffffff !important;
-    border-radius: 11px;
+    color: #3454d1 !important;
+ 
+ }
+ @media only screen and (max-width: 767px)
+ {
+
+.p-descrip-box {
+    padding: 7px !important;
+    font-size: 14px;
+}
  }
 </style>

@@ -2,18 +2,15 @@
 
    <div>
 
-<h2 class="text-center mb-3">  {{$t('Follow_up_on_engineering_consultancy_requests')}} </h2>
+<h2 class="text-center mb-3">  {{$t('consulting')}} </h2>
 
-<div class="links-requests mb-3">
-<router-link :to="{name:'ConslTenders'}" class="theme-color mr-3" v-if="IsUser==10">  {{$t('Consulting_Tender')}}</router-link>
-<router-link :to="{name:'request_consulte'}" class="theme-color  mr-3"> {{$t('FollowUp_Request')}}</router-link>
-<router-link :to="{name:'requestVilla'}" class="theme-color  mr-3">{{$t('Follow_up_on_requests_for_villas')}}</router-link>
+<div class="links-requests mb-3 p-descrip-box">
+<router-link :to="{name:'ConslTenders'}" class="text-dark mr-3" v-if="IsUser==10">  {{$t('tenders')}}</router-link>
+<router-link :to="{name:'request_consulte'}" class="text-dark  mr-3"> {{$t('FollowUp_Request')}}</router-link>
+<router-link :to="{name:'requestVilla'}" class="text-dark  mr-3">{{$t('Follow_up_on_requests_for_villas')}}</router-link>
 </div>
 
-<div v-if="loading">
-<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>
-
-</div>
+<div v-if="data>0">
     <div class="p-descrip-box mt-3" v-for="request , index in data" :key="index">
 <a @click="requestdirect(request.type,request.id)">
 
@@ -43,7 +40,10 @@
 
 </a>
            </div>
-
+</div>
+<div v-else>
+<b>{{$t('there_is_no_Request')}}</b>
+</div>
 
           
            
@@ -132,12 +132,19 @@ img {
 
 
 <style lang="scss" scoped>
+
  a.router-link-exact-active{
     font-weight: bold;
     text-decoration: none;
-    background: #3454d1 !important;
-    padding: 8px;
-    color: #ffffff !important;
-    border-radius: 11px;
+    color: #3454d1 !important;
+ 
+ }
+ @media only screen and (max-width: 767px)
+ {
+
+.p-descrip-box {
+    padding: 7px !important;
+    font-size: 14px;
+}
  }
 </style>

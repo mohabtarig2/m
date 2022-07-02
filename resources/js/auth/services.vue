@@ -151,10 +151,15 @@
 							<div class="agent-content" >
 								<h3 class="agent-title hs-6" v-if="user.company">
 									<!-- <router-link :to="{name:'CompanyProfile',params:{id:user.id,type:type}}"> -->
-										{{user.company.company_en}}
+										<span v-if="user.company.company_en.length>10">
+										{{user.company.company_en.substr(0,10)}}..
+										</span>
+										<span v-if="user.company.company_en.length<=12">
+											{{user.company.company_en}}
+										</span>
 										<!-- </router-link> -->
 									</h3>
-									<h3 class="agent-title hs-6" v-else>
+									<h3 class="agent-title hs-6" v-else >
 									<!-- <router-link :to="{name:'CompanyProfile',params:{id:user.id,type:type}}"> -->
 										{{user.name}}
 										<!-- </router-link> -->

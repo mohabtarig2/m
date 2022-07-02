@@ -62,10 +62,9 @@
                       {{$t('consulting_company')}}
   </router-link></li>
 								<li><router-link :to="{name:'constrtenders'}"><i class="fa fa-angle-right"></i>{{$t('construcion_company')}}</router-link></li>
-								<li><router-link :to="{name:'HvacTenders'}"><i class="fa fa-angle-right"></i>
-                {{$t('interior_companies')}}</router-link></li>
+							<li><router-link :to="{name:'HvacTenders'}"><i class="fa fa-angle-right"></i>{{$t('HVAC_companies')}}</router-link></li>
 	<li><router-link :to="{name:'InteriorTenders'}"><i class="fa fa-angle-right"></i>
-  {{$t('HVAC_companies')}}></router-link></li>
+  {{$t('interior_companies')}}></router-link></li>
 						
   <li><router-link :to="{name:'StoneTenders'}"><i class="fa fa-angle-right"></i>{{$t('Stone_companies')}}</router-link></li>
 
@@ -228,7 +227,7 @@
        <div v-if="user.roles.name =='user'">
 
          <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-dark navbar-dark" style="    padding: 20px;">
+  <nav class="main-header navbar navbar-expand navbar-light navbar-light" style="    padding: 20px;">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <!-- <li class="nav-item">
@@ -238,7 +237,7 @@
     
       <li class="nav-item d-none d-sm-inline-block">
         <div class="logo">
-							<a href="/"><img src="img/websiteLogo2.svg" style="width:185px" alt="#"></a>
+							<a href="/"><img src="img/websiteLogo.svg" style="width:185px" alt="#"></a>
 						</div>
       </li>
         <li class="nav-item  d-md-none">
@@ -262,6 +261,10 @@
            
          </router-link>
       </li>
+      
+      <li class="nav-item ">
+       <a class="nav-link" href="\"><i class="fa fa-home"></i> <span class="visible-xs">{{$t('home')}}</span></a>
+      </li>
 
     
       
@@ -280,7 +283,7 @@
         
          
  <a v-if="IsUser==10" class="font-weight-bold nav-link" data-toggle="dropdown" >
-<i class='bx bx-grid-alt font18'></i>     
+   
     <span class="links_name font18">{{$t('MY_Project')}}</span>
          </a>        
       
@@ -296,9 +299,9 @@
   </router-link></li>
 								<li><router-link :to="{name:'constrtenders'}"><i class="fa fa-angle-right"></i>{{$t('construcion_company')}}</router-link></li>
 								<li><router-link :to="{name:'HvacTenders'}"><i class="fa fa-angle-right"></i>
-                {{$t('interior_companies')}}</router-link></li>
+                {{$t('HVAC_companies')}}</router-link></li>
 	<li><router-link :to="{name:'InteriorTenders'}"><i class="fa fa-angle-right"></i>
-  {{$t('HVAC_companies')}}></router-link></li>
+  {{$t('interior_companies')}}></router-link></li>
 						
   <li><router-link :to="{name:'StoneTenders'}"><i class="fa fa-angle-right"></i>{{$t('Stone_companies')}}</router-link></li>
 
@@ -320,10 +323,11 @@
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" >
           <!-- <i class="far fa-bell"></i> -->
-         <div class="badge badge-primary text-uppercase rounded-circle " style="font-size:18px; width:36px; height:36px;    display: flex;
+         <div class=" text-uppercase rounded-circle " style="font-size:18px; width:36px; height:36px; 
+            display: flex;
     align-items: center;
     justify-content: center;">
-          <span>{{user.name.substr(0,1 )}}</span>
+          <span class="mb-2"><img src="img/user.png" style="width:100%" alt="#"></span>
          </div>
            
         </a>
@@ -414,7 +418,7 @@
 
 <div class="home-section">
 
- <a class="nav-link" href="\"><i class="fa fa-eye"></i> {{$t('home')}}</a>
+
 
 
   <!-- {{windowWidth}}

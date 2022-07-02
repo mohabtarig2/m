@@ -60,7 +60,7 @@
 
 <div class="row">
     <div class="col-md-6 col-sm-12">
-              <div class="font-weight-bold h6 mt-3  theme-color">{{$t('Choose_the_type_of_villa')}}</div>
+              <div class="font-weight-bold h6 mt-3  text-dark">{{$t('Choose_the_type_of_villa')}}</div>
 
               <div class="form-group  ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -82,7 +82,7 @@
 
     <div class="col-md-6 col-sm-12">
 
- <div class="font-weight-bold h6 mt-3  theme-color">{{$t('floors')}}</div>
+ <div class="font-weight-bold h6 mt-3  text-dark">{{$t('floors')}}</div>
 
               <div class="form-group ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -116,7 +116,7 @@
 <div class="row">
   
 <div class="col-md-6 col-sm-12">
-                <div class="font-weight-bold h6 mt-3  theme-color">  {{$t('Do_you_want_basement')}}</div>
+                <div class="font-weight-bold h6 mt-3  text-dark">  {{$t('Do_you_want_basement')}}</div>
 
  <div class="form-group">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -136,22 +136,22 @@
 
 </div>
 <div class="col-md-6 col-sm-12">
-                <div class="font-weight-bold h6 mt-3  theme-color">     {{$t('villa_design_shape')}}</div>
+                <div class="font-weight-bold h6 mt-3  text-dark">     {{$t('villa_design_shape')}}</div>
 
  <div class="form-group shapeVilla"  style="display: flex;">
-   <h4  @click="VillaShape('H')" class="btn btn-outline-success" :class="{'checked btn btn-success':square=='H'}">
+   <h4  @click="VillaShape('H')" class="btn btn-outline-dark" :class="{'checked btn btn-success':square=='H'}">
      H
      
    </h4>
 
-   <h4 @click="VillaShape('L')" class="btn btn-outline-success" :class="{'checked btn btn-success':square=='L'}"> L</h4>
-   <h4 @click="VillaShape('U')" class="btn btn-outline-success" :class="{'checked btn btn-success':square=='U'}"> U</h4>
-   <h4 @click="VillaShape('F')" class="btn btn-outline-success" :class="{'checked btn btn-success':square=='F'}"> F</h4>
-   <h4 @click="VillaShape('square')" class="btn btn-outline-success" :class="{'checked btn btn-success ':square=='square'}">
+   <h4 @click="VillaShape('L')" class="btn btn-outline-dark" :class="{'checked btn btn-success':square=='L'}"> L</h4>
+   <h4 @click="VillaShape('U')" class="btn btn-outline-dark" :class="{'checked btn btn-success':square=='U'}"> U</h4>
+   <h4 @click="VillaShape('F')" class="btn btn-outline-dark" :class="{'checked btn btn-success':square=='F'}"> F</h4>
+   <h4 @click="VillaShape('square')" class="btn btn-outline-dark" :class="{'checked btn btn-success ':square=='square'}">
    <span :class="{'checked  btn btn-success':square=='4'}" class="fa fa-square"  ></span>
    </h4>
 
-    <h4 @click="VillaShape('other')" class="btn btn-outline-success" 
+    <h4 @click="VillaShape('other')" class="btn btn-outline-dark" 
     :class="{'checked btn btn-success':square=='other'}">{{$t('other')}}</h4>
 
 
@@ -170,7 +170,7 @@
   <div class="col-12">
 <div class="single-property-details"  :dir="$t('directions')" :class="$t('text_align')">
 <label>
-  <span class="theme-color">{{$t('finshing')}}</span>
+  <span class="text-dark">{{$t('finshing')}}</span>
         <div class="nice-select form-control" :class="[open_select_finshing
          ,{'is-valid':finshing_selected !=''}
          ]"
@@ -212,7 +212,7 @@
                   <div class="col-6  " >
                     <div class="form-group">
                     <label for="customRange3">
-                       <span class=" theme-color font-weight-bold count"> {{$t('count')}} {{$t('master_rooms')}}</span>
+                       <span class=" text-dark font-weight-bold count"> {{$t('count')}} {{$t('master_rooms')}}</span>
                         </label>
                     <input
                       type="number"
@@ -244,7 +244,7 @@
                   <div class="col-6 ">
                     <div class="form-group">
                     <label for="customRange3">
-                         <span class=" theme-color font-weight-bold count">
+                         <span class=" text-dark font-weight-bold count">
                     {{$t('count')}}  {{$t('bed_rooms')}} </span></label>
                     <input
                       type="number"
@@ -271,7 +271,7 @@
 
                 <div class="row">
                   <div class="form-group col-4 ">
-                    <label for="customRange3"> <span class="h6 theme-color font-weight-bold count"> 
+                    <label for="customRange3"> <span class="h6 text-dark font-weight-bold count"> 
                      {{$t('count')}} {{$t('living_room')}}
                     </span></label>
                     <input
@@ -299,7 +299,7 @@
                   </div>
 
                   <div class=" form-group col-4">
-                    <label for="customRange3"> <span class="h6 theme-color font-weight-bold count">
+                    <label for="customRange3"> <span class="h6 text-dark font-weight-bold count">
                      {{$t('count')}}  {{$t('majlis')}}
                         </span>
                         </label>
@@ -326,7 +326,7 @@
                   </div>
                   <div class="form-group col-4">
                     <label for="customRange3">
-                         <span class="h6 theme-color font-weight-bold count">
+                         <span class="h6 text-dark font-weight-bold count">
                         {{$t('count')}} {{$t('kitchens')}}
                          </span>
                         </label>
@@ -355,7 +355,7 @@
 
                 <div class="row">
                   <div class=" form-group   col-6 ">
-                    <label for="customRange3"> <span class="h6 theme-color font-weight-bold count">
+                    <label for="customRange3"> <span class="h6 text-dark font-weight-bold count">
                       {{$t('count')}} {{$t('dining')}}
                         </span>
                          </label>
@@ -382,7 +382,7 @@
                   </div>
                   <div class=" form-group col-6 ">
                     <label for="customRange3">
-                         <span class="h6 theme-color font-weight-bold count">
+                         <span class="h6 text-dark font-weight-bold count">
                        {{$t('count')}} {{$t('bathroom')}}
                          </span>
                         </label>
@@ -411,7 +411,7 @@
                 </div>
 
 
-                <div class="h6 font-weight-bold  theme-color">    
+                <div class="h6 font-weight-bold  text-dark">    
                    
                     {{$t('Service_room_distribution_site')}}
                     <span class="text-muted">
@@ -495,11 +495,11 @@
 <input type="range" id="points" name="points" min="5000" max="5000" v-model="Maxval"> -->
 
                 <div class="budget">
-                  <div class="h3 mb-3 theme-color font-weight-bold">{{$t('budget')}}</div>
+                  <div class="h3 mb-3 text-dark font-weight-bold">{{$t('budget')}}</div>
                   <div class="row">
                     <div class="  col-md-6 col-sm-12"  dir="ltr">
                       <div class="form-group mb-2">
-                        <label  >{{$t('from')}}</label>
+                        <label  >{{$t('from')}} : </label>
 
                         <input
                         
@@ -528,7 +528,7 @@
                       </div>
                     </div>
                     <div class="  form-group col-md-6 col-sm-12" dir="ltr">
-                      <label >{{$t('to')}}</label>
+                      <label >{{$t('to')}} : </label>
                       <div class="input-group mb-2">
                         <input
                       
@@ -568,7 +568,7 @@
 <div class="col-12">
 <div class="single-property-details">
 <label>
-     <span class="theme-color">{{$t('Emirates')}}</span>
+     <span class="text-dark">{{$t('Emirates')}}</span>
         <div class="nice-select form-control "
          :class="[open_select,{'is-valid':emirates_selected !=''}]" tabindex="0" @click="open('emirates')">
             <span class="current">
@@ -615,7 +615,7 @@
 
                    <div class=" form-group mt-3">
                   <label for="exampleFormControlTextarea1 ">
-                    <span class="theme-color">{{$t('notes')}}</span></label>
+                    <span class="text-dark">{{$t('notes')}}</span></label>
                   <textarea
                   style="background:#fff"
                     class="form-control"
@@ -642,7 +642,7 @@
             {{$t('write_desc')}}
              </div>
              <div class="form-group">
-    <p class="theme-color  font-weight-bold">      {{$t('mobile')}}</p>
+    <p class="text-dark  font-weight-bold">      {{$t('mobile')}}</p>
 
   <input type="text" class="form-control" placeholder="(971) XXX-XXXXXX" v-model="phone" dir="ltr"
   
@@ -656,7 +656,7 @@
              </div>
 
 <div class="form-group">
-    <p class="theme-color  font-weight-bold">        {{$t('whatsapp')}}</p>
+    <p class="text-dark  font-weight-bold">        {{$t('whatsapp')}}</p>
 
   <input type="text" class="form-control" placeholder="(971) XXX-XXXXXX" v-model="whatsapp" dir="ltr" 
   :class="[{'is-invalid':CheckLWhatsapp=='false'}, {'is-valid':CheckLWhatsapp=='true'}]">
@@ -701,7 +701,7 @@
 </div> -->
 
             <div class=" form-group" dir="rtl">
-            <p class="font-weight-bold theme-color"> {{$t('build_by')}}</p>
+            <p class="font-weight-bold text-dark"> {{$t('build_by')}}</p>
 
         <label class="checkbox d-bolck" :dir="$t('directions')" >
             <input type="radio"  value="1" name="typeBuild"  v-model="typeBuild">
@@ -718,7 +718,7 @@
             
 
             <div class="form-group">
-                <div class=" font-weight-bold theme-color" dir="rtl">
+                <div class=" font-weight-bold text-dark" dir="rtl">
 {{$t('Mention_the_loan_amount')}}
 <sup class="text-danger"> ({{$t('optional')}})</sup>
                 </div>
@@ -728,7 +728,7 @@
 
 
         <div class=" form-group" dir="rtl">
-<p class=" font-weight-bold theme-color">  {{$t('Grant_Provider')}} </p>
+<p class=" font-weight-bold text-dark">  {{$t('Grant_Provider')}} </p>
 
              
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -767,7 +767,7 @@
 
         <div class="">
 
-    <p class="theme-color font-weight-bold">{{$t('Grant_Funding_Bank')}} 
+    <p class="text-dark font-weight-bold">{{$t('Grant_Funding_Bank')}} 
 <sup class="text-danger"> ({{$t('optional')}})</sup>
     </p>
 <div class="form-group">
@@ -777,7 +777,7 @@
 
             
             <div class="form-group" v-show="!hidden">
-                <div class=" font-weight-bold theme-color" dir="rtl">
+                <div class=" font-weight-bold text-dark" dir="rtl">
 {{$t('Approximate_added_amount_Financing_method')}}
 <sup class="text-danger"> ({{$t('optional')}})</sup>
                 </div>
@@ -790,7 +790,7 @@
   
 
 
-                             <span class="theme-color">
+                             <span class="text-dark">
                                  {{$t('Attach_examples')}}
                                   </span>
                                   <small> ({{$t('optional')}}) </small>

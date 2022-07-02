@@ -396,7 +396,9 @@
                                             </li>
 											<span class="visible-xs">
 											<li class="visible-xs"><b>
-												{{offer.tab}}</b><span><i class="fas fa-arrows-alt"></i></span></li>
+												{{offer.floors}}</b><span><i class="material-symbols-outlined" style="font-size: 20px;">
+location_city
+</i></span></li>
 											</span>
 										</ul>
 									</div>
@@ -407,14 +409,16 @@
 											<img :src="company.avatar" alt="#" class="rounded-circle visible-xs	" width="40" height="40">
 											<div class="property-user-title">
 												<p class="at-title mb-0 hs-6">
-													<router-link :to="{name:'CompanyProfile',params:{id:company.id,type:'consulting'}}">
+													<router-link 
+													:to="{name:'CompanyProfile',params:{id:company.id,type:'consulting'}}">
 														{{company.name}}</router-link>
 														</p>
-												<span>استشارات هندسية</span>
+												<span>{{$t('consulting')}}</span>
 											</div>
 										</div>
 										<div class="property-user-price">
-											<small><p>{{offer.price}}</p></small>
+											<small><p><router-link :to="{name:'pageDetails',params:{id:offer.id}}">
+												{{offer.price}}</router-link></p></small>
 										</div>
 									</div>
 								</div>
@@ -491,7 +495,12 @@
                                             <span><i class="bx bxs-bath"></i></span>
                                             </a>
                                             </li>
-											<li class="visible-xs"><b>{{offer.tab}}</b><span><i class="fas fa-arrows-alt"></i></span></li>
+											<li class="visible-xs"><b>
+												{{offer.floors}}</b><i class="material-symbols-outlined" style="font-size: 20px;">
+location_city
+</i></li>
+
+												
 										</ul>
 									</div>
 									<!-- Property User -->
@@ -506,7 +515,10 @@
 											</div>
 										</div>
 										<div class="property-user-price">
-											<small><p>{{offer.price}}</p></small>
+											<small><p>	<router-link :to="{name:'pageDetails',params:{id:offer.id}}">
+
+												{{offer.price}}
+												</router-link></p></small>
 										</div>
 									</div>
 								</div>
@@ -570,7 +582,8 @@
 								</div>
 								<!-- Single Recent Content -->
 								<div class="s-property-content">
-									<h3 class="srp-title hs-4"><router-link :to="{name:'pageDetails',params:{id:offer.id}}">{{offer.title}}</router-link></h3>
+									<h3 class="srp-title hs-4">
+										<router-link :to="{name:'pageDetails',params:{id:offer.id}}">{{offer.title}}</router-link></h3>
 									<p class="property-location mb-0"><i class="fa fa-map-marker-alt"></i>
                                     <all-uae :emirates="offer.Emirates"></all-uae></p>
 									<div class="single-r-property-bed">
@@ -586,7 +599,10 @@
                                             </a>
                                             </li>
 
-											<li class="visible-xs"><b>{{offer.tab}}</b><span><i class="fas fa-arrows-alt"></i></span></li>
+											<li class="visible-xs"><b>{{offer.floors}}</b>
+											<span><i class="material-symbols-outlined" style="font-size: 20px;">
+location_city
+</i></span></li>
 										</ul>
 									</div>
 									<!-- Property User -->
@@ -596,13 +612,15 @@
 											<img :src="company.avatar" alt="#" class="rounded-circle" width="40" height="40">
 											<div class="property-user-title">
 												<p class="at-title mb-0 hs-6">
-													<router-link :to="{name:'CompanyProfile',params:{id:company.id,type:'consulting'}}">
+													<router-link 
+													:to="{name:'CompanyProfile',params:{id:company.id,type:'consulting'}}">
 														{{company.name}}</router-link></p>
 												<span>{{$t('company')}}</span>
 											</div>
 										</div>
 										<div class="property-user-price">
-											<small><p>{{offer.price}}</p></small>
+											<small><p>	<router-link :to="{name:'pageDetails',params:{id:offer.id}}">
+												{{offer.price}}</router-link></p></small>
 										</div>
 									</div>
 								</div>

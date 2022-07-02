@@ -647,7 +647,7 @@ location_city
 					
 
                         <div class="single-p-slider" v-for="offer , index in smilirs " :key="index">
-<div class="single-recent-property">
+<div class="single-recent-property" v-if="ads_id!=offer.id">
 								<div class="single-r-property-top">
 									<!-- Recent Property Img -->
 									<div class="single-r-property-img" v-for="image , i in offer.villa_image" :key="i">
@@ -722,7 +722,7 @@ location_city
 											</div>
 										</div>
 										<div class="property-user-price">
-											<small><p>{{offer.price}}</p></small>
+											<small><router-link :to="{name:'pageDetails',params:{id:offer.id}}"><p>{{offer.price}}</p></router-link></small>
 										</div>
 									</div>
 								</div>

@@ -1,11 +1,11 @@
 <template>
 <div>
-<h2 class="text-center">{{$t('stone_Tender')}}</h2>
-<div class="links-requests mb-3">
-<router-link :to="{name:'StoneTenders'}" class="theme-color mr-3" > {{$t('stone_Tender')}}</router-link>
-<router-link :to="{name:'requestStone'}" class="theme-color">{{$t('FollowUp_Request')}}</router-link>
+<h2 class="text-center">{{$t('stone')}}</h2>
+<div class="links-requests p-descrip-box  mb-3">
+<router-link :to="{name:'StoneTenders'}" class="text-dark mr-3" > {{$t('tenders')}}</router-link>
+<router-link :to="{name:'requestStone'}" class="text-dark">{{$t('FollowUp_Request')}}</router-link>
 </div>
-
+<div v-if="tenders.length>0">
  <div class="s-blog-sidebar mb-3" v-for="(tendercr,index) in tenders" :key="index">
 
 
@@ -33,6 +33,10 @@
                 <button class="  theme-btn float-right" @click="ToredictConsle(tendercr.id)">{{$t('more')}}</button>
 
        </div>
+</div>
+</div>
+<div v-else>
+<b>{{$t('there_is_no_Tender')}}</b>
 </div>
 
 </div>
@@ -83,9 +87,15 @@ created() {
  a.router-link-exact-active{
     font-weight: bold;
     text-decoration: none;
-    background: #3454d1 !important;
-    padding: 8px;
-    color: #ffffff !important;
-    border-radius: 11px;
+    color: #3454d1 !important;
+ 
+ }
+ @media only screen and (max-width: 767px)
+ {
+
+.p-descrip-box {
+    padding: 7px !important;
+    font-size: 14px;
+}
  }
 </style>

@@ -5,11 +5,11 @@
   <div>
 
 <h2 class="text-center">{{$t('Flow_Stone_tender')}}</h2>
-<div class="links-requests mb-3">
-<router-link :to="{name:'StoneTenders'}" class="theme-color mr-3" > {{$t('stone_Tender')}}</router-link>
-<router-link :to="{name:'requestStone'}" class="theme-color">{{$t('FollowUp_Request')}}</router-link>
+<div class="links-requests p-descrip-box mb-3">
+<router-link :to="{name:'StoneTenders'}" class="text-dark mr-3" > {{$t('stone_Tender')}}</router-link>
+<router-link :to="{name:'requestStone'}" class="text-dark">{{$t('FollowUp_Request')}}</router-link>
 </div>
-
+<div v-if="data.length">
    <div class="s-blog-sidebar mt-3" v-for="request , index in data" :key="index">
 
 <a @click="requestdirect(request.type,request.id)">
@@ -36,6 +36,10 @@
 </a>
 
      </div>
+</div>
+<div v-else>
+<b>{{$t('there_is_no_Request')}}</b>
+</div>
   </div>
 </template>
 
@@ -99,9 +103,15 @@ created() {
  a.router-link-exact-active{
     font-weight: bold;
     text-decoration: none;
-    background: #3454d1 !important;
-    padding: 8px;
-    color: #ffffff !important;
-    border-radius: 11px;
+    color: #3454d1 !important;
+ 
+ }
+ @media only screen and (max-width: 767px)
+ {
+
+.p-descrip-box {
+    padding: 7px !important;
+    font-size: 14px;
+}
  }
 </style>

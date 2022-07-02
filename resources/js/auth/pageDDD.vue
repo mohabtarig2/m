@@ -139,8 +139,10 @@ location_city
 									</router-link>
 								</div>
 								<div class="property-user-price">
-									<p>{{offer.price}}</p>
+									<router-link  :to="{name:'pageDetails',params:{id:offer.id}}"><p>{{offer.price}}</p></router-link>
+
 								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -229,7 +231,8 @@ location_city
 									</router-link>
 								</div>
 								<div class="property-user-price">
-									<p>{{offer.price}}</p>
+									<router-link  :to="{name:'pageDetails',params:{id:offer.id}}"><p>{{offer.price}}</p></router-link>
+
 								</div>
 							</div>
 						</div>
