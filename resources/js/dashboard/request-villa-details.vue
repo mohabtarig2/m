@@ -74,7 +74,7 @@
                 </div>
   
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-lg-8 col-md-12">
 <div class="p-descrip-box">
     <h3> الوصف</h3>
 {{request.Description}}
@@ -2385,7 +2385,7 @@ request.offer.offersfiles.servicesPath && request.offer.offersfiles.StructurePat
 
         </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-8 col-md-12">
     <div class="p-descrip-box">
        <h3> تفاصيل العرض</h3>
 

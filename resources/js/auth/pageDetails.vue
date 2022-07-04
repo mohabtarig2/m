@@ -497,14 +497,14 @@ location_city
 						<h4 class="pr-d-title">{{$t('price_include')}}</h4>
 							
 						<div class="row" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
-							<div class="col-xl-3 col-md-4 col-12">{{$t('Consultant_fee')}} 
+							<div class="col-xl-3 col-md-3 col-12">{{$t('Consultant_fee')}} 
             
                   <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
                    :class="{'text-muted':offer.Consultant_fee!='true',
                    'text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar' }"></i>
               </div>
-					<div class="col-xl-3 col-md-4 col-12">
+					<div class="col-xl-3 col-md-3 col-12">
           
             {{$t('CostGov')}}<i class="mr-2 ml-2 mt-1 mr-2 ml-2 mt-1 fas fa-check-circle" :class="{
               'text-muted':offer.CostGov!='true','theme-color':offer.CostGov=='true',
@@ -512,7 +512,7 @@ location_city
                    'text-right float-right ':lang=='ar' }" ></i>
               </div>
 
-							<div class="col-xl-3 col-md-4 col-12">
+							<div class="col-xl-3 col-md-3 col-12">
                 
                 <span  >{{$t('gypsum')}}</span>
               <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
@@ -522,7 +522,7 @@ location_city
 
 					
 
-	<div class="col-xl-3 col-md-4 col-12">{{$t('conditioning')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
+	<div class="col-xl-3 col-md-3 col-12">{{$t('conditioning')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
   :class="{'text-muted':offer.conditioning!='true', 'theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
 
@@ -534,20 +534,20 @@ location_city
           
 						<div class="row mt-1" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
                           
-						   <div class="col-xl-3 col-md-4 col-12">{{$t('electric_pendants')}}
+						   <div class="col-xl-3 col-md-3 col-12">{{$t('electric_pendants')}}
                 <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
                  :class="{'text-muted':offer.electric_pendants!='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
 
-                            <div class="col-xl-3 col-md-4 col-12">
+                            <div class="col-xl-3 col-md-3 col-12">
                               {{$t('tabCost')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
                                :class="{'text-muted':offer.tabCost!='true','theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
-							<div class="col-xl-3 col-md-4 col-12">
+							<div class="col-xl-3 col-md-3 col-12">
                 {{$t('Bedroom_wardrobes')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
                  :class="{'text-muted':offer.Bedroom_wardrobes!='true','theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
-							<div class="col-xl-3 col-md-4 col-12">
+							<div class="col-xl-3 col-md-3 col-12">
                 {{$t('Kitchen_Cabinets')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
                 :class="{'text-muted':offer.Kitchen_Cabinets!='true','theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
@@ -556,28 +556,26 @@ location_city
               
 						<div class="row mt-1" :class="{'text-right  ':lang=='ar','text-left ':lang=='en'}">
 
-              		<div class="col-xl-3 col-md-4 col-12">{{$t('the_fence')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
+              		<div class="col-xl-3 col-md-3 col-12">{{$t('the_fence')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
                :class="{'text-muted':offer.the_fence!='true', 'theme-color':offer.the_fence=='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i>
                    
               </div>
 
-					<div class="col-xl-3 col-md-4 col-12">{{$t('the_elevator')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.the_elevator!='true','text-left float-left ':lang=='en',
+					<div class="col-xl-3 col-md-3 col-12">{{$t('the_elevator')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.the_elevator!='true','text-left float-left ':lang=='en',
                    ' float-right ':lang=='ar'}"></i></div>
-					<div class="col-xl-3 col-md-4 col-12">{{$t('interior_decoration')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.interior_decoration!='true','text-left float-left ':lang=='en',
+					<div class="col-xl-3 col-md-3 col-12">{{$t('interior_decoration')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.interior_decoration!='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
-                    <div class="col-xl-3 col-md-4 col-12">{{$t('garden_design')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.garden_design!='true',
+                    <div class="col-xl-3 col-md-3 col-12">{{$t('garden_design')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.garden_design!='true',
                     'text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
 					
 
 						</div>
-							<div class="row mt-1" :class="{'text-right  ':lang=='ar','text-left ':lang=='en'}">
-                <div class="offset-md-10">
-
-</div>
+							<div class="row mt-1" :class="{'text-right  ':lang=='ar','text-left ':lang=='en'}" :dir="$t('directions')">
+  
     
-<div class="col-xl-2 col-md-2 col-12">{{$t('pelvis')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
+<div class="col-xl-3 col-md-3 col-12" >{{$t('pelvis')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
 :class="{'text-muted':offer.pelvis!='true','text-muted':offer.pelvis=='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
             </div>
@@ -652,7 +650,7 @@ location_city
 									<!-- Recent Property Img -->
 									<div class="single-r-property-img" v-for="image , i in offer.villa_image" :key="i">
 									<router-link :to="{name:'pageDetails',params:{id:offer.id}}">	
-										<img :src="image.path" alt="#" v-if="i==0" class="image_villa">
+										<img :src="image.path" alt="#" v-if="i==0" class="">
 									</router-link>
 									</div>
 									<div class="property-for-sale visible-xs">
@@ -722,7 +720,8 @@ location_city
 											</div>
 										</div>
 										<div class="property-user-price">
-											<small><router-link :to="{name:'pageDetails',params:{id:offer.id}}"><p>{{offer.price}}</p></router-link></small>
+											<small><router-link :to="{name:'pageDetails',params:{id:offer.id}}"><p>
+                        {{offer.price}}</p></router-link></small>
 										</div>
 									</div>
 								</div>
@@ -1892,4 +1891,19 @@ button.close {
     outline: 0;
     padding: 0px !important;
     }
+</style>
+
+<style scoped>
+   
+
+    @media only screen and (min-width: 768px) and (max-width: 991px)
+{
+  .p-descrip-box
+{
+   font-size: 13px;
+    
+
+}
+}
+
 </style>

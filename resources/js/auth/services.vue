@@ -53,7 +53,7 @@
 			<div class="row" v-for="row in rows" :key="'row'+row">
 		
 				
-					<div  class="col-lg-4 col-sm-12 col-md-6 " v-for="(ads,column) in OfferRow(row)" :key="'row'+row+column">
+					<div  class="col-lg-4 col-sm-12 col-md-4 " v-for="(ads,column) in OfferRow(row)" :key="'row'+row+column">
 					<div class="blog-slider" >
 						<!-- Single Blog -->
 						<div class="single-blog">
@@ -76,8 +76,12 @@
 								</div>
 								<p class="blog-title fs-18">
 									<router-link :to="{name:'CompanyAdsDetails',params:{type:type,id:ads.id}}">
-									
-									{{ads.description.substr(0,70 )}}...
+									<span v-if="ads.description.length>70">
+									{{ads.description.substr(0,71 )}}...
+									</span>
+									<span v-else>
+										{{ads.description.substr(0,70 )}}
+									</span>
 									</router-link>
 									</p> 
 								<div class="blog-admin"  >
@@ -375,10 +379,7 @@ methods:{
 
 <style lang="scss">
 // @import "lesshat";
-.blog-img img {
-    width: 370px !important;
-    height: 197px !important;
-}
+
 #ad-pop-img {
 	position:relative;
 	bottom:0;
@@ -426,6 +427,18 @@ methods:{
 	}
 }
 
+</style>
+<style scoped>
+@media only screen and (min-width: 768px) and (max-width: 991px)
+{
+.blog-img img {
+    width: 370px !important;
+    height: 130px !important;
+}
+.blog-content .blog-title{
+	font-size: 12px;
+}
+}
 </style>
 
 

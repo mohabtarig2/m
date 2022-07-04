@@ -52,7 +52,7 @@
 
     <div class="container" :dir="$t('directions')" :class="$t('text_align')">
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-lg-7  col-md-12">
           <stages :dir="$t('directions')" :class="$t('text_align')"
             v-for="(tender, index) in tenders"
             :key="index"
@@ -700,7 +700,7 @@ v-model="tab"
           </div>
         </div>
 
-        <div class="col-md-5">
+        <div class="col-lg-5 col-md-12">
           <partsconsl
             v-for="(tender, index) in tenders"
             :key="index"

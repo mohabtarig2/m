@@ -1111,7 +1111,7 @@ v-show=" offer.result!=null  " ><i class="bx bxs-star" ></i>     اضف تقيي
       <!-- <stages :stage="confirm.tender.stage" ></stages> -->
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-lg-6 col-md-12">
 
   <div class="p-descrip-box mt-4">
            <div class=" h5 mb-3 font-weight-bold theme-color">{{$t('description')}} </div>
@@ -2714,7 +2714,7 @@ v-show=" offer.result!=null  " disabled ><i class="fa fa-check-circle-o text-lig
 </div>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-lg-6 col-md-12">
 <partsconsl v-bind="confirm.tender" ></partsconsl>
 
 <div class="p-descrip-box">

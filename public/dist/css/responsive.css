@@ -146,7 +146,8 @@ Version: 1.0.0
     height: 197px !important;
 }
 .blog-img img {
-    height: 197px !important;
+    width: 370px !important;
+    height: 130px !important;
 }
 .s-property-content {
     padding: 16px 15px !important;
@@ -2012,6 +2013,7 @@ Version: 1.0.0
 
 
 @media only screen and (max-width: 1500px) {
+
 	.hero-thumb-wrap {
 		right: 50px !important;
 		--thumb-size: 40px !important;

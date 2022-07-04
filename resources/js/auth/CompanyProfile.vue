@@ -483,3 +483,17 @@ methods:{
 	height:  500px !important;
 }
 </style>
+
+<style scoped>
+@media only screen and (min-width: 768px) and (max-width: 991px)
+{
+.blog-img img {
+    width: 370px !important;
+    height: 130px !important;
+}
+.blog-content .blog-title{
+	font-size: 12px;
+}
+}
+</style>
+</style>

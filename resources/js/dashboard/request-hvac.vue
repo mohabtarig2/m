@@ -6,8 +6,8 @@
       
 <h2 class="text-center">{{$t('hvac')}}</h2>
 <div class="links-requests p-descrip-box mb-3">
-<router-link :to="{name:'HvacTenders'}" class="text-dark mr-3" > {{$t('tenders')}}</router-link>
-<router-link :to="{name:'requestHvac'}" class="text-dark">{{$t('FollowUp_Request')}}</router-link>
+<router-link :to="{name:'HvacTenders'}" class="text-dark mr-1 ml-1  mr-3" > {{$t('tenders')}}</router-link>
+<router-link :to="{name:'requestHvac'}" class="text-dark mr-1 ml-1 ">{{$t('FollowUp_Request')}}</router-link>
 </div>
 <div v-if="data.length>0">
    <div class="p-descrip-box mt-3" v-for="request , index in data" :key="index">
