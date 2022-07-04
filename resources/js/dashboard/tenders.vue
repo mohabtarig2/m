@@ -3,7 +3,7 @@
             <div class="container mt-5  ">
 <h1 class="main-color text-center mb-3 mt-5"> {{$t('e_tenders')}} </h1>
                     <div class="row">
-                        <div class="col-md-4 mb-2 ">
+                        <div class="col-md-6 col-lg-4 mb-2 ">
                             <router-link :to="{name:'consultances'}">
 
                                       		<div class="single-process">
@@ -21,7 +21,7 @@
                             </router-link>
 
                         </div>
-                        <div class="col-md-4 mb-2 ">
+                        <div class="col-md-6 col-lg-4 mb-2 ">
                             <router-link :to="{name:'constructionTender'}">
 
 
@@ -40,7 +40,7 @@
 
                         </div>
 
-                              <div class="col-md-4 mb-3 ">
+                              <div class="col-md-6 col-lg-4 mb-3 ">
                     <router-link :to="{name:'hvac'}">
 
                                       	<div class="single-process">
@@ -60,12 +60,11 @@
                         </div>
 
 
-                    </div>
 
 
 
-                    <div class="row">
-                          <div class="col-md-4 mb-3 ">
+                    
+                          <div class="col-md-6 col-lg-4 mb-3 ">
 
                                <router-link :to="{name:'StoneTender'}">
 
@@ -85,7 +84,7 @@
                                </router-link>
                         </div>
 
-                        <div class="col-md-4 mb-2 ">
+                        <div class="col-md-6 col-lg-4 mb-2 ">
 
                  <router-link :to="{name:'interiorTender'}">
 
@@ -103,7 +102,7 @@
                  </router-link>
                         </div>
 
-                        <div class="col-md-4 mb-3 ">
+                        <div class="col-md-6 col-lg-4 mb-3 ">
 
 
 

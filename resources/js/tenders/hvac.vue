@@ -1,10 +1,10 @@
 <template>
 <div class="container" :dir="$t('directions')" :class="$t('text_align')">
     <div class="row  mt-4">
-               <div class=" col-md-4 col-sm-12">
+               <div class=" col-lg-4 col-md-12">
 <conditions></conditions>
   </div>
-        <div class="col-md-8 col-sm-12 ">
+        <div class="col-lg-8 col-md-12 ">
 
 
 
