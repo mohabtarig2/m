@@ -24,7 +24,7 @@
         <div class="col-md-12 col-lg-4">
         <conditions></conditions>
       </div>
-      <div class="col-md-12 col-lg-6">
+      <div class="col-md-12 col-lg-8">
         <div class="contact-form">
           <div class="card-body">
             <form @submit.prevent="formSubmit" enctype="multipart/form-data" class="c-form-inner">

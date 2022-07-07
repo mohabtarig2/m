@@ -608,6 +608,7 @@
     "Current_Password":"كلمة السر الحالية ",
     "New_password":"كلمة السر الجديدة ",
     "confirm_New_password":"تأكيد كلمة السر الجديدة  ",
+    "password_does_not_match":"كلمة السر غير متطابقة",
 
     "Licence":"رخصة",
     "upload":"تحميل",

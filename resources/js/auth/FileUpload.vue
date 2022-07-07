@@ -9,7 +9,7 @@
 
 
 
-                <div class="c-form-inner mt-5 mb-5" v-if="datas==''">
+                <div class="c-form-inner mt-5 mb-5" >
                      <h2 class="text-center mb-5 ">ارفق شعار و  رخصة التجارية للشركة </h2>
           <!-- <ul class="progressbar">
               <li class="active">تم تسجيل حساب</li>
