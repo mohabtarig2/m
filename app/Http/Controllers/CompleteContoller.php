@@ -12,7 +12,72 @@ use Illuminate\Support\Facades\Auth;
 class CompleteContoller extends Controller
 {
 
-    public function thisPhoneIsAvailble(Request $request){
+    public function uploadCompanyAvatar(Request $request){
+        $avatar= $request->file('avatar');
+        
+
+        $namePass = 'amb_avatar'.time().'_'.$avatar->getClientOriginalName();
+        // $file_extension_pass = $imagePassport= $request->file('avatar');
+        
+        $file_path_avatar = $avatar->storeAs('assets/userAvatar', $namePass, 'public');
+        $avatar->move(public_path('assets/userAvatar'), $namePass);
+
+       return $file_path_avatar;
+     
+        
+    }
+
+    public function UploadCompanyMunici(Request $request){
+        $Munici= $request->file('Munici');
+        
+
+        $namePass = 'amb_Munici'.time().'_'.$Munici->getClientOriginalName();
+        // $file_extension_pass = $imagePassport= $request->file('avatar');
+        
+        $file_path_Munici = $Munici->storeAs('municipality', $namePass, 'public');
+        $Munici->move(public_path('municipality'), $namePass);
+
+       return $file_path_Munici;
+     
+        
+    }
+
+    public function UploadCompanylicence(Request $request){
+        $licence= $request->file('licence');
+        
+
+        $namePass = 'amb_licence'.time().'_'.$licence->getClientOriginalName();
+        // $file_extension_pass = $imagePassport= $request->file('licence');
+        
+        $file_path_licence = $licence->storeAs('licence', $namePass, 'public');
+        $licence->move(public_path('licence'), $namePass);
+
+       return $file_path_licence;
+     
+        
+    }
+
+    public function UploadCompanyAchive(Request $request){
+        $Achive= $request->file('Achive');
+        
+
+        $namePass = 'amb_Achive'.time().'_'.$Achive->getClientOriginalName();
+        // $file_extension_pass = $imagePassport= $request->file('Achive');
+        
+        $file_path_Achive = $Achive->storeAs('Achive', $namePass, 'public');
+        $Achive->move(public_path('Achive'), $namePass);
+
+       return $file_path_Achive;
+     
+        
+    }
+
+    
+
+    
+    
+
+    public function thisPhoneIsAvailble(Request $request){  
 
       $companies =  companies::where('phone',$request->mobile)->get();
       if($companies->count() == 1){

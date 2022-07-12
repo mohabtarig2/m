@@ -139,6 +139,15 @@ Route::post('complete','CompleteContoller@complete');
 Route::post('thisPhoneIsAvailble','CompleteContoller@thisPhoneIsAvailble');
 Route::get('Getcomplete','CompleteContoller@Getcomplete');
 
+Route::post('UploadCompanyAvatar','CompleteContoller@UploadCompanyAvatar');
+Route::post('UploadCompanyMunici','CompleteContoller@UploadCompanyMunici');
+Route::post('UploadCompanylicence','CompleteContoller@UploadCompanylicence');
+Route::post('UploadCompanyAchive','CompleteContoller@UploadCompanyAchive');
+
+
+
+
+
 Route::get('getlicence','CompleteContoller@getlicence');
 
 
@@ -566,7 +575,9 @@ Route::get('AdsOfferCompany/{type}/{id}',"CompanyController@AdsOfferCompany");
 Route::post('service/ads/construction', 'ServicesAdsController@insertAds');
 Route::post('service/ads/hvac', 'ServicesAdsController@inserthvacAds');
 Route::post('service/ads/stone', 'ServicesAdsController@insertStoneAds');
+Route::post('service/ads/more', 'ServicesAdsController@insertMoreAds');
 Route::post('service/ads/interior', 'ServicesAdsController@insertInteriorAds');
+
 
 Route::get('/service/ads/all', 'ServicesAdsController@MYADSSERVICES');
 

@@ -15,6 +15,7 @@
                                 {{type=="hvac" ? $t('HVAC_companies'):''}}
                                 {{type=="stone" ? $t('Stone_companies'):''}}
                                 {{type=="interior" ? $t('interior_companies'):''}}
+                                {{type=="more" ? $t('Miscellaneous'):''}}
 							 </h1>
 						<ul class="breadcrumbs-menu list-none">
 						
@@ -38,7 +39,9 @@
                                 {{type=="hvac" ? $t('HVAC_companies'):''}}
                                 {{type=="stone" ? $t('Stone_companies'):''}}
                                 {{type=="interior" ? $t('interior_companies'):''}}
-							
+                                {{type=="more" ? $t('Miscellaneous'):''}}
+
+								
 							</h2>
 					</div>
 				</div>

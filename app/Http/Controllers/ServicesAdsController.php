@@ -118,6 +118,59 @@ class ServicesAdsController extends Controller
 
 
      }
+     public function insertMoreAds(Request $request){
+
+        $service_ads =  service_ads::create([
+             'title' => $request->title,
+             'description' => $request->description,
+             'TypeServices'=>$request->TypeServices,
+             'emirates'=>$request->emirates,
+             'status'=> 0,
+             'type' => 'more',
+             'user_id' => Auth::id(),
+
+         ]);
+
+
+
+         if ($request->hasFile('images')) {
+
+             $images = $request->file('images');
+             foreach ($images as $image) {
+
+                 $file_name = 'amb_Ads_More' . time() . '_' . $image->getClientOriginalName();
+                 $file_extension = $image->getClientOriginalExtension();
+                 $names = $file_name;
+                 $file_path = $image->storeAs('More/ads', $file_name, 'public');
+                 $image->move(public_path('More/ads'), $file_name);
+                 img_service_ads::create([
+                     "name" => $file_name,
+                     "path" => $file_path,
+                     'ads_id' => $service_ads->id,
+                 ]);
+             }
+         }
+
+
+
+         //     $admin = admin::where('role_id',1)->get();
+
+         //     broadcast(new TenderTconulte($tenders->user,$admin,$tenders));
+
+         // // broadcast(new NewTender($tenders->user,$tenders))->toOthers();
+         // // broadcast(new NewTender($user,$tender,$admins));
+
+
+
+         // Notification::send($admin, new NotiTenders($tenders));
+         // $admins->notify(new NotiTenders($tender));
+
+         return response()->json($service_ads->id);
+
+
+
+     }
+     
     public function insertAds(Request $request){
 
 

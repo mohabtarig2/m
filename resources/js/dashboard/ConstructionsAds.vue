@@ -408,6 +408,10 @@ console.log(result1);
           this.destination="/service/ads/stone"
 
       }
+          if(this.IsUser==7){
+          this.destination="/service/ads/more"
+
+      }
        if(this.IsUser==5){
           this.destination="/service/ads/interior"
 

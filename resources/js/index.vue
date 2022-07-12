@@ -148,6 +148,14 @@ style="position:absolute;
 
                                                             </li>
 
+                                                               <li>
+                                                                 <router-link :to="{name:'services',params:{type:'more'}}">
+                                                                {{$t('Miscellaneous')}}
+                                                                </router-link>
+
+
+                                                            </li>
+
 
 													</ul>
 						</li> 
@@ -326,9 +334,19 @@ style="position:absolute;
                                                             <router-link :to="{name:'services',params:{type:'stone'}}">
                                                                 {{$t('Stone_companies')}}
                                                                 </router-link>
-
+                                                             </li>
+                                                             <li>
                                                                 <router-link :to="{name:'services',params:{type:'interior'}}">
                                                                 {{$t('interior_companies')}}
+                                                                </router-link>
+
+
+                                                            </li>
+
+                                                            
+                                                               <li>
+                                                                 <router-link :to="{name:'services',params:{type:'more'}}">
+                                                                {{$t('Miscellaneous')}}
                                                                 </router-link>
 
 

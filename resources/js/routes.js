@@ -179,7 +179,7 @@ const routes = [
     },
 
     {
-        path:"/test",
+        path:"/partner/signup",
         component:test,
         name:'test',
     },

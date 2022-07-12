@@ -23,6 +23,18 @@ class CompanyController extends Controller
                 ]) ;
 
         }
+        if($request->type=="more"){
+
+            $user = User::where('role_id',7)->with('company')->limit($request->more)->get();
+            $count = User::where('role_id',7)->count();
+
+            return  response()->json([
+                'count'=>$count,
+                'user'=>$user,
+                
+                ]) ;
+
+        }
         if($request->type=="construction"){
 
             $user = User::where('role_id',6)->with('company')->limit($request->more)->get();
@@ -94,6 +106,29 @@ class CompanyController extends Controller
             $count = service_ads::where('type','construction')->count();
 
              $user = User::where('role_id',6)->with('company','service_ads')->inRandomOrder()->limit(8)->get();
+            // return $user;
+
+            
+
+            return  response()->json([
+                'ads'=>$ads,
+                'count'=>$count,
+                'user'=>$user,
+                
+                ]) ;
+
+            // $user = User::where('role_id',6)->with('company','service_ads')->inRandomOrder()->limit(8)->get();
+            // return $user;
+
+        }
+
+        if($request->type=="more"){
+
+           
+            $ads = service_ads::where('type','more')->with('company','image')->latest()->limit($request->more)->get();
+            $count = service_ads::where('type','more')->count();
+
+             $user = User::where('role_id',7)->with('company','service_ads')->inRandomOrder()->limit(8)->get();
             // return $user;
 
             
@@ -194,6 +229,16 @@ class CompanyController extends Controller
         if($request->type=="consulting"){
 
             $user = User::where('role_id',1)->with('company','companyfile','villa.villaImage','achivementFile','Review.user')-> 
+             with(['branch'=>function($query){
+                $query->where('status','1');
+            }])
+            ->where('id',$request->id)->get();
+            return $user;
+
+        }
+        if($request->type=="more"){
+
+            $user = User::where('role_id',7)->with('company','companyfile','villa.villaImage','achivementFile','Review.user')-> 
              with(['branch'=>function($query){
                 $query->where('status','1');
             }])

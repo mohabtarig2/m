@@ -103,212 +103,11 @@
 
 	<villa-finder class="mt-5"></villa-finder>
 
-	<section class="about-area section-padding text-center"  >
-		<div class="bg-image bg-img-bottom" style="background-image:url('img/about/about-shape.png')"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-12 order-class">
-					<!-- About Content -->
-					<div class="about-content">
-						<div class="about-top-content">
-							<span class="small-title">{{$t('uniqueServices')}}</span>
-							<h2 class="about-title hs-1">{{$t('uniqueServicesDesc1')}} <span class="theme-color">{{$t('uniqueServicesDesc2')}}</span></h2>
-							<p  class="mb-0">
-                                  {{$t('uniqueServicesDesc3')}}
-                                  .</p>
-						</div>
 
-
-
-													                                      
-						<!-- About Content Bottom -->
-						<div class="about-content-bottom ">
-							<div class="row gx-1 g-lg-4">
-								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
-									<div class="about-content-widget">
-										<router-link :to="{name:'consultances'}">
-
-									
-										<i class='bx bxs-home-smile'></i>
-                                        <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('consulting')}}</h6>
-										</router-link>
-									</div>
-									 <div class="about-content-widget">
-										<router-link :to="{name:'StoneTender'}">
-										<i class="fas fa-igloo"></i>
-                                        <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('stone')}}</h6>
-										</router-link>
-									</div>
-                                    <div class="about-content-widget  ">
-										
-										<i class="fas fa-couch"></i>
-
-                                        <span class="">{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('Soil_testing')}}</h6>
-									<span class="soon">{{$t('soon')}}</span>	
-									</div>
-
-                                   
-								</div>
-								
-								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
-									<div class="about-content-widget">
-										<router-link :to="{name:'constructionTender'}">
-										<i class="fas fa-hard-hat"></i>
-                                        <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('construction')}}</h6>
-										</router-link>
-									</div>
-
-									 <div class="about-content-widget">
-											<router-link :to="{name:'interiorTender'}">
-										<i class="fas fa-couch"></i>
-                                        <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('interior')}}</h6>
-											</router-link>
-									</div>
-									   <div class="about-content-widget " style="position:relative ; overflow: hidden;">
-										<i class="fas fa-toolbox"></i>
-                                        <span>{{$t('tender')}}</span>
-											<h6 class="mt-3">{{$t('maintenance')}}</h6>
-																				<span class="soon">{{$t('soon')}}</span>	
-
-									</div>
-
-                                   
-
-									
-								</div>
-								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
-
-									 <div class="about-content-widget">
-									<router-link :to="{name:'hvac'}">
-										<i class="fa fa-fan"></i>
-                                        <span>{{$t('tender')}}</span>
-										<h6 class="mt-3">{{$t('hvac')}}</h6>
-									</router-link>
-									</div> 
-                                   
-
-                                 
-
-								</div>
-							</div>
-                            <!-- <div class="row gx-1 g-lg-4">
-								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
-									<div class="about-content-widget">
-										<i class="fa fa-house-user"></i>
-										<span>Safe Life</span>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
-									<div class="about-content-widget">
-										<i class="fa fa-user-secret"></i>
-										<span>Office</span>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
-									<div class="about-content-widget">
-										<i class="fa fa-building"></i>
-										<span>Apartment</span>
-									</div>
-								</div>
-							</div> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-12" :dir="$t('directions')" :class="$t('text_align')">
-					<!-- About Image -->
-					<div class="about-img-area">
-						<div class="about-img">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="about-img-one">
-										<img src="img/about/02.jpg" alt="#">
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-12">
-									<div class="about-img-two">
-										<img src="img/about/03.jpg" alt="#">
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- About Property Details -->
-						<div class="about-property-details" data-aos="fade-up" data-aos-delay="600">
-							<div class="a-property-price">
-								<h3 class="price-title fs-40"> {{$t('start_project')}}</h3>
-
-								<p  class="mb-0">{{$t('Get_imagination')}}</p>
-								
-							</div>
-							<div class="a-property-btn">
-							<router-link :to="{name:'consultances'}" class="theme-btn">{{$t('start')}}</router-link>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 
 	<!-- End About Area -->
-    <div class="row">
-        <div class="col-md-6">
-                    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src=" img/1_lEyU2zS2TBaOl_fbXqPChA.png" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/Mobile_AD_FORMATS3-1.png" alt="Second slide">
-    </div>
-
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-        </div>
-
-
-
-              <div class="col-md-6">
-
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="img/Mobile_AD_FORMATS3-1.png" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/1_lEyU2zS2TBaOl_fbXqPChA.png" alt="Second slide">
-    </div>
-    
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-        </div>
-
-
-
-    </div>
-
+ 
 
 	<!-- Recent Property Area -->
 	<section class="recent-property-area section-padding">
@@ -633,6 +432,209 @@ location_city
 			</div>
 		</div>
 	</section>
+		<section class="about-area section-padding text-center"  >
+		<div class="bg-image bg-img-bottom" style="background-image:url('img/about/about-shape.png')"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-12 order-class">
+					<!-- About Content -->
+					<div class="about-content">
+						<div class="about-top-content">
+							<span class="small-title">{{$t('uniqueServices')}}</span>
+							<h2 class="about-title hs-1">{{$t('uniqueServicesDesc1')}} <span class="theme-color">{{$t('uniqueServicesDesc2')}}</span></h2>
+							<p  class="mb-0">
+                                  {{$t('uniqueServicesDesc3')}}
+                                  .</p>
+						</div>
+
+
+
+													                                      
+						<!-- About Content Bottom -->
+						<div class="about-content-bottom ">
+							<div class="row gx-1 g-lg-4">
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+									<div class="about-content-widget">
+										<router-link :to="{name:'consultances'}">
+
+									
+										<i class='bx bxs-home-smile'></i>
+                                        <span>{{$t('tender')}}</span>
+										<h6 class="mt-3">{{$t('consulting')}}</h6>
+										</router-link>
+									</div>
+									 <div class="about-content-widget">
+										<router-link :to="{name:'StoneTender'}">
+										<i class="fas fa-igloo"></i>
+                                        <span>{{$t('tender')}}</span>
+										<h6 class="mt-3">{{$t('stone')}}</h6>
+										</router-link>
+									</div>
+                                    <div class="about-content-widget  ">
+										
+										<i class="fas fa-couch"></i>
+
+                                        <span class="">{{$t('tender')}}</span>
+										<h6 class="mt-3">{{$t('Soil_testing')}}</h6>
+									<span class="soon">{{$t('soon')}}</span>	
+									</div>
+
+                                   
+								</div>
+								
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
+									<div class="about-content-widget">
+										<router-link :to="{name:'constructionTender'}">
+										<i class="fas fa-hard-hat"></i>
+                                        <span>{{$t('tender')}}</span>
+										<h6 class="mt-3">{{$t('construction')}}</h6>
+										</router-link>
+									</div>
+
+									 <div class="about-content-widget">
+											<router-link :to="{name:'interiorTender'}">
+										<i class="fas fa-couch"></i>
+                                        <span>{{$t('tender')}}</span>
+										<h6 class="mt-3">{{$t('interior')}}</h6>
+											</router-link>
+									</div>
+									   <div class="about-content-widget " style="position:relative ; overflow: hidden;">
+										<i class="fas fa-toolbox"></i>
+                                        <span>{{$t('tender')}}</span>
+											<h6 class="mt-3">{{$t('maintenance')}}</h6>
+																				<span class="soon">{{$t('soon')}}</span>	
+
+									</div>
+
+                                   
+
+									
+								</div>
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
+
+									 <div class="about-content-widget">
+									<router-link :to="{name:'hvac'}">
+										<i class="fa fa-fan"></i>
+                                        <span>{{$t('tender')}}</span>
+										<h6 class="mt-3">{{$t('hvac')}}</h6>
+									</router-link>
+									</div> 
+                                   
+
+                                 
+
+								</div>
+							</div>
+                            <!-- <div class="row gx-1 g-lg-4">
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+									<div class="about-content-widget">
+										<i class="fa fa-house-user"></i>
+										<span>Safe Life</span>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
+									<div class="about-content-widget">
+										<i class="fa fa-user-secret"></i>
+										<span>Office</span>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
+									<div class="about-content-widget">
+										<i class="fa fa-building"></i>
+										<span>Apartment</span>
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-12" :dir="$t('directions')" :class="$t('text_align')">
+					<!-- About Image -->
+					<div class="about-img-area">
+						<div class="about-img">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="about-img-one">
+										<img src="img/about/02.jpg" alt="#">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="about-img-two">
+										<img src="img/about/03.jpg" alt="#">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- About Property Details -->
+						<div class="about-property-details" data-aos="fade-up" data-aos-delay="600">
+							<div class="a-property-price">
+								<h3 class="price-title fs-40"> {{$t('start_project')}}</h3>
+
+								<p  class="mb-0">{{$t('Get_imagination')}}</p>
+								
+							</div>
+							<div class="a-property-btn">
+							<router-link :to="{name:'consultances'}" class="theme-btn">{{$t('start')}}</router-link>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	   <div class="row">
+        <div class="col-md-6">
+                    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src=" img/1_lEyU2zS2TBaOl_fbXqPChA.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/Mobile_AD_FORMATS3-1.png" alt="Second slide">
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+        </div>
+
+
+
+              <div class="col-md-6">
+
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/Mobile_AD_FORMATS3-1.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/1_lEyU2zS2TBaOl_fbXqPChA.png" alt="Second slide">
+    </div>
+    
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+        </div>
+
+
+
+    </div>
+
 	<!-- End Recent Property Area -->
 
 	<!-- Work Process Area -->

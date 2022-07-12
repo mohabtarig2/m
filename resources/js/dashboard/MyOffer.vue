@@ -1,7 +1,7 @@
 <template>
      <div class="   container mt-5" >
 
-<constructions-ads v-if="IsUser==6 || IsUser==4 || IsUser==3 || IsUser==5"></constructions-ads>
+<constructions-ads v-if="IsUser==6 || IsUser==4 || IsUser==3 || IsUser==5 ||  IsUser==7"></constructions-ads>
 
 <!-- <hvac-ads v-if="IsUser==4"> </hvac-ads> -->
 

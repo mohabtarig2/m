@@ -4,7 +4,8 @@
 <nav class="nav-part" style="background:">
             <div class="container">
                 <div class="logo   ">
-                   AMB <span class="main-color">TENDER</span>
+<a href="/"><img src="img/websiteLogo2.svg" style="width:185px" alt="#"></a>
+
                 </div>
                 <div class="main_list " id="mainListDiv">
                     <ul class="text-right" style="direction: rtl ">
@@ -40,128 +41,17 @@
                 <div class="row " dir="rtl">
 
 
-                <div class="col-md-6 text-partner hidden-xs">
+                <div class="col-md-8 text-partner hidden-xs">
                    <h1 class="text-light"> {{$t('Grow_your_business')}}</h1>
                    <p class="h2 mt-4 text-light">{{$t('Get_New_Project_and_Client')}}</p>
+
+                    <router-link :to="{name:'test'}" class="theme-btn mt-4 ">{{$t('join')}}</router-link>
+                    <router-link  :to="{name:'login'}"  
+                    class="theme-btn primary mt-4 ">{{$t('Login_Now')}}</router-link>
                 </div>
 
 
-                
-                <div class="col-md-6 form-partner">
-                     <div class="m-auto " >
-
-
-
-    <div class="" :class="$t('text_align')" :dir="$t('directions')"  style="padding: 0 40px;">
-        <h1 class="main-color text-center mt-5 mb-2"> {{$t('Join_To_Our_Family')}} </h1>
-      <form class="c-form-inner">
-
-        <div class="form-group">
-          <!-- <label for="name">{{$t('User_name')}}</label> -->
-          <input
-            type="text"
-            name="name"
-            :placeholder="$t('User_name')"
-            class="form-control"
-            v-model="business.name"
-            :class="[{'is-invalid': errorFor('name')}]"
-          />
-          <v-errors :errors="errorFor('name')"></v-errors>
-        </div>
-
-
-
-            <div class="form-group">
-          <!-- <label for="email">{{$t('Email')}}</label> -->
-          <input
-            type="text"
-            name="email"
-            :placeholder="$t('Email')"
-            class="form-control"
-            v-model="business.email"
-            :class="[{'is-invalid': errorFor('email')}]"
-          />
-          <v-errors :errors="errorFor('email')"></v-errors>
-            </div>
-
-            <div class="form-group">
-          <!-- <label for="password">{{$t('mobile')}}</label> -->
-          <input
-            type="number"
-            name="mobile2"
-            :placeholder="$t('mobile')"
-            class="form-control"
-            v-model="business.mobile"
-            pattern="^([+]{1}[9]{1}[7]{1}[1]{1}[5]{1}[0-9]{8})$"
-            :class="[{'is-invalid': errorFor('mobile')}]"
-          />
-          <v-errors :errors="errorFor('mobile')"></v-errors>
-            </div>
-
-
-
-        <div class="form-group">
-          <label for="password">{{$t('Categories')}}</label>
-      <select class="form-control"  v-model="business.Categories"  :class="[{'is-invalid': errorFor('Categories')}]">
-         
-          <option value="1">{{$t('consulting_company')}}</option>
-          <option value="6">{{$t('construcion_company')}} </option>
-          <option value="4">{{$t('HVAC_companies')}}</option>
-          <option value="3">{{$t('Stone_companies')}}</option>
-          <option value="5">{{$t('interior_decoration')}}</option>
-          
-      </select>
-          <v-errors :errors="errorFor('Categories')"></v-errors>
-        </div>
-
-        <div class="form-group">
-          <!-- <label for="password">{{$t('Password')}}</label> -->
-          <input
-            type="password"
-            name="password"
-            :placeholder="$t('Password')"
-            class="form-control"
-            v-model="business.password"
-            :class="[{'is-invalid': errorFor('password')}]"
-          />
-          <v-errors :errors="errorFor('password')"></v-errors>
-        </div>
-
-        <div class="form-group">
-          <!-- <label for="password_confirmation">{{$t('Confirm_Password')}}</label> -->
-          <input
-            type="password"
-            name="password_confirmation"
-            :placeholder="$t('Confirm_Password')"
-            class="form-control"
-            v-model="business.password_confirmation"
-            :class="[{'is-invalid': errorFor('confirmed')}]"
-          />
-          <v-errors :errors="errorFor('confirmed')"></v-errors>
-        </div>
-
-        <div class="form-group">
-<div :class="alertT" class="alert alert-success"    >{{$t('You_Register_Successfuly')}} - <a href="/#/login"> {{$t('Login_Now')}} </a></div>
-        <button
-          type="submit"
-          class="theme-btn btn-lg text-light btn-block mx-auto"
-          :disabled="loading"
-          @click.prevent="BusRegister"
-          style="padding: 15px 10px;"
-        >{{$t('register')}}</button>
-        </div>
-
-
-
-
-      </form>
-    </div>
-
-
-
-
-  </div>
-                </div>
+     
 
 
 
@@ -221,7 +111,8 @@
         <section style="padding-top: 80px; padding-bottom: 40px" class="container text-center">
             <div class="mx-auto d-block" >
             <h1 class="text-center">{{$t('Ready_To_Join_us')}} </h1>
-            <a href="#home" class="theme-btn text-center mt-3   " style="padding:20px 50px" ><b>{{$t('join_now')}}</b></a>
+            <router-link :to="{name:'test'}" class="theme-btn text-center mt-3 
+              " style="padding:20px 50px" ><b>{{$t('join_now')}}</b></router-link>
             </div>
         </section>
 
@@ -236,8 +127,9 @@ import { logIn } from "./../shared/utils/auth";
 import navbar from './navbar.vue';
 import ValidationErrors from '../shared/components/ValidationErrors.vue';
 import validationErrors from "../shared/mixins/validationErrors";
+import Tesstt from './tesstt.vue';
 export default {
-  components: { navbar, ValidationErrors },
+  components: { navbar, ValidationErrors, Tesstt },
   mixins: [validationErrors],
   data() {
     return {
@@ -579,8 +471,29 @@ align-items: center;
 /* Home section */
 
 
+.theme-btn{
+    background: #34d195 !important;
+}
 
+.theme-btn.primary
+{
+    border: 1px solid #34d195 !important;
+    background: transparent !important;
+    color: #34d195 !important;
+}
 
+.theme-btn::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    background: #0b6442;
+    right: 0;
+    top: 0;
+    border-radius: 12px;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
 
 
 </style>
