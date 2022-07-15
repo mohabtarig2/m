@@ -619,9 +619,8 @@ location_city
 									
 											</div>
 				<div class="about-img-two  d-sm-none d-lg-inline-block">
-			<video width="400" controls class=" d-lg-none d-sm-inline-block">
+			<video width="400"  loop  autoplay="autoplay" class=" d-lg-none d-sm-inline-block" id="myVideo">
 			<source src="img/video.mp4" type="video/mp4">
-			<source src="img/video.ogg" type="video/ogg">
 			Your browser does not support HTML video.
 			</video>
 		</div>
@@ -1562,7 +1561,10 @@ this.countArea();
 },
   mounted() {
 
-     
+     var vid = document.getElementById("myVideo");
+
+    vid.play();
+
 
              
                 $('.header-inner').removeClass('d-none');
