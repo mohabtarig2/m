@@ -2224,6 +2224,9 @@ Version: 1.0.0
 }
 
 @media only screen and (max-width: 576px) {
+	.visible-sm{
+		display: none !important;
+	 }
 
 	.single-r-property-bed{
 		     margin: 0 !important;
@@ -2378,3 +2381,6 @@ Version: 1.0.0
 
 
 }
+
+
+

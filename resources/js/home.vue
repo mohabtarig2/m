@@ -432,6 +432,59 @@ location_city
 			</div>
 		</div>
 	</section>
+
+		   <div class="row">
+        <div class="col-md-6">
+                    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src=" img/1_lEyU2zS2TBaOl_fbXqPChA.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/Mobile_AD_FORMATS3-1.png" alt="Second slide">
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+        </div>
+
+
+
+              <div class="col-md-6">
+
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/Mobile_AD_FORMATS3-1.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/1_lEyU2zS2TBaOl_fbXqPChA.png" alt="Second slide">
+    </div>
+    
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+        </div>
+
+
+
+    </div>
 		<section class="about-area section-padding text-center"  >
 		<div class="bg-image bg-img-bottom" style="background-image:url('img/about/about-shape.png')"></div>
 		<div class="container">
@@ -553,15 +606,25 @@ location_city
 					<div class="about-img-area">
 						<div class="about-img">
 							<div class="row">
-								<div class="col-lg-6 col-md-6 col-12">
+								<div class="col-lg-6 col-md-6 col-12 ">
 									<div class="about-img-one">
-										<img src="img/about/02.jpg" alt="#">
+										<img src="img/about/02.jpg" alt="#" class="  visible-sm">
+
+
 									</div>
 								</div>
-								<div class="col-lg-6 col-md-6 col-12">
+								<div class="col-lg-6 col-md-6 col-12 ">
 									<div class="about-img-two">
-										<img src="img/about/03.jpg" alt="#">
-									</div>
+										<img src="img/about/03.jpg" alt="#" class=" d-lg-inline-block visible-sm">
+									
+											</div>
+				<div class="about-img-two  d-sm-none d-lg-inline-block">
+			<video width="400" controls class=" d-lg-none d-sm-inline-block">
+			<source src="img/video.mp4" type="video/mp4">
+			<source src="img/video.ogg" type="video/ogg">
+			Your browser does not support HTML video.
+			</video>
+		</div>
 								</div>
 							</div>
 						</div>
@@ -582,58 +645,7 @@ location_city
 			</div>
 		</div>
 	</section>
-	   <div class="row">
-        <div class="col-md-6">
-                    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src=" img/1_lEyU2zS2TBaOl_fbXqPChA.png" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/Mobile_AD_FORMATS3-1.png" alt="Second slide">
-    </div>
 
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-        </div>
-
-
-
-              <div class="col-md-6">
-
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="img/Mobile_AD_FORMATS3-1.png" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/1_lEyU2zS2TBaOl_fbXqPChA.png" alt="Second slide">
-    </div>
-    
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-        </div>
-
-
-
-    </div>
 
 	<!-- End Recent Property Area -->
 
