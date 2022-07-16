@@ -622,7 +622,7 @@ location_city
 				<div class="about-img-two  d-sm-none d-lg-inline-block">
 					
 			<video width="400"  loop  autoplay="autoplay" class=" d-lg-none d-sm-inline-block" id="myVideo">
-			<source src="img/video.mp4" type="video/mp4">
+			<source src="img/video1.mp4" type="video/mp4">
 			Your browser does not support HTML video.
 			</video>
 		</div>
