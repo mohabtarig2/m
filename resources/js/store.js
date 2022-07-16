@@ -23,6 +23,7 @@ export default {
         lang:localStorage.getItem("lang") || localStorage.setItem("lang",'ar'),
         isAdminLoggedIn:false,
         user: null,
+        role_id:null,
         admin:null,
         notificationlist:[],
         notificationAdminlist:[],
@@ -91,7 +92,7 @@ export default {
         },
         IsUser(state){
             if(state.user){
-
+                state.role_id=state.user.role_id;
                 return state.user.role_id
                  }
                  return null;
@@ -190,6 +191,8 @@ export default {
                     const user = (await axios.get('user')).data;
                     const sacntum = (await axios.get('/token')).data.plainTextToken;
                     console.log(sacntum);
+
+                    
                     //console.log(user);
 
                     if(user==null){

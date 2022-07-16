@@ -10,6 +10,40 @@
   </div>
 </div>
 
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" id="emailfalid"
+ role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content alert alert-danger text-danger">
+     {{$t('You_must_email_all_fields')}}
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" id="passwordLength"
+ role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content alert alert-danger text-danger">
+     {{$t('passwordLength')}}
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" id="passwordLength100"
+ role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content alert alert-danger text-danger">
+     {{$t('passwordLength100')}}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 <div class="modal fade bd-example-modal-lg" tabindex="-1" id="password"
  role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -1275,15 +1309,38 @@ axios.post("bregister", data).then(res=>{
             // this.step++
             if(event=='plus'){
                 if(this.step==1){
+
                     if(this.business.name==null ||  this.business.email==null || this.business.Categories==null
                      || this.business.password==null ||this.business.password_confirmation==null
                      ||this.business.mobile==null){
                            $('#falid').modal('show');
-                     }else if(this.business.password!=this.business.password_confirmation){
+                     }
+                      else if(this.business.password.length <= 7){
+
+                             $('#passwordLength').modal('show');
+                             
+                      }
+                     
+                     else if(this.business.password!=this.business.password_confirmation){
                         $('#password').modal('show');
-                        }else{
-                        this.step++
-                        $(window).scrollTop(0);
+                    }
+                    
+                   else{
+                            let data = new FormData();
+                            data.append('email', this.business.email);
+
+                             axios.post('thisEmailIsAvailble',data).then(res=>{
+                               if(res.data ==1){
+
+                        $('#emailfalid').modal('show');
+                    }else{
+                                
+                                 this.step++
+                                 $(window).scrollTop(0);
+                               }
+                               
+           })
+                       
                      }
                 }
 
@@ -1293,7 +1350,12 @@ axios.post("bregister", data).then(res=>{
                     || this.complete.Company_ar==''|| this.phone=='' ||this.complete.emirates==''
                      || this.complete.date_create=='' ||this.complete.about==''){
                            $('#falid').modal('show');
-                     }else{
+                           
+                   }else if(this.complete.about.length<= 99){
+
+                             $('#passwordLength100').modal('show');
+                             
+                      }else{
                         this.step++
                         $(window).scrollTop(0);
                      }

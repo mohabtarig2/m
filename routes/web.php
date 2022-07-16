@@ -29,6 +29,10 @@ Auth::routes();
 Route::group(['middleware' => ['web']], function () {
 Route::post('login', 'Auth/LoginController@login');
 });
+
+// Route::group(['middleware' => ['web']], function () {
+//     Route::post('loginCompany', 'Auth/LoginController@loginCompany');
+//     });
 Route::group(['middleware' => ['customer']], function () {
     
     Route::post('tenders' ,'TenderController@insert_consl');
@@ -137,6 +141,9 @@ Route::get('/partner',function(){
 
 Route::post('complete','CompleteContoller@complete');
 Route::post('thisPhoneIsAvailble','CompleteContoller@thisPhoneIsAvailble');
+Route::post('thisEmailIsAvailble','CompleteContoller@thisEmailIsAvailble');
+
+
 Route::get('Getcomplete','CompleteContoller@Getcomplete');
 
 Route::post('UploadCompanyAvatar','CompleteContoller@UploadCompanyAvatar');

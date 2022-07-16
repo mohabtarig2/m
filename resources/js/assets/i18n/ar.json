@@ -431,6 +431,18 @@
    
     
     "build_by":"طريقة البناء ",
+    "contact_us":"تواصل معنا",
+    "contactnumber":" اتصال  ",
+    "contactemail":"البريد الكتروني ",
+    "timeworks":"ساعات العمل",
+    "hoursworks":"ساعات العمل من 9 ص الي 5 م",
+    "hoursweeks":"طول ايام الاسبوع",
+    "You_must_email_all_fields":"البريد الاكتروني مسجل من قبل ",
+    "passwordLength":"يجب ان  يكون حجم كلمة السر 8 ",
+    "passwordLength100":" ان  يكون حجم حول الشركة  100 حرف",
+    "municipality":"تقييم البلدية",
+    
+
     "request":"تم ارسال طلبك بنجاح",
     "sqft":" قدم مربع",
     "Email":"البريد الأكتروني",

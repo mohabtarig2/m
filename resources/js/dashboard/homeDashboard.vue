@@ -234,7 +234,7 @@
 
 
 
-         <statstic-user :counts="counts"></statstic-user>
+         <statstic-user :counts="counts" v-if="IsUser ==10"></statstic-user>
 
          <mini-offer v-if="IsUser==1"> </mini-offer>
 

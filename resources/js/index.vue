@@ -525,20 +525,26 @@ style="position:absolute;
                         <div class="col-sm-12 col-md-6 text-center" >
 
                         
-                      
-                               
-                                                                <router-link :to="{name:'termsConditions'   }" class="mr-3 ml-3">
-                                                                {{$t('termsConditions')}}
-                                                                </router-link>
-                                                           
 
-                                                               
-                                                                <router-link :to="{name:'responsibilaty'   }"  class="mr-3 ml-3">
-                                                                {{$t('Evacuation_responsibilaty')}}
-                                                                </router-link>
-                                                            
-                       
-                        
+        
+                                        <router-link :to="{name:'termsConditions'   }" class="mr-3 ml-3">
+                                        {{$t('termsConditions')}}
+                                        </router-link>
+
+
+                                            <router-link :to="{name:'responsibilaty'   }" class="mr-3 ml-3">
+                                        {{$t('Evacuation_responsibilaty')}}
+                                        </router-link>
+                                    
+                                    
+
+                                        
+                                        <router-link :to="{name:'contactus'}"  class="mr-3 ml-3">
+                                        {{$t('contact_us')}}
+                                        </router-link>
+                                    
+
+
                         					</div>
 				</div>
 			</div>

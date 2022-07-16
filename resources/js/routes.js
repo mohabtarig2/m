@@ -5,6 +5,8 @@ import Example2 from './components/Example2';
  import index from './index.vue';
  import home from './home.vue';
  import  termsConditions from './terms-conditions.vue';
+ import  contactus from './contactus.vue';
+ 
  import  responsibilaty from './responsibilaty.vue';
 
  
@@ -157,6 +159,13 @@ const routes = [
         path:"/terms-conditions",
         component: termsConditions,
         name:'termsConditions',
+
+    },
+    {
+
+        path:"/contact-us",
+        component: contactus,
+        name:'contactus',
 
     },
 

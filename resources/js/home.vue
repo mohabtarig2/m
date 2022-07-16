@@ -35,6 +35,7 @@
       <div>3</div>
       <div>4</div>
     </VueSlickCarousel> -->
+	
 
 
 	<section class="hero-area bg-image bg-left" style="background-image:url('img/hero-bg.jpg')" >
@@ -619,6 +620,7 @@ location_city
 									
 											</div>
 				<div class="about-img-two  d-sm-none d-lg-inline-block">
+					
 			<video width="400"  loop  autoplay="autoplay" class=" d-lg-none d-sm-inline-block" id="myVideo">
 			<source src="img/video.mp4" type="video/mp4">
 			Your browser does not support HTML video.
@@ -1523,6 +1525,7 @@ $('.searchBoxTggler').on('click', function (e) {
 
 
 created() {
+	
 	   $('#offcanvas-modal').modal('hide');
              $('#offcanvas-modal').css('display','none');
              $('.modal-backdrop').css('display','none');
@@ -1561,9 +1564,7 @@ this.countArea();
 },
   mounted() {
 
-     var vid = document.getElementById("myVideo");
-
-    vid.play();
+   
 
 
              

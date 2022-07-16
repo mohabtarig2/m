@@ -87,6 +87,19 @@ class CompleteContoller extends Controller
         return $companies->count();
     }
     }
+
+    public function thisEmailIsAvailble(Request $request){  
+
+        $companies =  User::where('email',$request->email)->get();
+        if($companies->count() == 1){
+            return $companies->count();
+        }
+        if($companies->count() == 0){
+          return $companies->count();
+      }
+      }
+
+    
     public function getlicence(Request $request)
     {
 

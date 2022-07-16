@@ -228,7 +228,7 @@ class CompanyController extends Controller
 
         if($request->type=="consulting"){
 
-            $user = User::where('role_id',1)->with('company','companyfile','villa.villaImage','achivementFile','Review.user')-> 
+            $user = User::where('role_id',1)->with('company','companyfile','villa.villaImage','achivementFile','Review.user','municipality')-> 
              with(['branch'=>function($query){
                 $query->where('status','1');
             }])
@@ -238,7 +238,7 @@ class CompanyController extends Controller
         }
         if($request->type=="more"){
 
-            $user = User::where('role_id',7)->with('company','companyfile','villa.villaImage','achivementFile','Review.user')-> 
+            $user = User::where('role_id',7)->with('company','companyfile','villa.villaImage','achivementFile','Review.user','municipality')-> 
              with(['branch'=>function($query){
                 $query->where('status','1');
             }])
@@ -248,7 +248,7 @@ class CompanyController extends Controller
         }
         if($request->type=="construction"){
 
-            $user = User::where('role_id',6)->with('company','companyfile','achivementFile','Review.user')-> 
+            $user = User::where('role_id',6)->with('company','companyfile','achivementFile','Review.user','municipality')-> 
             with(['branch'=>function($query){
                 $query->where('status','1');
             }])->
@@ -262,7 +262,7 @@ class CompanyController extends Controller
         }
         if($request->type=="hvac"){
            
-            $user = User::where('role_id',4)->with('company','companyfile','achivementFile','Review.user')-> 
+            $user = User::where('role_id',4)->with('company','companyfile','achivementFile','Review.user','municipality')-> 
             with(['branch'=>function($query){
                 $query->where('status','1');
             }])->
@@ -276,7 +276,7 @@ class CompanyController extends Controller
         }
         if($request->type=="stone"){
 
-            $user = User::where('role_id',3)->with('company','companyfile','achivementFile','Review.user')->
+            $user = User::where('role_id',3)->with('company','companyfile','achivementFile','Review.user','municipality')->
             with(['branch'=>function($query){
                 $query->where('status','1');
             }])->
@@ -291,7 +291,7 @@ class CompanyController extends Controller
 
         if($request->type=="interior"){
 
-            $user = User::where('role_id',5)->with('company','companyfile','achivementFile','Review.user')->
+            $user = User::where('role_id',5)->with('company','companyfile','achivementFile','Review.user','municipality')->
             with(['branch'=>function($query){
                 $query->where('status','1');
             }])->

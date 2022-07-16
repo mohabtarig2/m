@@ -326,6 +326,20 @@
 
     "classic_villa":"Villa Classic",
     "see_All":"see All ",
+    "contact_us":"contact-us",
+    "contactnumber":" Mobile  ",
+    "contactemail":" Email ",
+    "timeworks":"work hours",
+    "hoursworks":"Working hours from 9 am to 5 pm",
+    "hoursweeks":"All days of the week",
+    "You_must_email_all_fields":"Email is already registered",
+    "passwordLength":"Password size must be 8",
+    "passwordLength100":"About Company size must be 100",
+
+
+    "municipality":"municipality assessment",
+
+
 
  
     "First_floor":"First floor",

@@ -6,6 +6,7 @@ use App\achivement;
 use App\CompanyFile;
 use App\Http\Controllers\Controller;
 use App\models\companies;
+use App\municipality;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use App\User;
@@ -68,6 +69,19 @@ class BRegisterController extends Controller
             'user_id' => $user->id,
 
         ]);
+
+        if($request->Categories ==6 || $request->Categories==1){
+        municipality::create([
+           
+            'path' => $request->pathMunici,
+            'user_id' => $user->id,
+
+        ]);
+    }
+
+
+
+        
 
         $fileUpload = new achivement();
 

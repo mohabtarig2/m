@@ -150,12 +150,14 @@ data() {
   },
   computed: {
    
-
+    user(){
+             return this.$store.getters.user
+        },
      user_ID(){
                 return this.$store.getters.userid
     },
-       IsUser(){
-            return this.$store.getters.IsUser
+       role_id(){
+            return this.$store.state.role_id
         },
     ...mapState({
 
@@ -190,10 +192,23 @@ data() {
         logIn();
         this.$store.dispatch("loadUser");
         this.$store.dispatch("loadStoredState");
-        var ISuser = this.$store.getters.IsUser;
+
+       
+        
+    // console.log('User Details  '+this.user())
+
+      // if(this.$store.state.role_id==10){
+        this.$router.push(this.$route.query.redirect || '/');
+      //   console.log('go /')
+      // }else{
+      //    console.log('go Dashboard')
+      // }
+        
+        
+    
 
      
-        this.$router.push(this.$route.query.redirect || '/');
+        
      
 
 

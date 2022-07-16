@@ -161,6 +161,21 @@
                         </div>
 						</div>
 
+							<div class="properties-s-widget page-center mt-3 mr-3 ml-3" v-if="user.municipality.path">
+										
+                        <div class="timeline-item">
+							
+                          <h5 class="timeline-header"><a >{{$t('municipality')}} </a> </h5>
+
+                          <div class="timeline-body">
+                           <a :href="user.municipality.path" class="btn btn-warning btn-sm" target="_blank">{{$t('view')}}</a>
+                          </div>
+                          <div class="timeline-footer">
+                           
+                          </div>
+                        </div>
+						</div>
+
 
                  
                       
