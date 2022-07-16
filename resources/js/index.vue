@@ -13,7 +13,7 @@ style="position:absolute;
   right:-30px;
   top:0;
   z-index:999;
-  font-size:2rem;
+  font-size:2rem ;
   font-weight: normal;
   color:#fff;
   opacity:1;">
