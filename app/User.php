@@ -104,7 +104,7 @@ class User extends Authenticatable implements MustVerifyEmail
         
         public function municipality(){
 
-            return $this->hasOne('App\municipality','user_id');
+            return $this->hasMany('App\municipality','user_id');
         }
 
         
