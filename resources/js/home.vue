@@ -57,7 +57,7 @@
  </p	>
  <router-link :to="{name:'contactus'}" >
  <div class="icon"><i class="far fa-comments"></i></div>
-								<span style="text-decoration: underline;">{{$t('Get_Support')}}</span>
+								<span class="text-dark font-weight-bold" style="text-decoration: underline;">{{$t('Get_Support')}}</span>
  </router-link>
 								<!-- <h4 class="mb-0"><router-link :to="{name:'contactus'}" class="theme-btn mt-3">{{$t('contact_us')}}</router-link></h4> -->
 								

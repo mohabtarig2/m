@@ -445,7 +445,7 @@ style="position:absolute;
 								<div class="col-lg-4 col-md-6 col-12">
 								
 									<div class="single-f-widget f-services-widget">
-										<h3 class="widget_title ">{{$t('services')}}</h3>
+										<h4 class="widget_title ">{{$t('services')}}</h4>
 										<ul class="footer-services list-none mb-5" >
                                             
 
@@ -493,9 +493,9 @@ style="position:absolute;
                                                
                                                <br>
                                                <br>
-                                                             <h3 class="widget_title mt-3 " style="font-size:29px">
+                                                             <h4 class="widget_title mt-3 " >
                                                                 {{$t('social_media')}}
-                                                             </h3>
+                                                             </h4>
                                                          
                                         <ul class="footer-social list-none " style="margin-top: 20px;">
                                         	<li >
@@ -1125,6 +1125,9 @@ color:#fff !important; background:#fc7651 !important;
     }
   }
 
+.widget_title {
+    font-size: 22px !important;
+}
 
 
 
