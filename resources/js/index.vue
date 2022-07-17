@@ -378,7 +378,7 @@ style="position:absolute;
 									<ul class="header-details-inner list-none">
                                     <li v-if="!isLoggedIn"><router-link :to="'/login'"> {{ $t('login') }}</router-link></li>
 									<li v-if="!isLoggedIn"><router-link :to="'register'"   > {{ $t('register') }} </router-link>
-                                    <li v-if="isLoggedIn"> <router-link :to="{name:'mytenders'}"ذ class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
+                                    <li v-if="isLoggedIn"> <router-link :to="{name:'mytenders'}" class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
                                     <li class="" style="cursor:pointer"> 
                                      <small> <a class="" @click="switchLang('ar')" v-show="lang=='en'"><img src="https://img.icons8.com/color/20/000000/united-arab-emirates.png"/>عربي</a></small>
                                         <small><a @click="switchLang('en')" v-show="lang=='ar'">
@@ -417,9 +417,22 @@ style="position:absolute;
                                   
                                         {{$t('content_about')}}                
                                                             </p>
-										<ul class="footer-social list-none ">
-											<li class="active ">
-                                                <a href="https://www.instagram.com/amb.tenders/"><i class="fab fa-instagram  "></i></a></li>
+                                                              <br>
+                                                             <h3 class="widget_title mt-3">
+                                                                {{$t('contact_us')}}
+                                                             </h3>
+                                                 
+
+                                                       
+
+										<ul class="footer-social list-none  " style="margin-top: 20px;">
+                                                       <li class="">
+                                                                   <router-link :to="{name:'contactus'}" 
+                                                                    class="font-weight-bold">
+                                       <img src="img/get_support.png" width="20">
+                                        </router-link>
+                                                            </li>
+										
 											<!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li>
 											<li><a href="#"><i class="fab fa-dribbble"></i></a></li>
 											<li><a href="#"><i class="fab fa-youtube"></i></a></li> -->
@@ -433,7 +446,7 @@ style="position:absolute;
 								
 									<div class="single-f-widget f-services-widget">
 										<h3 class="widget_title ">{{$t('services')}}</h3>
-										<ul class="footer-services list-none">
+										<ul class="footer-services list-none mb-5" >
                                             
 
                                            
@@ -476,6 +489,22 @@ style="position:absolute;
 											
 											
 										</ul>
+                                        
+                                               
+                                               <br>
+                                               <br>
+                                                             <h3 class="widget_title mt-3 " style="font-size:29px">
+                                                                {{$t('social_media')}}
+                                                             </h3>
+                                                         
+                                        <ul class="footer-social list-none " style="margin-top: 20px;">
+                                        	<li >
+                                                <a href="https://www.instagram.com/amb.tenders/">
+                                                <img src="img/insta.png" width="50">
+                                                </a>
+                                                </li>
+                                          </ul>
+                                          
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-6 col-12">	
@@ -539,9 +568,7 @@ style="position:absolute;
                                     
 
                                         
-                                        <router-link :to="{name:'contactus'}"  class="mr-3 ml-3">
-                                        {{$t('contact_us')}}
-                                        </router-link>
+                                       
                                     
 
 

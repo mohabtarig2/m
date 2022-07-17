@@ -55,9 +55,11 @@
 								<p>
 									{{$t('home_descripe')}}
  </p	>
+ <router-link :to="{name:'contactus'}" >
  <div class="icon"><i class="far fa-comments"></i></div>
-								<span>{{$t('Get_Support')}}</span>
-								<h4 class="mb-0"><a href="mailto:Info@ambtenders.com">Info@ambtenders.com</a></h4>
+								<span style="text-decoration: underline;">{{$t('Get_Support')}}</span>
+ </router-link>
+								<!-- <h4 class="mb-0"><router-link :to="{name:'contactus'}" class="theme-btn mt-3">{{$t('contact_us')}}</router-link></h4> -->
 								
 							</div>
 
@@ -621,10 +623,11 @@ location_city
 											</div>
 				<div class="about-img-two  d-sm-none d-lg-inline-block">
 					
-			<video width="400"  loop  autoplay="autoplay" class=" d-lg-none d-sm-inline-block" id="myVideo">
+			<!-- <video width="400"  loop  autoplay="autoplay" class=" d-lg-none d-sm-inline-block" id="myVideo">
 			<source src="img/video1.mp4" type="video/mp4">
 			Your browser does not support HTML video.
-			</video>
+			</video> -->
+			<img class="img-fluid  d-lg-none d-sm-inline-block" src="img/logo3d.gif">
 		</div>
 								</div>
 							</div>

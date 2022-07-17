@@ -40,9 +40,7 @@
         
         
         <h3 class="mt-3">{{$t('timeworks')}}</h3>
-        <p class="font-weight-bold font-weight-bold mt-3 mb-3">
-            {{$t('hoursworks')}}
-        </p>
+    
           <p class="font-weight-bold font-weight-bold mt-3">
             {{$t('hoursweeks')}}
         </p>
@@ -52,7 +50,7 @@
 
     </div>
     <div class="col-md-6 col-12">
-  <img class="img-fluid" src="img/contact-image.jpeg">
+  <img class="img-fluid" src="img/IMG-7558.PNG">
     </div>
         </div>
 

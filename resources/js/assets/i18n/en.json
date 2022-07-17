@@ -322,6 +322,8 @@
     "um_alqwin":"umm alquwain",
     "ras_alkhima":"ras al khaimah ",
     "fujairah":"fujairah",
+    "another_links":"other links",
+    "social_media":"social media",
 
 
     "classic_villa":"Villa Classic",
@@ -331,7 +333,7 @@
     "contactemail":" Email ",
     "timeworks":"work hours",
     "hoursworks":"Working hours from 9 am to 5 pm",
-    "hoursweeks":"All days of the week",
+    "hoursweeks":"Working hours throughout the week from nine in the morning until five in the evening, except for holidays and official holidays",
     "You_must_email_all_fields":"Email is already registered",
     "passwordLength":"Password size must be 8",
     "passwordLength100":"About Company size must be 100",
