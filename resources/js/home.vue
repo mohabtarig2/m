@@ -627,7 +627,7 @@ location_city
 			<source src="img/video1.mp4" type="video/mp4">
 			Your browser does not support HTML video.
 			</video> -->
-			<img class="img-fluid  d-lg-none d-sm-inline-block" src="img/logo3d.gif">
+			<img class="img-fluid  d-lg-none d-sm-inline-block" src="img/3d3d.png">
 		</div>
 								</div>
 							</div>
