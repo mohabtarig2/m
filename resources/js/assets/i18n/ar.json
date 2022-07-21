@@ -47,6 +47,7 @@
     "Grant_Funding_Bank":"البنك الممول للمنحة ",
     "Approximate_added_amount_Financing_method":"المبلغ المضاف التقريبي لطريقة التمويل",
     "Follow_up_on_engineering_consultancy_requests":"متابعة طلبات الاستشارات ",
+    "follow_up_with_the_request":"متابعة الطلب",
     "Flow_Conturction_Tender":"متابعة مناقصات المقاولات",
     "Flow_Hvac_tender":"متابعة مناقصات التكييف",
     "Flow_Stone_tender":"متابعة مناقصات الحجر",
@@ -130,6 +131,7 @@
     "team_goals":"يعمل بجهد لكسب رضاء العميل وتطوير طرق المناقصات وذلك في سبيل توفير المصداقية والامان للمواطنين والمقيمين",
     "add_tender":"إضف مناقصة",
     "Join_To_Our_Family":"انضم الي عائلتنا ",
+    
 
     "Going":"   إذهب الي ابعد الحدود في تصميمك ",
     "header_title1":"ابنِ منزل أحلامك من",
@@ -192,7 +194,7 @@
     "Waiting_for_the_consultant_to_write_a_short_description_title":" إنتظار الاستشاري لكتب عنوان وصف مختصر",
     "Waiting_for_the_consultant_to_write_a_short_description":"إنتظار الاستشاري لكتب وصف مختصر",
     "Waiting_for_the_consultant_to_upload_the_3D_file":"إنتظار الاستشاري لرفع ملف الثري دي",
-    "3D_File":"ملف الثري دي",
+    "3D_File":"  3D ",
     "contacts":"التواصل",
     "autocad":" الاوتوكاد",
     "Number_customer":"رقم اتصال العميل :",
@@ -307,6 +309,7 @@
     "join_us":"سجل شركتك",
     "amb_story":"كن جزء من قصة اي ام بي ",
     "Tender_Num":"رقم المناقصة",
+    "office_number":"رقم المكتب",
     "Message_update_data":"تم تحديث البيانات بنجاح",
     "update_data":"تحديث البيانات",
     "short_descripe":"وصف مختصر",
@@ -364,13 +367,15 @@
     "Interior_tender":" مناقصة الديكور الداخلي",
     "interior":"ديكور داخلي ",
     "previous":"السابق",
+    "personal_financing":"تمويل شخصي",
+    "living room":"غرفة المعيشة",
     
     
     "description":"الوصف",
     "submit_an_app":"ارسل طلب  ",
-    "Consultant_fee": " الأستشارات   ",
+    "Consultant_fee": " رسوم   التصميم    ",
     "tabCost":"تكلفة البناء ",
-    "CostGov":" رسوم الحكومية ",
+    "CostGov":"  رسوم الاشراف ",
     "conditioning": "التكييف",
     "gypsum": "الجبس",
     "interface_design":"تصميم الواجهة ",
@@ -380,7 +385,7 @@
     "Kitchen_Cabinets": "خزائن المطبخ ",
     "the_elevator": "المصعد",
     "pelvis": "الحوض",
-    "interior_decoration": "االديكور الداخلي",
+    "interior_decoration": "الديكور الداخلي",
     "Soil_testing":"شركات فحص التربة  ",
     "soon" : "قريباً",
     "garden_design": "تصميم الحدائق ",
@@ -482,8 +487,9 @@
     
     "UnderProcess":"تحت المعالجة ",
     "superVision_monthly":"الأشراف/ شهرياٌ",
-    "Name_Super_eng":"اسم المهندس(المشرف)",
+    "Name_Super_eng":"اسم الشركة",
     "Supervisor_phone_number":"رقم هاتف المشرف",
+    "The_maximum_limit_for_featured_ads_is_2_only":"  الحد الاعلى للاعلانات المميزة 2 فقط",
 
     "You_have_to_write_the_construction_supervision_price_example":" : عليك كتابة سعر الاشراف البناء  مثال ",
     "design_price":"عليك كتابة سعر التصميم , مثال",
@@ -573,7 +579,7 @@
     "Achievement_License":" ملف الانجازات",
     "Achievement_number_since_inception":"عدد الانجاز منذ التأسيس",
     "since":"منذ",
-  "Number_of_achievements_in_the_last_three_years":"عدد الانجازات اخر ثلاث سنين ",
+  "Number_of_achievements_in_the_last_three_years":"عدد الانجازات اخر ثلاث سنوات ",
     
 
     "construction":"مقاولات",
@@ -613,6 +619,7 @@
     "Edit_Profile":"تعديل الحساب",
     "Company_name":"اسم الشركة ",
     "Manager_Name":"اسم المدير",
+ 
     "arabic":"عربي",
     "about_Us":"حولنا ",
     "english":"انجليزي",

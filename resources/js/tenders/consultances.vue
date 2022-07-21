@@ -714,6 +714,12 @@
             <span class="check" style="border-radius:10px"></span>
             <span class="mr-4 ml-4">{{$t('Grant')}}</span>
              </label>
+                  <label class="checkbox d-bolck" :dir="$t('directions')" >
+            
+           <input type="radio" value="3"  name="typeBuild"  v-model="typeBuild">
+            <span class="check" style="border-radius:10px"></span>
+            <span class="mr-4 ml-4">{{$t('personal_financing')}}</span>
+             </label>
 </div>
             
 
@@ -728,7 +734,9 @@
 
 
         <div class=" form-group" dir="rtl">
-<p class=" font-weight-bold text-dark">  {{$t('Grant_Provider')}} </p>
+<p class=" font-weight-bold text-dark">  {{$t('Grant_Provider')}} <sup class="text-danger"> ({{$t('optional')}})</sup> </p>
+
+
 
              
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -818,7 +826,7 @@
 
       </label>
 
-                                <span class="ttm-color">      {{$t('add_photos')}}  . </span>
+                           
 
                 </div>
 
@@ -841,7 +849,7 @@
 
 
 <span v-if="progressbar!=null"  class="main-color"> {{files[i].name}}
-    <small class="text-muted  " v-if="files[i].size"> ({{files[i].size}} KB) </small>
+    <small class="text-muted  " v-if="files[i].size"> {{bytesToSize(files[i].size)}}</small>
 </span>
 <span class="btn btn-light float-left"  v-if="progressbar">
 
@@ -1054,6 +1062,10 @@ export default {
    },
 
   methods: {
+
+
+
+    
    
                          onSoilChange(event){
            this.soil=event.target.files[0];
@@ -1271,6 +1283,10 @@ this.resultSize = size+' MB' ;
               onImageChanged(event){
                const files = event.target.files;
 
+            for (let i = 0; i < this.files.length; i++) {
+              this.upload(i, this.files[i]);
+            }
+
                Array.from(files).forEach(file => this.addImage(file))
 
 
@@ -1327,6 +1343,15 @@ console.log(result1);
                     this.FileNotAllowd=null
                 });
             },
+
+            
+
+                 bytesToSize(bytes) {
+   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+   if (bytes == 0) return '0 Byte';
+   var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+   return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+},
             removeImage(i){
   let files = this.files;
   files.splice(i,1,'');

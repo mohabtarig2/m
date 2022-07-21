@@ -13,7 +13,7 @@ class request_villa extends Model
     'passport_path','map_path',
     'phone','whatsapp',
     'Description','type_villa',
-    'Emirates','price','room_mastar',
+    'Emirates','price','room_mastar','finishing',
     'rooms','floors','majlis',
     'Consultant_fee','conditioning',
     'gypsum','electric_pendants',

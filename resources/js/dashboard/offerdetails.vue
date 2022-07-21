@@ -234,7 +234,6 @@
            <!-- <div class="invalid-feedback" v-for="(error, index) in this.errorFor('bathroom')" :key="'bathroom' + index" >{{ error }}</div> -->
       </div>
 
-
   </div>
 
   <div class="form-group row">
@@ -396,7 +395,7 @@
 </label>
 <label class="checkbox d-bolck" :dir="$t('directions')"> 
 
-  <input type="checkbox" v-model="ads.tabCost" name="tabCos">
+  <input type="checkbox" value="true" v-model="ads.tabCost" name="tabCos">
   <span class="check" ></span>
   <span class="mr-4 ml-4">  {{$t('tabCost')}}</span>
 </label>
@@ -511,9 +510,10 @@ ads.pelvis,ads.interior_decoration,ads.Kitchen_Cabinets,ads.garden_design,ads.gy
 
 
 <script>
+import Toast from '../auth/toast.vue';
 import constructionOfferDetials from './constructionOfferDetials.vue';
 export default {
-  components: { constructionOfferDetials },
+  components: { constructionOfferDetials, Toast },
 data(){
     return{
      ads_Id :this.$route.params.id,

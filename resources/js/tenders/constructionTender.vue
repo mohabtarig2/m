@@ -110,8 +110,14 @@
         >{{ error }}</div>
 <h5 class="text-right mt-3   mb-3 text-muted"> {{$t('Required_files')}} </h5>
 <div class="form-group">
+  
         <small class="text-muted">(pdf, jpg , png )</small>
-                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}}</small>
+        
+                    <div class=" float-right  font-weight-bold">
+                    <span class="">   {{$t('villa_design')}}</span>
+          <span class=""> {{$t('3D_File')}} </span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
 
 
              <div class="form-group container file-style ">
@@ -120,8 +126,7 @@
                  <span class="btn btn-light" @click="$refs.threeD" v-if="threeD==null"><span class=" fa fa-paperclip" ></span></span>
 
                 <span class="btn btn-light " @click="$refs.threeD" v-else><span class="fa fa-paperclip" ></span></span>
-          <span class="">   {{$t('villa_design')}}</span>
-          <span class=""> {{$t('3D_File')}} </span>
+          
              <small class=" font-weight-bold text-danger" v-if="FileNotthreeDAllowd!=null">{{FileNotthreeDAllowd}}</small>
                 <input type="file" class="form-control"  @change="threedFile" style="display:none" ref="threeD">
 
@@ -149,15 +154,22 @@
 </div>
 
 <div class="form-group">
-    <small class="text-muted">  dwg (autocad file)</small>
-    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}}</small>
+
+  
+            <small class="text-muted">  dwg (autocad file)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+           <span class=""> {{$t('Architectural_drawings_file')}} </span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
+
              <div class="file-style">
 
                  <label>
                  <span class="btn btn-light" @click="$refs.fileinput2" v-if="Architect==null"><span class=" fa fa-paperclip" ></span></span>
 
                 <span class="btn btn-light " @click="$refs.fileinput2" v-else><span class="fa fa-paperclip" ></span></span>
-              <span class=""> {{$t('Architectural_drawings_file')}} </span>
+             
               <small class=" font-weight-bold text-danger" v-if="FileNotMapAllowd!=null">{{FileNotMapAllowd}}</small>
                 <input type="file" class="form-control"  @change="ArchitectFile" style="display:none" ref="fileinput2" >
 
@@ -181,15 +193,23 @@
 </div>
 
 <div class="form-group">
-        <small class="text-muted"> dwg (autocad file)</small>
-                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}}</small>
+
+  
+            <small class="text-muted">  dwg (autocad file)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+              <span class="">    {{$t('Services_file')}}</span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
+      
+                   
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.services" v-if="services==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.services" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">    {{$t('Services_file')}}</span>
+       
               <small class=" font-weight-bold text-danger" v-if="FileNotservicesAllowd!=null">{{FileNotservicesAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="ServicesFile" style="display:none" ref="services">
@@ -256,15 +276,22 @@
 </div>
 
 <div class="form-group">
-        <small class="text-muted">  dwg (autocad file)</small>
-                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}}</small>
+
+      <small class="text-muted">  dwg (autocad file)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+              <span class="">    {{$t('Structure_file')}}</span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
+       
+                   
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.structure" v-if="Structure==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.structure" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">   {{$t('Structure_file')}}</span>
+     
               <small class=" font-weight-bold text-danger" v-if="FileNotStructureAllowd!=null">{{FileNotStructureAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="StructureFile" style="display:none" ref="structure">
@@ -288,15 +315,22 @@
 
 </div>
 <div class="form-group">
-            <small class="text-muted">( xlsx)</small>
-                        <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}}</small>
+  
+       <small class="text-muted">  ( xlsx)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+                <span class="">     {{$t('specification_file')}}</span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
+
+                   
 
              <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.specifications" v-if="Specifications==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.specifications" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">     {{$t('specification_file')}}</span>
+        
                 <input type="file" class="form-control"  @change="SpecificationsFile" style="display:none" ref="specifications">
 
                <div class=" text-danger" v-if="FileNotSpecificationsAllowd!=null">{{FileNotSpecificationsAllowd}}</div>
@@ -326,15 +360,23 @@
 
 
 <div class="form-group">
-        <small class="text-muted">(pdf)</small>
-            <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}}</small>
+
+  <small class="text-muted">  (pdf)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+              <span class="">    {{$t('Emirates_id')}}</span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
+       
+    
+          
 
             <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.idfile" v-if="identity==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.idfile" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">     {{$t('Emirates_id')}}</span>
+          
                 <input type="file" class="form-control"  @change="idFile" style="display:none" ref="idfile">
 
                <div class=" text-danger" v-if="FileNotidentityAllowd!=null">{{FileNotidentityAllowd}}</div>
@@ -358,15 +400,22 @@
 
 </div>
 <div class="form-group">
-        <small class="text-muted">(Pdf)</small>
-                    <small class=" float-right text-danger font-weight-bold">{{$t('Mandatory')}}</small>
+
+   <small class="text-muted">  (pdf)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+              <span class="">    {{$t('earth_map_file')}}</span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
+        
+                 
 
             <div class="file-style ">
                  <label>
                  <span class="btn btn-light" @click="$refs.ele" v-if="map==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.ele" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">   {{$t('earth_map_file')}}  </span>
+           
                 <input type="file" class="form-control"  @change="mapFile" style="display:none" ref="ele">
 
                <div class=" text-danger" v-if="FileNotmapAllowd!=null">{{FileNotmapAllowd}}</div>

@@ -157,7 +157,7 @@
 									</div>
 									<!-- Property Ratting -->
 									<div class="property-ratting">
-										<div class="property-ratting-left visible-xs">
+										<!-- <div class="property-ratting-left visible-xs">
 											<span class="p-ratting-point">4.5</span>
 											<div class="p-ratting-details">
 												<ul class="ratting-details-star list-none">
@@ -168,9 +168,10 @@
 													<li><i class="fa fa-star-half-alt"></i></li>
 												</ul>
 											</div>
-										</div>
+										</div> -->
 										<div class="property-ratting-save" v-if="offer.saved_villa==null">
-											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i><b class="visible-xs">{{$t('save')}}</b></a>
+											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i>
+											<b class="visible-xs">{{$t('save')}}</b></a>
 										</div>
                                         <div class="property-ratting-save saved" v-else>
 											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart"></i><b class="visible-xs">
@@ -181,7 +182,9 @@
 								<!-- Single Recent Content -->
 								<div class="s-property-content">
 									<h3 class="srp-title hs-4"><router-link :to="{name:'pageDetails',params:{id:offer.id}}">
-										{{offer.title}}</router-link></h3>
+										<!-- {{offer.title}} -->
+									{{$t('design')}}	{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}
+										</router-link></h3>
 									<p class="property-location mb-0"><i class="fa fa-map-marker-alt"></i>
                                     <all-uae :emirates="offer.Emirates"></all-uae></p>
 									<div class="single-r-property-bed">
@@ -260,8 +263,8 @@ location_city
 									<!-- Property Ratting -->
 									<div class="property-ratting">
 										<div class="property-ratting-left visible-xs">
-											<span class="p-ratting-point">4.5</span>
-											<div class="p-ratting-details">
+											<!-- <span class="p-ratting-point">4.5</span> -->
+											<!-- <div class="p-ratting-details">
 												<ul class="ratting-details-star list-none">
 													<li><i class="fa fa-star"></i></li>
 													<li><i class="fa fa-star"></i></li>
@@ -269,20 +272,25 @@ location_city
 													<li><i class="fa fa-star"></i></li>
 													<li><i class="fa fa-star-half-alt"></i></li>
 												</ul>
-											</div>
+											</div> -->
 										</div>
 
 										<div class="property-ratting-save" v-if="offer.saved_villa==null">
 											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i>{{$t('save')}}</a>
 										</div>
                                         <div class="property-ratting-save saved" v-else>
-											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart"></i>{{$t('saved')}}</a>
+											<a @click="undosaved(offer.id)" class="theme-color"><i class="fa fa-heart">
+												</i>{{$t('saved')}}</a>
 										</div>
 									</div>
 								</div>
 								<!-- Single Recent Content -->
 								<div class="s-property-content">
-									<h3 class="srp-title hs-4"><router-link :to="{name:'pageDetails',params:{id:offer.id}}">{{offer.title}}</router-link></h3>
+									<h3 class="srp-title hs-4">
+										<router-link :to="{name:'pageDetails',params:{id:offer.id}}">
+											<!-- {{offer.title}} -->
+											{{$t('design')}} {{offer.type_villa==1 ? $t('classic')  : $t('modern')}} 
+											</router-link></h3>
 									<p class="property-location mb-0"><i class="fa fa-map-marker-alt"></i>
                                     <all-uae :emirates="offer.Emirates"></all-uae></p>
 									<div class="single-r-property-bed">
@@ -360,7 +368,7 @@ location_city
 									</div>
 									<!-- Property Ratting -->
 									<div class="property-ratting">
-										<div class="property-ratting-left visible-xs">
+										<!-- <div class="property-ratting-left visible-xs">
 											<span class="p-ratting-point">4.5</span>
 											<div class="p-ratting-details">
 												<ul class="ratting-details-star list-none">
@@ -372,7 +380,7 @@ location_city
 												</ul>
 												<span>4  Comment</span>
 											</div>
-										</div>
+										</div> -->
 										<div class="property-ratting-save" v-if="offer.saved_villa==null">
 											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i><span class="visible-xs">
 												{{$t('save')}}</span></a>
@@ -385,7 +393,11 @@ location_city
 								<!-- Single Recent Content -->
 								<div class="s-property-content">
 									<h3 class="srp-title hs-4">
-										<router-link :to="{name:'pageDetails',params:{id:offer.id}}">{{offer.title}}</router-link></h3>
+										<router-link :to="{name:'pageDetails',params:{id:offer.id}}">
+											<!-- {{offer.title}} -->
+											{{$t('design')}} {{offer.type_villa==1 ? $t('classic')  : $t('modern')}} 
+
+											</router-link></h3>
 									<p class="property-location mb-0"><i class="fa fa-map-marker-alt"></i>
                                     <all-uae :emirates="offer.Emirates"></all-uae></p>
 									<div class="single-r-property-bed">

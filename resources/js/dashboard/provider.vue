@@ -14,6 +14,7 @@
 
            
             <span class="mr-2" v-if="typeBuild==2">  {{$t('Grant')}}</span>
+            <span class="mr-2" v-if="typeBuild==3">  {{$t('personal_financing')}}</span>
      
     
    
@@ -53,11 +54,11 @@
     {{BankProvider}}
 </div>
 
-<div v-if="finance">
+<!-- <div v-if="finance">
     <h3 class="h5 mt-4 font-weight-bold theme-color"> {{$t('Approximate_added_amount_Financing_method')}} </h3>
 
     {{finance}}
-</div>
+</div> -->
 
 
     </div>

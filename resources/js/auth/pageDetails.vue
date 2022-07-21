@@ -5,7 +5,7 @@
 
 
 <!-- Modal -->
-
+  <toast  ></toast>
 
 
    <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -21,7 +21,6 @@
     </div>
   </div>
 </div>
-
 
 
 
@@ -73,6 +72,7 @@
 	</section>
 
 
+
 	<!-- End Breadcrumbs Area -->
 
 
@@ -93,7 +93,11 @@
 											<review :rating="offer.rating"></review>
 										</div>
 									</div>
-									<h2 class="p-single-title hs-2">{{offer.title}}</h2>
+									<h2 class="p-single-title hs-2">
+                    <!-- {{offer.title}} -->
+ {{$t('design')}}	{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}
+
+                    </h2>
 									<p class="pr-location m-0"><i class="fa fa-map-marker-alt">
                                         </i><all-uae :emirates="offer.Emirates"></all-uae></p>
 
@@ -112,6 +116,7 @@
                       
                       {{$t('aed')}}
                       </span>
+
                     
                  
                     
@@ -137,7 +142,17 @@
 						
 							</div>
 							<div class="col-lg-4 col-md-4 col-12" v-if="isLoggedIn && IsUser==10">
-								<div class="print-react">
+
+                          <div v-if="offer.request_villa" class="print-react">
+     <router-link  :to="{name:'requestDetails',id:offer.request_villa.id}">
+      <span class="theme-btn" > 
+        <i class='bx bxs-check-circle text-light'></i>
+        {{$t('follow_up_with_the_request')}}</span>
+                    
+
+                </router-link>
+                    </div>
+								<div class="print-react" v-else>
 									<ul class="p-react-list list-none">
 										<li><router-link class="btnsVilla btn-dark" 
 										:to="{name:'FromOffers',id:ads_id}">
@@ -146,7 +161,7 @@
 										  {{$t('edit_on_offer')}}
 										</router-link></li>
 										<li>
-											<a data-toggle="modal" data-target="#exampleModalCenter" v-if="IsUser==10"
+											<a data-toggle="modal" data-target="#exampleModalCenter" 
 										class=" btnsVilla btn-download"
 										 :to="{name:'FromOffers',id:ads_id}">
 										 <i class="bx bxs-home-smile text-light"></i
@@ -154,7 +169,7 @@
 										  {{$t('submit_an_app')}}
 										</a></li>
 										
-										<li>
+										<li >
 										<a class="fa fa-heart "
 										v-if="offer.saved_villa==null"
 										 @click="saved"
@@ -326,7 +341,10 @@
 					<!-- Property Details -->
 					<div class="p-descrip-box pro-details" :dir="$t('directions')" :class="$t('text_align')">
 						<h4 class="pr-d-title"  :dir="$t('directions')" :class="$t('text_align')">{{$t('Desgin_Details')}}</h4>
+
 						<div class="pr-details-main">
+
+
 							<div class="row"  >
 								<div class="col-xl-3 col-md-4 col-6">
 									<!-- Single Property Detail -->
@@ -480,6 +498,37 @@ location_city
 									</div>
 									<!-- End Single Property Detail -->
 								</div>
+                
+            
+
+                       	<div class="col-xl-3 col-md-4 col-6">
+                                  
+									<!-- Single Property Detail -->
+									<div class="pr-single"  :dir="$t('directions')" :class="{'text-right float-right':lang=='ar'}">
+										
+										<div class="pr-desc">
+											<span>
+                                                {{$t('Finishing_type')}}
+                                            </span>
+
+            <p class="pr-des-title m-0">
+  <span v-show="offer.finishing==1"> {{$t('commercial')}} </span>
+                <span v-show="offer.finishing==2"> {{$t('normal')}}</span>
+                <span v-show="offer.finishing==3"> {{$t('good')}}</span>
+                <span v-show="offer.finishing==4"> {{$t('Excellent')}}</span>
+                <span v-show="offer.finishing==5"> {{$t('deluxe')}}</span>
+                <span v-show="offer.finishing==6"> {{$t('superdeluxe')}}</span>
+
+                                            </p>
+										</div>
+										<div class="pr-icon">
+                                            <i class='bx bxs-paint-roll'></i>
+                                            </div>
+									</div>
+									<!-- End Single Property Detail -->
+								</div>
+
+
 
 							
 
@@ -488,19 +537,24 @@ location_city
 
 								
 							</div>
+                                                  
+
 						</div>
 					</div>
 					<!-- End Property Details -->
 
 					<!-- Property Features -->
 					<div class="p-descrip-box pro-features   " :class="{'text-left ':lang=='en' ,'text-right ':lang=='ar'}" >
+            
 						<h4 class="pr-d-title">{{$t('price_include')}}</h4>
+
+
 							
-						<div class="row" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
+						<div class="row" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}" :dir="$t('directions')">
 							<div class="col-xl-3 col-md-3 col-12">{{$t('Consultant_fee')}} 
             
                   <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
-                   :class="{'text-muted':offer.Consultant_fee!='true',
+                   :class="{'text-muted':offer.Consultant_fee!='true', 'theme-color':offer.Consultant_fee=='true',
                    'text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar' }"></i>
               </div>
@@ -512,19 +566,21 @@ location_city
                    'text-right float-right ':lang=='ar' }" ></i>
               </div>
 
-							<div class="col-xl-3 col-md-3 col-12">
-                
-                <span  >{{$t('gypsum')}}</span>
-              <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
-               :class="{'text-muted':offer.gypsum!='true','text-left float-left ':lang=='en','theme-color':offer.gypsum=='true',
-                   'text-right float-right ':lang=='ar'}"></i>
-              </div>
+						     <div class="col-xl-3 col-md-3 col-12">
+                              {{$t('tabCost')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
+                               :class="{'text-muted':offer.tabCost!='true','theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></div>
 
 					
 
-	<div class="col-xl-3 col-md-3 col-12">{{$t('conditioning')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
-  :class="{'text-muted':offer.conditioning!='true', 'theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></div>
+
+
+
+                    		<div class="col-xl-3 col-md-3 col-12">{{$t('the_fence')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
+               :class="{'text-muted':offer.the_fence!='true', 'theme-color':offer.the_fence=='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i>
+                   
+              </div>
 
 
 
@@ -533,16 +589,23 @@ location_city
 
           
 						<div class="row mt-1" :class="{'text-right  ':lang=='ar','text-left  ':lang=='en'}">
+
+              
                           
 						   <div class="col-xl-3 col-md-3 col-12">{{$t('electric_pendants')}}
                 <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
-                 :class="{'text-muted':offer.electric_pendants!='true','text-left float-left ':lang=='en',
+                 :class="{'text-muted':offer.electric_pendants!='true', 'theme-color':offer.electric_pendants=='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
 
-                            <div class="col-xl-3 col-md-3 col-12">
-                              {{$t('tabCost')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
-                               :class="{'text-muted':offer.tabCost!='true','theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i></div>
+                       
+
+                   	<div class="col-xl-3 col-md-3 col-12">
+                
+                <span  >{{$t('gypsum')}}</span>
+              <i class="mr-2 ml-2 mt-1 fas fa-check-circle"
+               :class="{'text-muted':offer.gypsum!='true','text-left float-left ':lang=='en','theme-color':offer.gypsum=='true',
+                   'text-right float-right ':lang=='ar'}"></i>
+              </div>
 							<div class="col-xl-3 col-md-3 col-12">
                 {{$t('Bedroom_wardrobes')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
                  :class="{'text-muted':offer.Bedroom_wardrobes!='true','theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
@@ -556,17 +619,18 @@ location_city
               
 						<div class="row mt-1" :class="{'text-right  ':lang=='ar','text-left ':lang=='en'}">
 
-              		<div class="col-xl-3 col-md-3 col-12">{{$t('the_fence')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle"
-               :class="{'text-muted':offer.the_fence!='true', 'theme-color':offer.the_fence=='true','text-left float-left ':lang=='en',
-                   'text-right float-right ':lang=='ar'}"></i>
-                   
-              </div>
-
-					<div class="col-xl-3 col-md-3 col-12">{{$t('the_elevator')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.the_elevator!='true','text-left float-left ':lang=='en',
-                   ' float-right ':lang=='ar'}"></i></div>
-					<div class="col-xl-3 col-md-3 col-12">{{$t('interior_decoration')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.interior_decoration!='true','text-left float-left ':lang=='en',
+             	<div class="col-xl-3 col-md-3 col-12">{{$t('conditioning')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
+  :class="{'text-muted':offer.conditioning!='true', 'theme-color':offer.conditioning=='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
-                    <div class="col-xl-3 col-md-3 col-12">{{$t('garden_design')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" :class="{'text-muted':offer.garden_design!='true',
+
+					<div class="col-xl-3 col-md-3 col-12">{{$t('the_elevator')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
+          :class="{'text-muted':offer.the_elevator!='true','theme-color':offer.the_elevator=='true','text-left float-left ':lang=='en',
+                   ' float-right ':lang=='ar'}"></i></div>
+					<div class="col-xl-3 col-md-3 col-12">{{$t('interior_decoration')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
+          :class="{'text-muted':offer.interior_decoration!='true','theme-color':offer.interior_decoration=='true','text-left float-left ':lang=='en',
+                   'text-right float-right ':lang=='ar'}"></i></div>
+                    <div class="col-xl-3 col-md-3 col-12">{{$t('garden_design')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
+                    :class="{'text-muted':offer.garden_design!='true', 'theme-color':offer.garden_design=='true',
                     'text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
 					
@@ -576,14 +640,15 @@ location_city
   
     
 <div class="col-xl-3 col-md-3 col-12" >{{$t('pelvis')}}<i class="mr-2 ml-2 mt-1 fas fa-check-circle" 
-:class="{'text-muted':offer.pelvis!='true','text-muted':offer.pelvis=='true','text-left float-left ':lang=='en',
+:class="{'text-muted':offer.pelvis!='true','theme-color':offer.pelvis=='true','text-left float-left ':lang=='en',
                    'text-right float-right ':lang=='ar'}"></i></div>
             </div>
 					
 					</div>
 
           
-							<a data-toggle="modal" data-target="#exampleModalCenter" v-if="IsUser==10 && isLoggedIn"
+							<a data-toggle="modal" data-target="#exampleModalCenter" v-if="IsUser==10 && isLoggedIn" v-show="!offer.request_villa"
+
 										class="  theme-btn mb-3">
 										 <i class="bx bxs-home-smile text-light"></i
 										>
@@ -595,16 +660,25 @@ location_city
 										>
 										 سجل دخول كمستخدم للطلب
 										</a> -->
-                                        <a href="#/login" v-else v-show="!isLoggedIn"
+                           <a  data-toggle="modal" data-target="#LoginMini" v-else v-show="!isLoggedIn"
+
 										class="  theme-btn mb-3">
 										 <i class="bx bxs-home-smile text-light"></i
 										>
 										  {{$t('login_first')}} 
-										</a>
+										</a >
 					<!-- End Property Features -->
 					<!-- Property Features -->
 
 
+
+<div class="modal fade" id="LoginMini" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <loginmini></loginmini>
+  </div>
+</div>
+</div>
 
 
 					<!-- Propery Features -->
@@ -685,7 +759,10 @@ location_city
 								<!-- Single Recent Content -->
 								<div class="s-property-content">
 									<h3 class="srp-title hs-4"><router-link :to="{name:'pageDetails',params:{id:offer.id}}">
-										{{offer.title}}</router-link></h3>
+										<!-- {{offer.title}} -->
+                    {{$t('design')}}	{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}
+                    
+                    </router-link></h3>
 									<p class="property-location mb-0"><i class="fa fa-map-marker-alt"></i>
                                     <all-uae :emirates="offer.Emirates"></all-uae></p>
 									<div class="single-r-property-bed">
@@ -835,9 +912,15 @@ location_city
          </label>
              <label class="checkbox d-bolck" >
             
-           <input type="radio" value="Grant"  name="typeBuild"  v-model="typeBuild">
+           <input type="radio" value="2"  name="typeBuild"  v-model="typeBuild">
             <span class="check" style="border-radius:10px"></span>
             <span class="mr-4 ml-4">{{$t('Grant')}}</span>
+             </label>
+                      <label class="checkbox d-bolck" :dir="$t('directions')" >
+            
+           <input type="radio" value="3"  name="typeBuild"  v-model="typeBuild">
+            <span class="check" style="border-radius:10px"></span>
+            <span class="mr-4 ml-4">{{$t('personal_financing')}}</span>
              </label>
 </div>
             
@@ -853,7 +936,7 @@ location_city
 
 
         <div class=" form-group" :dir="$t('directions')" :class="$t('text_align')">
-<p class=" font-weight-bold theme-color">{{$t('Grant_Provider')}} </p>
+<p class=" font-weight-bold theme-color">{{$t('Grant_Provider')}} <sup class="text-danger"> ({{$t('optional')}})</sup> </p>
 
              
     <label class="checkbox d-bolck" :dir="$t('directions')" >
@@ -941,6 +1024,7 @@ location_city
 </div>
 
 </div>
+
     </div>
 </template>
 
@@ -952,10 +1036,12 @@ import AllUae from './AllUae.vue';
 import Unique from './unique.vue';
 import Review from '../dashboard/review.vue';
 import Lightbox from '@morioh/v-lightbox'
+import Loginmini from './loginmini.vue';
+import Toast from './toast.vue';
 
 
 export default {
- components: { slick ,AllUae, Unique, Review, Lightbox },
+ components: { slick ,AllUae, Unique, Review, Lightbox, Loginmini,Toast  },
  data() {
      return {
       keyIndex:0,
@@ -974,6 +1060,7 @@ export default {
          offers:null,
          uniques:null,
          payment:'',
+         loading:false,
       form:{
         EmiratesId:null,
         passport:null,
@@ -1244,6 +1331,7 @@ axios.get('/api/ads/details/'+event).then(res=>{
                 
     },
         payForm(offer){
+          this.loading=true,
 		  console.log(offer);
 		  
          let title = '';
@@ -1257,6 +1345,7 @@ axios.get('/api/ads/details/'+event).then(res=>{
          let Description	 = '';
          let floors	 = '';
          let TypeVilla	 = '';
+         let finishing	 = '';
          let Emirates	 = '';
 
 		let Consultant_fee = '';
@@ -1294,6 +1383,7 @@ axios.get('/api/ads/details/'+event).then(res=>{
           Description	 = offer.Description;
           floors	 = offer.floors;
           TypeVilla	 = offer.type_villa;
+          finishing = offer.finishing
           Emirates	 = offer.Emirates;
 
 		  //additional info 
@@ -1333,6 +1423,7 @@ axios.get('/api/ads/details/'+event).then(res=>{
 
       data.append("com_id", this.com_id);
       data.append("villa_type", TypeVilla);
+      data.append("finishing", finishing);
       data.append("floor", floors);
       data.append("position", this.position);
 
@@ -1405,8 +1496,9 @@ $('#exampleModalCenter').modal('hide');
    $('.modal-backdrop').css('display','block');
 
    this.succesAlert();
-                
+  this.VillaDetails();
  this.success = res.data;
+      this.loading=false,
 
 
 

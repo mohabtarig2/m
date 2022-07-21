@@ -16,7 +16,7 @@ class Villa extends Model
         'the_fence','room_master'
         ,'majlis','bathroom','dining','kitchen','Service_room_placement',
         'ads','sqft','living_room',
-        'Phone','Name_eng','supervision','design','tab','CostGov','tabCost'
+        'Phone','Name_eng','supervision','design','tab','CostGov','tabCost','finishing'
     ];
 
 
@@ -32,6 +32,10 @@ class Villa extends Model
 
     }
 
+    public function request_villa(){
+        return $this->hasOne('App\request_villa','ads_id');
+
+    }
     public function reason(){
 
         return $this->hasMany('App\reason_rejected_offer','offer_id');

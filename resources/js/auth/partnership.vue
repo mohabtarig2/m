@@ -472,14 +472,14 @@ align-items: center;
 
 
 .theme-btn{
-    background: #34d195 !important;
+    background: #1d67cb !important;
 }
 
 .theme-btn.primary
 {
-    border: 1px solid #34d195 !important;
+    border: 1px solid #1d67cb !important;
     background: transparent !important;
-    color: #34d195 !important;
+    color: #1d67cb !important;
 }
 
 .theme-btn::before {

@@ -74,7 +74,7 @@
 							<!-- Recent Property Img -->
 							<div class="single-r-property-img" v-for="image , i in offer.villa_image" :key='i' x>
 								<router-link  :to="{name:'pageDetails',params:{id:offer.id}}">
-								<img :src="image.path" v-if="i==0" alt="#"  style="width:370px; height:280px !important">
+								<img :src="image.path" v-if="i==0" alt="#"  style="width:370px !important; height:280px !important">
 								</router-link>
 							</div>
 							<div class="property-for-sale">
@@ -86,7 +86,7 @@
 							</div>
 							<!-- Property Ratting -->
 							<div class="property-ratting">
-								<div class="property-ratting-left">
+								<!-- <div class="property-ratting-left">
 									<span class="p-ratting-point">4.5</span>
 									<div class="p-ratting-details">
 										<ul class="ratting-details-star list-none">
@@ -96,9 +96,9 @@
 											<li><i class="fa fa-star"></i></li>
 											<li><i class="fa fa-star-half-alt"></i></li>
 										</ul>
-										<!-- <span>2 Comment</span> -->
+										<span>2 Comment</span>
 									</div>
-								</div>
+								</div> -->
 									<div class="property-ratting-save" v-if="offer.saved_villa==null">
 											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i><span class="visible-xs">
 												{{$t('save')}}</span></a>
@@ -112,7 +112,10 @@
 						<!-- Single Recent Content -->
 						<div class="s-property-content">
 							<h3 class="srp-title hs-4"><router-link  :to="{name:'pageDetails',params:{id:offer.id}}">
-                                        {{offer.title}}</router-link></h3>
+                                        <!-- {{offer.title}} -->
+										                    {{$t('design')}}	{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}
+
+										</router-link></h3>
 							<p class="property-location mb-0"><i class="fa fa-map-marker-alt">
                                 </i>     <all-uae :emirates="offer.Emirates"></all-uae></p>
 							<div class="single-r-property-bed">
@@ -163,7 +166,7 @@ location_city
 							<!-- Recent Property Img -->
 							<div class="single-r-property-img" v-for="image , i in offer.villa_image" :key='i' >
 								<router-link  :to="{name:'pageDetails',params:{id:offer.id}}">
-								<img :src="image.path" v-if="i==0" alt="#"  style="width:370px; height:280px !important">
+								<img :src="image.path" v-if="i==0" alt="#"  style="width:370px !important; height:280px !important">
 								</router-link>
 							</div>
 							<div class="property-for-sale">
@@ -175,7 +178,7 @@ location_city
 							</div>
 							<!-- Property Ratting -->
 							<div class="property-ratting">
-								<div class="property-ratting-left">
+								<!-- <div class="property-ratting-left">
 									<span class="p-ratting-point">4.5</span>
 									<div class="p-ratting-details">
 										<ul class="ratting-details-star list-none">
@@ -187,7 +190,7 @@ location_city
 										</ul>
 										<span>2 Comment</span>
 									</div>
-								</div>
+								</div> -->
 								<div class="property-ratting-save" v-if="offer.saved_villa==null">
 											<a @click="saved(offer.id)" ><i class="fa fa-heart"></i><span class="visible-xs">
 												{{$t('save')}}</span></a>
@@ -201,7 +204,10 @@ location_city
 						<!-- Single Recent Content -->
 						<div class="s-property-content">
 							<h3 class="srp-title hs-4"><router-link  :to="{name:'pageDetails',params:{id:offer.id}}">
-                                        {{offer.title}}</router-link></h3>
+                                        <!-- {{offer.title}} -->
+ {{$t('design')}}	{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}
+
+										</router-link></h3>
 							<p class="property-location mb-0"><i class="fa fa-map-marker-alt">
                                 </i>     <all-uae :emirates="offer.Emirates"></all-uae></p>
 							<div class="single-r-property-bed">
@@ -296,13 +302,13 @@ location_city
 									<img :src="image.path" alt="#" v-if="i==0" style="width:90px;height:85px">
                                     </span>
 									<div class="r-view-content">
-										<ul class="r-view-ratting list-none">
+										<!-- <ul class="r-view-ratting list-none">
 											<li><i class="fa fa-star"></i></li>
 											<li><i class="fa fa-star"></i></li>
 											<li><i class="fa fa-star"></i></li>
 											<li><i class="fa fa-star"></i></li>
 											<li><i class="fa fa-star-half-alt"></i></li>
-										</ul>
+										</ul> -->
 										<!-- <h5 class="r-view-title"><a  @click="ridirct(ads.id)" :to="{name:'pageDetails',params:{id:ads.id}}"> -->
 										<h5 class="r-view-title"><a  @click="ridirct(ads.id)">
                                             {{ads.title}} <span class="badge badge-secondary">{{$t('ads')}}</span>

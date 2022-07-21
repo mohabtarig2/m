@@ -2385,7 +2385,7 @@ request.offer.offersfiles.servicesPath && request.offer.offersfiles.StructurePat
 
         </div>
 
-            <div class="col-lg-8 col-md-12">
+            <div class="col-lg-4 col-md-12">
     <div class="p-descrip-box">
        <h3> تفاصيل العرض</h3>
 
@@ -2444,6 +2444,9 @@ request.offer.offersfiles.servicesPath && request.offer.offersfiles.StructurePat
                 </div>
 
             </div>
+
+   
+
 
 
 
@@ -2534,6 +2537,25 @@ request.offer.offersfiles.servicesPath && request.offer.offersfiles.StructurePat
 										<div class="pr-desc">
 											<span> {{$t('living room')}}</span>
 											<p class="pr-des-title m-0" >  {{request.living_room}}</p>
+										</div>
+									</div>
+                </div>
+
+                       
+
+                  <div class="col-6" v-if="request.finishing">
+
+                   <div class="pr-single m-0">
+										<div class="pr-icon"><i class="fa fa-bed"></i></div>
+										<div class="pr-desc">
+											<span>{{$t('Finishing_type')}}</span>
+											<p class="pr-des-title m-0" >  <span v-show="request.finishing==1"> {{$t('commercial')}} </span>
+                <span v-show="request.finishing==2"> {{$t('normal')}}</span>
+                <span v-show="request.finishing==3"> {{$t('good')}}</span>
+                <span v-show="request.finishing==4"> {{$t('Excellent')}}</span>
+                <span v-show="request.finishing==5"> {{$t('deluxe')}}</span>
+                <span v-show="request.finishing==6"> {{$t('superdeluxe')}}</span></p>
+
 										</div>
 									</div>
                 </div>

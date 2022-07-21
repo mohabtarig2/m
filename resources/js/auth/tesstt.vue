@@ -69,7 +69,8 @@
 
             <div class="stepper-item" :class="{ 'current': step == item, 'success': step > item }" v-for="item in 4" :key="item">
                 <div class="stepper-item-counter">
-                    <img class="icon-success" src="https://www.seekpng.com/png/full/1-10353_check-mark-green-png-green-check-mark-svg.png" alt="">
+                  
+                    <i class='bx bx-check text-primary icon-success' style="font-size: 30px;"></i>
                     <span class="number">
                         {{ item }}
                     </span>
@@ -112,21 +113,45 @@
           />
           <v-errors :errors="errorFor('email')"></v-errors>
             </div>
+  <div class="form-group mt-3">
+             <div class="h5" :class="$t('text_align')">رقم الجوال</div>
+            <div class="row" dir="ltr">
+              <div class=" col-4 ">
+			
+                     <span class="single-property-details">
+     <span class="nice-select" >
+       <span class="current" v-if="country">
+        <img src="img/ae.svg" width="20" class="pr-1">
+        <span class="text-dark">+ 971</span>
+                                        </span>
 
-            <div class="form-group">
-          <!-- <label for="password">{{$t('mobile')}}</label> -->
-          <input
-            type="number"
-            name="mobile2"
-            :placeholder="$t('mobile')"
-            class="form-control"
-            v-model="business.mobile"
-            pattern="^([+]{1}[9]{1}[7]{1}[1]{1}[5]{1}[0-9]{8})$"
-            :class="[{'is-invalid': errorFor('mobile')}]"
+     </span>
+
+   </span>
+										
+								
+                  </div>
+<div class="col-8">
+           
+            <input type="text"
+            name="phone"
+              class="form-control"
+              v-model="phone"
+              dir="ltr"
+
+
+             :class="[{'is-invalid': this.errorFor('phone')},{'is-invalid':isAvailble==1}]"
+
           />
-          <v-errors :errors="errorFor('mobile')"></v-errors>
-            </div>
+           <small >{{ error_phone}} </small>
+           <div v-if="isAvailble==1" class="text-danger text-right">هذا الرقم مسجل باسم شركة اخرى</div>
 
+          <v-errors :errors="errorFor('phone')"></v-errors>
+
+</div>
+            </div>
+        </div>  
+  
 
 
         <div class="form-group">
@@ -179,10 +204,10 @@
             </div>
 
             <div class="stepper-pane" v-if="step == 2">
-                  <div class="mt-5 mx-auto contact-form"  v-if="completeData==''" dir="rtl" >
+                  <div class="mt-5 mx-auto contact-form"  v-if="completeData==''" :dir="$t('directions')" >
 
 
-    <h2 class="text-center mb-4 " >اكمل حسابك  </h2>
+
           <!-- <ul class="progressbar" dir="">
               <li class="active">تم تسجيل حساب</li>
               <li>اكمال الحساب </li>
@@ -200,14 +225,19 @@
 
   <div class="row">
              <div class="col-6 form-group  mt-3">
-                 <div class=" h5" :class="$t('text_align')">اسم المدير <sup class="text-muted"> (باللغة العربية)</sup> </div>
+                 <div class=" h5" :class="$t('text_align')">{{$t('Manager_Name')}}<sup class="text-muted"> ({{$t('arabic')}})</sup> </div>
             <input type="text"
              name="manger_ar"
 
               class="form-control"
               pattern="[a-z]"
               v-model="complete.manger_ar"
+               @keyup.delete="console.log(1)"
+              @keypress="isArabicChars($event)"
+              dir="rtl"
+              
              :class="[{'is-invalid': errorFor('manger_ar')},{'is-valid':limitMangerAr>=5}]"
+             
 
              @input="ontype('mgrAr')"
           />
@@ -216,14 +246,16 @@
         </div>
 
         <div class="col-6  form-group mt-3">
-                 <div class=" h5" :class="$t('text_align')">اسم المدير <sup class="text-muted"> (باللغة الانجليزية)</sup> </div>
+                 <div class=" h5" :class="$t('text_align')">{{$t('Manager_Name')}}<sup class="text-muted"> ({{$t('english')}})</sup> </div>
             <input type="text"
              name="manger_en"
-
+             dir="ltr"
               class="form-control"
               v-model="complete.manger_en"
              :class="[{'is-invalid': errorFor('manger_en')},{'is-valid':limitMangerEn>=5}]"
              @input="ontype('mgrEn')"
+               @keyup.delete="console.log(1)"
+              @keypress="isLetter($event)"
           />
 <div class="invalid-feedback" v-for="(error, index) in this.errorFor('manger_en')" :key="'manger_en' + index" >{{ error }}</div>
         </div>
@@ -231,23 +263,30 @@
   </div>
   <div class="row">
         <div class="col-6  form-group mt-3">
-                 <div class=" h5" :class="$t('text_align')">اسم الشركة <sup class="text-muted"> (باللغة العربية)</sup> </div>
+                 <div class=" h5" :class="$t('text_align')">{{$t('Company_name')}} <sup class="text-muted"> ({{$t('arabic')}})</sup> </div>
             <input type="text"
              name="Company_ar"
               class="form-control"
-              v-model="complete.Company_ar"
+              dir="rtl"
+               v-model="complete.Company_ar"
+                @keyup.delete="console.log(1)"
+              @keypress="isArabicChars($event)"
              :class="[{'is-invalid': errorFor('Company_ar')}]"
           />
 <div class="invalid-feedback" v-for="(error, index) in this.errorFor('Company_ar')" 
 :key="'Company_ar' + index" >{{ error }}</div>
         </div>
         <div class="col-6 form-group mt-3">
-            <div class="h5" :class="$t('text_align')"> اسم الشركة باللغة الانجليزية</div>
+                 <div class=" h5" :class="$t('text_align')">{{$t('Company_name')}} <sup class="text-muted"> ({{$t('english')}})</sup> </div>
             <input type="Company_en"
              name="Company_en"
-
+              dir="ltr"
               class="form-control"
               v-model="complete.Company_en"
+               @keyup.delete="console.log(1)"
+              @keypress="isLetter($event)"
+
+              isArabicChars
              :class="[{'is-invalid': errorFor('Company_en')}]"
           />
           <v-errors :errors="errorFor('Company_en')"></v-errors>
@@ -272,261 +311,22 @@
           :key="'date' + index"
         >{{ error }}</div>
         </div>
-        <div class="form-group mt-3">
-             <div class="h5" :class="$t('text_align')">رقم الجوال</div>
-            <div class="row">
-              <div class=" col-4 ">
-			
-                         <span class="single-property-details">
-     <span class="nice-select" :class="open" tabindex="0" @click="openCountry">
-       <span class="current" v-if="country">
-<allcountry :country="country"></allcountry>
 
-                                        </span>
-<ul class="list">
-    <li  class="option" @click='countryChoose("GB")' value="44" Selected> (+47)</li>
-    <li  class="option" @click='countryChoose("US")' value="1"> (+44)</li>
-        <li  class="option" @click='countryChoose("DZ")' value="213"> (+213)</li>
-        <li  class="option" @click='countryChoose("AD")' value="376"> (+376)</li>
-        <li  class="option" @click='countryChoose("AO")' value="244"> (+244)</li>
-        <li  class="option" @click='countryChoose("AI")' value="1264"> (+1264)</li>
-        <li  class="option" @click='countryChoose("AG")' value="1268">  (+1268)</li>
-        <li  class="option" @click='countryChoose("AR")' value="54"> (+54)</li>
-        <li  class="option" @click='countryChoose("AM")' value="374"> (+374)</li>
-        <li  class="option" @click='countryChoose("AW")' value="297"> (+297)</li>
-        <li  class="option" @click='countryChoose("AU")' value="61"> (+61)</li>
-        <li  class="option" @click='countryChoose("AT")' value="43"> (+43)</li>
-        <li  class="option" @click='countryChoose("AZ")' value="994"> (+994)</li>
-        <li  class="option" @click='countryChoose("BS")' value="1242"> (+1242)</li>
-        <li  class="option" @click='countryChoose("BH")' value="973"> (+973)</li>
-        <li  class="option" @click='countryChoose("BD")' value="880"> (+880)</li>
-        <li  class="option" @click='countryChoose("BB")' value="1246"> (+1246)</li>
-        <li  class="option" @click='countryChoose("BY")' value="375"> (+375)</li>
-        <li  class="option" @click='countryChoose("BE")' value="32"> (+32)</li>
-        <li  class="option" @click='countryChoose("BZ")' value="501"> (+501)</li>
-        <li  class="option" @click='countryChoose("BJ")' value="229"> (+229)</li>
-        <li  class="option" @click='countryChoose("BM")' value="1441"> (+1441)</li>
-        <li  class="option" @click='countryChoose("BT")' value="975"> (+975)</li>
-        <li  class="option" @click='countryChoose("BO")' value="591"> (+591)</li>
-        <li  class="option" @click='countryChoose("BA")' value="387">  (+387)</li>
-        <li  class="option" @click='countryChoose("BW")' value="267"> (+267)</li>
-        <li  class="option" @click='countryChoose("BR")' value="55"> (+55)</li>
-        <li  class="option" @click='countryChoose("BN")' value="673"> (+673)</li>
-        <li  class="option" @click='countryChoose("BG")' value="359"> (+359)</li>
-        <li  class="option" @click='countryChoose("BF")' value="226">  (+226)</li>
-        <li  class="option" @click='countryChoose("BI")' value="257"> (+257)</li>
-        <li  class="option" @click='countryChoose("KH" )' value="855"> (+855)</li>
-        <li  class="option" @click='countryChoose("CM" )' value="237"> (+237)</li>
-        <li  class="option" @click='countryChoose("CA" )' value="1"> (+1)</li>
-        <li  class="option" @click='countryChoose("CV" )' value="238"> (+238)</li>
-        <li  class="option" @click='countryChoose("KY" )' value="1345"> (+1345)</li>
-        <li  class="option" @click='countryChoose("CF" )' value="236"> (+236)</li>
-        <li  class="option" @click='countryChoose("CL" )' value="56"> (+56)</li>
-        <li  class="option" @click='countryChoose("CN" )' value="86"> (+86)</li>
-        <li  class="option" @click='countryChoose("CO" )' value="57"> (+57)</li>
-        <li  class="option" @click='countryChoose("KM" )' value="269"> (+269)</li>
-        <li  class="option" @click='countryChoose("CG" )' value="242"> (+242)</li>
-        <li  class="option" @click='countryChoose("CK" )' value="682">  (+682)</li>
-        <li  class="option" @click='countryChoose("CR" )' value="506">  (+506)</li>
-        <li  class="option" @click='countryChoose("HR" )' value="385"> (+385)</li>
-        <li  class="option" @click='countryChoose("CU" )' value="53"> (+53)</li>
-        <li  class="option" @click='countryChoose("CY" )' value="90392">  (+90392)</li>
-        <li  class="option" @click='countryChoose("CY" )' value="357">  (+357)</li>
-        <li  class="option" @click='countryChoose("CZ" )' value="42">  (+42)</li>
-        <li  class="option" @click='countryChoose("DK" )' value="45"> (+45)</li>
-        <li  class="option" @click='countryChoose("DJ" )' value="253"> (+253)</li>
-        <li  class="option" @click='countryChoose("DM" )' value="1809"> (+1809)</li>
-        <li  class="option" @click='countryChoose("DO" )' value="1809">  (+1809)</li>
-        <li  class="option" @click='countryChoose("EC" )' value="593"> (+593)</li>
-        <li  class="option" @click='countryChoose("EG" )' value="20"> (+20)</li>
-        <li  class="option" @click='countryChoose("SV" )' value="503">  (+503)</li>
-        <li  class="option" @click='countryChoose("GQ" )' value="240">  (+240)</li>
-        <li  class="option" @click='countryChoose("ER" )' value="291"> (+291)</li>
-        <li  class="option" @click='countryChoose("EE" )' value="372"> (+372)</li>
-        <li  class="option" @click='countryChoose("ET" )' value="251"> (+251)</li>
-        <li  class="option" @click='countryChoose("FK" )' value="500">  (+500)</li>
-        <li  class="option" @click='countryChoose("FO" )' value="298">  (+298)</li>
-        <li  class="option" @click='countryChoose("FJ" )' value="679"> (+679)</li>
-        <li  class="option" @click='countryChoose("FI" )' value="358"> (+358)</li>
-        <li  class="option" @click='countryChoose("FR" )' value="33"> (+33)</li>
-        <li  class="option" @click='countryChoose("GF" )' value="594">  (+594)</li>
-        <li  class="option" @click='countryChoose("PF" )' value="689">  (+689)</li>
-        <li  class="option" @click='countryChoose("GA" )' value="241"> (+241)</li>
-        <li  class="option" @click='countryChoose("GM" )' value="220"> (+220)</li>
-        <li  class="option" @click='countryChoose("GE" )' value="7880"> (+7880)</li>
-        <li  class="option" @click='countryChoose("DE" )' value="49"> (+49)</li>
-        <li  class="option" @click='countryChoose("GH" )' value="233"> (+233)</li>
-        <li  class="option" @click='countryChoose("GI" )' value="350"> (+350)</li>
-        <li  class="option" @click='countryChoose("GR" )' value="30"> (+30)</li>
-        <li  class="option" @click='countryChoose("GL" )' value="299"> (+299)</li>
-        <li  class="option" @click='countryChoose("GD" )' value="1473"> (+1473)</li>
-        <li  class="option" @click='countryChoose("GP" )' value="590"> (+590)</li>
-        <li  class="option" @click='countryChoose("GU" )' value="671"> (+671)</li>
-        <li  class="option" @click='countryChoose("GT" )' value="502"> (+502)</li>
-        <li  class="option" @click='countryChoose("GN" )' value="224"> (+224)</li>
-        <li  class="option" @click='countryChoose("GW" )' value="245"> (+245)</li>
-        <li  class="option" @click='countryChoose("GY" )' value="592"> (+592)</li>
-        <li  class="option" @click='countryChoose("HT" )' value="509"> (+509)</li>
-        <li  class="option" @click='countryChoose("HN" )' value="504"> (+504)</li>
-        <li  class="option" @click='countryChoose("HK" )' value="852">  (+852)</li>
-        <li  class="option" @click='countryChoose("HU" )' value="36"> (+36)</li>
-        <li  class="option" @click='countryChoose("IS" )' value="354"> (+354)</li>
-        <li  class="option" @click='countryChoose("IN" )' value="91"> (+91)</li>
-        <li  class="option" @click='countryChoose("ID" )' value="62"> (+62)</li>
-        <li  class="option" @click='countryChoose("IR" )' value="98"> (+98)</li>
-        <li  class="option" @click='countryChoose("IQ" )' value="964"> (+964)</li>
-        <li  class="option" @click='countryChoose("IE" )' value="353"> (+353)</li>
-        <li  class="option" @click='countryChoose("IT" )' value="39"> (+39)</li>
-        <li  class="option" @click='countryChoose("JM" )' value="1876"> (+1876)</li>
-        <li  class="option" @click='countryChoose("JP" )' value="81"> (+81)</li>
-        <li  class="option" @click='countryChoose("JO" )' value="962"> (+962)</li>
-        <li  class="option" @click='countryChoose("KZ" )' value="7"> (+7)</li>
-        <li  class="option" @click='countryChoose("KE" )' value="254"> (+254)</li>
-        <li  class="option" @click='countryChoose("KI" )' value="686"> (+686)</li>
-        <li  class="option" @click='countryChoose("KP" )' value="850">  (+850)</li>
-        <li  class="option" @click='countryChoose("KR" )' value="82">  (+82)</li>
-        <li  class="option" @click='countryChoose("KW" )' value="965"> (+965)</li>
-        <li  class="option" @click='countryChoose("KG" )' value="996"> (+996)</li>
-        <li  class="option" @click='countryChoose("LA" )' value="856"> (+856)</li>
-        <li  class="option" @click='countryChoose("LV" )' value="371"> (+371)</li>
-        <li  class="option" @click='countryChoose("LB" )' value="961"> (+961)</li>
-        <li  class="option" @click='countryChoose("LS" )' value="266"> (+266)</li>
-        <li  class="option" @click='countryChoose("LR" )' value="231"> (+231)</li>
-        <li  class="option" @click='countryChoose("LY" )' value="218"> (+218)</li>
-        <li  class="option" @click='countryChoose("LI" )' value="417"> (+417)</li>
-        <li  class="option" @click='countryChoose("LT" )' value="370"> (+370)</li>
-        <li  class="option" @click='countryChoose("LU" )' value="352"> (+352)</li>
-        <li  class="option" @click='countryChoose("MO" )' value="853"> (+853)</li>
-        <li  class="option" @click='countryChoose("MK" )' value="389"> (+389)</li>
-        <li  class="option" @click='countryChoose("MG" )' value="261"> (+261)</li>
-        <li  class="option" @click='countryChoose("MW" )' value="265"> (+265)</li>
-        <li  class="option" @click='countryChoose("MY" )' value="60"> (+60)</li>
-        <li  class="option" @click='countryChoose("MV" )' value="960"> (+960)</li>
-        <li  class="option" @click='countryChoose("ML" )' value="223"> (+223)</li>
-        <li  class="option" @click='countryChoose("MT" )' value="356"> (+356)</li>
-        <li  class="option" @click='countryChoose("MH" )' value="692">  (+692)</li>
-        <li  class="option" @click='countryChoose("MQ" )' value="596"> (+596)</li>
-        <li  class="option" @click='countryChoose("MR" )' value="222"> (+222)</li>
-        <li  class="option" @click='countryChoose("YT" )' value="269"> (+269)</li>
-        <li  class="option" @click='countryChoose("MX" )' value="52"> (+52)</li>
-        <li  class="option" @click='countryChoose("FM" )' value="691"> (+691)</li>
-        <li  class="option" @click='countryChoose("MD" )' value="373"> (+373)</li>
-        <li  class="option" @click='countryChoose("MC" )' value="377"> (+377)</li>
-        <li  class="option" @click='countryChoose("MN" )' value="976"> (+976)</li>
-        <li  class="option" @click='countryChoose("MS" )' value="1664"> (+1664)</li>
-        <li  class="option" @click='countryChoose("MA" )' value="212"> (+212)</li>
-        <li  class="option" @click='countryChoose("MZ" )' value="258"> (+258)</li>
-        <li  class="option" @click='countryChoose("MN" )' value="95"> (+95)</li>
-        <li  class="option" @click='countryChoose("NA" )' value="264"> (+264)</li>
-        <li  class="option" @click='countryChoose("NR" )' value="674"> (+674)</li>
-        <li  class="option" @click='countryChoose("NP" )' value="977"> (+977)</li>
-        <li  class="option" @click='countryChoose("NL" )' value="31"> (+31)</li>
-        <li  class="option" @click='countryChoose("NC" )' value="687">  (+687)</li>
-        <li  class="option" @click='countryChoose("NZ" )' value="64">  (+64)</li>
-        <li  class="option" @click='countryChoose("NI" )' value="505"> (+505)</li>
-        <li  class="option" @click='countryChoose("NE" )' value="227"> (+227)</li>
-        <li  class="option" @click='countryChoose("NG" )' value="234"> (+234)</li>
-        <li  class="option" @click='countryChoose("NU" )' value="683"> (+683)</li>
-        <li  class="option" @click='countryChoose("NF" )' value="672">  (+672)</li>
-        <li  class="option" @click='countryChoose("NP" )' value="670">  (+670)</li>
-        <li  class="option" @click='countryChoose("NO" )' value="47"> (+47)</li>
-        <li  class="option" @click='countryChoose("OM" )' value="968"> (+968)</li>
-        <li  class="option" @click='countryChoose("PW" )' value="680"> (+680)</li>
-        <li  class="option" @click='countryChoose("PA" )' value="507"> (+507)</li>
-        <li  class="option" @click='countryChoose("PG" )' value="675">   (+675)</li>
-        <li  class="option" @click='countryChoose("PY" )' value="595"> (+595)</li>
-        <li  class="option" @click='countryChoose("PE" )' value="51"> (+51)</li>
-        <li  class="option" @click='countryChoose("PH" )' value="63"> (+63)</li>
-        <li  class="option" @click='countryChoose("PL" )' value="48"> (+48)</li>
-        <li  class="option" @click='countryChoose("PT" )' value="351"> (+351)</li>
-        <li  class="option" @click='countryChoose("PR" )' value="1787">  (+1787)</li>
-        <li  class="option" @click='countryChoose("QA" )' value="974"> (+974)</li>
-        <li  class="option" @click='countryChoose("RE" )' value="262"> (+262)</li>
-        <li  class="option" @click='countryChoose("RO" )' value="40"> (+40)</li>
-        <li  class="option" @click='countryChoose("RU" )' value="7"> (+7)</li>
-        <li  class="option" @click='countryChoose("RW" )' value="250"> (+250)</li>
-        <li  class="option" @click='countryChoose("SM" )' value="378">  (+378)</li>
-        <li  class="option" @click='countryChoose("ST" )' value="239"> (+239)</li>
-        <li  class="option" @click='countryChoose("SA" )' value="966"> (+966)</li>
-        <li  class="option" @click='countryChoose("SN" )' value="221"> (+221)</li>
-        <li  class="option" @click='countryChoose("CS" )' value="381">(+381)</li>
-        <li  class="option" @click='countryChoose("SC" )' value="248"> (+248)</li>
-        <li  class="option" @click='countryChoose("SL" )' value="232">(+232)</li>
-        <li  class="option" @click='countryChoose("SG" )' value="65"> (+65)</li>
-        <li  class="option" @click='countryChoose("SK" )' value="421">  (+421)</li>
-        <li  class="option" @click='countryChoose("SI" )' value="386"> (+386)</li>
-        <li  class="option" @click='countryChoose("SB" )' value="677">  (+677)</li>
-        <li  class="option" @click='countryChoose("SO" )' value="252"> (+252)</li>
-        <li  class="option" @click='countryChoose("ZA" )' value="27">  (+27)</li>
-        <li  class="option" @click='countryChoose("ES" )' value="34"> (+34)</li>
-        <li  class="option" @click='countryChoose("LK" )' value="94">  (+94)</li>
-        <li  class="option" @click='countryChoose("SH" )' value="290">  (+290)</li>
-        <li  class="option" @click='countryChoose("KN" )' value="1869"> (+1869)</li>
-        <li  class="option" @click='countryChoose("SC" )' value="1758"> (+1758)</li>
-        <li  class="option" @click='countryChoose("SD" )' value="249"> (+249)</li>
-        <li  class="option" @click='countryChoose("SR" )' value="597"> (+597)</li>
-        <li  class="option" @click='countryChoose("SZ" )' value="268"> (+268)</li>
-        <li  class="option" @click='countryChoose("SE" )' value="46"> (+46)</li>
-        <li  class="option" @click='countryChoose("CH" )' value="41"> (+41)</li>
-        <li  class="option" @click='countryChoose("SI" )' value="963"> (+963)</li>
-        <li  class="option" @click='countryChoose("TW" )' value="886"> (+886)</li>
-        <li  class="option" @click='countryChoose("TJ" )' value="7"> (+7)</li>
-        <li  class="option" @click='countryChoose("TH" )' value="66"> (+66)</li>
-        <li  class="option" @click='countryChoose("TG" )' value="228"> (+228)</li>
-        <li  class="option" @click='countryChoose("TO" )' value="676"> (+676)</li>
-        <li  class="option" @click='countryChoose("TT" )' value="1868">  (+1868)</li>
-        <li  class="option" @click='countryChoose("TN" )' value="216"> (+216)</li>
-        <li  class="option" @click='countryChoose("TR" )' value="90"> (+90)</li>
-        <li  class="option" @click='countryChoose("TM" )' value="7"> (+7)</li>
-        <li  class="option" @click='countryChoose("TM" )' value="993"> (+993)</li>
-        <li  class="option" @click='countryChoose("TC" )' value="1649">  (+1649)</li>
-        <li  class="option" @click='countryChoose("TV" )' value="688"> (+688)</li>
-        <li  class="option" @click='countryChoose("UG" )' value="256"> (+256)</li>
-     
-        <li  class="option" @click='countryChoose("UA" )' value="380"> (+380)</li>
-        <li  class="option" @click='countryChoose("AE" )' value="971"> (+971)</li>
-        <li  class="option" @click='countryChoose("UY" )' value="598"> (+598)</li>
-        <li  class="option" @click='countryChoose("US" )' value="1"> (+1)</li>
-        <li  class="option" @click='countryChoose("UZ" )' value="7"> (+7)</li>
-        <li  class="option" @click='countryChoose("VU" )' value="678"> (+678)</li>
-        <li  class="option" @click='countryChoose("VA" )' value="379"> City (+379)</li>
-        <li  class="option" @click='countryChoose("VE" )' value="58"> (+58)</li>
-        <li  class="option" @click='countryChoose("VN" )' value="84"> (+84)</li>
-        <li  class="option" @click='countryChoose("VG" )' value="84">   (+1284)</li>
-        <li  class="option" @click='countryChoose("VI" )' value="84"> (+1340)</li>
-        <li  class="option" @click='countryChoose("WF" )' value="681">(+681)</li>
-        <li  class="option" @click='countryChoose("YE" )' value="969">(+969)</li>
-        <li  class="option" @click='countryChoose("YE" )' value="967">(+967)</li>
-        <li  class="option" @click='countryChoose("ZM" )' value="260"> (+260)</li>
-        <li  class="option" @click='countryChoose("ZW" )' value="263"> (+263)</li>
-
-</ul>
-     </span>
-
-   </span>
-										
-								
-                  </div>
-<div class="col-8">
-           
-            <input type="text"
-            name="phone"
-              class="form-control"
-              v-model="phone"
-              dir="ltr"
-
-
-             :class="[{'is-invalid': this.errorFor('phone')},{'is-invalid':isAvailble==1}]"
-
+                  <div class="form-group">
+          <!-- <label for="password">{{$t('mobile')}}</label> -->
+          <input
+            type="number"
+            name="mobile2"
+            :placeholder="$t('office_number')"
+            class="form-control"
+            v-model="business.mobile"
+            pattern="^([+]{1}[9]{1}[7]{1}[1]{1}[5]{1}[0-9]{8})$"
+            :class="[{'is-invalid': errorFor('mobile')}]"
           />
-           <small >{{ error_phone}} </small>
-           <div v-if="isAvailble==1" class="text-danger text-right">هذا الرقم مسجل باسم شركة اخرى</div>
-
-          <v-errors :errors="errorFor('phone')"></v-errors>
-
-</div>
+          <v-errors :errors="errorFor('mobile')"></v-errors>
             </div>
-        </div>
+
+      
          <div class="form-group mt-3">
                         <div class="h5" :class="$t('text_align')">الامارة </div>
 
@@ -583,7 +383,7 @@
                  <label style="    display: grid; justify-content: center;">
                     
                  <span class="file-style-avatar" @click="$refs.Avatar" v-if="Avatar==null"> <span class=" 
-                 fa fa-paperclip"  ></span></span>
+                 bx bxs-cloud-upload"  ></span></span>
 
                 <span   @click="$refs.Avatar" v-else>
                     <img :src="pathAvatar" class="file-style-avatar-after mx-auto">
@@ -607,9 +407,9 @@
 <!-- <div class="progress" v-if="progressAvatar" style="hieght:10px !important">
 
 
-  <div  v-if="progressAvatar !='100%'" class="progress-bar  progress-bar-striped bg-primary"
+  <div  v-if="progressAvatar !='100%'" class="progress-bar   bg-success"
    role="progressbar" :style="'width:'+progressAvatar+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-  <div  v-if="progressAvatar=='100%'" class="progress-bar progress-bar-striped  bg-success" role="progressbar"
+  <div  v-if="progressAvatar=='100%'" class="progress-bar   bg-success" role="progressbar"
    :style="'width:'+progressAvatar+';hieght:10px !important;background-color:#3454d1 !important'"
    
  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -635,49 +435,77 @@
 
 
           
-<div v-if="business.Categories==1 || business.Categories==6 ">
-  <span class="">   تقييم البلدية</span>
-                  <div class="form-group container file-style " >
-                 <label>
 
-                 <span :class="{'btn btn-light':Munici==null,'btn btn-success':Munici}" @click="$refs.Munici" >
-                  <span class=" fa fa-paperclip" ></span></span>
+</div>
 
-           
-        
-        
-             <small class=" font-weight-bold text-danger" v-if="FileNotMuniciAllowd!=null">{{FileNotMuniciAllowd}}</small>
-                <input type="file" class="form-control"  @change="MuniciFile" style="display:none" ref="Munici">
+<div class="container-file" v-if="business.Categories==1 || business.Categories==6 "  >
+<!-- <div v-if="business.Categories==1 || business.Categories==6 "> -->
+ 
+ 
 
 
 
-                 </label>
 
-            </div>
+
+
+
+<div class="upload-file file-style">
+                             <label class="dd-flex ">
+
+
+                 <span class="btn" :class="{' btn-light':Munici==null , 'btn-download':Munici}" @click="$refs.Munici" v-if="file==null">
+                  <i class=" bx bxs-cloud-upload" ></i></span>
+
+                <span class="btn btn-primary " @click="$refs.Munici" v-else><i class="bx bxs-cloud-upload" ></i></span>
+              <span class="float-right mr-2 ml-2">   تقييم البلدية</span>
+              <small class=" font-weight-bold text-danger" v-if="FileNotMuniciAllowd!=null">{{FileNotMuniciAllowd}}</small>
+                <input type="file" class="form-control"  @change="MuniciFile" style="display:none" ref="Munici" >
+
+
+
+
+
+            </label>
+</div>
+
 <span v-if="progressMunici" class="">{{progressMunici}}</span>
 <div class="progress" v-if="progressMunici" style="hieght:10px !important">
 
 
-  <div  v-if="progressMunici !='100%'" class="progress-bar  progress-bar-striped bg-primary"
-   role="progressbar" :style="'width:'+progressMunici+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-  <div  v-if="progressMunici=='100%'" class="progress-bar progress-bar-striped  bg-success" role="progressbar" :style="'width:'+progressMunici+';hieght:10px !important;background-color:#3454d1 !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  <div  v-if="progressMunici !='100%'" class="progress-bar   bg-success"
+   role="progressbar" :style="'width:'+progressMunici+';hieght:10px !important'"
+    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+
+
+    
+  <div  v-if="progressMunici =='100%'" class="progress-bar   bg-success"
+   role="progressbar" :style="'width:'+progressMunici+';hieght:10px !important'"
+    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 
 </div>
+ 
+<div class="mt-2">
+   <span v-if="progressMunici" class="text-dark">{{Munici.name}}</span>
+<span v-if="progressMunici">{{bytesToSize(Munici.size)}}</span>
+ <span v-if="progressMunici=='100%'">
+  
+    <i class='bx bx-check-circle text-success'></i>
+   
 
-
-
-
+   </span>
+</div>
 
 </div>
-</div>
+<div class="container-file">
 <div class="upload-file file-style">
-                             <label class=" ">
+                             <label class="dd-flex ">
 
 
-                 <span class="btn btn-light" @click="$refs.licence" v-if="file==null"><i class=" fa fa-paperclip" ></i></span>
+                 <span :class="{'btn btn-light':licence==null,'btn btn-download':licence}" @click="$refs.licence" v-if="file==null"><i class=" bx bxs-cloud-upload" ></i></span>
 
-                <span class="btn btn-primary " @click="$refs.licence" v-else><i class="fa fa-paperclip" ></i></span>
-              <span class="float-right">   رخصة  الشركة </span>
+                <span class="btn btn-primary " @click="$refs.licence" v-else><i class="bx bxs-cloud-upload" ></i></span>
+              <span class="float-right mr-2 ml-2">   رخصة  الشركة </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotlicenceAllowd!=null">{{FileNotlicenceAllowd}}</small>
                 <input type="file" class="form-control"  @change="licenceFile" style="display:none" ref="licence" >
 
@@ -691,30 +519,39 @@
 <span v-if="progresslicence" class="">{{progresslicence}}</span>
 <div class="progress" v-if="progresslicence" style="hieght:10px !important">
 
-  <div  v-if="progresslicence!='100%'" class="progress-bar  progress-bar-striped bg-primary" role="progressbar" :style="'width:'+progresslicence+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-  <div  v-if="progresslicence=='100%'" class="progress-bar  progress-bar-striped bg-success   " role="progressbar" :style="'width:'+progresslicence+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  <div  v-if="progresslicence!='100%'" class="progress-bar   bg-success" role="progressbar" :style="'width:'+progresslicence+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  <div  v-if="progresslicence=='100%'" class="progress-bar   bg-success   " role="progressbar" :style="'width:'+progresslicence+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-<i class="fa fa-close btn" v-if="resultSize" @click="RemoveFile('file')"></i>
 
-<span v-if="resultSize!=null" ><i class="fa fa-file" style="color:#ebeef2"  ></i> {{resultName}}</span>
-<span v-if="resultSize!=null"  class="float-right"> {{resultSize}}</span>
+
 </div>
-                    <div>
 
-                        <div v-if="success != ''" class="alert alert-success">
-                            {{success}}
-                        </div>
+<div class="mt-2">
+  <span v-if="progresslicence" class="text-dark">{{licence.name}}</span>
+<span v-if="progresslicence" class="">{{bytesToSize(licence.size)}}</span>
+ <span v-if="progresslicence=='100%'">
+  
+    <i class='bx bx-check-circle text-success'></i>
+   
 
-                        <form>
+   </span>
+</div>
+
+                    </div>
+
+                       
+
+                        <div class="container-file">
                        
                             <div class="upload-file file-style">
-                             <label class="  ">
+                             <label class=" dd-flex ">
 
 
-                 <span class="btn btn-light" @click="$refs.Achive" v-if="Achive==null"><i class=" fa fa-paperclip" ></i></span>
+                 <span :class="{'btn btn-light':Achive==null,'btn btn-download':Achive}" @click="$refs.Achive" v-if="Achive==null">
+                  <i class=" bx bxs-cloud-upload" ></i></span>
 
-                <span class="btn btn-primary " @click="$refs.Achive" v-else><i class="fa fa-paperclip" ></i></span>
-              <span class="float-right">     الانجازات </span>
+                <span class="btn btn-primary " @click="$refs.Achive" v-else><i class="bx bxs-cloud-upload" ></i></span>
+              <span class="mr-2 ml-2">     الانجازات </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotMapAllowd!=null">{{FileNotAchiveAllowd}}</small>
                 <input type="file" class="form-control"  @change="AchiveFile" style="display:none" ref="Achive" >
 
@@ -728,15 +565,100 @@
 <span v-if="progressAchive" class="">{{progressAchive}}</span>
 <div class="progress" v-if="progressAchive" style="hieght:10px !important">
 
-  <div  v-if="progressAchive!='100%'" class="progress-bar  progress-bar-striped bg-primary" role="progressbar" :style="'width:'+progressAchive+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-  <div  v-if="progressAchive=='100%'" class="progress-bar  progress-bar-striped bg-success   " role="progressbar" :style="'width:'+progressAchive+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  <div  v-if="progressAchive!='100%'" class="progress-bar  bg-success" role="progressbar"
+   :style="'width:'+progressAchive+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+
+ <div  v-if="progressAchive=='100%'" class="progress-bar  bg-success" role="progressbar"
+   :style="'width:'+progressAchive+';hieght:10px !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+  
+
+</div>
+<div class="mt-2">
+<span v-if="progressAchive">{{Achive.name}}</span>
+<span v-if="progressAchive">{{resultAchiveSize}}</span>
+ <span v-if="progressAchive=='100%'">
+  
+    <i class='bx bx-check-circle text-success'></i>
+   
+
+   </span>
 </div>
 
 </div>
 
 
-                        </form>
-                    </div>
+                        </div>
+
+                        <div class="container-file">
+          <div class="form-group container file-style" >
+
+              <label class=" mt-2 dd-flex ">
+
+            <span :class="{'btn btn-light':files=='' , 'btn btn-download':files!=''} " @click="$refs.ete"  >
+                  <span class='bx bx-plus-medical'></span>
+                  
+                </span>
+                 <span class="mr-2 ml-2">     ملفات اضافية </span>
+                
+
+
+          <input  class="form-control" type="file"   style="display:none" ref="ete" @change.prevent="onImageChanged"
+           id="file" multiple>
+
+
+
+
+
+
+      </label>
+
+                           
+
+                </div>
+
+<div class="form-group">
+     <strong v-if="FileNotAllowd" class="text-danger">{{FileNotAllowd}}</strong>
+        <div class="image-preview" v-show="images.length">
+            <div class="image-wrapper mt-3 " v-for="(image,i) in images" :key="i">
+                <span v-if="files[i].name!=null">
+
+                <span v-if="progressbar" class="">
+                   <span class=""> {{progressbar}}</span>
+                    </span>
+<div class="progress" v-if="progressbar" style="hieght:10px !important">
+  <div v-if="progressbar!='100%'" class="progress-bar  progress-bar-striped bg-success"
+   role="progressbar" :style="'width:'+progressbar+';hieght:10px !important; '" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  <div v-if="progressbar=='100%'" class="progress-bar   bg-success" role="progressbar"
+   :style="'width:'+progressbar+';hieght:10px !important;background-color:#3454d1 !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+</div>
+
+
+<span v-if="progressbar!=null"  class="main-color"> {{files[i].name}}
+    <small class="text-muted  " v-if="files[i].size"> {{bytesToSize(files[i].size)}}</small>
+</span>
+<span class="btn btn-light float-left"  v-if="progressbar">
+
+<span class="fa fa-close    " @click.prevent='removeImage(i)'></span>
+</span>
+
+
+                </span>
+
+
+
+            </div>
+            <!-- <div v-for="file , index in filename" :key="index">
+              {{file}}
+
+            </div> -->
+        </div>
+
+</div>
+                        </div>
+                   
 
 
                         </form>
@@ -765,14 +687,16 @@
             </div>
         
 
-        <div class="controls">
+        <div class="controls mt-4 mb-4">
             <button class="btn" @click="stepGo('min')" :disabled="step == 1" v-if="step != 4">
                 <!-- "stepGo('min')" -->
+                 <i class='bx bx-left-arrow-alt mr-2'></i>
                 {{$t('previous')}}
             </button>
-            <button class="btn btn-success btn--green-1"  @click="stepGo('plus')" :disabled="step == 4"  v-if="step != 4">
+            <button class="btn btn-download btn--green-1"  @click="stepGo('plus')" :disabled="step == 4"  v-if="step != 4">
                 <!-- @click="stepGo('plus')" -->
                 {{$t('next')}}
+                <i class='bx bx-right-arrow-alt mr-2'></i>
             </button>
         </div>
     </div>
@@ -809,7 +733,7 @@ export default {
   data(){
      return{
 
-
+     
       isAvailble:null,
 
          country:'AE',
@@ -825,6 +749,7 @@ export default {
         password_confirmation: null,
         mobile: null
       },
+      
               complete:{
       about: '',
       Company_ar:'',
@@ -900,6 +825,15 @@ export default {
                 resultSize:null,
                 resultName:null,
                 progress2:null,
+
+
+
+                FileNotAllowd:'',
+                files:[],
+                filename:[],
+                images:[],
+                progressbar:[],
+                
               
 
 
@@ -919,9 +853,11 @@ export default {
 
 
         watch:{
+
+    
   phone() {
         var x = this.phone.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,6})/);
-  this.phone = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+  this.phone = !x[2] ? x[1] : '' + x[1] + '' + x[2] + (x[3] ? '' + x[3] : '');
   
              let data = new FormData();
 data.append('mobile', this.phone);
@@ -933,11 +869,30 @@ data.append('mobile', this.phone);
     },
   },
     methods:{
+         isArabicChars(e) {
+      // var arregex = /[\u0600-\u06FF]/;
+      // return arregex.test(text);
+
+          let text = String.fromCharCode(e.keyCode);
+      if (/[\u0600-\u06FF]/.test(text)) return true;
+      else e.preventDefault();
+    },
+         isLetter(e) {
+      let char = String.fromCharCode(e.keyCode);
+      if (/^[A-Za-z]+$/.test(char)) return true;
+      else e.preventDefault();
+    },
               openCountry(){
      
               this.open=="open" ? this.open='' : this.open="open"
 		  
     },
+     bytesToSize(bytes) {
+   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+   if (bytes == 0) return '0 Byte';
+   var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+   return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+},
 
 countryChoose(event){
 
@@ -945,6 +900,87 @@ countryChoose(event){
 
 
 },
+       onImageChanged(event){
+               const files = event.target.files;
+
+
+               Array.from(files).forEach(file => this.addImage(file))
+
+
+            },
+            addImage(file){
+
+
+
+
+
+    function getFileExtension(filename){
+
+    // get file extension
+    const extension = filename.split('.').pop();
+    return extension;
+}
+
+// passing the filename
+const result1 = getFileExtension(file.name);
+console.log(result1);
+
+
+
+                if(!file.type.match('image.*')){
+                   this.FileNotAllowd =`should be jpg , png `;
+                    return ;
+                }
+
+                
+
+
+  
+                this.files.push(file); //upload
+    let  index = this.files.indexOf(file);
+    console.log(this.files[index].name);
+                
+                //preview of image
+                const reader = new FileReader();
+                reader.onload = (e)=>this.images.push(e.target.result)
+
+          
+          // data.append("index",index);
+                reader.readAsDataURL(file);
+            
+                 this.FileNotAllowd ='';
+
+                    let data = new FormData();
+          data.append("file",file,file.name);
+          data.append("index",index);
+
+                // console.log('this file lenght '+i)
+                     const config = {
+                    onUploadProgress:uploadEvent=>{
+                    this.progressbar =  Math.round(uploadEvent.loaded / uploadEvent.total * 100 )+ '%';
+                    // this.progress2 =  Math.round(uploadEvent.loaded / uploadEvent.total * 100 )+ '%';
+
+                 }
+
+                }
+
+
+                axios.post('/imagesSign',data,config).then(res=>{
+                    this.FileNotAllowd=null
+                    this.filename[index]=res.data;
+                 
+                });
+            },
+               removeImage(i){
+  let files = this.files;
+  files.splice(i,1,'');
+    console.log(files);
+
+
+
+
+            },
+
 
                    onChange(event){
            this.file=event.target.files[0];
@@ -992,9 +1028,10 @@ this.resultSize = size+' MB' ;
                  }
                 }
 
-
+  
                 axios.post('sucess',data,config).then(res=>{
                     this.FileNotMapAllowd=null
+                     
                 });
 
 
@@ -1059,7 +1096,9 @@ this.resultSize = size+' MB' ;
                         axios.post('UploadCompanylicence',data,config).then(res=>{
                     this.FileNotlicenceAllowd=null
                     this.pathlicence = res.data;
-                });
+                }).catch(function (error) {
+                    console.log('error');
+                });;
 
 
                     
@@ -1222,20 +1261,21 @@ this.resultSize = size+' MB' ;
                   console.log('hi achive 2');
                   
 
-                        if(this.Achive.size < 1048576){
-        let size = Math.floor(this.Achive.size/1024);
-        this.resultAchiveName = this.Achive.name   ;
-        this.resultAchiveSize = size+' KB' ;
+        //                 if(this.Achive.size < 1048576){
+        // let size = Math.floor(this.Achive.size/1024);
+        // this.resultAchiveName = this.Achive.name   ;
+        // this.resultAchiveSize = size+' KB' ;
 
 
-                    }
-        if(this.Achive.size > 1048576){
-        let size = Math.floor(this.Achive.size/1024);
-        this.resultAchiveName = this.Achive.name   ;
-        this.resultAchiveSize = size+' MB' ;
+        //             }
+        // if(this.Achive.size > 1048576){
+        // let size = Math.floor(this.Achive.size/1024);
+        // this.resultAchiveName = this.Achive.name   ;
+        // this.resultAchiveSize = size+' MB' ;
 
 
-        }
+        // }
+        this.resultAchiveSize = this.bytesToSize(this.Achive.size);
                             function getFileExtension(filename){
             const extension = filename.split('.').pop();
             return extension;
@@ -1281,7 +1321,7 @@ data.append('manger_ar',this.complete.manger_ar);
 data.append('manger_en',this.complete.manger_en);
 data.append('Company_en',this.complete.Company_en);
 data.append('Company_ar',this.complete.Company_ar);
-data.append('mobile',this.complete.mobile);
+data.append('mobile',this.business.mobile);
 
 data.append('emirates',this.complete.emirates);
 data.append('about',this.complete.about);
@@ -1295,6 +1335,11 @@ data.append('AchiveSinceCreate',this.AchiveSinceCreate);
 data.append('pathAvatar',this.pathAvatar);
 data.append('pathAchive',this.pathAchive);
 data.append('pathlicence',this.pathlicence);
+
+
+   this.filename.forEach((file) => {
+        data.append("filename[]", file);
+      });
 
  if(this.business.Categories==1 || this.business.Categories==6){
 data.append('pathMunici',this.pathMunici);
@@ -1315,7 +1360,7 @@ axios.post("bregister", data).then(res=>{
 
                     if(this.business.name==null ||  this.business.email==null || this.business.Categories==null
                      || this.business.password==null ||this.business.password_confirmation==null
-                     ||this.business.mobile==null){
+                     ||  this.phone=='' ){
                            $('#falid').modal('show');
                      }
                       else if(this.business.password.length <= 7){
@@ -1350,8 +1395,8 @@ axios.post("bregister", data).then(res=>{
                     else if(this.step==2){
 
                     if(this.complete.manger_ar=='' || this.complete.manger_en=='' || this.complete.Company_en==''
-                    || this.complete.Company_ar==''|| this.phone=='' ||this.complete.emirates==''
-                     || this.complete.date_create=='' ||this.complete.about==''){
+                    || this.complete.Company_ar==''||this.complete.emirates==''
+                     || this.complete.date_create=='' ||this.complete.about==''|| this.business.mobile==null){
                            $('#falid').modal('show');
                            
                    }else if(this.complete.about.length<= 99){
@@ -1408,7 +1453,7 @@ axios.post("bregister", data).then(res=>{
 
 <style lang="scss" scoped>
 $default    :   #C5C5C5;
-$green-1    :   #34d195;
+$green-1    :   #1d67cb ;
 $transiton  :   all 500ms ease;
 
 body{
@@ -1503,7 +1548,7 @@ body{
 .stepper-item.success{
     .stepper-item-counter{
         border-color: $green-1;
-        background-color: #c8ebc1;
+        background-color: #c1cbeb;
         color: #fff;
         font-weight: 600;
 
@@ -1590,6 +1635,24 @@ body{
     justify-content: center;
     border-radius: 50%;
 }
+.file-style{
+  border: none;
+}
+.container-file{
+  position: relative;
+
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+}
+.file-style {
+    border: 2px dotted #eee;
+    background: #fff;
+    padding: 10px;
+   
+}
 .file-style-avatar-after{
         
     width: 100px;
@@ -1605,6 +1668,25 @@ body{
 .file-style-avatar:hover {
  color:#34d195;
  cursor: pointer;
+}
+.progress .bg-success{
+ color:#34d195 !important;
+
+}
+.progress{
+   height: 7px !important;
+}
+.nice-select:after {
+  
+    display: none;
+
+}
+.bxs-cloud-upload , .bx-plus-medical{
+  font-size: 30px; 
+}
+.dd-flex{
+    display: flex;
+    align-items: center;
 }
 </style>
 

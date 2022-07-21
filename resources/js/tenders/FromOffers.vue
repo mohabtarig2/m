@@ -260,7 +260,7 @@
                                 >
                                   <input
                                     type="radio"
-                                    value="Grant"
+                                    value="2"
                                     name="typeBuild"
                                     v-model="typeBuild"
                                   />
@@ -270,6 +270,24 @@
                                   ></span>
                                   <span class="mr-4 ml-4">{{
                                     $t("Grant")
+                                  }}</span>
+                                </label>
+                                <label
+                                  class="checkbox d-bolck"
+                                  :dir="$t('directions')"
+                                >
+                                  <input
+                                    type="radio"
+                                    value="3"
+                                    name="typeBuild"
+                                    v-model="typeBuild"
+                                  />
+                                  <span
+                                    class="check"
+                                    style="border-radius: 10px"
+                                  ></span>
+                                  <span class="mr-4 ml-4">{{
+                                    $t("personal_financing")
                                   }}</span>
                                 </label>
                               </div>
@@ -297,6 +315,9 @@
                               <div class="text-right form-group" dir="rtl">
                                 <p class="font-weight-bold theme-color">
                                   الجهة المقدمة للمنحة
+                                  <sup class="text-danger">
+                                    ({{ $t("optional") }})</sup
+                                  >
                                 </p>
 
                                 <label
@@ -868,6 +889,42 @@
                         </label>
                       </div>
                     </div>
+
+
+                   <div class="col-12">
+<div class="single-property-details"  :dir="$t('directions')" :class="$t('text_align')">
+<label>
+  <span class="text-dark">{{$t('finshing')}}</span>
+        <div class="nice-select form-control" :class="[open_select_finshing
+         ,{'is-valid':finshing_selected !=''}
+         ]"
+        
+         tabindex="0" @click="open('finishing')">
+            <span class="current">
+               <span v-show="finshing_selected==1"> {{$t('commercial')}} </span>
+                <span v-show="finshing_selected==2"> {{$t('normal')}}</span>
+                <span v-show="finshing_selected==3"> {{$t('good')}}</span>
+                <span v-show="finshing_selected==4"> {{$t('Excellent')}}</span>
+                <span v-show="finshing_selected==5"> {{$t('deluxe')}}</span>
+                <span v-show="finshing_selected==6"> {{$t('superdeluxe')}}</span>
+           </span>
+
+                <ul class="list">
+              <li data-value="1" class="option " @click="finshing(1)">{{$t('commercial')}}</li>
+                  <li data-value="2" class="option" @click="finshing(2)">{{$t('normal')}} </li>
+                  <li data-value="3" class="option"  @click="finshing(3)">{{$t('good')}}</li>
+                  <li data-value="3" class="option"  @click="finshing(4)">{{$t('Excellent')}}</li>
+                  <li data-value="3" class="option"  @click="finshing(5)">{{$t('deluxe')}}</li>
+                  <li data-value="3" class="option"  @click="finshing(6)">{{$t('superdeluxe')}}</li>
+    
+                            </ul>
+                    </div>
+                    </label>
+
+</div>
+
+                    
+                  </div>
                   </div>
                 </div>
 
@@ -1063,11 +1120,13 @@ export default {
       garden_design: "",
       the_fence: "",
       finance: null,
+       open_select_finshing:null,
+            finshing_selected:'',
     };
   },
-  mounted(){
-  $('.header-inner').removeClass('d-block');
-                $('.header-inner').addClass('d-none');
+  mounted() {
+    $(".header-inner").removeClass("d-block");
+    $(".header-inner").addClass("d-none");
   },
   watch: {
     phone() {
@@ -1101,6 +1160,25 @@ export default {
   },
 
   methods: {
+          open(event){
+         
+           if (event == "emirates") {
+        this.open_select == "open"
+          ? (this.open_select = "")
+          : (this.open_select = "open");
+      
+      }
+          if(event=='finishing'){
+          this.open_select_finshing=="open" ? this.open_select_finshing='' : this.open_select_finshing="open"
+        }
+
+
+
+    },
+         finshing(e){
+        this.finshing_selected=e;
+         $(this.open_select_finshing).remove();
+    },
     edito() {
       if (this.o_form == true) {
         this.o_form = false;
@@ -1111,18 +1189,7 @@ export default {
         this.getOfferForTender();
       }
     },
-    open(event) {
-      if (event == "emirates") {
-        this.open_select == "open"
-          ? (this.open_select = "")
-          : (this.open_select = "open");
-        $(".");
-      }
-    },
-    emirates(e) {
-      this.emirates_selected = e;
-      $(this.open_select).remove();
-    },
+
     onImageChanged(event) {
       const files = event.target.files;
 
@@ -1318,8 +1385,7 @@ export default {
       data.append("priceGrant", this.priceGrant);
       data.append("BankProvider", this.BankProvider);
       data.append("Provider", this.Provider);
-                  data.append("finance", this.finance);
-
+      data.append("finance", this.finance);
 
       data.append("typeBuild", this.typeBuild);
       data.append("phone", this.phone);

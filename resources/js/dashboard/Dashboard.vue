@@ -571,7 +571,7 @@ export default {
 
         axios.post("/logout").then((response) => {
              this.$store.dispatch("logout");
-           this.$router.push({ name: "login"});
+           this.$router.push({ name: "home"});
         })
         .catch((error) => {
         this.$store.dispatch("logout");

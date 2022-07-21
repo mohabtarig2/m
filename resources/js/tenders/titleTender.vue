@@ -1,6 +1,7 @@
 <template>
 <div class="container">
 
+<!-- <loading v-show="loading"></loading> -->
 
 
 <!-- Modal -->
@@ -8,7 +9,10 @@
 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
+      
 <div class="contact-form">
+  <loading style=" position: relative;
+    overflow: hidden;" v-show="loading" ></loading>
 
     <h1 class="text-center thm-color">  {{$t('update_data')}}
 
@@ -139,7 +143,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="form-group  ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
-   <input type="radio" name="flexRadioDefault"  value="cassic" v-model="villa_type">
+   <input type="radio" name="flexRadioDefault"  value="classic" v-model="villa_type">
   <span class="check" style="border-radius:10px"></span>
   <span class="mr-4 ml-4 "> {{$t('classic')}}</span>
 </label>
@@ -161,19 +165,28 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="form-group ">
     <label class="checkbox d-bolck" :dir="$t('directions')" >
 
-  <input type="radio" name="floors" value="1" v-model="floors">
+  <input type="radio" name="floors" value="0" v-model="floors">
   <span class="check" style="border-radius:10px"></span>
-   <span class="mr-4 ml-4">1 {{$t('floor')}} + {{$t('ground_floor')}}</span>
+   <span class="mr-4 ml-4">{{$t('ground_floor')}}</span>
 </label>
 
  <label class="checkbox d-bolck" :dir="$t('directions')">
 
+  <input type="radio" name="floors" value="1"  v-model="floors">
+  <span class="check" style="border-radius:10px"></span>
+<span class="mr-4 ml-4">{{$t('ground_floor')}} +  {{$t('First_floor')}} </span>
+</label>
+ <label class="checkbox d-bolck" :dir="$t('directions')">
+
   <input type="radio" name="floors" value="2"  v-model="floors">
   <span class="check" style="border-radius:10px"></span>
-  <span class="mr-4 ml-4"> 2 {{$t('floor')}} + {{$t('ground_floor')}} </span>
+<span class="mr-4 ml-4">{{$t('ground_floor')}} + {{$t('First_floor')}}+  
+   {{$t('Surface')}} </span>
 </label>
                                 </div>
     </div>
+
+   
 
 
 
@@ -189,7 +202,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <input type="radio" name="replacement" value="inside"
                     v-model="position">
   <span class="check" style="border-radius:10px"></span>
-   <span class="mr-4 ml-4">   {{$t('inisde')}}
+   <span class="mr-4 ml-4">   {{$t('inside')}}
         <sub>
                       <span class="text-muted">{{$t('Maidroom_mainkitchen_pantry')}}</span>
                     </sub>
@@ -313,7 +326,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
 <div  class="text-center h6 font-weight-bold thm-color">{{$t('living room')}}</div>
 <div class="form-group text-center">
-   <button class="theme-btn" @click.prevent="disincrease('living_room')">-</button>
+   <button class="theme-btn" @click="disincrease('living_room')">-</button>
      <h5 class="fonr-weight-bold text-center d-inline">{{living}}</h5>
     <button class="theme-btn" @click.prevent="increase('living_room')">+</button>
 
@@ -363,6 +376,15 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
             <span class="check" style="border-radius:10px"></span>
             <span class="mr-4 ml-4">{{$t('Grant')}}</span>
+             </label>
+
+
+                 <label class="checkbox d-bolck" :dir="$t('directions')" >
+            
+ <input type="radio" name="typeBuild" value="3"  v-model="typeBuild">
+
+            <span class="check" style="border-radius:10px"></span>
+            <span class="mr-4 ml-4">{{$t('personal_financing')}}</span>
              </label>
 </div>
             
@@ -427,7 +449,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         </div>
 
 
-           <div class="form-group">
+           <!-- <div class="form-group">
                 <div class=" font-weight-bold theme-color" >
 {{$t('Approximate_added_amount_Financing_method')}}
 <sup class="text-danger"> ({{$t('optional')}})</sup>
@@ -435,7 +457,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <input type="text" class="form-control" placeholder="" v-model="finance" name="finance">
          
 
-           </div>
+           </div> -->
 
 
     <button class=" theme-btn"  @click.prevent="save()">{{$t('save')}}</button>
@@ -471,7 +493,8 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                  <i class=" bx bx-edit"></i>{{$t('Edit')}}</a>
 
 </div>
-        <input class=" h1 text-dark form-control"  name="title" v-if="edit==1 && IsUser==10" :value="title"  style="font-size:2rem">
+        <!-- <input class=" h1 text-dark form-control"  name="title" v-if="edit==1 && IsUser==10" 
+        :value="title"  style="font-size:2rem"> -->
         <div class="d-flex">
 
             <div class="alert alert-success alert-dismissible fade show" role="alert" v-if="Message!=null">
@@ -501,11 +524,12 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 <script>
 import status from '../admin/status.vue'
 import AllUae from '../auth/AllUae.vue';
+import loading from '../auth/loading.vue';
 import ValidationErrors from "../shared/components/ValidationErrors.vue";
 import validationErrors from "../shared/mixins/validationErrors";
 
 export default {
-  components: { status , ValidationErrors, AllUae },
+  components: { status , ValidationErrors, AllUae , loading},
   mixins: [validationErrors],
 props:{title:String ,status:Number,added_at:String,id:
     Number,Message:String,edit:Number,testing:Number,floors:Number,
@@ -531,6 +555,7 @@ data() {
        dining_room_ncrease:this.dining_room,
        emirates_selected:this.emirats,
        living:this.living_room,
+       loading:false,
      tender_id: this.$route.params.id,
 
 
@@ -732,15 +757,15 @@ getTenders(data){
       });
       }
 
+this.loading=true;
 
-
- let Newtitle = document.querySelector("input[name=title]").value;
+//  let Newtitle = document.querySelector("input[name=title]").value;
 
  let priceGrant = document.querySelector("input[name=priceGrant]").value;
 
  let BankProvider = document.querySelector("input[name=BankProvider]").value;
 
- let finance = document.querySelector("input[name=finance]").value;
+//  let finance = document.querySelector("input[name=finance]").value;
 
  let phone = document.querySelector("input[name=phone]").value;
  let whatsapp = document.querySelector("input[name=whatsapp").value;
@@ -771,7 +796,7 @@ getTenders(data){
 
  let data = new FormData();
 
- data.append('title',Newtitle)
+//  data.append('title',Newtitle)
  data.append('desc',desc)
  data.append('min',min)
  data.append('max',max)
@@ -791,16 +816,16 @@ getTenders(data){
  data.append('priceGrant',priceGrant)
  data.append('Provider',this.Provider)
  data.append('BankProvider',BankProvider)
- data.append('finance',finance)
+//  data.append('finance',finance)
  data.append('whatsapp',whatsapp)
  data.append('phone',phone)
 
   // ,typeBuild:String,priceGrant:String,Provider:String,BankProvider:String,
-
+console.log('hello from save edit');
 
 
      axios.post('edit/consulte/data',data).then(res=>{
-
+      this.loading=false;
          this.data = res.data;
 
         //    this.Message="تم تحديث العنوان"
@@ -849,67 +874,6 @@ getTenders(data){
 
 <style lang="scss" scoped>
 .btn-bus {background-image: linear-gradient(to right, #3454d1 0%, #3454d1  51%, #3454d1  100%)}
-
-body {
-  background-color: #eee;
-  font-family: 'Nunito Sans', sans-serif;
-
-  .checkbox ,radio {
-    display: block;
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 14px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    /* this hide the default checkbox */
-    input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-
-      &:checked ~ .check {
-        background-color: #3454d1;
-
-        &:after {
-          display: block;
-        }
-      }
-    }
-
-    .check {
-      position: absolute;
-      top: 10px;
-      height: 14px;
-      width: 14px;
-      background-color: white;
-      border: 2px solid #3454d1;
-      border-radius:5px;
-
-      &:after {
-        content: "";
-        position: absolute;
-        display: none;
-
-        left: 2;
-        top: 1px;
-        width: 4px;
-        height: 8px;
-        border: 3px solid white;
-        border-width: 0 1.5px 1.5px 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-    }
-  }
-}
 .file-style{
     border:2px dotted #eee;
     background: #fff;

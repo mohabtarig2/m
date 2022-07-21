@@ -115,7 +115,7 @@
 						<div class="rating-reviews-main">
 							<div class="review-add" v-if="active2==true">
 								<h4 class="review-add-title fs-20">{{user.review.length}} Review</h4>
-								<div class="review-add-main"  v-for="review ,index in user.review" :key="index" v-if="review">
+								<div class="review-add-main"  v-for="review ,index in user.review" :key="index" v-show="review">
 									<div class="review-img">
 										<img :src="review.user.avatar" alt="#" width="126" height="126" style="
                                         width:126px !important;  height:126px !important;">
@@ -378,7 +378,12 @@
 								</div>
 								<!-- Single Recent Content -->
 								<div class="s-property-content">
-									<h3 class="srp-title hs-4"><router-link :to="{name:'pageDetails',params:{id:offer.id}}">{{offer.title}}</router-link></h3>
+									<h3 class="srp-title hs-4"><router-link :to="{name:'pageDetails',params:{id:offer.id}}">
+										<!-- {{offer.title}} -->
+										                    {{$t('design')}}	{{offer.type_villa==1 ? $t('classic')  : $t('modern')}}
+
+										
+										</router-link></h3>
 									<p class="property-location mb-0"><i class="fa fa-map-marker-alt"></i>
                                     <all-uae :emirates="offer.Emirates"></all-uae></p>
 									<div class="single-r-property-bed">

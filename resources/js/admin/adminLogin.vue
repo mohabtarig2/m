@@ -127,7 +127,7 @@ data() {
         this.$store.dispatch("loadStoredAdminState");
 
         
-       this.$router.push({ path: "/home" })
+       this.$router.push({ path: "/admin/home" })
 
       })
       .catch((error) => {

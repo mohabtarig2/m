@@ -374,7 +374,7 @@ class AdsController extends Controller
            $errors =  response()->json(['errors' => $valditor->errors()],422);
            return $errors;
        }
-
+// return $request;
 
        $offer =    Villa::create([
         "Emirates" => $request->Emirates,
@@ -382,6 +382,7 @@ class AdsController extends Controller
         "type_villa" => $request->villa,
         "title" => $request->title,
         "price" => $request->price,
+        "finishing" => $request->finishing,
         "floors" => $request->floors,
         "rooms" => $request->rooms,
         "Date" => now(),
@@ -576,7 +577,11 @@ class AdsController extends Controller
             $rating =  $VillaReview / count($reviewCalc) ;
         }
         // $offers =  Villa::with('villaImage','company.company','savedVilla')->where('status',1)->where( 'ads','=',1)->latest()->get();
-        $villas =  Villa::with('villaImage','company.company','savedVilla','review.user')->where('id',$id)->get();
+        $villas =  Villa::with('villaImage','company.company','savedVilla','review.user')->
+        with(['request_villa'=>function($query){
+            $query->select('id', 'ads_id');
+        }])->
+        where('id',$id)->get();
         
         foreach($villas as $villa){
             $villa->setAttribute('rating',$rating);

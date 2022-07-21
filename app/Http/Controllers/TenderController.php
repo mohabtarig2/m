@@ -229,7 +229,7 @@ class TenderController extends Controller
                 'bathroom' => $request->bathroom,
                 'dining_room' =>$request->dining_room,
                 'note' => $request->Notes,
-                'title' => $request->title,
+                // 'title' => $request->title,
                 'bedroom' => $request->bedroom,
                 'finishing' => $request->finishing,
                 'soil'=>$request->soil,
@@ -281,7 +281,7 @@ class TenderController extends Controller
 
 
             return $ruels = [
-            'title' => 'required|min:4',
+            // 'title' => 'required|min:4',
             'emirates' => 'required|integer',
             'villa_type' => 'required|string',
             'position' => 'required|string',
@@ -303,7 +303,7 @@ class TenderController extends Controller
         }
         protected function getRules2(){
             return $ruels2 = [
-                'title' => 'required|min:4',
+                // 'title' => 'required|min:4',
                 'emirates' => 'required|integer',
                 'villa_type' => 'required|string',
                 'position' => 'required|string',

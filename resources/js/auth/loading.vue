@@ -2,6 +2,8 @@
     <div>
      <div class="bg-white-card" >
 <div class="loader"></div>
+
+
 </div>
     </div>
 </template>
@@ -35,10 +37,14 @@ background-image: none;
         right: 0;
         bottom: 0;
         background-color: rgba(255, 255, 255); /* Black background with opacity */
-        z-index: 2;
+        z-index: 1051;
      flex-wrap: wrap;
      justify-content: center;
     align-items: center;
+        display: flex;
+    align-items: center;
+
+    
     transition: all .5s ease-in-out;
 }
 .loader {

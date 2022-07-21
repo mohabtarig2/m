@@ -24,7 +24,7 @@
     <input type="file" @change="newPhoto($event)" class="form-control" id="photo" name="photo">
     !-->
 <div class="form-group">
-    <input class="form-control mb-2" type="text" placeholder="عنوان مناسب"  v-model="title" :class="[{'is-invalid': errorFor('title')}]">
+    <input class="form-control mb-2" type="text" :placeholder="$t('short_descripe')"   v-model="title" :class="[{'is-invalid': errorFor('title')}]">
     <div
           class="invalid-feedback"
           v-for="(error, index) in this.errorFor('title')"
@@ -35,7 +35,7 @@
 
 
   <div class=" form-group mt-3">
-                  <div for="exampleFormControlTextarea1">الوصف</div>
+                 <label for="exampleFormControlTextarea1">{{$t('description')}}</label>
                   <textarea
                   style="background:#fff"
                     class="form-control"
@@ -43,7 +43,7 @@
                     rows="4"
                     v-model="notes"
                     :class="[{'is-invalid': errorFor('Notes')}]"
-                      placeholder=" أدخل وصفاً مفصلاً لمشروعك   "
+                   :placeholder="$t('long_descripe')"
 
                   ></textarea>
                   <div
@@ -78,17 +78,24 @@
                                                             </div>
                                                         </div>
 <div class="form-group">
-         <input class="form-control mb-4 mt-3" type="text" placeholder="اسم الاستشاري"  v-model="company_name" :class="[{'is-invalid': errorFor('company_name')}]" dir="rtl">
+         <input class="form-control mb-4 mt-3" type="text" :placeholder="$t('Name_Super_eng')"  v-model="company_name" :class="[{'is-invalid': errorFor('company_name')}]" dir="rtl">
     <div
           class="invalid-feedback"
           v-for="(error, index) in this.errorFor('company_name')"
           :key="'company_name' + index"
         >{{ error }}</div>
 </div>
-<h5 class="text-right mt-3   mb-3 text-muted">الملفات المطلوبة </h5>
+<h5 class="text-right mt-3   mb-3 text-muted"> {{$t('Required_files')}} </h5>
 <div class="form-group">
+
+
         <small class="text-muted">(pdf, jpg , png )</small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+        
+                    <div class=" float-right  font-weight-bold">
+                    <span class="">   {{$t('villa_design')}}</span>
+          <span class=""> {{$t('3D_File')}} </span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
 
 
              <div class="file-style"><label class="d-block ">
@@ -96,8 +103,7 @@
                  <span class="btn btn-light" @click="$refs.threeD" v-if="threeD==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.threeD" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">  تصميم الفيلا</span>
-          <span class=""> 3D </span>
+    
              <small class=" font-weight-bold text-danger" v-if="FileNotthreeDAllowd!=null">{{FileNotthreeDAllowd}}</small>
                 <input type="file" class="form-control"  @change="threedFile" style="display:none" ref="threeD">
 
@@ -124,15 +130,20 @@
 
 
 <div class="form-group">
-    <small class="text-muted"> Pdf , dwg (autocad file)</small>
-    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+
+            <small class="text-muted">  dwg (autocad file)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+           <span class=""> {{$t('Architectural_drawings_file')}} </span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
              <div class="file-style"><label class="d-block ">
 
 
                  <span class="btn btn-light" @click="$refs.fileinput2" v-if="Architect==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.fileinput2" v-else><span class="fa fa-paperclip" ></span> </span>
-              <span class=""> الملف المخططات المعماري </span>
+          
               <small class=" font-weight-bold text-danger" v-if="FileNotMapAllowd!=null">{{FileNotMapAllowd}}</small>
                 <input type="file" class="form-control"  @change="ArchitectFile" style="display:none" ref="fileinput2" >
 
@@ -158,14 +169,18 @@
 
 
 <div class="form-group">
-        <small class="text-muted">Pdf , dwg (autocad file)</small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+       <small class="text-muted">  dwg (autocad file)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+              <span class="">    {{$t('Structure_file')}}</span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
 
              <div class="file-style"><label class="d-block ">
                  <span class="btn btn-light" @click="$refs.structure" v-if="Structure==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.structure" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">  الملف الانشائي</span>
+          
               <small class=" font-weight-bold text-danger" v-if="FileNotStructureAllowd!=null">{{FileNotStructureAllowd}}</small>
 
                 <input type="file" class="form-control"  @change="StructureFile" style="display:none" ref="structure">
@@ -189,14 +204,18 @@
 
 </div>
 <div class="form-group">
-            <small class="text-muted">(pdf, xlsx)</small>
-                        <small class=" float-right text-danger font-weight-bold">إجباري</small>
+              <small class="text-muted">  ( xlsx)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+                <span class="">     {{$t('specification_file')}}</span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
 
              <div class="file-style"><label class="d-block ">
                  <span class="btn btn-light" @click="$refs.specifications" v-if="Specifications==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.specifications" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">    جدول المواصفات</span>
+
                 <input type="file" class="form-control"  @change="SpecificationsFile" style="display:none" ref="specifications">
 
                <div class=" text-danger" v-if="FileNotSpecificationsAllowd!=null">{{FileNotSpecificationsAllowd}}</div>
@@ -225,14 +244,18 @@
 
 
 <div class="form-group">
-        <small class="text-muted">(pdf, xlsx)</small>
-            <small class=" float-right text-danger font-weight-bold">إجباري</small>
+     <small class="text-muted">  (pdf)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+              <span class="">    {{$t('Emirates_id')}}</span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
 
              <div class="file-style"><label class="d-block ">
                  <span class="btn btn-light" @click="$refs.idfile" v-if="identity==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn btn-primary " @click="$refs.idfile" v-else><span class="fa fa-paperclip" ></span> </span>
-          <span class="">     الهوية</span>
+ 
                 <input type="file" class="form-control"  @change="idFile" style="display:none" ref="idfile">
 
                <div class=" text-danger" v-if="FileNotidentityAllowd!=null">{{FileNotidentityAllowd}}</div>
@@ -255,14 +278,18 @@
 
 </div>
 <div class="form-group">
-        <small class="text-muted"> Pdf , dwg (autocad file)</small>
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+          <small class="text-muted">  (pdf)</small>
+        
+                    <div class=" float-right  font-weight-bold">
+              <span class="">    {{$t('earth_map_file')}}</span>
+          <span class="text-danger">{{$t('Mandatory')}}</span>
+          </div>
 
              <div class="file-style"><label class="d-block ">
                  <span class="btn btn-light" @click="$refs.ele" v-if="map==null"><span class=" fa fa-paperclip" ></span> </span>
 
                 <span class="btn  btn-primary " @click="$refs.ele" v-else><span class="fa fa-paperclip" ></span> </span>
-           <span class="">   خارطة الارض  </span>
+       
                 <input type="file" class="form-control"  @change="mapFile" style="display:none" ref="ele">
 
                <div class=" text-danger" v-if="FileNotmapAllowd!=null">{{FileNotmapAllowd}}</div>
@@ -317,7 +344,7 @@
 
 
 
-
+<!-- 
         <small class="text-muted">Pdf , dwg (autocad file) , jpg , png)</small>
              <div class="file-style"><label class="d-block ">
                  <span class="btn btn-light" @click="$refs.ete" v-if="Another==null"><span class=" fa fa-plus" ></span> </span>
@@ -330,7 +357,7 @@
 
 
 
-            </label></div>
+            </label></div> -->
 
 </div>
 

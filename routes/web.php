@@ -30,6 +30,8 @@ Route::group(['middleware' => ['web']], function () {
 Route::post('login', 'Auth/LoginController@login');
 });
 
+
+
 // Route::group(['middleware' => ['web']], function () {
 //     Route::post('loginCompany', 'Auth/LoginController@loginCompany');
 //     });
@@ -131,7 +133,10 @@ if($request->user()->roles->id!=10){
     });
 Route::post('skip','UserController@skip');
 Route::post('SetBranch','UserController@SetBranch');
-Route::post('/bregister','BRegisterController@bcreate');
+Route::post('/bregister','UserController@bcreate');
+Route::post('/imagesSign','UserController@imagesSignup');
+
+
 Route::get('/partner',function(){
     return view('partner');
 })->name('partner');

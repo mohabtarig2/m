@@ -14,6 +14,7 @@
     "Mention_the_loan_amount":"Mention the loan amount",
     "optional":"optional",
     "Grant_Provider":"Grant Provider",
+    "The_maximum_limit_for_featured_ads_is_2_only":"The maximum limit for featured ads is 2 only",
     "send":"send",
     "interface_design":"interface design",
     "add_offer":"Add  Offer",
@@ -177,7 +178,7 @@
     "edit":"edit",
     "delete":"delete",
     "Design_Price":"Design Price",
-    "Name_Super_eng":"Engineer name (supervisor)",
+    "Name_Super_eng":"Company name ",
     
     "Supervisor_phone_number":"Supervisor phone number",
     "must_be_12_digits":"must be 12 digits",
@@ -194,6 +195,8 @@
 
     "unique_villa_designs":"unique villa designs",
     "All_Rights_Reserved":"AMB TENDERS All Rights Reserved",
+   
+  
     "villa":"villa",
     "HowItWroks":"How It Wroks",
     "villa_design":"villa design",
@@ -436,8 +439,12 @@
     "ads":"ads",
     "description":"description",
     "tabCost":"Building Cost",
+    "personal_financing":"personal financing",
+    "follow_up_with_the_request":"follow up with the request",
+    "office_number":"office number",
 
-    "Consultant_fee": "Consultation fees ",
+
+    "Consultant_fee": "Engineering consultancy fees design and supervision",
     "conditioning": "conditioning",
     "gypsum": "gypsum",
     "electric_pendants": "electric pendants",
@@ -570,6 +577,7 @@
     "Edit_Profile":"Edit Profile",
     "Company_name":"Company name",
     "Manager_Name":"Manager Name",
+    
     "arabic":"Arabic",
     "about_Us":"about Us ",
     "english":"english",

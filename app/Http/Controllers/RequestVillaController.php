@@ -895,11 +895,12 @@ return 'true';
 
            
      
-
+return $request;
            $reques_villa =  request_villa::create([
                 "user_id" => Auth::id(),
                 "ads_id" =>$request->ads_id,
                 "c_id" =>$request->c_id,
+                'finishing'=>$request->finishing,
                 "map_path" => $file_path_map,
                 "passport_path" => $file_name_pass,
                 "typeBuild" => $request->typeBuild,
