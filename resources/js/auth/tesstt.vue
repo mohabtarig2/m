@@ -721,13 +721,13 @@
                  
                 <div class="c-form-inner mt-5">
                 <h2 class="text-center">
-                    <i class="font-weight-bold theme-btn d-block text-center"></i>
+                    <i class="fas fa-check-circle text-success"></i>
                 </h2>
                       <h2 class="text-center mb-5 ">  
                          {{$t('success_signup')}}</h2>
 
-                         <div class="text-center">
-                          <a href="/">{{$t('homepage')}}</a>
+                         <div class="text-center ">
+                          <a href="/" class="font-weight-bold theme-btn d-block text-center">{{$t('homepage')}}</a>
                          </div>
  
 
