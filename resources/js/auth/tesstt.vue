@@ -1408,7 +1408,7 @@ axios.post("bregister", data).then(res=>{
 
                                		setInterval(function ()
 				 {
-					  this.$router.push( '/');
+					  this.$router.push({ path: '/'});
 					 },
 				  3000);
                 });

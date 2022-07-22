@@ -199,6 +199,7 @@ data() {
 
       // if(this.$store.state.role_id==10){
         this.$router.push(this.$route.query.redirect || '/');
+        
       //   console.log('go /')
       // }else{
       //    console.log('go Dashboard')
