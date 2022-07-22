@@ -24,6 +24,7 @@
     "view":"عرض",
     "other":"اخرى",
     "count":"عدد",
+    "Company_establishment_date":"تاريخ تأسيس الشركة",
     "Attach_examples":"    أرفق أمثلة لما تريد ان أمكن",
     "soil_investigation_file":"ملف فحص  التربة",
     "earth_map_file":"خارطة الارض ",
@@ -56,6 +57,7 @@
     
     "home":"الرئيسية",
     "about":"من نحن",
+    "about_company":"حول الشركة",
     "results":"نتائج",
     "unique_ads":"إعلانات مميزة",
     "ads":"اعلان",
@@ -172,6 +174,7 @@
     "dashboard":"لوحة التحكم",
     "show_more":"شاهد المزيد",
     "Myprofile":"الملف الشخصي",
+    "Logo_Company":"شعار الشركة",
     "settings":"الاعدادات",
     "Edit_Account":"تعديل الحساب",
     "Edit":"تعديل  البيانات",
@@ -454,7 +457,10 @@
     "sqft":" قدم مربع",
     "Email":"البريد الأكتروني",
     "Password":" كلمة السر",
-    "mobile":"رقم هاتف ",
+    "mobile":"رقم الجوال ",
+    "Phone_Office":"رقم المكتب الثابت ",
+    "level":"المرحلة",
+    "align":"right",
     "write_desc":" اكتب وصف ",
     "Confirm_Password":"  تأكيد كلمة السر ",
     "confirm":"تأكيد",
@@ -473,6 +479,7 @@
     "Are_you_sure_you_want_to_complete_this_application":" هل انت متأكد تريد أكمال هذا الطلب؟",
     "project_files":" ملفات المشروع ",
     "Miscellaneous":"متفرقات",
+    
     
 
 
@@ -575,8 +582,9 @@
     "no_branchs":"ليس هنالك فروع",
     "company_files":"ملفات الشركة",
     "review_and_rating":"مراجعة & وتقييم",
-    "Business_license":"الرخصة التجارية",
+    "Business_license":"رخصة الشركة",
     "Achievement_License":" ملف الانجازات",
+    "Additional_file":"ملفات أخرى ",
     "Achievement_number_since_inception":"عدد الانجاز منذ التأسيس",
     "since":"منذ",
   "Number_of_achievements_in_the_last_three_years":"عدد الانجازات اخر ثلاث سنوات ",

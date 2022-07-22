@@ -1258,6 +1258,7 @@ this.resultSize = size+' MB' ;
    
 
   },
+  
        open(event){
          
         if(event=='emirates'){

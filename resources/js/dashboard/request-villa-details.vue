@@ -2840,6 +2840,15 @@ watch:{
       Vue.nextTick(() => this.Supervisor = result);
     }
 },
+      mounted() {
+
+      
+
+                $('.header-inner').removeClass('d-block');
+                $('.header-inner').addClass('d-none');
+              
+  
+        },
 methods:{
 
 soilConfirm(){

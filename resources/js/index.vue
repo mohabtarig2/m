@@ -55,7 +55,7 @@ style="position:absolute;
 <li v-if="!isLoggedIn"><router-link :to="'/login'"> {{ $t('login') }}</router-link></li>
 <li v-if="!isLoggedIn"><router-link :to="'register'"   > {{ $t('register') }} </router-link></li>
   <li v-if="isLoggedIn"> <router-link :to="{name:'mytenders'}"  class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
-  <li v-if="isLoggedIn"> <router-link :to="{name:'mytenders'}"  class="font-weight-bold" >{{ $t('logout') }} </router-link></li>
+  <li v-if="isLoggedIn"> <a :to="{name:'mytenders'}"  class="font-weight-bold" >{{ $t('logout') }} </a></li>
   <li class><a data-toggle="modal" @click="HideMenue()" data-target="#myModal" class="font-weight-bold" >
                                                     <i class="item-center fa fa-play"></i>{{$t('How_it_works')}}</a ></li>
 

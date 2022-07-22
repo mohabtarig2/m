@@ -29,7 +29,8 @@
     "Company_main_branch":"Company main branch",
     "Company branches":"Company branches",
     "no_branchs":"no branchs",
-    "Number_of_achievements_in_the_last_three_years":"Number of achievements in the last three years",
+    "Additional_file":"Other files",
+    "Number_of_achievements_in_the_last_three_years":"Number of achievements in the last 3 years",
     "since":"since",
     "business_fair":"business fair",
     "Achievement_License":"Achievement License",
@@ -51,11 +52,16 @@
     "consultant_contract":"consultant contract",
     "canceled":"canceled",
     "reason":"reason",
+    "align":"left",
     "cancel":"cancel",
     "Thers_No_Tender":"Thers No Tender Yet",
     "company_files":"company files",
     "review_and_rating":" review & rating",
       "Achievement_number_since_inception":"Achievement number since inception",
+    "Company_establishment_date":"Company establishment date",
+    "about_company":"about company",
+    
+
 
     
     "Are_you_sure_you_want_to_complete_this_project":"Are you sure you want to complete this project?",
@@ -72,6 +78,7 @@
     "Hvac_Tender":"Hvac Tender",
     "Stone_Tender":"Stone Tender",
     "Interior_tender":"Interior Tender",
+    "level":"level",
 
     "3D_File":"3D File",
     "autocad":"autocad",
@@ -160,6 +167,7 @@
     "Related_search":"Related search",
     "posted_by":"Posted By",
     "review":"review",
+    "Phone_Office":"Phone Office",
     "Desgin_Details":"Desgin Details",
 
     "content_about":"An Emirati company established in 2020 to develop the concept of construction at the level of the Gulf Cooperation Council countries, the Arab world and the foreign market",
@@ -249,7 +257,7 @@
     "save_peoject":"  Save Money ",
     "Get_imagination":" Realize your imagination",
     "Join_To_Our_Family":"Join To Our Family",
-    "User_name":"User_name",
+    "User_name":"Username",
     "Login_Now":"Login Now",
     "You_Register_Successfuly":"You Register Successfuly",
     "Grow_your_business":"Grow your business perfectly and easily",
@@ -409,7 +417,8 @@
     "next":"next",
     "Email":"Email",
     "Password":"Password",
-    "Confirm_Password":"Confirm_Password",
+
+    "Confirm_Password":"Confirm Password",
 
 
     "title":"title",
@@ -431,6 +440,7 @@
     "Service_room_placement":"svc room position",
     "price":"price",
     "Emirates":"Emirates",
+    "Logo_Company":"Logo Company",
     "inside":" inside The Villa",
     "outside":"  Outside",
     "New_offer_add":"A new offer has been added",

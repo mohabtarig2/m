@@ -55,16 +55,16 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row mt-5">
     <div class="offset-md-2 ">
 
     </div>
       <div class="col-lg-8 col-12">
 <div class="wrapper-stepper">
 
-                       <div class="stepper">
+                       <div class="stepper mb-5" :dir="$t('directions')" :class="$t('text_align')">
             <div class="stepper-progress">
-                <div class="stepper-progress-bar" :style="'width:' + stepperProgress "></div>
+                <div class="stepper-progress-bar" :style="'width:' + stepperProgress+';'+$t('align')+':0'"></div>
             </div>
 
             <div class="stepper-item" :class="{ 'current': step == item, 'success': step > item }" v-for="item in 4" :key="item">
@@ -76,20 +76,20 @@
                     </span>
                 </div>
                 <span class="stepper-item-title">
-                    level
+                    {{$t('level')}}
                      {{ item }}
                 </span>
             </div>
         </div>
      
             <div class="stepper-pane mt-3" v-if="step == 1">
-                <form class="c-form-inner">
+                <form class="c-form-inner" :dir="$t('directions')" :class="$t('text_align')">
      
 
         <div class="form-group">
           <!-- <label for="name">{{$t('User_name')}}</label> -->
           <input
-            type="text"
+            type="text" autocomplete="off"
             name="name"
             :placeholder="$t('User_name')"
             class="form-control"
@@ -104,7 +104,7 @@
             <div class="form-group">
           <!-- <label for="email">{{$t('Email')}}</label> -->
           <input
-            type="text"
+            type="text" autocomplete="off"
             name="email"
             :placeholder="$t('Email')"
             class="form-control"
@@ -114,9 +114,9 @@
           <v-errors :errors="errorFor('email')"></v-errors>
             </div>
   <div class="form-group mt-3">
-             <div class="h5" :class="$t('text_align')">رقم الجوال</div>
+             <div class="h6 font-weight-bold text-dark " :class="$t('text_align')">{{$t('mobile')}}</div>
             <div class="row" dir="ltr">
-              <div class=" col-4 ">
+              <div class=" col-4 mobile ">
 			
                      <span class="single-property-details">
      <span class="nice-select" >
@@ -133,7 +133,7 @@
                   </div>
 <div class="col-8">
            
-            <input type="text"
+            <input type="text" autocomplete="off"
             name="phone"
               class="form-control"
               v-model="phone"
@@ -154,19 +154,33 @@
   
 
 
-        <div class="form-group">
-          <label for="password">{{$t('Categories')}}</label>
-      <select class="form-control"  v-model="business.Categories"  :class="[{'is-invalid': errorFor('Categories')}]">
-         
-          <option value="1">{{$t('consulting_company')}}</option>
-          <option value="6">{{$t('construcion_company')}} </option>
-          <option value="4">{{$t('HVAC_companies')}}</option>
-          <option value="3">{{$t('Stone_companies')}}</option>
-          <option value="5">{{$t('interior_decoration')}}</option>
-          <option value="7">{{$t('other')}}</option>
-          
-      </select>
-          <v-errors :errors="errorFor('Categories')"></v-errors>
+        <div class="row mb-3">
+
+          <div class="col-12">
+<div class="single-property-details ">
+<label>
+     <span class="text-dark">{{$t('Categories')}}</span>
+     
+        <div class="nice-select form-control mb-4" :class="[open_select_category,{'is-valid':category_selected}]" tabindex="0" @click="openCategory('category')">
+            <span class="current">
+                <allcategory :category="category_selected"></allcategory>
+            </span>
+                
+                <ul class="list">
+                  <li data-value="1" class="option " @click="SelectCategoreis(1)">{{$t('consulting_company')}}</li>
+                  <li data-value="2" class="option" @click="SelectCategoreis(6)">{{$t('construcion_company')}} </li>
+                  <li data-value="3" class="option"  @click="SelectCategoreis(4)">{{$t('HVAC_companies')}}</li>
+                  <li data-value="3" class="option"  @click="SelectCategoreis(3)">{{$t('Stone_companies')}}</li>
+                  <li data-value="3" class="option"  @click="SelectCategoreis(3)"> {{$t('interior_decoration')}}</li>
+                  <li data-value="3" class="option"  @click="SelectCategoreis(7)">{{$t('other')}} </li>
+                            </ul>
+                    </div>
+                    </label>
+
+</div>
+</div>
+
+
         </div>
 
         <div class="form-group">
@@ -225,8 +239,8 @@
 
   <div class="row">
              <div class="col-6 form-group  mt-3">
-                 <div class=" h5" :class="$t('text_align')">{{$t('Manager_Name')}}<sup class="text-muted"> ({{$t('arabic')}})</sup> </div>
-            <input type="text"
+                 <div class=" h6 font-weight-bold text-dark " :class="$t('text_align')">{{$t('Manager_Name')}}<sup class="text-muted"> ({{$t('arabic')}})</sup> </div>
+            <input type="text" autocomplete="off"
              name="manger_ar"
 
               class="form-control"
@@ -246,8 +260,8 @@
         </div>
 
         <div class="col-6  form-group mt-3">
-                 <div class=" h5" :class="$t('text_align')">{{$t('Manager_Name')}}<sup class="text-muted"> ({{$t('english')}})</sup> </div>
-            <input type="text"
+                 <div class=" h6 font-weight-bold text-dark " :class="$t('text_align')">{{$t('Manager_Name')}}<sup class="text-muted"> ({{$t('english')}})</sup> </div>
+            <input type="text" autocomplete="off"
              name="manger_en"
              dir="ltr"
               class="form-control"
@@ -263,8 +277,8 @@
   </div>
   <div class="row">
         <div class="col-6  form-group mt-3">
-                 <div class=" h5" :class="$t('text_align')">{{$t('Company_name')}} <sup class="text-muted"> ({{$t('arabic')}})</sup> </div>
-            <input type="text"
+                 <div class=" h6 font-weight-bold text-dark " :class="$t('text_align')">{{$t('Company_name')}} <sup class="text-muted"> ({{$t('arabic')}})</sup> </div>
+            <input type="text" autocomplete="off"
              name="Company_ar"
               class="form-control"
               dir="rtl"
@@ -277,7 +291,7 @@
 :key="'Company_ar' + index" >{{ error }}</div>
         </div>
         <div class="col-6 form-group mt-3">
-                 <div class=" h5" :class="$t('text_align')">{{$t('Company_name')}} <sup class="text-muted"> ({{$t('english')}})</sup> </div>
+                 <div class=" h6 font-weight-bold text-dark " :class="$t('text_align')">{{$t('Company_name')}} <sup class="text-muted"> ({{$t('english')}})</sup> </div>
             <input type="Company_en"
              name="Company_en"
               dir="ltr"
@@ -295,7 +309,9 @@
   </div>
 
   <div class="form-group  mt-3">
-            <div class="h5" :class="$t('text_align')">تاريخ تأسيس الشركة
+            <div class="h6 font-weight-bold text-dark " :class="$t('text_align')">
+              {{$t('Company_establishment_date')}}
+
             </div>
             <input type="date"
              name="date_create"
@@ -327,26 +343,38 @@
             </div>
 
       
-         <div class="form-group mt-3">
-                        <div class="h5" :class="$t('text_align')">الامارة </div>
+														<div class="row">
+<div class="col-12">
+<div class="single-property-details">
+<label>
+     <span class="text-dark">{{$t('Emirates')}}</span>
+        <div class="nice-select form-control "
+         :class="[open_select,{'is-valid':emirates_selected !=null}]" tabindex="0" @click="openCategory('emirates')">
+            <span class="current">
+                <all-uae :emirates="emirates_selected"></all-uae></span>
+              
+                <ul class="list">
+                <li data-value="1" class="option " @click="emiratesChoose(7)">{{$t('abu_dabhi')}}</li>
+                  <li data-value="2" class="option" @click="emiratesChoose(1)">{{$t('dubai')}} </li>
+                  <li data-value="3" class="option"  @click="emiratesChoose(5)">{{$t('sharja')}}</li>
+                  <li data-value="3" class="option"  @click="emiratesChoose(6)">{{$t('ajman')}}</li>
+                  <li data-value="3" class="option"  @click="emiratesChoose(4)">{{$t('um_alqwin')}} </li>
+                  <li data-value="3" class="option"  @click="emiratesChoose(3)"> {{$t('ras_alkhima')}}</li>
+                  <li data-value="3" class="option"  @click="emiratesChoose(2)">{{$t('fujairah')}} </li>
+                            </ul>
+                    </div>
+                    </label>
 
-        <select class="form-control " v-model="complete.emirates " :class="$t('text_align')">
-  <option value="1">dubai</option>
-  <option value="2">Fujira</option>
-  <option value="3">Ras Alkhima</option>
-  <option value="4">um alqwain</option>
-  <option value="5">sharjah</option>
-  <option value="6">ajman</option>
-  <option value="7">Abudabhi</option>
-
-</select>
-         </div>
-             <div   class="h5 text-right form-group mt-3"><span class="font-weight-bold">حول الشركة </span>
+</div>
+</div>
+                                                        </div>
+             <div   class="h6 font-weight-bold text-dark   form-group mt-3"
+              :dir="$t('directions')" :class="$t('text_align')"><span class="font-weight-bold">{{$t('about_company')}}</span>
     <small class="text-muted">
     <span v-if="complete.about">{{complete.about.length }}</span>
     <span v-else>0</span>/100
     </small>
-    <textarea class="form-control "  id="exampleFormControlTextarea1" rows="6" style="font-size:18px" v-model="complete.about"
+    <textarea class="form-control "    id="exampleFormControlTextarea1" rows="6" style="font-size:18px" v-model="complete.about" 
     :class="[{'is-valid':limitComplete>=100}]" @input="ontype('About')" ></textarea>
     </div>
 
@@ -360,7 +388,7 @@
             </div>
 
              <div class="stepper-pane" v-if="step == 3">
-                      <div class="c-form-inner mt-5 mb-5" >
+                      <div class="c-form-inner mt-5 mb-5" :dir="$t('directions')" :class="$t('text_align')">
                     
           <!-- <ul class="progressbar">
               <li class="active">تم تسجيل حساب</li>
@@ -391,7 +419,7 @@
 
           <div class="text-center">  
             <span v-if="progressAvatar" class="badge badge-success">{{progressAvatar}}</span>
-             صورة بروفايل</div>
+             {{$t('Logo_Company')}}</div>
            
         
              <small class=" font-weight-bold text-danger" v-if="FileNotAvatarAllowd!=null">{{FileNotAvatarAllowd}}</small>
@@ -415,15 +443,15 @@
  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 
 </div> -->
-                    <small class=" float-right text-danger font-weight-bold">إجباري</small>
+                
 
                     <div class="row mb-3">
     <div class="col-6">
-        <h5 class="text-right">عدد الأنجازات اخر 3 سنين  </h5>
+        <h6  class=" font-weight-bold text-dark ">{{$t('Number_of_achievements_in_the_last_three_years')}} </h6 >
 <input type="number" v-model="AchiveThreeYears" class="form-control">
     </div>
         <div class="col-6">
-                    <h5 class="text-right">عدد الأنجازات منذ التأسيس </h5>
+                    <h6   class="font-weight-bold text-dark">{{$t('Achievement_License')}}</h6>
 
 <input type="number" v-model="AchiveSinceCreate" class="form-control">
     </div>
@@ -449,7 +477,7 @@
 
 
 
-<div class="upload-file file-style">
+<div class="upload-file file-style" :dir="$t('directions')">
                              <label class="dd-flex ">
 
 
@@ -457,7 +485,7 @@
                   <i class=" bx bxs-cloud-upload" ></i></span>
 
                 <span class="btn btn-primary " @click="$refs.Munici" v-else><i class="bx bxs-cloud-upload" ></i></span>
-              <span class="float-right mr-2 ml-2">   تقييم البلدية</span>
+              <span class="float-right mr-2 ml-2">   {{$t('municipality')}}</span>
               <small class=" font-weight-bold text-danger" v-if="FileNotMuniciAllowd!=null">{{FileNotMuniciAllowd}}</small>
                 <input type="file" class="form-control"  @change="MuniciFile" style="display:none" ref="Munici" >
 
@@ -498,14 +526,14 @@
 
 </div>
 <div class="container-file">
-<div class="upload-file file-style">
+<div class="upload-file file-style" :dir="$t('directions')">
                              <label class="dd-flex ">
 
 
                  <span :class="{'btn btn-light':licence==null,'btn btn-download':licence}" @click="$refs.licence" v-if="file==null"><i class=" bx bxs-cloud-upload" ></i></span>
 
                 <span class="btn btn-primary " @click="$refs.licence" v-else><i class="bx bxs-cloud-upload" ></i></span>
-              <span class="float-right mr-2 ml-2">   رخصة  الشركة </span>
+              <span class="float-right mr-2 ml-2">   {{$t('Business_license')}}</span>
               <small class=" font-weight-bold text-danger" v-if="FileNotlicenceAllowd!=null">{{FileNotlicenceAllowd}}</small>
                 <input type="file" class="form-control"  @change="licenceFile" style="display:none" ref="licence" >
 
@@ -543,15 +571,15 @@
 
                         <div class="container-file">
                        
-                            <div class="upload-file file-style">
+                            <div class="upload-file file-style" :dir="$t('directions')">
                              <label class=" dd-flex ">
 
 
-                 <span :class="{'btn btn-light':Achive==null,'btn btn-download':Achive}" @click="$refs.Achive" v-if="Achive==null">
-                  <i class=" bx bxs-cloud-upload" ></i></span>
+                 <span :class="{'btn btn-light':Achive==null,'btn btn-download' :Achive}" @click="$refs.Achive" v-if="Achive==null">
+                  <span class=" bx bxs-cloud-upload" ></span></span>
 
                 <span class="btn btn-primary " @click="$refs.Achive" v-else><i class="bx bxs-cloud-upload" ></i></span>
-              <span class="mr-2 ml-2">     الانجازات </span>
+              <span class="mr-2 ml-2">     {{$t('Achievement_License')}} </span>
               <small class=" font-weight-bold text-danger" v-if="FileNotMapAllowd!=null">{{FileNotAchiveAllowd}}</small>
                 <input type="file" class="form-control"  @change="AchiveFile" style="display:none" ref="Achive" >
 
@@ -600,7 +628,7 @@
                   <span class='bx bx-plus-medical'></span>
                   
                 </span>
-                 <span class="mr-2 ml-2">     ملفات اضافية </span>
+                 <span class="mr-2 ml-2">     {{$t('Additional_file')}}</span>
                 
 
 
@@ -624,24 +652,26 @@
             <div class="image-wrapper mt-3 " v-for="(image,i) in images" :key="i">
                 <span v-if="files[i].name!=null">
 
+              
+
                 <span v-if="progressbar" class="">
                    <span class=""> {{progressbar}}</span>
                     </span>
 <div class="progress" v-if="progressbar" style="hieght:10px !important">
-  <div v-if="progressbar!='100%'" class="progress-bar  progress-bar-striped bg-success"
+  <div v-if="progressbar!='100%'" class="progress-bar   bg-success"
    role="progressbar" :style="'width:'+progressbar+';hieght:10px !important; '" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
   <div v-if="progressbar=='100%'" class="progress-bar   bg-success" role="progressbar"
-   :style="'width:'+progressbar+';hieght:10px !important;background-color:#3454d1 !important'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+   :style="'width:'+progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 
 </div>
 
 
-<span v-if="progressbar!=null"  class="main-color"> {{files[i].name}}
+<span v-if="progressbar!=null"  class="main-color  mt-1"> {{files[i].name}}
     <small class="text-muted  " v-if="files[i].size"> {{bytesToSize(files[i].size)}}</small>
 </span>
-<span class="btn btn-light float-left"  v-if="progressbar">
+<span class="btn btn-light float-left mt-1"  v-if="progressbar" @click.prevent='removeFile(i)'>
 
-<span class="fa fa-close    " @click.prevent='removeImage(i)'></span>
+<span class="fa fa-close " ></span>
 </span>
 
 
@@ -687,16 +717,16 @@
             </div>
         
 
-        <div class="controls mt-4 mb-4">
-            <button class="btn" @click="stepGo('min')" :disabled="step == 1" v-if="step != 4">
+        <div class="controls mt-4 mb-4" >
+            <button class="theme-btn primary" @click="stepGo('min')" :disabled="step == 1" v-if="step != 4">
                 <!-- "stepGo('min')" -->
-                 <i class='bx bx-left-arrow-alt mr-2'></i>
+                 <i class='bx bx-left-arrow-alt mr-3'></i>
                 {{$t('previous')}}
             </button>
-            <button class="btn btn-download btn--green-1"  @click="stepGo('plus')" :disabled="step == 4"  v-if="step != 4">
+            <button class="theme-btn btn btn-download btn--green-1"  @click="stepGo('plus')" :disabled="step == 4"  v-if="step != 4">
                 <!-- @click="stepGo('plus')" -->
                 {{$t('next')}}
-                <i class='bx bx-right-arrow-alt mr-2'></i>
+                <i class='bx bx-right-arrow-alt ml-3'></i>
             </button>
         </div>
     </div>
@@ -726,14 +756,19 @@
 <script>
 import ValidationErrors from '../shared/components/ValidationErrors.vue';
 import validationErrors from "../shared/mixins/validationErrors";
+import Allcategory from './allcategory.vue';
 import Allcountry from './allcountry.vue';
+import AllUae from './AllUae.vue';
 export default {
-  components: {  ValidationErrors, Allcountry },
+  components: {  ValidationErrors, Allcountry, Allcategory, AllUae },
   mixins: [validationErrors],
   data(){
      return{
 
-     
+     category_selected:null,
+     open_select_category:'',
+      emirates_selected:null,
+        open_select:'',
       isAvailble:null,
 
          country:'AE',
@@ -869,17 +904,39 @@ data.append('mobile', this.phone);
     },
   },
     methods:{
+
+            openCategory(event){
+         
+        if(event=='category'){
+          this.open_select_category=="open" ? this.open_select_category='' : this.open_select_category="open"
+        }
+            if(event=='emirates'){
+          this.open_select=="open" ? this.open_select='' : this.open_select="open"
+        }
+            },
+              emiratesChoose(e){
+       console.log(e)
+        this.emirates_selected=e;
+         $(this.open_select).remove();
+    },
+            SelectCategoreis(e){
+             
+             this.category_selected=e;
+       
+            },
+
          isArabicChars(e) {
-      // var arregex = /[\u0600-\u06FF]/;
+      var arregex = /[\u0600-\u06FF- ]/;
       // return arregex.test(text);
 
           let text = String.fromCharCode(e.keyCode);
-      if (/[\u0600-\u06FF]/.test(text)) return true;
+      if (arregex.test(text)  ) return true;
       else e.preventDefault();
     },
          isLetter(e) {
+          var reg = /^[a-zA-Z- ]+$/
       let char = String.fromCharCode(e.keyCode);
-      if (/^[A-Za-z]+$/.test(char)) return true;
+      if (reg.test(char) ) return true;
       else e.preventDefault();
     },
               openCountry(){
@@ -927,12 +984,11 @@ console.log(result1);
 
 
 
-                if(!file.type.match('image.*')){
-                   this.FileNotAllowd =`should be jpg , png `;
+                if(!file.type.match('application/pdf')){
+                   this.FileNotAllowd =`should be PDF`;
                     return ;
                 }
-
-                
+ 
 
 
   
@@ -971,10 +1027,15 @@ console.log(result1);
                  
                 });
             },
-               removeImage(i){
-  let files = this.files;
-  files.splice(i,1,'');
-    console.log(files);
+               removeFile(i){
+
+console.log('hello Console')
+  
+    console.log('file Before = '+this.files);
+    this.files.splice(i,1,'');
+
+        console.log('file After = '+this.files);
+
 
 
 
@@ -983,7 +1044,7 @@ console.log(result1);
 
 
                    onChange(event){
-           this.file=event.target.files[0];
+           this.file=event.target.files;
 
 
 const result1 = getFileExtension(this.file.name);
@@ -1357,7 +1418,7 @@ axios.post("bregister", data).then(res=>{
             // this.step++
             if(event=='plus'){
                 if(this.step==1){
-
+                  this.business.Categories = this.category_selected;
                     if(this.business.name==null ||  this.business.email==null || this.business.Categories==null
                      || this.business.password==null ||this.business.password_confirmation==null
                      ||  this.phone=='' ){
@@ -1393,6 +1454,8 @@ axios.post("bregister", data).then(res=>{
                 }
 
                     else if(this.step==2){
+
+                      this.complete.emirates=this.emirates_selected;
 
                     if(this.complete.manger_ar=='' || this.complete.manger_en=='' || this.complete.Company_en==''
                     || this.complete.Company_ar==''||this.complete.emirates==''
@@ -1453,7 +1516,7 @@ axios.post("bregister", data).then(res=>{
 
 <style lang="scss" scoped>
 $default    :   #C5C5C5;
-$green-1    :   #1d67cb ;
+$green-1    :   #3454d1  ;
 $transiton  :   all 500ms ease;
 
 body{
@@ -1482,7 +1545,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 660px;
+    width: auto;
     position: relative;
     z-index: 0;
     margin-bottom: 24px;
@@ -1676,7 +1739,7 @@ body{
 .progress{
    height: 7px !important;
 }
-.nice-select:after {
+.mobile .nice-select:after {
   
     display: none;
 
