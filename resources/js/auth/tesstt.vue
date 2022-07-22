@@ -1429,11 +1429,10 @@ data.append('pathMunici',this.pathMunici);
 axios.post("bregister", data).then(res=>{
                     this.step++
 
-                               		setInterval(function ()
-				 {
-					this.routing();
-					 },
-				  3000);
+     
+            setTimeout(function() {
+            this.routing();
+        }, 2000, this);
                 });
 
             },

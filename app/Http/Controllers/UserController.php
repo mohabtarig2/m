@@ -54,7 +54,7 @@ class UserController extends Controller
 
          companies::create([
             'about_us' => $request->about,
-            'phone' => $request->phone,
+            'phone' => "00971"+$request->phone,
             'emirates' => $request->emirates,
             'date_create' => $request->date_create,
             'manager_ar' => $request->manger_ar,
