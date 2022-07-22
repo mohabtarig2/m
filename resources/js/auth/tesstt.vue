@@ -449,11 +449,11 @@
 
                     <div class="row mb-3">
     <div class="col-6">
-        <h6  class=" font-weight-bold text-dark ">{{$t('Number_of_achievements_in_the_last_three_years')}} </h6 >
+        <h6  class=" font-weight-bold text-dark " style="font-size:14px">{{$t('Number_of_achievements_in_the_last_three_years')}} </h6 >
 <input type="number" v-model="AchiveThreeYears" class="form-control">
     </div>
         <div class="col-6">
-                    <h6   class="font-weight-bold text-dark">{{$t('Achievement_number_since_inception')}}</h6>
+                    <h6   class="font-weight-bold text-dark" style="font-size:14px">{{$t('Achievement_number_since_inception')}}</h6>
 
 <input type="number" v-model="AchiveSinceCreate" class="form-control">
     </div>
@@ -1701,6 +1701,9 @@ body{
     justify-content: center;
     border-radius: 50%;
 }
+.file-style-avatar:hover{
+  cursor: pointer;
+}
 .file-style{
   border: none;
 }
@@ -1731,10 +1734,7 @@ body{
     justify-content: center;
     border-radius: 50%;
 }
-.file-style-avatar:hover {
- color:#34d195;
- cursor: pointer;
-}
+
 .progress .bg-success{
  color:#34d195 !important;
 
