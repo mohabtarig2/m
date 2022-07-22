@@ -161,7 +161,7 @@
 <label>
      <span class="text-dark">{{$t('Categories')}}</span>
      
-        <div class="nice-select form-control mb-4" :class="[open_select_category,{'is-valid':category_selected}]" tabindex="0" @click="openCategory('category')">
+        <div class="nice-select form-control mb-4" :class="[open_select_category]" tabindex="0" @click="openCategory('category')">
             <span class="current">
                 <allcategory :category="category_selected"></allcategory>
             </span>
@@ -349,8 +349,9 @@
 <label>
      <span class="text-dark">{{$t('Emirates')}}</span>
         <div class="nice-select form-control "
-         :class="[open_select,{'is-valid':emirates_selected !=null}]" tabindex="0" @click="openCategory('emirates')">
+         :class="[open_select]" tabindex="0" @click="openCategory('emirates')">
             <span class="current">
+              <!-- ,{'is-valid':emirates_selected !=null} -->
                 <all-uae :emirates="emirates_selected"></all-uae></span>
               
                 <ul class="list">
@@ -375,7 +376,8 @@
     <span v-else>0</span>/100
     </small>
     <textarea class="form-control "    id="exampleFormControlTextarea1" rows="6" style="font-size:18px" v-model="complete.about" 
-    :class="[{'is-valid':limitComplete>=100}]" @input="ontype('About')" ></textarea>
+     @input="ontype('About')" ></textarea>'
+     <!-- :class="[{'is-valid':limitComplete>=100}]" -->
     </div>
 
 
@@ -704,13 +706,8 @@
                     <i class="fas fa-check-circle text-success"></i>
                 </h2>
                       <h2 class="text-center mb-5 ">  
-                         تم التسجيل بنجاح </h2>
-          <!-- <ul class="progressbar">
-              <li class="active">تم تسجيل حساب</li>
-              <li class="active"> اكمال الحساب </li>
-              <li class="active">رخصة الشركة </li>
-              <li >الانجازات </li>
-          </ul> -->
+                         {{$t('success_signup')}}</h2>
+ 
 
 
                 </div>
@@ -1408,6 +1405,12 @@ data.append('pathMunici',this.pathMunici);
 
 axios.post("bregister", data).then(res=>{
                     this.step++
+
+                               		setInterval(function ()
+				 {
+					  this.$router.push( '/');
+					 },
+				  3000);
                 });
 
             },

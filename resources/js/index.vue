@@ -55,7 +55,7 @@ style="position:absolute;
 <li v-if="!isLoggedIn"><router-link :to="'/login'"> {{ $t('login') }}</router-link></li>
 <li v-if="!isLoggedIn"><router-link :to="'register'"   > {{ $t('register') }} </router-link></li>
   <li v-if="isLoggedIn"> <router-link :to="{name:'mytenders'}"  class="font-weight-bold" >{{ $t('dashboard') }} </router-link></li>
-  <li v-if="isLoggedIn"> <a :to="{name:'mytenders'}"  class="font-weight-bold" >{{ $t('logout') }} </a></li>
+  <li v-if="isLoggedIn"> <a @click.prevent="logout()"  class="font-weight-bold" >{{ $t('logout') }} </a></li>
   <li class><a data-toggle="modal" @click="HideMenue()" data-target="#myModal" class="font-weight-bold" >
                                                     <i class="item-center fa fa-play"></i>{{$t('How_it_works')}}</a ></li>
 
@@ -694,7 +694,7 @@ axios.get('api/ads/showOffeUnique').then(res=>{
 
         axios.post("/logout").then((response) => {
              this.$store.dispatch("logout");
-           this.$router.push({ name: "login"});
+           this.$router.push({ name: "home"});
         })
         .catch((error) => {
         this.$store.dispatch("logout");
@@ -770,19 +770,7 @@ axios.get('api/ads/showOffeUnique').then(res=>{
         },
 
 
-     logout() {
-      try {
 
-        axios.post("/logout");
-
-        this.$store.dispatch("logout");
-
-        this.$router.push({ name: "home"});
-      } catch (error) {
-        this.$store.dispatch("logout");
-      }
-         location.reload();
-    }
   },
   
   beforeCreate(){

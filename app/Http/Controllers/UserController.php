@@ -100,7 +100,7 @@ class UserController extends Controller
    
 
 
-            
+                if($request->filename){
                 foreach ($request->filename as $file) {
                     $FilesAdditional = new FilesAdditional();
 
@@ -109,6 +109,7 @@ class UserController extends Controller
     
                     $FilesAdditional->save();
                 }
+            }
    
             return response()->json(['success'=>'File uploaded Register.']);
    
