@@ -725,6 +725,10 @@
                 </h2>
                       <h2 class="text-center mb-5 ">  
                          {{$t('success_signup')}}</h2>
+
+                         <div class="text-center">
+                          <a href="/">{{$t('homepage')}}</a>
+                         </div>
  
 
 
