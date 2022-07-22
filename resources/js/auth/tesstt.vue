@@ -718,7 +718,7 @@
         
 
         <div class="controls mt-4 mb-4" >
-            <button class="theme-btn primary " @click="stepGo('min')" :disabled="step == 1" v-if="step != 4">
+            <button class="theme-btn primary  " @click="stepGo('min')" :disabled="step == 1" v-if="step != 4">
                 <!-- "stepGo('min')" -->
                  <i class='bx bx-left-arrow-alt mr-3'></i>
                 {{$t('previous')}}
