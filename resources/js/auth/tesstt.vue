@@ -328,8 +328,23 @@
         >{{ error }}</div>
         </div>
 
-                  <div class="form-group">
-          <!-- <label for="password">{{$t('mobile')}}</label> -->
+                  <div class="row">
+                                 <div class=" col-4 mobile ">
+			
+                     <span class="single-property-details">
+     <span class="nice-select" >
+       <span class="current" v-if="country">
+        <img src="img/ae.svg" width="20" class="pr-1">
+        <span class="text-dark">+ 971</span>
+                                        </span>
+
+     </span>
+
+   </span>
+										
+								
+                  </div>
+        <div class="col-8">
           <input
             type="number"
             name="mobile2"
@@ -340,6 +355,7 @@
             :class="[{'is-invalid': errorFor('mobile')}]"
           />
           <v-errors :errors="errorFor('mobile')"></v-errors>
+        </div>
             </div>
 
       
@@ -1235,6 +1251,11 @@ this.resultSize = size+' MB' ;
 
 
             },
+            routing(){
+              
+                  this.$router.push({ path: '/'});
+                
+            },
                     MuniciFile(event){ //check
 
               //         Avatar:null,
@@ -1408,7 +1429,7 @@ axios.post("bregister", data).then(res=>{
 
                                		setInterval(function ()
 				 {
-					  this.$router.push({ path: '/'});
+					this.routing();
 					 },
 				  3000);
                 });
