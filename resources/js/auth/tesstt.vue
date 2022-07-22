@@ -721,7 +721,7 @@
                  
                 <div class="c-form-inner mt-5">
                 <h2 class="text-center">
-                    <i class="fas fa-check-circle text-success"></i>
+                    <i class="font-weight-bold theme-btn d-block text-center"></i>
                 </h2>
                       <h2 class="text-center mb-5 ">  
                          {{$t('success_signup')}}</h2>
