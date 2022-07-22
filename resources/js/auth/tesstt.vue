@@ -113,7 +113,7 @@
           />
           <v-errors :errors="errorFor('email')"></v-errors>
             </div>
-  <div class="form-group mt-3">
+  <div class="form-group mt-3" >
              <div class="h6 font-weight-bold text-dark " :class="$t('text_align')">{{$t('mobile')}}</div>
             <div class="row" dir="ltr">
               <div class=" col-4 mobile ">
@@ -328,8 +328,8 @@
         >{{ error }}</div>
         </div>
 
-                  <div class="row">
-                                 <div class=" col-4 mobile ">
+                  <div class="row form-group" dir="ltr">
+                                  <div class=" col-4 mobile ">
 			
                      <span class="single-property-details">
      <span class="nice-select" >
@@ -344,6 +344,7 @@
 										
 								
                   </div>
+           
         <div class="col-8">
           <input
             type="number"
@@ -356,6 +357,7 @@
           />
           <v-errors :errors="errorFor('mobile')"></v-errors>
         </div>
+                
             </div>
 
       
